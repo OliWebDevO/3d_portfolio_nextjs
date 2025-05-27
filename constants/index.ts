@@ -119,12 +119,12 @@ const techStackIcons = [
     scale: 1,
     rotation: [0, 0, 0],
   },
-  {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
-    rotation: [0, 0, 0],
-  },
+  // {
+  //   name: "Python Developer",
+  //   modelPath: "/models/python-transformed.glb",
+  //   scale: 0.8,
+  //   rotation: [0, 0, 0],
+  // },
   {
     name: "Backend Developer",
     modelPath: "/models/node-transformed.glb",
@@ -150,7 +150,7 @@ const expCards = [
     review:
       "Oliver brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
     imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    logoPath: "/images/asset1.png",
     title: "Frontend Developer",
     date: "January 2023 - Present",
     responsibilities: [
@@ -163,7 +163,7 @@ const expCards = [
     review:
       "Oliver’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    logoPath: "/images/asset2.png",
     title: "Full Stack Developer",
     date: "June 2020 - December 2023",
     responsibilities: [
@@ -176,7 +176,7 @@ const expCards = [
     review:
       "Oliver’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    logoPath: "/images/asset3.png",
     title: "React Native Developer",
     date: "March 2019 - May 2020",
     responsibilities: [
@@ -313,44 +313,117 @@ const projectDetailsCards = [
     cards: [
       {
         imgPath: "/images/ag1.png",
-        logoPath: "/images/logo1.png",
-        title: "React Native Developerr",
+        logoPath: "/images/asset1.png",
+        title: "A social platform for artists",
         details: [
-          "Led the development of Docker's web applications, focusing on scalability.",
-          "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-          "Contributed to open-source projects that were used with the Docker ecosystem.",
+          `This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.`,
+          "Through this project, I wanted to create a social network that allows artists to showcase and share their works, while enabling everyone to like and comment on each post. Users can create their own profile, where they can publish text and photos as posts. They can also display their artworks in a personal gallery.",
         ],
       },
       {
-        imgPath: "/images/ag1.png",
-        logoPath: "/images/logo2.png",
-        title: "React Native Developer",
+        imgPath: "/images/artg1.png",
+        logoPath: "/images/asset2.png",
+        title: "Front End Technologies",
         details: [
-          "Led the development of Docker's web applications, focusing on scalability.",
-          "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-          "Contributed to open-source projects that were used with the Docker ecosystem.",
+         "React Router Dom handles routing, navigation, and links.",
+          "MUI5 is used for the interface design.",
+          "Axios is used for managing API queries.",
+          "React Query is used for state management and data fetching.",
+          "Toastify is used for notifications and pop-ups."
         ],
       },
       {
-        imgPath: "/images/ag1.png",
-        logoPath: "/images/logo3.png",
-        title: "React Native Developerrr",
+        imgPath: "/images/ag3.png",
+        logoPath: "/images/asset3.png",
+        title: "Back End Technologies",
         details: [
-          "Led the development of Docker's web applications, focusing on scalability.",
-          "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-          "Contributed to open-source projects that were used with the Docker ecosystem.",
+          "Nodemon is used for server monitoring.",
+          "CORS is used for managing cross-origin requests.",
+          "Multer is used for file handling.",
+          "Bcrypt is used for password encryption.",
+          "JsonWebToken is used for authentication token management.",
+          "Cookie Parser is used to store these tokens via cookie management.",
+          "DotEnv is used for managing environment variables and securing sensitive information."
         ],
       },
     ],
   },
-  // Add more projects here, e.g.:
-  {
+    {
     slug: "library",
     cards: [
-      // ...experience cards for the "library" project
+      {
+        imgPath: "/images/ag1.png",
+        logoPath: "/images/asset1.png",
+        title: "A social platform for artists",
+        details: [
+          `This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.`,
+          "Through this project, I wanted to create a social network that allows artists to showcase and share their works, while enabling everyone to like and comment on each post. Users can create their own profile, where they can publish text and photos as posts. They can also display their artworks in a personal gallery.",
+        ],
+      },
+      {
+        imgPath: "/images/artg1.png",
+        logoPath: "/images/asset2.png",
+        title: "Front End Technologies",
+        details: [
+         "React Router Dom handles routing, navigation, and links.",
+          "MUI5 is used for the interface design.",
+          "Axios is used for managing API queries.",
+          "React Query is used for state management and data fetching.",
+          "Toastify is used for notifications and pop-ups."
+        ],
+      },
+      {
+        imgPath: "/images/ag3.png",
+        logoPath: "/images/asset3.png",
+        title: "Back End Technologies",
+        details: [
+          "Nodemon is used for server monitoring.",
+          "CORS is used for managing cross-origin requests.",
+          "Multer is used for file handling.",
+          "Bcrypt is used for password encryption.",
+          "JsonWebToken is used for authentication token management.",
+          "Cookie Parser is used to store these tokens via cookie management.",
+          "DotEnv is used for managing environment variables and securing sensitive information."
+        ],
+      },
     ],
   },
-  // etc.
+    {
+     slug: "portfolio",
+  cards: [
+    {
+      imgPath: "/images/portfolioCover.png",
+      logoPath: "/images/asset1.png",
+      title: "Animated Portfolio Website",
+      details: [
+        "This portfolio website was designed and developed to showcase my work, skills, and experience as a front-end developer.",
+        "The site features interactive animations, a modern UI, and responsive design to provide an engaging user experience on all devices.",
+      ],
+    },
+    {
+      imgPath: "/images/portfolioCover2.png",
+      logoPath: "/images/asset2.png",
+      title: "Front End Technologies",
+      details: [
+        "Built with Next.js and React for fast, SEO-friendly rendering.",
+        "Tailwind CSS is used for rapid and consistent styling.",
+        "GSAP powers the smooth animations and transitions.",
+        "TypeScript ensures type safety and maintainability.",
+      ],
+    },
+    {
+    imgPath: "/images/portfolioCover3.png",
+    logoPath: "/images/asset3.png",
+    title: "Contact Me",
+    details: [
+      "Interested in working together or have a project in mind?",
+      "Feel free to reach out to discuss your ideas, get a quote, or just say hello!",
+      "I'm always open to new opportunities and collaborations.",
+      "Let's build something great together—contact me today!"
+      ],
+    },
+  ],
+  },
 ];
 
 export {

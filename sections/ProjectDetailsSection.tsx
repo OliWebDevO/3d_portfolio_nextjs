@@ -71,9 +71,9 @@ const ProjectDetailsSection = () => {
                     {details?.map((card, index) => (
                         <div key={card.title} className="exp-card-wrapper">
                            <div className="xl:w-2/6">
-                                <GlowCardDetails card={card} index={index}>
+                                <GlowCardDetails index={index}>
                                     <div>
-                                        <img src={card.imgPath} alt={card.imgPath} />
+                                        <img className="rounded-lg" src={card.imgPath} alt={card.imgPath} />
                                     </div>
                                 </GlowCardDetails>
                             </div>
@@ -92,9 +92,9 @@ const ProjectDetailsSection = () => {
                                             {/* <p className="my-5 text-white-50">
                                                 📅 {card.date}
                                             </p> */}
-                                            <p className="text-[#839cb5] italic">
+                                            {/* <p className="text-[#839cb5] italic">
                                                Responsibilities
-                                            </p>
+                                            </p> */}
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
                                                 {card.details?.map((detail, index) => (
                                                     <li key={index} className="text-lg">
