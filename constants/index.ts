@@ -262,12 +262,15 @@ const projects = [
   },
   {
     slug: "library",
-    title: "Library Management System",
+    title: "BookWise : A library management system",
     description: "Streamlining book management for libraries",
     image: "/images/project2.png",
     techLogos: [
+      "/images/logos/nextjs.png",
       "/images/logos/react.png",
-      "/images/logos/node.png"
+      "/images/logos/node.png",
+      "/images/logos/postgresql.png",
+      "/images/logos/tailwind.png",
     ],
     bg: "#ffefdb",
   },
@@ -277,8 +280,36 @@ const projects = [
     description: "An animated portfolio website showcasing my work.",
     image: "/images/portfolioCover.png",
     techLogos: [
+      "/images/logos/nextjs.png",
       "/images/logos/react.png",
-      "/images/logos/node.png"
+      "/images/logos/node.png",
+      "/images/logos/tailwind.png",
+    ],
+    bg: "#ffe7eb",
+  },
+  {
+    slug: "lenoyer",
+    title: "Le Noyer : Medical center website",
+    description: "A minimalist, elegant, and functional website",
+    image: "/images/portfolioCover.png",
+    techLogos: [
+      "/images/logos/html.png",
+      "/images/logos/css.png",
+      "/images/logos/js.png",
+      "/images/logos/wordpress.png",
+    ],
+    bg: "#ffe7eb",
+  },
+  {
+    slug: "annick",
+    title: "Annick Van Endert : Artist's website",
+    description: "A window into the paintress's world.",
+    image: "/images/portfolioCover.png",
+    techLogos: [
+       "/images/logos/html.png",
+      "/images/logos/css.png",
+      "/images/logos/js.png",
+      "/images/logos/wordpress.png",
     ],
     bg: "#ffe7eb",
   },
@@ -419,7 +450,76 @@ const projectDetailsCards = [
       "Interested in working together or have a project in mind?",
       "Feel free to reach out to discuss your ideas, get a quote, or just say hello!",
       "I'm always open to new opportunities and collaborations.",
-      "Let's build something great together—contact me today!"
+      "Let's build something great together, contact me today!"
+      ],
+    },
+  ],
+  },
+   {
+     slug: "lenoyer",
+  cards: [
+    {
+      imgPath: "/images/portfolioCover.png",
+      logoPath: "/images/asset1.png",
+      title: "Medical Center Le Noyer",
+      details: [
+       "A minimalist, elegant, and functional website",
+        "Maison Médicale Le Noyer is a multidisciplinary team providing quality, accessible, continuous, comprehensive, and integrated healthcare in the municipality of Schaerbeek.",
+      ],
+    },
+    {
+      imgPath: "/images/portfolioCover2.png",
+      logoPath: "/images/asset2.png",
+      title: "All the informations in a few clicks",
+      details: [
+       "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
+        "The site is personalized so that each section can be directly modified or updated by the medical center team. They can easily add or remove content at will via the Wordpress admin panel.",
+      ],
+    },
+    {
+    imgPath: "/images/portfolioCover3.png",
+    logoPath: "/images/asset3.png",
+    title: "A responsive and user-friendly design",
+    details: [
+      "The site uses various plugins:",
+      "Wow.js & Animate.css are used for animations.",
+      "Slick Slider is used for managing carousels (for example: team page).",
+      "Magnific Popup is used to display images as a lightbox."
+      ],
+    },
+  ],
+  },
+   {
+     slug: "annick",
+  cards: [
+    {
+      imgPath: "/images/portfolioCover.png",
+      logoPath: "/images/asset1.png",
+      title: "A professional painter's website",
+      details: [
+      "A window into the artist's world",
+      "Annick Van Endert is a painter, sculptor, and tattoo artist from Brussels. Through various mediums, her works highlight sharp and striking contrasts.",
+      ],
+    },
+    {
+      imgPath: "/images/portfolioCover2.png",
+      logoPath: "/images/asset2.png",
+      title: "Front End Technologies",
+      details: [
+       "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
+        "The site is designed so that each gallery and section can be easily updated, allowing Annick to add new artworks and content at any time through the Wordpress admin panel.",
+      ],
+    },
+    {
+    imgPath: "/images/portfolioCover3.png",
+    logoPath: "/images/asset3.png",
+    title: "Contact Me",
+    details: [
+     "To create this website, various plugins are used:",
+      "Wow.js & Animate.css are used for animations.",
+      "Swiper is used for the slider.",
+      "SimpleLightBox is used for displaying the gallery.",
+      "Lenis is used for smooth scrolling."
       ],
     },
   ],
