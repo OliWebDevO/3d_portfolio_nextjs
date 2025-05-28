@@ -48,7 +48,7 @@ export default function ProjectHero() {
     <section className="app-showcase min-h-screen flex items-center justify-center">
       <div className="showcaselayout flex flex-col md:flex-row gap-10">
         <div className="image-wrapper group relative overflow-hidden rounded-xl" style={{ background: project.bg }}>
-          <Image src={project.image} alt={project.title} width={600} height={400} className="rounded-xl object-contain" />
+          <Image src={project.image} alt={project.title} width={600} height={400} className="rounded-xl  card-border p-5" />
         </div>
         <div className="text-content flex flex-col justify-center gap-4">
           <div className="tech-logos flex gap-4 mb-3">

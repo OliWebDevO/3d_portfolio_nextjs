@@ -285,33 +285,33 @@ const projects = [
       "/images/logos/node.png",
       "/images/logos/tailwind.png",
     ],
-    bg: "#ffe7eb",
+    bg: "#ffefdb",
   },
   {
     slug: "lenoyer",
     title: "Le Noyer : Medical center website",
     description: "A minimalist, elegant, and functional website",
-    image: "/images/portfolioCover.png",
+    image: "/images/lenoyer1.png",
     techLogos: [
       "/images/logos/html.png",
       "/images/logos/css.png",
       "/images/logos/js.png",
       "/images/logos/wordpress.png",
     ],
-    bg: "#ffe7eb",
+    bg: "white",
   },
   {
     slug: "annick",
     title: "Annick Van Endert : Artist's website",
     description: "A window into the paintress's world.",
-    image: "/images/portfolioCover.png",
+    image: "/images/annick1.png",
     techLogos: [
        "/images/logos/html.png",
       "/images/logos/css.png",
       "/images/logos/js.png",
       "/images/logos/wordpress.png",
     ],
-    bg: "#ffe7eb",
+    bg: "#ffefdb",
   },
 ];
 
@@ -459,8 +459,8 @@ const projectDetailsCards = [
      slug: "lenoyer",
   cards: [
     {
-      imgPath: "/images/portfolioCover.png",
-      logoPath: "/images/asset1.png",
+      imgPath: "/images/lenoyer1.png",
+      logoPath: "/images/asset2.png",
       title: "Medical Center Le Noyer",
       details: [
        "A minimalist, elegant, and functional website",
@@ -468,7 +468,7 @@ const projectDetailsCards = [
       ],
     },
     {
-      imgPath: "/images/portfolioCover2.png",
+      imgPath: "/images/lenoyer2.png",
       logoPath: "/images/asset2.png",
       title: "All the informations in a few clicks",
       details: [
@@ -477,7 +477,7 @@ const projectDetailsCards = [
       ],
     },
     {
-    imgPath: "/images/portfolioCover3.png",
+    imgPath: "/images/lenoyer3.png",
     logoPath: "/images/asset3.png",
     title: "A responsive and user-friendly design",
     details: [
@@ -493,7 +493,7 @@ const projectDetailsCards = [
      slug: "annick",
   cards: [
     {
-      imgPath: "/images/portfolioCover.png",
+      imgPath: "/images/annick2.png",
       logoPath: "/images/asset1.png",
       title: "A professional painter's website",
       details: [
@@ -502,7 +502,7 @@ const projectDetailsCards = [
       ],
     },
     {
-      imgPath: "/images/portfolioCover2.png",
+      imgPath: "/images/annick3.png",
       logoPath: "/images/asset2.png",
       title: "Front End Technologies",
       details: [
@@ -511,7 +511,7 @@ const projectDetailsCards = [
       ],
     },
     {
-    imgPath: "/images/portfolioCover3.png",
+    imgPath: "/images/annick4.png",
     logoPath: "/images/asset3.png",
     title: "Contact Me",
     details: [

@@ -107,7 +107,7 @@ const ShowcaseSection = () => {
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="rounded-xl object-contain main-img"
+                    className=" main-img "
                   />
                   <div className="showcase-animated-bg flex items-center justify-center">
                     {project.techLogos &&
