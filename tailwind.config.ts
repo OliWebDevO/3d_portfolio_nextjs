@@ -19,6 +19,9 @@ export default {
         'blue-50': '#839cb5',
         'blue-100': '#2d2d38',
       },
+         screens: {
+        'xxl': '1800px', 
+      },
     },
   },
   plugins: [],

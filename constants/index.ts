@@ -4,16 +4,17 @@ const navLinks = [
     link: "#work",
   },
   {
-    name: "Experience",
-    link: "#experience",
-  },
-  {
     name: "Skills",
     link: "#skills",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    
+    name: "Experience",
+    link: "#experience",
+  },
+  {
+    name: "Tech Stack",
+    link: "#techstack",
   },
 ];
 
@@ -37,37 +38,92 @@ const counterItems = [
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/company-logo-1.png",
+    id: 1,
+    imgPath: "/images/logos/nextjs.png",
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    id: 2,
+    imgPath: "/images/logos/react.png",
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    id: 3,
+    imgPath: "/images/logos/tailwind.png",
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    id: 4,
+    imgPath: "/images/logos/node.png",
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    id: 5,
+    imgPath: "/images/logos/sql.png",
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    id: 6,
+    imgPath: "/images/logos/postgresql.png",
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    id: 7,
+    imgPath: "/images/logos/three.png",
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    id: 8,
+    imgPath: "/images/logos/git.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
+    id: 9,
+    imgPath: "/images/logos/html.png",
   },
   {
-    imgPath: "/images/logos/company-logo-10.png",
+    id: 10, 
+    imgPath: "/images/logos/css.png",
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
+    id: 11,
+    imgPath: "/images/logos/js.png",
+  },
+  {
+    id: 12,
+    imgPath: "/images/logos/nextjs.png",
+  },
+  {
+    id: 13, 
+    imgPath: "/images/logos/react.png",
+  },
+  {
+    id: 14,
+    imgPath: "/images/logos/tailwind.png",
+  },
+  {
+    id: 15,
+    imgPath: "/images/logos/node.png",
+  },
+  {
+    id: 16,
+    imgPath: "/images/logos/sql.png",
+  },
+  {
+    id: 17,
+    imgPath: "/images/logos/postgresql.png",
+  },
+  {
+    id: 18,
+    imgPath: "/images/logos/three.png",
+  },
+  {
+    id: 19,
+    imgPath: "/images/logos/git.svg",
+  },
+  {
+    id: 20,
+    imgPath: "/images/logos/html.png",
+  },
+  {
+    id: 21,
+    imgPath: "/images/logos/css.png",
+  },
+  {
+    id: 22,
+    imgPath: "/images/logos/js.png",
   },
 ];
 
@@ -91,7 +147,7 @@ const abilities = [
 
 const techStackImgs = [
   {
-    name: "React Developer",
+    name: "Frontend Developer",
     imgPath: "/images/logos/react.png",
   },
   {
@@ -107,14 +163,14 @@ const techStackImgs = [
     imgPath: "/images/logos/three.png",
   },
   {
-    name: "Project Manager",
+    name: "Project Management",
     imgPath: "/images/logos/git.svg",
   },
 ];
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "Frontend Developer",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
@@ -138,7 +194,7 @@ const techStackIcons = [
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
+    name: "Project Management",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],

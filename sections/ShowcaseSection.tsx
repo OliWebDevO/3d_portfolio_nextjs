@@ -46,7 +46,7 @@ const ShowcaseSection = () => {
 
   return (
     <section id="work" className="app-showcase" ref={showcaseRef}>
-      <div className="w-full">
+      <div className="w-full  xxl:px-40">
         <div className="showcaselayout xl:flex xl:gap-10 block">
           {/* LEFT : First two projects */}
           <div className="first-project-wrapper xl:w-[60%] w-full mb-10 xl:mb-0 flex flex-col gap-10">
