@@ -213,6 +213,9 @@ const expCards = [
       "Developed and maintained user-facing features for the Hostinger website.",
       "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
       "Optimized web applications for maximum speed and scalability.",
+      "Developed and maintained user-facing features for the Hostinger website.",
+      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
+      "Optimized web applications for maximum speed and scalability.",
     ],
   },
   {
