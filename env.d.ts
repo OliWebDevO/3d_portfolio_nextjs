@@ -2,6 +2,12 @@ interface ButtonProps {
   className?: string; 
   id?: string;
   text?: string;
+  href?: string;
+}
+interface ButtonProjectProps {
+  className?: string; 
+  text?: string;
+  href: string;
 }
 
 interface LogoIconType {

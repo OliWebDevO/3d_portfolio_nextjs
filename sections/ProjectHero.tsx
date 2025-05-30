@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/Button";
+import ProjectButton from "@/components/ProjectButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,6 +67,7 @@ export default function ProjectHero() {
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
           <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
+          <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text="Visit Project" href={project.link}/>
         </div>
       </div>
     </section>

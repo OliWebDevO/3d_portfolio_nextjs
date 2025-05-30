@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 const navLinks = [
   {
     name: "Work",
@@ -309,6 +311,7 @@ const projects = [
     title: "BookWise : A library management system",
     description: "Streamlining book management for libraries",
     image: "/images/library1.png",
+    link: "https://university-library-v2-nu.vercel.app/",
     techLogos: [
       "/images/logos/nextjs.png",
       "/images/logos/react.png",
@@ -323,6 +326,7 @@ const projects = [
     title: "Art Gallery : A social platform for artists",
     description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
     image: "/images/ag2.png",
+    link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
     techLogos: [
       "/images/logos/react.png",
       "/images/logos/node.png",
@@ -335,6 +339,7 @@ const projects = [
     title: "Portfolio Website",
     description: "An animated portfolio website showcasing my work.",
     image: "/images/portfolioCover.png",
+    link: "https://olivervdb.com",
     techLogos: [
       "/images/logos/nextjs.png",
       "/images/logos/react.png",
@@ -348,6 +353,7 @@ const projects = [
     title: "Le Noyer : Medical center website",
     description: "A minimalist, elegant, and functional website",
     image: "/images/lenoyer1.png",
+    link: "https://lenoyer.be",
     techLogos: [
       "/images/logos/html.png",
       "/images/logos/css.png",
@@ -361,6 +367,7 @@ const projects = [
     title: "Annick Van Endert : Artist's website",
     description: "A window into the paintress's world.",
     image: "/images/annick1.png",
+    link: "https://annickvanendert.com",
     techLogos: [
        "/images/logos/html.png",
       "/images/logos/css.png",

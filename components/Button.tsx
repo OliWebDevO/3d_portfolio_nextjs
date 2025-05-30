@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-const Button = ({className, id, text} : ButtonProps) => {
+const Button = ({className, id, text, href} : ButtonProps) => {
   return (
     <a className={`${className ?? ''} cta-wrapper`}
         onClick={(e) => {
             e.preventDefault();
-            const target = document.querySelector('#work') as HTMLElement;
+            const target = document.querySelector(`${href}`) as HTMLElement;
             if (target && id) {
                 const offset = window.innerWidth * 0.15;
                 const top = target.getBoundingClientRect().top + window.scrollY - offset;
