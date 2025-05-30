@@ -202,46 +202,43 @@ const techStackIcons = [
 ];
 
 const expCards = [
-  {
+    {
     review:
-      "Oliver brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+      "Through those projects, I have developed strong technical skills and adaptability across modern stacks. My work is composed of web apps, portfolio sites, and client platforms, always with a focus on quality and user experience.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/asset1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Freelance Web Developer",
+    date: "2024 – 2025",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), and a personal portfolio (Next.js, React, GSAP).",
+      "Built and deployed client websites such as annickvanendert.com and lenoyer.be using WordPress, HTML, CSS, and JavaScript.",
+      "Managed all aspects of project delivery: design translation, frontend and backend development, deployment, and client communication.",
     ],
   },
   {
     review:
-      "Oliver’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "During my training at DigitalCity, I built a solid foundation in frontend development, mastering modern tools and frameworks while delivering real-world projects.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/asset2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Front End Development Training",
+    date: "2023 – 2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Produced multiple websites using HTML5, CSS, Vanilla JS, Flexbox, Grid, SASS, API management, GSAP, and React.",
+      "Transcribed site designs and architecture into ready-to-use WordPress platforms.",
+      "Developed a social network web app for Belgian artists using React, Node.js, and MySQL.",
     ],
   },
   {
     review:
-      "Oliver’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "My working holiday in Australia helped me foster strong soft skills and adaptability, enriching my professional and personal growth through diverse experiences.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/asset3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    title: "Working Holiday & Soft Skills Development",
+    date: "2019 – 2022",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Worked various jobs across Western Australia: mining, farms, cattle stations, and more.",
+      "Traveled extensively, developing autonomy, adaptability, stress management, resilience, and decision-making skills.",
+      "Achieved English proficiency at C1 level.",
     ],
   },
 ];
@@ -307,6 +304,20 @@ const testimonials = [
 ];
 
 const projects = [
+    {
+    slug: "library",
+    title: "BookWise : A library management system",
+    description: "Streamlining book management for libraries",
+    image: "/images/library1.png",
+    techLogos: [
+      "/images/logos/nextjs.png",
+      "/images/logos/react.png",
+      "/images/logos/node.png",
+      "/images/logos/postgresql.png",
+      "/images/logos/tailwind.png",
+    ],
+    bg: "#ffefdb",
+  },
   {
     slug: "artgallery",
     title: "Art Gallery : A social platform for artists",
@@ -318,20 +329,6 @@ const projects = [
       "/images/logos/sql.png",
     ],
     bg: "",
-  },
-  {
-    slug: "library",
-    title: "BookWise : A library management system",
-    description: "Streamlining book management for libraries",
-    image: "/images/project2.png",
-    techLogos: [
-      "/images/logos/nextjs.png",
-      "/images/logos/react.png",
-      "/images/logos/node.png",
-      "/images/logos/postgresql.png",
-      "/images/logos/tailwind.png",
-    ],
-    bg: "#ffefdb",
   },
   {
     slug: "portfolio",
@@ -398,48 +395,45 @@ const socialImgs = [
 ];
 
 const projectDetailsCards = [
+    {
+  slug: "library",
+  cards: [
+    {
+      imgPath: "/images/library.png",
+      logoPath: "/images/asset1.png",
+      title: "BookWise: University Library Management System",
+      details: [
+        "BookWise is a comprehensive library management system built with Next.js and TypeScript, designed to streamline book management for universities and libraries.",
+        "The platform features a profile page for users, a borrowing system, and automated email notifications for onboarding.",
+        "Caching, rate-limiting, DDoS protection, and real-time image optimization are implemented to enhance performance and security.",
+      ],
+    },
+    {
+      imgPath: "/images/library3.png",
+      logoPath: "/images/asset2.png",
+      title: "Front End Technologies",
+      details: [
+        "Built with Next.js and TypeScript for scalable, maintainable development.",
+        "Tailwind CSS and ShadCN provide a modern, responsive UI/UX.",
+        "ImageKit is used for real-time image and video optimization.",
+      ],
+    },
+    {
+      imgPath: "/images/library2.png",
+      logoPath: "/images/asset3.png",
+      title: "Back End Technologies",
+      details: [
+        "PostgreSQL with Neon powers scalable and collaborative database management.",
+        "Upstash Redis is used for efficient caching, workflows, and triggers.",
+        "Drizzle ORM simplifies database interactions.",
+        "Resend handles automated email notifications for onboarding, reminders, and updates.",
+        "NextAuth provides robust authentication and role management.",
+      ],
+    },
+  ],
+},
   {
     slug: "artgallery",
-    cards: [
-      {
-        imgPath: "/images/ag1.png",
-        logoPath: "/images/asset1.png",
-        title: "A social platform for artists",
-        details: [
-          `This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.`,
-          "Through this project, I wanted to create a social network that allows artists to showcase and share their works, while enabling everyone to like and comment on each post. Users can create their own profile, where they can publish text and photos as posts. They can also display their artworks in a personal gallery.",
-        ],
-      },
-      {
-        imgPath: "/images/artg1.png",
-        logoPath: "/images/asset2.png",
-        title: "Front End Technologies",
-        details: [
-         "React Router Dom handles routing, navigation, and links.",
-          "MUI5 is used for the interface design.",
-          "Axios is used for managing API queries.",
-          "React Query is used for state management and data fetching.",
-          "Toastify is used for notifications and pop-ups."
-        ],
-      },
-      {
-        imgPath: "/images/ag3.png",
-        logoPath: "/images/asset3.png",
-        title: "Back End Technologies",
-        details: [
-          "Nodemon is used for server monitoring.",
-          "CORS is used for managing cross-origin requests.",
-          "Multer is used for file handling.",
-          "Bcrypt is used for password encryption.",
-          "JsonWebToken is used for authentication token management.",
-          "Cookie Parser is used to store these tokens via cookie management.",
-          "DotEnv is used for managing environment variables and securing sensitive information."
-        ],
-      },
-    ],
-  },
-    {
-    slug: "library",
     cards: [
       {
         imgPath: "/images/ag1.png",
@@ -563,7 +557,7 @@ const projectDetailsCards = [
     {
       imgPath: "/images/annick3.png",
       logoPath: "/images/asset2.png",
-      title: "Front End Technologies",
+      title: "A modern and visually engaging interface",
       details: [
        "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
         "The site is designed so that each gallery and section can be easily updated, allowing Annick to add new artworks and content at any time through the Wordpress admin panel.",
@@ -572,7 +566,7 @@ const projectDetailsCards = [
     {
     imgPath: "/images/annick4.png",
     logoPath: "/images/asset3.png",
-    title: "Contact Me",
+    title: "Pluggins and Features",
     details: [
      "To create this website, various plugins are used:",
       "Wow.js & Animate.css are used for animations.",
