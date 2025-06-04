@@ -169,9 +169,12 @@ section {
       } 
     .first-project-wrapper {
       @apply h-full flex flex-col justify-between xl:w-[60%];
+      .image-wrapper {
+        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[70vh] md:h-[50vh] h-96 xl:px-5 2xl:px-12 py-0 px-5;
+      }
 
-      .image-wrapper .main-img {
-        @apply w-full h-full object-cover rounded-xl absolute inset-0;
+       .main-img {
+        @apply w-full h-fit object-cover object-center rounded-xl;
       }
 
       .text-content {
@@ -191,7 +194,7 @@ section {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
         .image-wrapper {
-        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[37vh] md:h-52 lg:h-72 h-64 xl:px-5 2xl:px-12 py-0;
+        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[37vh] md:h-52 lg:h-72 h-64 xl:px-5 2xl:px-12 py-0 px-5;
       }
       .main-img {
         @apply w-full h-fit object-cover object-center rounded-xl;
@@ -300,7 +303,7 @@ section {
   }
 
   .mobile-padding {
-    @apply md:pt-20 pt-16;
+    @apply pt-20 md:mt-0 mt-10 ;
   }
 
   .footer {

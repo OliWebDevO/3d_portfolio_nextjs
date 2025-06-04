@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oliver Van Droogenbroeck | Portfolio",
+  title: "Oliver Van Droogenbroeck | Web Developer",
   description: "Welcome to my portfolio website! I am Oliver Van Droogenbroeck, a web developer based in Belgium. Explore my projects, skills, and experiences. I am proficient in React, Next.js, and TypeScript, and I am passionate about creating innovative web solutions.",
   robots: "index, follow",
   metadataBase: new URL("https://www.olivervdb.com"),

@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { projects } from "@/constants";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,7 +112,7 @@ const ShowcaseSection = () => {
                   <div className="showcase-animated-bg flex items-center justify-center">
                     {project.techLogos &&
                       project.techLogos.map((logo, logoIdx) => (
-                        <img
+                        <Image
                           key={logo}
                           src={logo}
                           alt={`Tech logo ${logoIdx + 1}`}
