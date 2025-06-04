@@ -411,6 +411,12 @@ section {
   width: 100dvw;
   overflow: hidden;
   position: relative;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  touch-action: pan-x;
+}
+.marquee::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 .marquee-box {
   display: flex;
@@ -420,6 +426,7 @@ section {
   position: absolute;
   overflow: hidden;
   animation: marquee 60s linear infinite;
+  
 }
 .marquee-item {
   float: left;
