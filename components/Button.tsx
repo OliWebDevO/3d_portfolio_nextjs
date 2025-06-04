@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 const Button = ({className, id, text, href} : ButtonProps) => {
   return (
@@ -19,7 +19,7 @@ const Button = ({className, id, text, href} : ButtonProps) => {
             <div className='bg-circle'/>
                 <p className='text'>{text}</p>
                 <div className='arrow-wrapper'>
-                    <Image src="/images/arrow-down.svg" width={30} height={30} alt="arrow" />
+                    <img src="/images/arrow-down.svg" width={30} height={30} alt="arrow" />
                 </div>
         </div>
     </a>

@@ -1,6 +1,6 @@
 'use client'
 import { useParams } from "next/navigation";
-import Image from "next/image";
+// Removed: import Image from "next/image";
 import { projects } from "@/constants";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -10,16 +10,24 @@ import ProjectButton from "@/components/ProjectButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProjectHero() {
-  const { slug } = useParams();
+function getSlug(param: string | string[] | undefined): string {
+  if (Array.isArray(param)) return param[0];
+  return param || "";
+}
+
+export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
+  // Always call useParams
+  const params = useParams();
+  const paramSlug = getSlug(params?.slug);
+
+  // Prefer staticSlug if provided, otherwise use paramSlug
+  const slug = staticSlug || paramSlug;
   const project = projects.find((p) => p.slug === slug);
 
   const logoRefs = useRef<(HTMLImageElement | null)[]>([]);
 
   useGSAP(() => {
-    // Kill previous triggers to avoid duplicates
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
     if (logoRefs.current.length) {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -46,15 +54,21 @@ export default function ProjectHero() {
   if (!project) return <div>Project not found.</div>;
 
   return (
-    <section className="app-showcase min-h-screen flex items-center justify-center">
+    <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
       <div className="showcaselayout flex flex-col md:flex-row gap-10">
         <div className="image-wrapper group relative overflow-hidden rounded-xl" style={{ background: project.bg }}>
-          <Image src={project.image} alt={project.title} width={600} height={400} className="rounded-xl  card-border p-5" />
+          <img
+            src={project.image}
+            alt={project.title}
+            width={600}
+            height={400}
+            className="rounded-xl  card-border p-5"
+          />
         </div>
         <div className="text-content flex flex-col justify-center gap-4">
           <div className="tech-logos flex gap-4 mb-3">
             {project.techLogos && project.techLogos.map((logo, idx) => (
-              <Image
+              <img
                 key={logo}
                 src={logo}
                 alt={`Tech logo ${idx + 1}`}

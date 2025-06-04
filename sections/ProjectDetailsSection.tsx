@@ -6,17 +6,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import GlowCardDetails from "@/components/GlowCardDetails"
 import { useParams } from "next/navigation"
 
-
 gsap.registerPlugin(ScrollTrigger)
 
-const ProjectDetailsSection = () => {
+// Helper to get slug as string (for static export)
+function getSlug(param: string | string[] | undefined): string {
+  if (Array.isArray(param)) return param[0];
+  return param || "";
+}
 
-    const { slug } = useParams<{ slug: string }>();
+const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => {
+    // Always call useParams
+    const params = useParams();
+    const paramSlug = getSlug(params?.slug);
+
+    // Prefer staticSlug if provided, otherwise use paramSlug
+    const slug = staticSlug || paramSlug;
     const details = projectDetailsCards.find(p => p.slug === slug)?.cards;
 
-
     useGSAP(() => {
-
         gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
             gsap.from(card, {
                 xPercent: -100,
@@ -61,7 +68,7 @@ const ProjectDetailsSection = () => {
             })
         })
         
-    }, [] )
+    }, [details] )
 
   return (
     <section id="experience" className="w-full md:mt-4 mt2 xl:px-0 section-padding">
@@ -89,12 +96,6 @@ const ProjectDetailsSection = () => {
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>
-                                            {/* <p className="my-5 text-white-50">
-                                                📅 {card.date}
-                                            </p> */}
-                                            {/* <p className="text-[#839cb5] italic">
-                                               Responsibilities
-                                            </p> */}
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
                                                 {card.details?.map((detail, index) => (
                                                     <li key={index} className="text-lg">

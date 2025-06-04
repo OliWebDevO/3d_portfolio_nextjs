@@ -1,11 +1,15 @@
 'use client'
 // import AnimatedCounter from "../components/AnimatedCounter"
 import Button from "../components/Button"
-import HeroExperience from "@/components/models/HeroModels/HeroExperience"
+// import HeroExperience from "@/components/models/HeroModels/HeroExperience"
 import { words } from "../constants"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import Image from "next/image"
+import dynamic from "next/dynamic";
+const HeroExperience = dynamic(
+  () => import("@/components/models/HeroModels/HeroExperience"),
+  { ssr: false }
+);
 
 const Hero = () => {
 
@@ -19,7 +23,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden xxl:px-40">
         <div className="absolute top-0 left-0 z-10">
-            <Image src="/images/bg.png" alt="background" width={300} height={250} priority />
+            <img src="/images/bg.png" alt="background" />
         </div>
         <div className="hero-layout">
             {/* LEFT : CONTENT */}
@@ -32,11 +36,10 @@ const Hero = () => {
                                 <span className="wrapper">
                                     {words.map((word)=> (
                                         <span key={word.id} className="flex items-center md:gap-3 gap-1 pb-2">
-                                            <Image
+                                            <img
                                                 src={word.imgPath}
                                                 alt={word.text}
-                                                width={48}
-                                                height={48}
+                                               
                                                 className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                                             />
                                             <span>{word.text}</span>

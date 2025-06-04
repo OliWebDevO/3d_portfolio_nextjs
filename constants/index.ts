@@ -317,7 +317,7 @@ const projects = [
       "/images/logos/react.png",
       "/images/logos/node.png",
       "/images/logos/postgresql.png",
-      "/images/logos/tailwind.png",
+      // "/images/logos/tailwind.png",
     ],
     bg: "#ffefdb",
   },
@@ -520,7 +520,7 @@ const projectDetailsCards = [
   cards: [
     {
       imgPath: "/images/lenoyer1.png",
-      logoPath: "/images/asset2.png",
+      logoPath: "/images/asset1.png",
       title: "Medical Center Le Noyer",
       details: [
        "A minimalist, elegant, and functional website",

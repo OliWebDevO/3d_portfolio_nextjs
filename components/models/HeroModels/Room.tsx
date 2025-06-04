@@ -19,7 +19,7 @@ interface RoomGLTFResult {
   };
 }
 
-export function Room(props: JSX.IntrinsicElements['group']) {
+export function Room(props: React.ComponentProps<'group'>) {
 
   const { nodes, materials } = useGLTF('/models/optimized-room.glb') as unknown as RoomGLTFResult; // Use 'unknown' first, then cast to RoomGLTFResult
 
@@ -58,11 +58,11 @@ export function Room(props: JSX.IntrinsicElements['group']) {
     <group {...props} dispose={null}>
       <EffectComposer>
         <SelectiveBloom
-          selection={screensRef}
-          intensity={1.5} // Strength of the bloom
-          luminanceThreshold={0.2} // Minimum luminance needed
-          luminanceSmoothing={0.9} // Smooth transition
-          blendFunction={BlendFunction.ADD} // How it blends
+          selection={screensRef.current ?? undefined}
+          intensity={1.5}
+          luminanceThreshold={0.2}
+          luminanceSmoothing={0.9}
+          blendFunction={BlendFunction.ADD}
         />
       </EffectComposer>
       <mesh

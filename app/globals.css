@@ -118,7 +118,7 @@ section {
     }
 
     .inner {
-      @apply mx-auto flex items-center justify-between;
+      @apply mx-auto flex items-center justify-between ;
     }
 
     .logo {
@@ -297,6 +297,10 @@ section {
     a img {
         @apply inline-block;
       }
+  }
+
+  .mobile-padding {
+    @apply md:pt-20 pt-16;
   }
 
   .footer {

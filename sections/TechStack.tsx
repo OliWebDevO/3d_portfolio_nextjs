@@ -1,10 +1,16 @@
 'use client'
 import { useGSAP } from "@gsap/react"
 import TitleHeader from "../components/TitleHeader"
-import TechIcon from "../components/models/techlogos/TechIcon"
+// import TechIcon from "../components/models/techlogos/TechIcon"
 import { techStackIcons } from "../constants"
 // import { techStackImgs } from "../constants"
 import { gsap }from "gsap"
+
+import dynamic from "next/dynamic";
+const TechIcon = dynamic(
+  () => import("../components/models/techlogos/TechIcon"),
+  { ssr: false }
+);
 
 
 const TechStack = () => {
