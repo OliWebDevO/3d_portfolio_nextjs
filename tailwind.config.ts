@@ -21,6 +21,7 @@ export default {
       },
          screens: {
         'xxl': '1800px', 
+        'mobile': '475px',
       },
     },
   },

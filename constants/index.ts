@@ -332,7 +332,7 @@ const projects = [
       "/images/logos/node.png",
       "/images/logos/sql.png",
     ],
-    bg: "",
+    bg: "#1c1c21",
   },
   {
     slug: "portfolio",

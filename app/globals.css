@@ -165,13 +165,10 @@ section {
       @apply flex xl:flex-row flex-col gap-10 justify-between;
     }
     .first-project-wrapper .image-wrapper {
-        @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[60vh] md:h-[50vh] h-[35vh] xl:px-5 2xl:px-12 py-0 px-5;
       } 
     .first-project-wrapper {
       @apply h-full flex flex-col justify-between xl:w-[60%];
-      .image-wrapper {
-        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[70vh] md:h-[50vh] h-96 xl:px-5 2xl:px-12 py-0 px-5;
-      }
 
        .main-img {
         @apply w-full h-fit object-cover object-center rounded-xl;
@@ -194,7 +191,7 @@ section {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
         .image-wrapper {
-        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[37vh] md:h-52 lg:h-72 h-64 xl:px-5 2xl:px-12 py-0 px-5;
+        @apply flex items-center justify-center overflow-hidden rounded-xl relative xl:h-[37vh] md:h-52 lg:h-72 h-[35vh] xl:px-5 2xl:px-12 py-0 px-5;
       }
       .main-img {
         @apply w-full h-fit object-cover object-center rounded-xl;
@@ -435,6 +432,7 @@ section {
     left: -100%;
   }
 }
+
 /* marquee end */
 
 .card {
