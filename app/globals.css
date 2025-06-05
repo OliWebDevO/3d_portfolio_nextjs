@@ -413,6 +413,28 @@ section {
 }
 
 /* marquee */
+
+@media (max-width: 768px) {
+  .marquee {
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+    animation: none !important; /* Disable animation for swipe */
+    position: relative;
+  }
+  .marquee-box {
+    width: max-content;
+    animation: none !important;
+    position: static;
+  }
+  .marquee::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .marquee {
   width: 100dvw;
   overflow: hidden;
@@ -424,6 +446,7 @@ section {
 .marquee::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
 .marquee-box {
   display: flex;
   align-items: center;
