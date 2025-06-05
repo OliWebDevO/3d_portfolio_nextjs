@@ -1,5 +1,6 @@
 // import Image from "next/image";
 
+import Slider from "@/components/models/MaterialUiSlider/Slider";
 import NavBar from "@/components/NavBar";
 import Contact from "@/sections/Contact";
 import ExperienceSection from "@/sections/ExperienceSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <NavBar/>
         <Hero/>
+        <Slider/>
         <ShowcaseSection/>
         <LogoSection/>
         <FeatureCards/>
