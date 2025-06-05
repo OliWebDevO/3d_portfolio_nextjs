@@ -58,7 +58,7 @@ export function Room(props: React.ComponentProps<'group'>) {
     <group {...props} dispose={null}>
       <EffectComposer>
         <SelectiveBloom
-          selection={screensRef.current ?? undefined}
+          selection={screensRef}
           intensity={1.5}
           luminanceThreshold={0.2}
           luminanceSmoothing={0.9}

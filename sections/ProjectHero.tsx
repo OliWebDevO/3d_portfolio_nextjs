@@ -24,10 +24,12 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
   const slug = staticSlug || paramSlug;
   const project = projects.find((p) => p.slug === slug);
 
+  gsap.registerPlugin(ScrollTrigger);
+
   const logoRefs = useRef<(HTMLImageElement | null)[]>([]);
 
   useGSAP(() => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     if (logoRefs.current.length) {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -53,7 +55,10 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
 
   if (!project) return <div>Project not found.</div>;
 
+
+
   return (
+    <>
     <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
       <div className="showcaselayout flex flex-col md:flex-row gap-10">
         <div className="image-wrapper group relative overflow-hidden rounded-xl" style={{ background: project.bg }}>
@@ -84,5 +89,45 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
         </div>
       </div>
     </section>
+    </>
   );
 }
+
+
+{/* 
+
+      useGSAP(() => {
+    const clipAnimation = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#clip",
+        start: "center center",
+        end: "+=800 center",
+        scrub: 0.5,
+        pin: true,
+        pinSpacing: true,
+      },
+    });
+
+    clipAnimation.to(".mask-clip-path", {
+      width: "100vw",
+      height: "100vh",
+      borderRadius: 0,
+    });
+  });
+  
+    <div id="about" className="min-h-screen w-screen">
+      <div className="h-dvh w-screen" id="clip">
+        <div className="mask-clip-path about-image">
+          <img
+            src="/images/portfoliocover.png"
+            alt="Background"
+            className="absolute left-0 top-0 size-full object-cover"
+          />
+        </div>
+      </div>
+      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
+        <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
+        <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text="Visit Project" href={project.link}/>
+      </div>
+    </div> */}
