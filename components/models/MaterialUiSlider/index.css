@@ -1,22 +1,6 @@
 
-html,
-body {
-  position: relative;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background: #000;
-  line-height: 1.5;
-  font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial,
-    'Segoe UI', Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 #work {
   height: 100%;
-  height: 60dvh;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -50,32 +34,8 @@ body {
       background: rgba(0, 0, 0, 0.1);
     }
   }
-  .dropdown {
-    position: absolute;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    right: 4px;
-    top: 4px;
-    width: 64px;
-    overflow: hidden;
-    &:not(.visible) {
-      display: none;
-    }
-    span {
-      display: block;
-      cursor: pointer;
-      text-align: right;
-      padding: 4px 8px;
-      cursor: pointer;
-      &:hover {
-        background: rgba(255, 255, 255, 0.05);
-      }
-    }
-  }
 }
+
 .demo-slider {
   height: 100%;
   display: flex;

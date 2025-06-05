@@ -24,12 +24,10 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
   const slug = staticSlug || paramSlug;
   const project = projects.find((p) => p.slug === slug);
 
-  gsap.registerPlugin(ScrollTrigger);
 
   const logoRefs = useRef<(HTMLImageElement | null)[]>([]);
 
   useGSAP(() => {
-    // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     if (logoRefs.current.length) {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -114,7 +112,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
       borderRadius: 0,
     });
   });
-  
+
     <div id="about" className="min-h-screen w-screen">
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">

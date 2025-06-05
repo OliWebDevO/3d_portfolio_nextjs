@@ -6,6 +6,9 @@ import 'swiper/css';
 import './effect-material.css';
 import './index.css';
 import Link from 'next/link';
+import type { SwiperOptions } from 'swiper/types';
+import '@/app/globals.css';
+import TitleHeader from '@/components/TitleHeader';
 
 const images = [
   { src: '/images/library.png', label: 'Library' },
@@ -52,7 +55,7 @@ export default function Slider() {
           centeredSlides: false,
           spaceBetween: 16,
           speed: 600,
-        } as any);
+        } as unknown as SwiperOptions);
       }
     });
 
@@ -63,7 +66,8 @@ export default function Slider() {
   }, [slidesPerView]);
 
   return (
-    <div id="work">
+    <section id="work" className=''>
+        <TitleHeader title="Swipe through the projects" sub='Quick Dive into the projects' cn=' pt-20 pb-14'  />
       <div className="demo-slider">
         <div className="swiper" ref={swiperRef}>
           <div className="swiper-wrapper">
@@ -90,7 +94,7 @@ export default function Slider() {
           </div>
         </div>
       </div>
-      
-    </div>
+
+    </section>
   );
 }

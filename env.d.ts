@@ -15,7 +15,8 @@ interface LogoIconType {
 }
 interface TitleHeaderProps {
   title: string;
-  sub: string;
+  sub?: string;
+  cn?: string;
 }
 
 interface CardType {

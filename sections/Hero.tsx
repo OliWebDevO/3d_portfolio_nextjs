@@ -53,7 +53,7 @@ const Hero = () => {
                     </div>
                     <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">Hi I'm Oliver, a developer based in Belgium 
                     <br /> with a passion for creating immersive designs.</p>
-                    <Button className="md:w-80 md:h-16 w-60 h-12" id="button" text="See My Work" href="#work"/>
+                    <Button className="md:w-80 md:h-16 w-60 h-12" text="See My Work" href="#work"/>
                 </div>
             </header>
             {/* RIGHT : 3D MODEL */}

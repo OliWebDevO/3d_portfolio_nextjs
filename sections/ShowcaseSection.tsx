@@ -1,19 +1,20 @@
 'use client'
-import { useRef, useState } from "react";
+import { useRef} from "react";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { projects } from "@/constants";
 import Image from "next/image";
-import Button from "@/components/Button";
+import TitleHeader from "@/components/TitleHeader";
+// import ButtonShowcase from "@/components/ButtonShowcase";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [open, setOpen] = useState(false);
+
 
   useGSAP(() => {
     if (!open) return;
@@ -40,7 +41,19 @@ const ShowcaseSection = () => {
       { opacity: 0 },
       { opacity: 1, duration: 1.5 }
     );
-  }, [open]);
+     return () => {
+    ScrollTrigger.getAll().forEach(trigger => {
+      // Only kill triggers whose trigger is inside this section
+      if (
+        trigger.trigger &&
+        showcaseRef.current &&
+        showcaseRef.current.contains(trigger.trigger as Node)
+      ) {
+        trigger.kill();
+      }
+    });
+  };
+  }, []);
 
   // Split projects for layout: first two on left, others stacked right
   const leftProjects = projects.slice(0, 2);
@@ -48,21 +61,17 @@ const ShowcaseSection = () => {
 
   return (
     <>
-      <div className="flex items-center gap-4 mb-6 ml-[6vw]">
-        <Button className="md:w-80 md:h-16 w-60 h-12" text={open ? "Hide Projects" : "Show Projects"} onClick={() => setOpen(v => !v)}>
+      {/* <div className="flex items-center gap-4 mb-6 w-full justify-center">
+        <ButtonShowcase className="md:w-80 md:h-16 w-60 h-12" text={open ? "Hide Projects" : "Show Projects"} onClick={() => setOpen(v => !v)}>
 
-        </Button>
-      </div>
-   {open && (
+        </ButtonShowcase>
+      </div> */}
   <section
     className="app-showcase"
     ref={showcaseRef}
-    style={{
-      opacity: 1,
-      transition: "opacity 0.3s"
-    }}
   >
         <div className="w-full  xxl:px-40">
+          <TitleHeader title="Explore the details of each project" sub='Take a deeper dive' cn='pt-20 pb-14' />
           <div className="showcaselayout xl:flex xl:gap-10 block">
             {/* LEFT : First two projects */}
             <div className="first-project-wrapper xl:w-[60%] w-full mb-10 xl:mb-0 flex flex-col gap-10">
@@ -149,7 +158,6 @@ const ShowcaseSection = () => {
           </div>
         </div>
       </section>
-      )}
     </>
   );
 };
