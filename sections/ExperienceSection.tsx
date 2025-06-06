@@ -28,20 +28,45 @@ const ExperienceSection = () => {
             })
         });
 
-        gsap.to('.timeline', {
-            transformOrigin: 'bottom bottom',
-            ease: 'power1.inOut',
-            scrollTrigger: {
-                trigger: '.timeline',
-                start: 'top center',
-                end: '70% center',
-                onUpdate: (self) => {
-                    gsap.to('.timeline', {
+          // Responsive ScrollTrigger for timeline
+            ScrollTrigger.matchMedia({
+                // Desktop
+                "(min-width: 768px)": function() {
+                gsap.to('.timeline', {
+                    transformOrigin: 'bottom bottom',
+                    ease: 'power1.inOut',
+                    scrollTrigger: {
+                    trigger: '.timeline',
+                    start: '30% center',
+                    end: 'bottom center',
+                    scrub: true,
+                    onUpdate: (self) => {
+                        gsap.to('.timeline', {
                         scaleY: 1 - self.progress,
-                    })
+                        })
+                    }
+                    }
+                });
+                },
+                // Mobile
+                "(max-width: 767px)": function() {
+                gsap.to('.timeline', {
+                    transformOrigin: 'bottom bottom',
+                    ease: 'power1.inOut',
+                    scrollTrigger: {
+                    trigger: '.timeline',
+                    start: 'top center',
+                    end: '70% center',
+                    scrub: true,
+                    onUpdate: (self) => {
+                        gsap.to('.timeline', {
+                        scaleY: 1 - self.progress,
+                        })
+                    }
+                    }
+                });
                 }
-            }
-        });
+            });
 
         gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
             gsap.from(text, {
@@ -56,14 +81,14 @@ const ExperienceSection = () => {
                 }
             })
         })
-        
+
     }, [] )
 
   return (
-    <section id="experience" className="w-full md:pt-40 pt20 section-padding">
+    <section id="experience" className="w-full section-padding">
         <div className="w-full h-full md:px-20 px-5">
-            <TitleHeader title='Professional Work Experience' sub='💼  My career Overview'/>
-            <div className="mt-32 relative">
+            <TitleHeader title='Professional Work Experience' sub='💼  My career Overview' cn="mb-28"/>
+            <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {expCards.map((card, index) => (
                         <div key={card.title} className="exp-card-wrapper">
