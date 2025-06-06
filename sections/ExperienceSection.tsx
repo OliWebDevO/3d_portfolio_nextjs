@@ -60,7 +60,7 @@ const ExperienceSection = () => {
     }, [] )
 
   return (
-    <section id="experience" className="w-full md:pt-40 pt20 xl:px-0 section-padding">
+    <section id="experience" className="w-full md:pt-40 pt20 section-padding">
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader title='Professional Work Experience' sub='💼  My career Overview'/>
             <div className="mt-32 relative">
@@ -81,7 +81,7 @@ const ExperienceSection = () => {
                                         <div className="gradient-line w-1 h-full"/> 
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                                        <div className="timeline-logo">
+                                        <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
                                             <img src={card.logoPath} alt="logo" />
                                         </div>
                                         <div className="">

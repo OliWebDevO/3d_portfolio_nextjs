@@ -23,7 +23,7 @@ const FeatureCards = () => {
   return (
     
     <div className="w-full padding-x-lg">
-        <div className="mx-auto grid-3-cols">
+        <div className="mx-auto grid-3-cols 3xl:px-20 2xl:px-10 xl:px-6">
             {abilities.map(({imgPath, title, desc}, index) => (
               <div 
               key={imgPath} 

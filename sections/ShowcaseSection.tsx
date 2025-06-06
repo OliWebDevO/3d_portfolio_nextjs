@@ -70,7 +70,7 @@ const ShowcaseSection = () => {
     className="app-showcase"
     ref={showcaseRef}
   >
-        <div className="w-full  xxl:px-40">
+        <div className="w-full  3xl:px-20 2xl:px-10 xl:px-6">
           <TitleHeader title="Explore the details of each project" sub='Take a deeper dive' cn='pt-20 pb-14' />
           <div className="showcaselayout xl:flex xl:gap-10 block">
             {/* LEFT : First two projects */}
