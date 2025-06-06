@@ -102,7 +102,7 @@ const ShowcaseSection = () => {
                             alt={`Tech logo ${logoIdx + 1}`}
                             width={80}
                             height={80}
-                            className="opacity-100 hover:opacity-80 hover:scale-90  duration-500 transition-all-ease-in-out"
+                            className="opacity-100 hover:opacity-80 hover:scale-90  duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
                           />
                         ))}
                     </div>
@@ -143,7 +143,7 @@ const ShowcaseSection = () => {
                             alt={`Tech logo ${logoIdx + 1}`}
                             width={80}
                             height={80}
-                            className="opacity-100 hover:opacity-80 hover:scale-90 duration-500 transition-all-ease-in-out"
+                            className="opacity-100 hover:opacity-80 hover:scale-90 duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
                           />
                         ))}
                     </div>
