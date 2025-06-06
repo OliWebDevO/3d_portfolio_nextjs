@@ -11,78 +11,105 @@ gsap.registerPlugin(ScrollTrigger)
 
 const ExperienceSection = () => {
 
-    useGSAP(() => {
-
-        gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
-            gsap.from(card, {
-                xPercent: -100,
-                opacity: 0,
-                transformOrigin: 'left left',
-                duration: 1,
-                ease: 'power2.inOut',
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse',
-                }
-            })
+   useGSAP(() => {
+  // Responsive ScrollTrigger 
+  ScrollTrigger.matchMedia({
+    // Desktop
+    "(min-width: 768px)": function() {
+      gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
+        gsap.from(card, {
+          xPercent: -100,
+          opacity: 0,
+          transformOrigin: 'left left',
+          duration: 1,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: card,
+            start: 'center center', // Desktop: start when center hits center of viewport
+            toggleActions: 'play none none reverse',
+          }
         });
+      });
 
-          // Responsive ScrollTrigger for timeline
-            ScrollTrigger.matchMedia({
-                // Desktop
-                "(min-width: 768px)": function() {
-                gsap.to('.timeline', {
-                    transformOrigin: 'bottom bottom',
-                    ease: 'power1.inOut',
-                    scrollTrigger: {
-                    trigger: '.timeline',
-                    start: '30% center',
-                    end: 'bottom center',
-                    scrub: true,
-                    onUpdate: (self) => {
-                        gsap.to('.timeline', {
-                        scaleY: 1 - self.progress,
-                        })
-                    }
-                    }
-                });
-                },
-                // Mobile
-                "(max-width: 767px)": function() {
-                gsap.to('.timeline', {
-                    transformOrigin: 'bottom bottom',
-                    ease: 'power1.inOut',
-                    scrollTrigger: {
-                    trigger: '.timeline',
-                    start: 'top center',
-                    end: '70% center',
-                    scrub: true,
-                    onUpdate: (self) => {
-                        gsap.to('.timeline', {
-                        scaleY: 1 - self.progress,
-                        })
-                    }
-                    }
-                });
-                }
-            });
+      gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
+        gsap.from(text, {
+          xPercent: 0,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: text,
+            start: 'center 25%', // Desktop: start when center hits 30% of viewport
+            toggleActions: 'play none none reverse',
+          }
+        });
+      });
 
-        gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
-            gsap.from(text, {
-                xPercent: 0,
-                opacity: 0,
-                duration: 1,
-                ease: 'power2.inOut',
-                scrollTrigger: {
-                    trigger: text,
-                    start: 'top 60%',
-                    toggleActions: 'play none none reverse',
-                }
+      gsap.to('.timeline', {
+        transformOrigin: 'bottom bottom',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.timeline',
+          start: '30% center',
+          end: 'bottom center',
+          scrub: true,
+          onUpdate: (self) => {
+            gsap.to('.timeline', {
+              scaleY: 1 - self.progress,
             })
-        })
+          }
+        }
+      });
+    },
+    // Mobile
+    "(max-width: 767px)": function() {
+      gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
+        gsap.from(card, {
+          xPercent: -100,
+          opacity: 0,
+          transformOrigin: 'left left',
+          duration: 1,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%', // Mobile: original value
+            toggleActions: 'play none none reverse',
+          }
+        });
+      });
 
-    }, [] )
+      gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
+        gsap.from(text, {
+          xPercent: 0,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: text,
+            start: 'top 60%', // Mobile: original value
+            toggleActions: 'play none none reverse',
+          }
+        });
+      });
+
+      gsap.to('.timeline', {
+        transformOrigin: 'bottom bottom',
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.timeline',
+          start: 'top center',
+          end: '70% center',
+          scrub: true,
+          onUpdate: (self) => {
+            gsap.to('.timeline', {
+              scaleY: 1 - self.progress,
+            })
+          }
+        }
+      });
+    }
+  });
+}, []);
 
   return (
     <section id="experience" className="w-full section-padding">
