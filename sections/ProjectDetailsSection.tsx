@@ -71,7 +71,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
     }, [details] )
 
   return (
-    <section id="experience" className="w-full md:mt-4 mt2 xl:px-0 section-padding">
+    <section id="experience" className="w-full md:mt-4 mt2 section-padding">
         <div className="w-full h-full md:px-20 px-5">
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
@@ -91,7 +91,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                                         <div className="gradient-line w-1 h-full"/> 
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                                        <div className="timeline-logo xl:-translate-x-2 2xl:translate-x-0 3xl:translate-x-4">
+                                        <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
                                             <img src={card.logoPath} alt="logo" />
                                         </div>
                                         <div className="">
