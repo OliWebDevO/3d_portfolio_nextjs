@@ -39,7 +39,7 @@ const ExperienceSection = () => {
           ease: 'power2.inOut',
           scrollTrigger: {
             trigger: text,
-            start: 'center 25%', // Desktop: start when center hits 30% of viewport
+            start: 'center center', // Desktop: start when center hits 30% of viewport
             toggleActions: 'play none none reverse',
           }
         });
@@ -50,7 +50,7 @@ const ExperienceSection = () => {
         ease: 'power1.inOut',
         scrollTrigger: {
           trigger: '.timeline',
-          start: '30% center',
+          start: 'center center',
           end: 'bottom center',
           scrub: true,
           onUpdate: (self) => {
