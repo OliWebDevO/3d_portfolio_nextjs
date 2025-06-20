@@ -50,12 +50,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={geistSans.variable}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Oliver Van Droogenbroeck",
+              url: "https://olivervdb.com",
+              sameAs: [
+                "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
+                "https://github.com/OliWebDevO"
+              ],
+              jobTitle: "Front-End Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Your Company"
+              }
+            }),
+          }}
+        />
+      </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      
     </html>
   );
 }
