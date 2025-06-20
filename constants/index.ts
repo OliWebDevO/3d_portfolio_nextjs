@@ -396,7 +396,7 @@ const socialImgs = [
   // },
   {
     name: "linkedin",
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
     imgPath: "/images/linkedin.png",
   },
 ];
