@@ -15,6 +15,7 @@ function getSlug(param: string | string[] | undefined): string {
 }
 
 const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => {
+    
     // Always call useParams
     const params = useParams();
     const paramSlug = getSlug(params?.slug);

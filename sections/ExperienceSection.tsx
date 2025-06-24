@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 const ExperienceSection = () => {
-
+  
    useGSAP(() => {
   // Responsive ScrollTrigger 
   ScrollTrigger.matchMedia({
@@ -109,44 +109,6 @@ const ExperienceSection = () => {
       });
     }
   });
-    // --- Refresh ScrollTrigger after all images are loaded ---
-    const images = Array.from(document.images);
-    if (images.length) {
-      let loaded = 0;
-      images.forEach(img => {
-        if (img.complete) {
-          loaded++;
-        } else {
-          img.addEventListener('load', () => {
-            loaded++;
-            if (loaded === images.length) {
-              ScrollTrigger.refresh();
-            }
-          });
-          img.addEventListener('error', () => {
-            loaded++;
-            if (loaded === images.length) {
-              ScrollTrigger.refresh();
-            }
-          });
-        }
-      });
-      if (loaded === images.length) {
-        ScrollTrigger.refresh();
-      }
-    } else {
-      ScrollTrigger.refresh();
-    }
-    // --------------------------------------------------------
-
-    // --- Listen for 3D model loaded event and refresh ScrollTrigger ---
-    const handler = () => ScrollTrigger.refresh();
-    window.addEventListener("room-loaded", handler);
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener("room-loaded", handler);
-    };
-    // --------------------------------------------------------
 
 
 }, []);
