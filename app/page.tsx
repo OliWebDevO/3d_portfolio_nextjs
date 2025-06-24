@@ -29,6 +29,7 @@ export default function Home() {
           localStorage.setItem("hasVisited", "true");
         }, 2000); // or your asset loading logic
       }
+      
     }, []);
 
   return (
