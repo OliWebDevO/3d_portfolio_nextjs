@@ -16,12 +16,21 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
 
-   const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Your asset loading logic here
-    setTimeout(() => setLoading(false), 2000); // Example: 2s delay
-  }, []);
+    useEffect(() => {
+      // Check if user has visited before
+      const hasVisited = localStorage.getItem("hasVisited");
+      if (hasVisited) {
+        setLoading(false);
+      } else {
+        setTimeout(() => {
+          setLoading(false);
+          localStorage.setItem("hasVisited", "true");
+        }, 2000); // or your asset loading logic
+      }
+    }, []);
+
   return (
 
     <>
