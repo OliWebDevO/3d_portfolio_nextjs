@@ -18,19 +18,33 @@ export default function Home() {
 
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-      // Check if user has visited before
-      const hasVisited = localStorage.getItem("hasVisited");
-      if (hasVisited) {
-        setLoading(false);
-      } else {
-        setTimeout(() => {
-          setLoading(false);
-          localStorage.setItem("hasVisited", "true");
-        }, 2000); // or your asset loading logic
-      }
-      
-    }, []);
+      useEffect(() => {
+    // Only show preloader on first visit
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (hasVisited) {
+      setLoading(false);
+      return;
+    }
+
+    // Handler for when the room is loaded
+    const handleRoomLoaded = () => {
+      setLoading(false);
+      localStorage.setItem("hasVisited", "true");
+    };
+
+    window.addEventListener("room-loaded", handleRoomLoaded);
+
+    // Optional: fallback timeout in case the event never fires
+    const timeout = setTimeout(() => {
+      setLoading(false);
+      localStorage.setItem("hasVisited", "true");
+    }, 10000); // 10 seconds fallback
+
+    return () => {
+      window.removeEventListener("room-loaded", handleRoomLoaded);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
 
