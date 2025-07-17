@@ -8,40 +8,36 @@ import HeroLights from "./HeroLights"
 import Particles from "./Particles"
 
 const HeroExperience = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
-    // const isTablet = useMediaQuery({ query: '(max-width: 1024px)' })
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-
-    
-
-  return (
+  return isMobile ? (
+    <img
+      src="/images/hero-mobile.png"
+      alt="Room Model"
+      style={{ width: "100%", height: "auto", marginTop: "15rem" }}
+    />
+  ) : (
     <Canvas 
       camera={{position : [0,0,15], fov: 45}}
-      style={isMobile ? { pointerEvents: "none" } : {}}
     >
-        <HeroLights/>
-        <Particles count={7}/>
-        <OrbitControls
+      <HeroLights/>
+      <Particles count={7}/>
+      <OrbitControls
         enablePan={false}
-        // enableZoom={!isTablet || !isMobile}
         enableZoom={false}
-        enableRotate={!isMobile}
+        enableRotate={true}
         maxDistance={20}
         minDistance={5}
         minPolarAngle={Math.PI / 5}
         maxPolarAngle={Math.PI / 2}
-        />
-        {/* <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color="teal" />
-        </mesh> */}
-        <group
-        scale={isMobile ? 0.7 : 1}
+      />
+      <group
+        scale={1}
         position={[0, -3.5, 0]}
         rotation={[0, -Math.PI / 4, 0]}
-        >
+      >
         <Room/>
-        </group>
+      </group>
     </Canvas>
   )
 }
