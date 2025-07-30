@@ -1,11 +1,12 @@
 'use client'
 import { useEffect, useState } from "react"
-import { navLinks } from "../constants"
 import Link from "next/link"
+import { useTranslation } from '@/hooks/useTranslation'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const NavBar = () => {
-
     const [scrolled, setScrolled] = useState(false)
+    const { t, navLinks } = useTranslation() // Get navLinks from translation context
     
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +29,7 @@ const NavBar = () => {
                 <ul>
                     {navLinks.map(({link, name}) => (
                         <li key={name}>
-                            <Link href={`/${link}`} className="group">
+                            <Link href={link} className="group">
                                 <span>{name}</span>
                                 <span className="underline"/>
                             </Link>
@@ -37,11 +38,14 @@ const NavBar = () => {
                 </ul>
             </nav>
 
-            <Link href="#contact" className="contact-btn group nav-contact">
-                <div className="inner">
-                    <span>Contact </span>
-                </div>
-            </Link>
+            <div className="flex items-center gap-4">
+                <LanguageSwitcher />
+                <Link href="#contact" className="contact-btn group nav-contact">
+                    <div className="inner">
+                        <span>{t.nav.contact}</span>
+                    </div>
+                </Link>
+            </div>
         </div>
     </header>
   )

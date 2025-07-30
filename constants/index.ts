@@ -1,24 +1,79 @@
 
 
-const navLinks = [
-  {
-    name: "Work",
-    link: "#work",
-  },
-  {
-    name: "Skills",
-    link: "#skills",
-  },
-  {
+// const navLinks = [
+//   {
+//     name: "Work",
+//     link: "#work",
+//   },
+//   {
+//     name: "Skills",
+//     link: "#skills",
+//   },
+//   {
     
-    name: "Experience",
-    link: "#experience",
+//     name: "Experience",
+//     link: "#experience",
+//   },
+//   {
+//     name: "Tech Stack",
+//     link: "#techstack",
+//   },
+// ];
+
+const navLinks = {
+  en: [
+    { name: "Work", link: "#work" },
+    { name: "Skills", link: "#skills" },
+    { name: "Experience", link: "#experience" },
+    { name: "Tech Stack", link: "#techstack" },
+  ],
+  fr: [
+    { name: "Travaux", link: "#work" },
+    { name: "Compétences", link: "#skills" },
+    { name: "Expérience", link: "#experience" },
+    { name: "Stack Tech", link: "#techstack" },
+  ]
+};
+
+const translations = {
+  en: {
+    nav: {
+      contact: "Contact"
+    },
+    hero: {
+      title: "Frontend Developer",
+      subtitle: "Creating amazing web experiences",
+      badge: "Available for work"
+    },
+    experience: {
+      title: "Professional Work Experience",
+      subtitle: "💼 My career Overview"
+    },
+    contact: {
+      title: "Contact Me",
+      subtitle: "Let's work together"
+    }
   },
-  {
-    name: "Tech Stack",
-    link: "#techstack",
-  },
-];
+  fr: {
+    nav: {
+      contact: "Contact"
+    },
+    hero: {
+      title: "Développeur Frontend",
+      subtitle: "Créer des expériences web incroyables",
+      badge: "Disponible pour travailler"
+    },
+    experience: {
+      title: "Expérience Professionnelle",
+      subtitle: "💼 Aperçu de ma carrière"
+    },
+    contact: {
+      title: "Contactez-moi",
+      subtitle: "Travaillons ensemble"
+    }
+  }
+};
+
 
 const words = [
   { id: 1, text: "Ideas", imgPath: "/images/ideas.svg" },
@@ -587,6 +642,7 @@ const projectDetailsCards = [
 ];
 
 export {
+  translations,
   words,
   abilities,
   logoIconsList,
