@@ -39,12 +39,12 @@ const NavBar = () => {
             </nav>
 
             <div className="flex items-center gap-4">
-                <LanguageSwitcher />
                 <Link href="#contact" className="contact-btn group nav-contact">
                     <div className="inner">
                         <span>{t.nav.contact}</span>
                     </div>
                 </Link>
+                <LanguageSwitcher />
             </div>
         </div>
     </header>

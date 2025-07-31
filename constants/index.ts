@@ -28,30 +28,23 @@ const navLinks = {
     { name: "Tech Stack", link: "#techstack" },
   ],
   fr: [
-    { name: "Travaux", link: "#work" },
+    { name: "Projets", link: "#work" },
     { name: "Compétences", link: "#skills" },
     { name: "Expérience", link: "#experience" },
-    { name: "Stack Tech", link: "#techstack" },
+    { name: "Tech Stack", link: "#techstack" },
   ]
 };
-
 const translations = {
   en: {
     nav: {
       contact: "Contact"
     },
     hero: {
-      title: "Frontend Developer",
-      subtitle: "Creating amazing web experiences",
-      badge: "Available for work"
-    },
-    experience: {
-      title: "Professional Work Experience",
-      subtitle: "💼 My career Overview"
-    },
-    contact: {
-      title: "Contact Me",
-      subtitle: "Let's work together"
+      shaping: "Shapping",
+      intoRealProjects: "Into Real Projects",
+      deliverResults: "that Deliver Results",
+      description: "Hi I'm Oliver, a developer based in Belgium with a passion for creating immersive designs.",
+      buttonText: "See My Work"
     }
   },
   fr: {
@@ -59,32 +52,38 @@ const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Développeur Frontend",
-      subtitle: "Créer des expériences web incroyables",
-      badge: "Disponible pour travailler"
-    },
-    experience: {
-      title: "Expérience Professionnelle",
-      subtitle: "💼 Aperçu de ma carrière"
-    },
-    contact: {
-      title: "Contactez-moi",
-      subtitle: "Travaillons ensemble"
+      shaping: "Transformez vos ",
+      intoRealProjects: "En Projets Professionnels",
+      deliverResults: "",
+      description: "Salut, je suis Oliver, un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
+      buttonText: "Voir Mon Travail"
     }
   }
 };
 
 
-const words = [
-  { id: 1, text: "Ideas", imgPath: "/images/ideas.svg" },
-  { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
-  { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
-  { id: 4, text: "Code", imgPath: "/images/code.svg" },
-  { id: 5, text: "Ideas", imgPath: "/images/ideas.svg" },
-  { id: 6, text: "Concepts", imgPath: "/images/concepts.svg" },
-  { id: 7, text: "Designs", imgPath: "/images/designs.svg" },
-  { id: 8, text: "Code", imgPath: "/images/code.svg" },
-];
+const words = {
+  en: [
+    { id: 1, text: "Ideas", imgPath: "/images/ideas.svg" },
+    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 4, text: "Code", imgPath: "/images/code.svg" },
+    { id: 5, text: "Ideas", imgPath: "/images/ideas.svg" },
+    { id: 6, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 7, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 8, text: "Code", imgPath: "/images/code.svg" },
+  ],
+  fr: [
+    { id: 1, text: "Idées", imgPath: "/images/ideas.svg" },
+    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 4, text: "Code", imgPath: "/images/code.svg" },
+    { id: 5, text: "Idées", imgPath: "/images/ideas.svg" },
+    { id: 6, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 7, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 8, text: "Code", imgPath: "/images/code.svg" },
+  ]
+};
 
 const counterItems = [
   { value: 1, suffix: "+", label: "Year of Experience" },

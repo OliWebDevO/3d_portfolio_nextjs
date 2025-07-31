@@ -1,17 +1,28 @@
+// sections/Hero.tsx
 'use client'
-// import AnimatedCounter from "../components/AnimatedCounter"
+import React from "react";
 import Button from "../components/Button"
-// import HeroExperience from "@/components/models/HeroModels/HeroExperience"
-import { words } from "../constants"
+import { useTranslation } from "@/hooks/useTranslation"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import dynamic from "next/dynamic";
+
 const HeroExperience = dynamic(
   () => import("@/components/models/HeroModels/HeroExperience"),
   { ssr: false }
 );
+const Stable3DModel = React.memo(() => (
+  <figure>
+    <div className="hero-3d-layout hover:cursor-grab">
+      <HeroExperience />
+    </div>
+  </figure>
+));
+
+Stable3DModel.displayName = 'Stable3DModel';
 
 const Hero = () => {
+    const { words, t } = useTranslation(); // Get translated words
 
     useGSAP(() => {
         gsap.fromTo('.hero-text h1', 
@@ -20,7 +31,7 @@ const Hero = () => {
         )
     })
 
-  return (
+return (
     <section id="hero" className="relative overflow-hidden 3xl:px-20 2xl:px-10 xl:px-6">
         <div className="absolute top-0 left-0 z-10">
             <img src="/images/bg.png" alt="background" />
@@ -31,7 +42,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-7">
                     <div className="hero-text">
                         <h1>
-                            Shapping 
+                            {t.hero.shaping}
                             <span className="slide">
                                 <span className="wrapper">
                                     {words.map((word)=> (
@@ -39,7 +50,6 @@ const Hero = () => {
                                             <img
                                                 src={word.imgPath}
                                                 alt={word.text}
-                                               
                                                 className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                                             />
                                             <span>{word.text}</span>
@@ -48,22 +58,22 @@ const Hero = () => {
                                 </span>
                             </span>
                         </h1>
-                        <h1>Into Real Projects</h1>
-                        <h1>that Deliver Results</h1>
+                        <h1>{t.hero.intoRealProjects}</h1>
+                        <h1>{t.hero.deliverResults}</h1>
                     </div>
-                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">Hi I'm Oliver, a developer based in Belgium 
-                    <br /> with a passion for creating immersive designs.</p>
-                    <Button className="md:w-80 md:h-16 w-60 h-12" text="See My Work" href="#work"/>
+                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none max-w-[50%]">
+                        {t.hero.description}
+                    </p>
+                    <Button 
+                        className="md:w-80 md:h-16 w-60 h-12" 
+                        text={t.hero.buttonText}
+                        href="#work"
+                    />
                 </div>
             </header>
             {/* RIGHT : 3D MODEL */}
-            <figure>
-                <div className="hero-3d-layout hover:cursor-grab">
-                    <HeroExperience />
-                </div>
-            </figure>
+            <Stable3DModel />
         </div>
-        {/* <AnimatedCounter /> */}
     </section>
   )
 }

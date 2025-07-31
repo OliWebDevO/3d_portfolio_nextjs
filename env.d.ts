@@ -53,3 +53,35 @@ interface ProjectType {
   bg: string;
   techLogos?: string[];
 }
+
+
+interface WordType {
+  id: number;
+  text: string;
+  imgPath: string;
+}
+
+
+interface WordsType {
+  en: WordType[];
+  fr: WordType[];
+}
+
+type Language = 'en' | 'fr';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: any;
+  navLinks: { name: string; link: string }[];
+  words: WordType[];
+}
+
+interface UseTranslationReturn {
+  t: any;
+  locale: Language;
+  isEnglish: boolean;
+  isFrench: boolean;
+  navLinks: { name: string; link: string }[];
+  words: WordType[];
+}
