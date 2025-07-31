@@ -45,6 +45,14 @@ const translations = {
       deliverResults: "that Deliver Results",
       description: "Hi I'm Oliver, a developer based in Belgium with a passion for creating immersive designs.",
       buttonText: "See My Work"
+    },
+    slider: {
+      title: "Swipe through the projects",
+      subtitle: "Quick Dive into the projects"
+    },
+    showcase: {
+      title: "Explore the details of each project",
+      subtitle: "Take a deeper dive"
     }
   },
   fr: {
@@ -55,10 +63,18 @@ const translations = {
       shaping: "Transformez vos ",
       intoRealProjects: "En Projets Professionnels",
       deliverResults: "",
-      description: "Salut, je suis Oliver, un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
-      buttonText: "Voir Mon Travail"
+      description: "Bienvenue sur mon site. Je suis un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
+      buttonText: "Mes Projets"
+    },
+    slider: {
+      title: "Swipez pour parcourir les projets",
+      subtitle: "Aperçu rapide des projets"
+    },
+    showcase: {
+      title: "Explorez les détails de chaque projet",
+      subtitle: "Une plongée dans mes projets"
     }
-  }
+  },
 };
 
 

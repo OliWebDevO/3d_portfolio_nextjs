@@ -9,6 +9,7 @@ import Link from 'next/link';
 import type { SwiperOptions } from 'swiper/types';
 import '@/app/globals.css';
 import TitleHeader from '@/components/TitleHeader';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
   { src: '/images/library.png', label: 'Library' },
@@ -19,6 +20,7 @@ const images = [
 ];
 
 export default function Slider() {
+  const { t } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
   const [slidesPerView, setSlidesPerView] = useState<number>(2);
 
@@ -65,9 +67,13 @@ export default function Slider() {
     };
   }, [slidesPerView]);
 
-  return (
+    return (
     <section id="work" className=''>
-        <TitleHeader title="Swipe through the projects" sub='Quick Dive into the projects' cn=' pt-20 pb-14'  />
+        <TitleHeader 
+          title={t.slider.title} 
+          sub={t.slider.subtitle} 
+          cn=' pt-20 pb-14'  
+        />
       <div className="demo-slider">
         <div className="swiper" ref={swiperRef}>
           <div className="swiper-wrapper">
@@ -94,7 +100,6 @@ export default function Slider() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

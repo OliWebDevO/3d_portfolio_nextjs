@@ -7,11 +7,13 @@ import Link from "next/link";
 import { projects } from "@/constants";
 import Image from "next/image";
 import TitleHeader from "@/components/TitleHeader";
+import { useTranslation } from "@/hooks/useTranslation";
 // import ButtonShowcase from "@/components/ButtonShowcase";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
+  const { t } = useTranslation(); 
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -71,7 +73,7 @@ const ShowcaseSection = () => {
     ref={showcaseRef}
   >
         <div className="w-full  3xl:px-20 2xl:px-10 xl:px-6">
-          <TitleHeader title="Explore the details of each project" sub='Take a deeper dive' cn='pt-20 pb-14' />
+          <TitleHeader title={t.showcase.title} sub={t.showcase.subtitle} cn='pt-20 pb-14' />
           <div className="showcaselayout xl:flex xl:gap-10 block">
             {/* LEFT : First two projects */}
             <div className="first-project-wrapper xl:w-[60%] w-full mb-10 xl:mb-0 flex flex-col gap-10">

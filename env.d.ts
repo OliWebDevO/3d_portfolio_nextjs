@@ -67,18 +67,48 @@ interface WordsType {
   fr: WordType[];
 }
 
+interface NavTranslations {
+  contact: string;
+}
+
+interface HeroTranslations {
+  shaping: string;
+  intoRealProjects: string;
+  deliverResults: string;
+  description: string;
+  buttonText: string;
+}
+
+interface SliderTranslations {
+  title: string;
+  subtitle: string;
+}
+
+interface ShowcaseTranslations {
+  title: string;
+  subtitle: string;
+}
+
+interface Translations {
+  nav: NavTranslations;
+  hero: HeroTranslations;
+  slider: SliderTranslations;
+  showcase: ShowcaseTranslations;
+}
+
+
 type Language = 'en' | 'fr';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: any;
+  t: Translations;
   navLinks: { name: string; link: string }[];
   words: WordType[];
 }
 
 interface UseTranslationReturn {
-  t: any;
+  t: Translations;
   locale: Language;
   isEnglish: boolean;
   isFrench: boolean;

@@ -2,15 +2,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { translations, navLinks, words } from '@/constants';
 
-type Language = 'en' | 'fr';
 
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: any;
-  navLinks: { name: string; link: string }[];
-  words: WordType[]; // Use the proper interface
-}
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -30,7 +22,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = translations[language];
   const currentNavLinks = navLinks[language]; 
-  const currentWords = words[language]; 
+  const currentWords = words[language];
 
   return (
     <LanguageContext.Provider value={{ 
