@@ -71,6 +71,17 @@ interface NavTranslations {
   contact: string;
 }
 
+interface AbilityType {
+  imgPath: string;
+  title: string;
+  desc: string;
+}
+
+interface AbilitiesTranslations {
+  en: AbilityType[];
+  fr: AbilityType[];
+}
+
 interface HeroTranslations {
   shaping: string;
   intoRealProjects: string;
@@ -89,11 +100,28 @@ interface ShowcaseTranslations {
   subtitle: string;
 }
 
+
+
+interface ProjectsTranslations {
+  library: ProjectTranslations;
+  artgallery: ProjectTranslations;
+  portfolio: ProjectTranslations;
+  lenoyer: ProjectTranslations;
+  annick: ProjectTranslations;
+  [key: string]: ProjectTranslations
+}
+
+interface ProjectTranslations {
+  title: string;
+  description: string;
+}
+
 interface Translations {
   nav: NavTranslations;
   hero: HeroTranslations;
   slider: SliderTranslations;
   showcase: ShowcaseTranslations;
+  projects: ProjectsTranslations; 
 }
 
 
@@ -105,6 +133,7 @@ interface LanguageContextType {
   t: Translations;
   navLinks: { name: string; link: string }[];
   words: WordType[];
+  abilities: AbilityType[];
 }
 
 interface UseTranslationReturn {
@@ -114,4 +143,5 @@ interface UseTranslationReturn {
   isFrench: boolean;
   navLinks: { name: string; link: string }[];
   words: WordType[];
+  abilities: AbilityType[];
 }

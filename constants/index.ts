@@ -34,6 +34,7 @@ const navLinks = {
     { name: "Tech Stack", link: "#techstack" },
   ]
 };
+
 const translations = {
   en: {
     nav: {
@@ -53,6 +54,28 @@ const translations = {
     showcase: {
       title: "Explore the details of each project",
       subtitle: "Take a deeper dive"
+    },
+    projects: {
+      library: {
+        title: "BookWise : A library management system",
+        description: "Streamlining book management for libraries"
+      },
+      artgallery: {
+        title: "Art Gallery : A social platform for artists",
+        description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts."
+      },
+      portfolio: {
+        title: "Portfolio Website",
+        description: "An animated portfolio website showcasing my work."
+      },
+      lenoyer: {
+        title: "Le Noyer : Medical center website",
+        description: "A minimalist, elegant, and functional website"
+      },
+      annick: {
+        title: "Annick Van Endert : Artist's website",
+        description: "A window into the paintress's world."
+      }
     }
   },
   fr: {
@@ -73,6 +96,28 @@ const translations = {
     showcase: {
       title: "Explorez les détails de chaque projet",
       subtitle: "Une plongée dans mes projets"
+    },
+    projects: {
+      library: {
+        title: "BookWise : Système de gestion de bibliothèque",
+        description: "Faciliter la gestion des livres au sein d'une bibliothèque universitaire"
+      },
+      artgallery: {
+        title: "Art Gallery : Plateforme sociale pour artistes",
+        description: "Une plateforme qui permet aux artistes de créer des profils, télécharger leurs œuvres et se connecter avec les amateurs d'art."
+      },
+      portfolio: {
+        title: "Site Web Portfolio",
+        description: "Un site portfolio animé présentant mon travail."
+      },
+      lenoyer: {
+        title: "Le Noyer : Site web du centre médical",
+        description: "Un site web minimaliste, élégant et fonctionnel"
+      },
+      annick: {
+        title: "Annick Van Endert : Site web d'artiste",
+        description: "Une fenêtre sur le monde de la peintre."
+      }
     }
   },
 };
@@ -199,23 +244,42 @@ const logoIconsList = [
   },
 ];
 
-const abilities = [
-  {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
-  },
-  {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
-  },
-  {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
-  },
-];
+const abilities = {
+  en: [
+    {
+      imgPath: "/images/seo.png",
+      title: "Quality Focus",
+      desc: "Delivering high-quality results while maintaining attention to every detail.",
+    },
+    {
+      imgPath: "/images/chat.png",
+      title: "Reliable Communication",
+      desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    },
+    {
+      imgPath: "/images/time.png",
+      title: "On-Time Delivery",
+      desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    },
+  ],
+  fr: [
+    {
+      imgPath: "/images/seo.png",
+      title: "Focus Qualité",
+      desc: "Livrer des résultats de haute qualité tout en maintenant l'attention sur chaque détail.",
+    },
+    {
+      imgPath: "/images/chat.png",
+      title: "Communication Fiable",
+      desc: "Vous tenir informé à chaque étape pour assurer transparence et clarté.",
+    },
+    {
+      imgPath: "/images/time.png",
+      title: "Livraison Ponctuelle",
+      desc: "S'assurer que les projets sont terminés dans les délais, avec qualité et attention aux détails.",
+    },
+  ]
+};
 
 const techStackImgs = [
   {

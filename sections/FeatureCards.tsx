@@ -1,11 +1,12 @@
 'use client'
 import { useRef } from "react";
-import { abilities } from "../constants"
+import { useTranslation } from "@/hooks/useTranslation";
 
 
 const FeatureCards = () => {
    const cardRefs = useRef<HTMLDivElement[]>([]);
-  
+   const { abilities } = useTranslation();
+
     const handleMouseMove = (index: number) => (e: React.MouseEvent<HTMLDivElement>) => {
       const card = cardRefs.current[index];
       if (!card) return;
@@ -24,9 +25,9 @@ const FeatureCards = () => {
     
     <div className="w-full padding-x-lg md:pb-40 pb20">
         <div className="mx-auto grid-3-cols 3xl:px-20 2xl:px-10 xl:px-6">
-            {abilities.map(({imgPath, title, desc}, index) => (
+            {abilities.map((ability, index) => (
               <div 
-              key={imgPath} 
+              key={ability.imgPath} 
               className=" bg-black-100 card  rounded-xl p-8 flex flex-col gap-4"
               onMouseMove={handleMouseMove(index)}
               ref={(el) => {
@@ -35,10 +36,10 @@ const FeatureCards = () => {
               >
                 <div className="glow" />
                 <div className="size-14 flex items-center justify-center rounded-full">
-                    <img src={imgPath} alt={title} />
+                    <img src={ability.imgPath} alt={ability.title} />
                 </div>
-                  <h3 className="text-2xl font-semibold text-white">{title}</h3>
-                  <p className="text-white-50 text-lg">{desc}</p>
+                  <h3 className="text-2xl font-semibold text-white">{ability.title}</h3>
+                  <p className="text-white-50 text-lg">{ability.desc}</p>
               </div>
             ))}
         </div>

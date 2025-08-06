@@ -110,8 +110,8 @@ const ShowcaseSection = () => {
                     </div>
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
-                    <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
+                    <p className="text-white-50 md:text-xl mt-4">{t.projects[project.slug].description}</p>
                   </div>
                 </Link>
               ))}
@@ -151,8 +151,8 @@ const ShowcaseSection = () => {
                     </div>
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
-                    <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
+                    <p className="text-white-50 md:text-xl mt-4">{t.projects[project.slug].description}</p>
                   </div>
                 </Link>
               ))}
