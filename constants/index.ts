@@ -1,25 +1,4 @@
 
-
-// const navLinks = [
-//   {
-//     name: "Work",
-//     link: "#work",
-//   },
-//   {
-//     name: "Skills",
-//     link: "#skills",
-//   },
-//   {
-    
-//     name: "Experience",
-//     link: "#experience",
-//   },
-//   {
-//     name: "Tech Stack",
-//     link: "#techstack",
-//   },
-// ];
-
 const navLinks = {
   en: [
     { name: "Work", link: "#work" },
@@ -88,6 +67,10 @@ const translations = {
       subtitle: "💼  My career Overview",
       resp: "Responsibilities"
     },
+    techstack : {
+      title: "Tech Stack",
+      subtitle: "🛠️  My Toolbox"
+    }
   },
   fr: {
     nav: {
@@ -138,6 +121,10 @@ const translations = {
       title: "Expérience Professionnelle",
       subtitle: "💼  Mon parcours professionnel",
       resp : "Responsabilités",
+    },
+    techstack : {
+      title: "Tech Stack",
+      subtitle: "🛠️  Mes Outils"
     },
   },
 };
@@ -386,61 +373,119 @@ const expCards = {
   ]
 };
 
-const techStackImgs = [
-  {
-    name: "Frontend Developer",
-    imgPath: "/images/logos/react.png",
-  },
-  {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
-  },
-  {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Management",
-    imgPath: "/images/logos/git.svg",
-  },
-];
+const techStackImgs = {
+  en: [
+    {
+      name: "Frontend Developer",
+      imgPath: "/images/logos/react.png",
+    },
+    {
+      name: "Python Developer",
+      imgPath: "/images/logos/python.svg",
+    },
+    {
+      name: "Backend Developer",
+      imgPath: "/images/logos/node.png",
+    },
+    {
+      name: "Interactive Developer",
+      imgPath: "/images/logos/three.png",
+    },
+    {
+      name: "Project Management",
+      imgPath: "/images/logos/git.svg",
+    },
+  ],
+  fr: [
+    {
+      name: "Développeur Frontend",
+      imgPath: "/images/logos/react.png",
+    },
+    {
+      name: "Développeur Python",
+      imgPath: "/images/logos/python.svg",
+    },
+    {
+      name: "Développeur Backend",
+      imgPath: "/images/logos/node.png",
+    },
+    {
+      name: "Développeur Interactif",
+      imgPath: "/images/logos/three.png",
+    },
+    {
+      name: "Gestion de Projet",
+      imgPath: "/images/logos/git.svg",
+    },
+  ]
+};
 
-const techStackIcons = [
-  {
-    name: "Frontend Developer",
-    modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
-    rotation: [0, 0, 0],
-  },
-  // {
-  //   name: "Python Developer",
-  //   modelPath: "/models/python-transformed.glb",
-  //   scale: 0.8,
-  //   rotation: [0, 0, 0],
-  // },
-  {
-    name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
-    scale: 5,
-    rotation: [0, -Math.PI / 2, 0],
-  },
-  {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Project Management",
-    modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
-  },
-];
+const techStackIcons = {
+  en: [
+    {
+      name: "Frontend Developer",
+      modelPath: "/models/react_logo-transformed.glb",
+      scale: 1,
+      rotation: [0, 0, 0],
+    },
+    // {
+    //   name: "Python Developer",
+    //   modelPath: "/models/python-transformed.glb",
+    //   scale: 0.8,
+    //   rotation: [0, 0, 0],
+    // },
+    {
+      name: "Backend Developer",
+      modelPath: "/models/node-transformed.glb",
+      scale: 5,
+      rotation: [0, -Math.PI / 2, 0],
+    },
+    {
+      name: "Interactive Developer",
+      modelPath: "/models/three.js-transformed.glb",
+      scale: 0.05,
+      rotation: [0, 0, 0],
+    },
+    {
+      name: "Project Management",
+      modelPath: "/models/git-svg-transformed.glb",
+      scale: 0.05,
+      rotation: [0, -Math.PI / 4, 0],
+    },
+  ],
+  fr: [
+    {
+      name: "Développeur Frontend",
+      modelPath: "/models/react_logo-transformed.glb",
+      scale: 1,
+      rotation: [0, 0, 0],
+    },
+    // {
+    //   name: "Développeur Python",
+    //   modelPath: "/models/python-transformed.glb",
+    //   scale: 0.8,
+    //   rotation: [0, 0, 0],
+    // },
+    {
+      name: "Développeur Backend",
+      modelPath: "/models/node-transformed.glb",
+      scale: 5,
+      rotation: [0, -Math.PI / 2, 0],
+    },
+    {
+      name: "Développeur Interactif",
+      modelPath: "/models/three.js-transformed.glb",
+      scale: 0.05,
+      rotation: [0, 0, 0],
+    },
+    {
+      name: "Gestion de Projet",
+      modelPath: "/models/git-svg-transformed.glb",
+      scale: 0.05,
+      rotation: [0, -Math.PI / 4, 0],
+    },
+  ]
+};
 
 const expLogos = [
   {

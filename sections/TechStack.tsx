@@ -2,9 +2,9 @@
 import { useGSAP } from "@gsap/react"
 import TitleHeader from "../components/TitleHeader"
 // import TechIcon from "../components/models/techlogos/TechIcon"
-import { techStackIcons } from "../constants"
 // import { techStackImgs } from "../constants"
 import { gsap }from "gsap"
+import { useTranslation } from "@/hooks/useTranslation";
 
 import dynamic from "next/dynamic";
 const TechIcon = dynamic(
@@ -14,7 +14,7 @@ const TechIcon = dynamic(
 
 
 const TechStack = () => {
-
+    const { t, techStackIcons } = useTranslation();
     useGSAP(() => {
         gsap.fromTo('.tech-card',
             { y: 50, opacity: 0 },
@@ -35,10 +35,10 @@ const TechStack = () => {
   return (
     <div id="techstack" className="flex-center section-padding">
         <div className="w-full h-full 3xl:px-28 2xl:px-20 xl:px-12">
-            <TitleHeader title='Tech Stack' sub='🛠️  My Toolbox'/>
+            <TitleHeader title={t.techstack.title} sub={t.techstack.subtitle} />
             <div className="tech-grid">
-                {techStackIcons.map((icon)=> (
-                    <div key={icon.name} className="card-border tech-card overflow-hidden group rounded-xl relative">
+                {techStackIcons.map((icon) => (
+                    <div key={icon.modelPath} className="card-border tech-card overflow-hidden group rounded-xl relative">
                         <div className="tech-card-animated-bg" />
                         <div className="tech-card-content">
                             <div className="tech-icon-wrapper">

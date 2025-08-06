@@ -45,6 +45,13 @@ interface TechIconType {
   scale: number;
   rotation: number[];
 }
+
+interface TechIconsType {
+  en: TechIconType[];
+  fr: TechIconType[];
+}
+
+
 interface ProjectType {
   title: string;
   slug: string;
@@ -60,7 +67,6 @@ interface WordType {
   text: string;
   imgPath: string;
 }
-
 
 interface WordsType {
   en: WordType[];
@@ -95,6 +101,7 @@ interface ExpCardsType {
   en: ExpCardType[];
   fr: ExpCardType[];
 }
+
 
 interface HeroTranslations {
   shaping: string;
@@ -139,6 +146,10 @@ interface ExperienceTranslations {
   subtitle: string;
   resp: string;
 }
+interface TechStackTranslations {
+  title: string;
+  subtitle: string;
+}
 
 interface Translations {
   nav: NavTranslations;
@@ -148,6 +159,7 @@ interface Translations {
   projects: ProjectsTranslations;
   skills: SkillsTranslations;
   experience: ExperienceTranslations;
+  techstack: TechStackTranslations;
 }
 
 
@@ -161,6 +173,7 @@ interface LanguageContextType {
   words: WordType[];
   abilities: AbilityType[];
   expCards: ExpCardType[];
+  techStackIcons: TechStackIconsType[];
 }
 
 interface UseTranslationReturn {
@@ -172,4 +185,5 @@ interface UseTranslationReturn {
   words: WordType[];
   abilities: AbilityType[];
   expCards: ExpCardType[];
+  techStackIcons: TechStackIconsType[];
 }
