@@ -6,7 +6,8 @@ import LanguageSwitcher from './LanguageSwitcher'
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
-    const { t, navLinks } = useTranslation() // Get navLinks from translation context
+    const { navLinks } = useTranslation() 
+    // const { t, navLinks } = useTranslation() 
     
     useEffect(() => {
         const handleScroll = () => {
@@ -39,11 +40,11 @@ const NavBar = () => {
             </nav>
 
             <div className="flex items-center gap-4">
-                <Link href="#contact" className="contact-btn group nav-contact">
+                {/* <Link href="#contact" className="contact-btn group nav-contact">
                     <div className="inner">
                         <span>{t.nav.contact}</span>
                     </div>
-                </Link>
+                </Link> */}
                 <LanguageSwitcher />
             </div>
         </div>

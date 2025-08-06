@@ -26,12 +26,14 @@ const navLinks = {
     { name: "Skills", link: "#skills" },
     { name: "Experience", link: "#experience" },
     { name: "Tech Stack", link: "#techstack" },
+    { name: "Contact", link: "#contact" },
   ],
   fr: [
     { name: "Projets", link: "#work" },
     { name: "Compétences", link: "#skills" },
     { name: "Expérience", link: "#experience" },
     { name: "Tech Stack", link: "#techstack" },
+    { name: "Contact", link: "#contact" },
   ]
 };
 
