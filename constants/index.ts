@@ -76,7 +76,16 @@ const translations = {
         title: "Annick Van Endert : Artist's website",
         description: "A window into the paintress's world."
       }
-    }
+    },
+    skills: {
+      title: "Skills",
+      subtitle: "⚙️ My field of expertise" 
+    },
+    experience: {
+      title: "Professional Work Experience",
+      subtitle: "💼  My career Overview",
+      resp: "Responsibilities"
+    },
   },
   fr: {
     nav: {
@@ -118,7 +127,16 @@ const translations = {
         title: "Annick Van Endert : Site web d'artiste",
         description: "Une fenêtre sur le monde de la peintre."
       }
-    }
+    },
+    skills: {
+      title: "Compétences",
+      subtitle: "⚙️ Mon domaine d'expertise",
+    },
+    experience: {
+      title: "Expérience Professionnelle",
+      subtitle: "💼  Mon parcours professionnel",
+      resp : "Responsabilités",
+    },
   },
 };
 
@@ -281,6 +299,91 @@ const abilities = {
   ]
 };
 
+const expCards = {
+  en: [
+    {
+      review:
+        "Through those projects, I have developed strong technical skills and adaptability across modern stacks. My work is composed of web apps, portfolio sites, and client platforms, always with a focus on quality and user experience.",
+      imgPath: "/images/exp1.png",
+      logoPath: "/images/asset1.png",
+      title: "Freelance Web Developer",
+      date: "2024 – 2025",
+      responsibilities: [
+        "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), and a personal portfolio (Next.js, React, GSAP).",
+        "Built and deployed client websites such as annickvanendert.com and lenoyer.be using WordPress, HTML, CSS, and JavaScript.",
+        "Managed all aspects of project delivery: design translation, frontend and backend development, deployment, and client communication.",
+      ],
+    },
+    {
+      review:
+        "During my training at DigitalCity, I built a solid foundation in frontend development, mastering modern tools and frameworks while delivering real-world projects.",
+      imgPath: "/images/exp2.png",
+      logoPath: "/images/asset2.png",
+      title: "Front End Development Training",
+      date: "2023 – 2024",
+      responsibilities: [
+        "Produced multiple websites using HTML5, CSS, Vanilla JS, Flexbox, Grid, SASS, API management, GSAP, and React.",
+        "Transcribed site designs and architecture into ready-to-use WordPress platforms.",
+        "Developed a social network web app for Belgian artists using React, Node.js, and MySQL.",
+      ],
+    },
+    {
+      review:
+        "My working holiday in Australia helped me foster strong soft skills and adaptability, enriching my professional and personal growth through diverse experiences.",
+      imgPath: "/images/exp3.png",
+      logoPath: "/images/asset3.png",
+      title: "Working Holiday & Soft Skills Development",
+      date: "2019 – 2022",
+      responsibilities: [
+        "Worked various jobs across Western Australia: mining, farms, cattle stations, and more.",
+        "Traveled extensively, developing autonomy, adaptability, stress management, resilience, and decision-making skills.",
+        "Achieved English proficiency at C1 level.",
+      ],
+    },
+  ],
+  fr: [
+    {
+      review:
+        "À travers ces projets, j'ai développé de solides compétences techniques et une adaptabilité à travers les stacks modernes. Mon travail est composé d'applications web, de sites portfolio et de plateformes clients, toujours avec un focus sur la qualité et l'expérience utilisateur.",
+      imgPath: "/images/exp1.png",
+      logoPath: "/images/asset1.png",
+      title: "Développeur Web Freelance",
+      date: "2024 – 2025",
+      responsibilities: [
+        "Développement d'applications web full-stack incluant Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), et un portfolio personnel (Next.js, React, GSAP).",
+        "Construction et déploiement de sites clients tels que annickvanendert.com et lenoyer.be en utilisant WordPress, HTML, CSS et JavaScript.",
+        "Gestion de tous les aspects de livraison de projet : traduction de design, développement frontend et backend, déploiement et communication client.",
+      ],
+    },
+    {
+      review:
+        "Pendant ma formation à DigitalCity, j'ai construit une base solide en développement frontend, maîtrisant les outils et frameworks modernes tout en livrant des projets concrets.",
+      imgPath: "/images/exp2.png",
+      logoPath: "/images/asset2.png",
+      title: "Formation Développement Front End",
+      date: "2023 – 2024",
+      responsibilities: [
+        "Production de multiples sites web utilisant HTML5, CSS, Vanilla JS, Flexbox, Grid, SASS, gestion d'API, GSAP et React.",
+        "Transcription de designs et architectures de sites en plateformes WordPress prêtes à l'emploi.",
+        "Développement d'une application web de réseau social pour artistes belges en utilisant React, Node.js et MySQL.",
+      ],
+    },
+    {
+      review:
+        "Mon working holiday en Australie m'a aidé à développer de solides soft skills et une adaptabilité, enrichissant ma croissance professionnelle et personnelle à travers diverses expériences.",
+      imgPath: "/images/exp3.png",
+      logoPath: "/images/asset3.png",
+      title: "Working Holiday & Développement des Soft Skills",
+      date: "2019 – 2022",
+      responsibilities: [
+        "Travail dans divers emplois à travers l'Australie Occidentale : mines, fermes, stations de bétail, et plus.",
+        "Voyages extensifs, développant autonomie, adaptabilité, gestion du stress, résilience et prise de décision.",
+        "Atteinte d'un niveau de maîtrise de l'anglais C1.",
+      ],
+    },
+  ]
+};
+
 const techStackImgs = [
   {
     name: "Frontend Developer",
@@ -334,48 +437,6 @@ const techStackIcons = [
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
-  },
-];
-
-const expCards = [
-    {
-    review:
-      "Through those projects, I have developed strong technical skills and adaptability across modern stacks. My work is composed of web apps, portfolio sites, and client platforms, always with a focus on quality and user experience.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/asset1.png",
-    title: "Freelance Web Developer",
-    date: "2024 – 2025",
-    responsibilities: [
-      "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), and a personal portfolio (Next.js, React, GSAP).",
-      "Built and deployed client websites such as annickvanendert.com and lenoyer.be using WordPress, HTML, CSS, and JavaScript.",
-      "Managed all aspects of project delivery: design translation, frontend and backend development, deployment, and client communication.",
-    ],
-  },
-  {
-    review:
-      "During my training at DigitalCity, I built a solid foundation in frontend development, mastering modern tools and frameworks while delivering real-world projects.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/asset2.png",
-    title: "Front End Development Training",
-    date: "2023 – 2024",
-    responsibilities: [
-      "Produced multiple websites using HTML5, CSS, Vanilla JS, Flexbox, Grid, SASS, API management, GSAP, and React.",
-      "Transcribed site designs and architecture into ready-to-use WordPress platforms.",
-      "Developed a social network web app for Belgian artists using React, Node.js, and MySQL.",
-    ],
-  },
-  {
-    review:
-      "My working holiday in Australia helped me foster strong soft skills and adaptability, enriching my professional and personal growth through diverse experiences.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/asset3.png",
-    title: "Working Holiday & Soft Skills Development",
-    date: "2019 – 2022",
-    responsibilities: [
-      "Worked various jobs across Western Australia: mining, farms, cattle stations, and more.",
-      "Traveled extensively, developing autonomy, adaptability, stress management, resilience, and decision-making skills.",
-      "Achieved English proficiency at C1 level.",
-    ],
   },
 ];
 

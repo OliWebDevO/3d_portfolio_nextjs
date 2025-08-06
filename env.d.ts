@@ -82,6 +82,20 @@ interface AbilitiesTranslations {
   fr: AbilityType[];
 }
 
+interface ExpCardType {
+  review: string;
+  imgPath: string;
+  logoPath: string;
+  title: string;
+  date: string;
+  responsibilities: string[];
+}
+
+interface ExpCardsType {
+  en: ExpCardType[];
+  fr: ExpCardType[];
+}
+
 interface HeroTranslations {
   shaping: string;
   intoRealProjects: string;
@@ -116,12 +130,24 @@ interface ProjectTranslations {
   description: string;
 }
 
+interface SkillsTranslations {
+  title: string;
+  subtitle: string;
+}
+interface ExperienceTranslations {
+  title: string;
+  subtitle: string;
+  resp: string;
+}
+
 interface Translations {
   nav: NavTranslations;
   hero: HeroTranslations;
   slider: SliderTranslations;
   showcase: ShowcaseTranslations;
-  projects: ProjectsTranslations; 
+  projects: ProjectsTranslations;
+  skills: SkillsTranslations;
+  experience: ExperienceTranslations;
 }
 
 
@@ -134,6 +160,7 @@ interface LanguageContextType {
   navLinks: { name: string; link: string }[];
   words: WordType[];
   abilities: AbilityType[];
+  expCards: ExpCardType[];
 }
 
 interface UseTranslationReturn {
@@ -144,4 +171,5 @@ interface UseTranslationReturn {
   navLinks: { name: string; link: string }[];
   words: WordType[];
   abilities: AbilityType[];
+  expCards: ExpCardType[];
 }

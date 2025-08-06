@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function useTranslation(): UseTranslationReturn {
-  const { language, t, navLinks, words, abilities } = useLanguage();
+  const { language, t, navLinks, words, abilities, expCards } = useLanguage();
   
   return { 
     t, 
@@ -10,6 +10,7 @@ export function useTranslation(): UseTranslationReturn {
     isFrench: language === 'fr',
     navLinks,
     words,
-    abilities
+    abilities,
+    expCards
   };
 }

@@ -2,8 +2,10 @@
 import { useRef } from "react";
 import TitleHeader from "@/components/TitleHeader";
 import { logoIconsList } from "../constants";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
+
   <div className="flex-none flex-center marquee-item select-none" style={{ cursor: "grab" }}>
     <img
       src={icon.imgPath}
@@ -19,6 +21,7 @@ const LogoSection = () => {
   const isDownRef = useRef(false);
   const startXRef = useRef(0);
   const scrollLeftRef = useRef(0);
+  const { t } = useTranslation(); 
 
   // For momentum
   const lastXRef = useRef(0);
@@ -80,6 +83,7 @@ const LogoSection = () => {
     const friction = 0.95; // Lower = more friction, higher = longer glide
 
     function animate() {
+      if (!marquee) return;
       if (Math.abs(velocity) > 0.1) {
         marquee.scrollLeft -= velocity;
         velocity *= friction;
@@ -112,7 +116,7 @@ const LogoSection = () => {
 
   return (
     <section id="skills" className="section-padding md:pb-20 pb-10">
-      <TitleHeader title="Skills" sub="⚙️ My field of expertise" />
+      <TitleHeader title={t.skills.title} sub={t.skills.subtitle} />
       <div className="md:my-15 my-25 relative overflow-hidden">
         <div className="gradient-edge"></div>
         <div className="gradient-edge"></div>

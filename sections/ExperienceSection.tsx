@@ -1,16 +1,16 @@
 'use client'
 import GlowCard from "../components/GlowCard"
 import TitleHeader from "../components/TitleHeader"
-import { expCards } from "../constants"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
+import { useTranslation } from "@/hooks/useTranslation"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const ExperienceSection = () => {
-  
+  const { t, expCards } = useTranslation();
+
    useGSAP(() => {
   // Responsive ScrollTrigger 
   ScrollTrigger.matchMedia({
@@ -120,7 +120,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="w-full section-padding">
         <div className="w-full h-full md:px-20 px-5">
-            <TitleHeader title='Professional Work Experience' sub='💼  My career Overview' cn="mb-28"/>
+            <TitleHeader title={t.experience.title} sub={t.experience.subtitle} cn="mb-28"/>
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {expCards.map((card, index) => (
@@ -148,7 +148,7 @@ const ExperienceSection = () => {
                                                 📅 {card.date}
                                             </p>
                                             <p className="text-[#839cb5] italic">
-                                               Responsibilities
+                                               {t.experience.resp}
                                             </p>
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
                                                 {card.responsibilities.map((responsibility, index) => (
