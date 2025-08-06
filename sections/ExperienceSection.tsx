@@ -5,117 +5,121 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useTranslation } from "@/hooks/useTranslation"
+import { useEffect } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const ExperienceSection = () => {
-  const { t, expCards } = useTranslation();
+  const { t, expCards, locale } = useTranslation(); // Add locale to track language changes
 
-   useGSAP(() => {
-  // Responsive ScrollTrigger 
-  ScrollTrigger.matchMedia({
-    // Desktop
-    "(min-width: 768px)": function() {
-    gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
-      gsap.from(card, {
-        xPercent: -100,
-        opacity: 0,
-        transformOrigin: 'left left',
-        duration: 1,
-        ease: 'power2.inOut',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%', // earlier trigger
-          toggleActions: 'play none none reverse',
-        }
-      });
-    });
+  useGSAP(() => {
+    // Responsive ScrollTrigger 
+    ScrollTrigger.matchMedia({
+      // Desktop
+      "(min-width: 768px)": function() {
+        gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
+          gsap.from(card, {
+            xPercent: -100,
+            opacity: 0,
+            transformOrigin: 'left left',
+            duration: 1,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          });
+        });
 
-    gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
-      gsap.from(text, {
-        xPercent: 0,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.inOut',
-        scrollTrigger: {
-          trigger: text,
-          start: 'top 80%', // earlier trigger
-          toggleActions: 'play none none reverse',
-        }
-      });
-    });
+        gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
+          gsap.from(text, {
+            xPercent: 0,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: text,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          });
+        });
 
-    gsap.to('.timeline', {
-      transformOrigin: 'bottom bottom',
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.timeline',
-        start: 'top center', // earlier trigger
-        end: '70% center',
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.to('.timeline', {
-            scaleY: 1 - self.progress,
-          })
-        }
+        gsap.to('.timeline', {
+          transformOrigin: 'bottom bottom',
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: '.timeline',
+            start: 'top center',
+            end: '70% center',
+            scrub: true,
+            onUpdate: (self) => {
+              gsap.to('.timeline', {
+                scaleY: 1 - self.progress,
+              })
+            }
+          }
+        });
+      },
+      // Mobile
+      "(max-width: 767px)": function() {
+        gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
+          gsap.from(card, {
+            xPercent: -100,
+            opacity: 0,
+            transformOrigin: 'left left',
+            duration: 1,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            }
+          });
+        });
+
+        gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
+          gsap.from(text, {
+            xPercent: 0,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+            scrollTrigger: {
+              trigger: text,
+              start: 'top 60%',
+              toggleActions: 'play none none reverse',
+            }
+          });
+        });
+
+        gsap.to('.timeline', {
+          transformOrigin: 'bottom bottom',
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: '.timeline',
+            start: 'top center',
+            end: '70% center',
+            scrub: true,
+            onUpdate: (self) => {
+              gsap.to('.timeline', {
+                scaleY: 1 - self.progress,
+              })
+            }
+          }
+        });
       }
     });
-    },
-    // Mobile
-    "(max-width: 767px)": function() {
-      gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
-        gsap.from(card, {
-          xPercent: -100,
-          opacity: 0,
-          transformOrigin: 'left left',
-          duration: 1,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 80%', // Mobile: original value
-            toggleActions: 'play none none reverse',
-          }
-        });
-      });
+  }, [locale]); // Add locale as dependency
 
-      gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
-        gsap.from(text, {
-          xPercent: 0,
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: text,
-            start: 'top 60%', // Mobile: original value
-            toggleActions: 'play none none reverse',
-          }
-        });
-      });
+  // Refresh ScrollTrigger when language changes
+  useEffect(() => {
+    const refreshTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100); // Small delay to allow DOM to update
 
-      gsap.to('.timeline', {
-        transformOrigin: 'bottom bottom',
-        ease: 'power1.inOut',
-        scrollTrigger: {
-          trigger: '.timeline',
-          start: 'top center',
-          end: '70% center',
-          scrub: true,
-          onUpdate: (self) => {
-            gsap.to('.timeline', {
-              scaleY: 1 - self.progress,
-            })
-          }
-        }
-      });
-    }
-  });
-
-
-}, []);
-    setTimeout(() => {
-  ScrollTrigger.refresh();
-}, 800); // 800ms is a safe default, adjust as needed
-
+    return () => clearTimeout(refreshTimeout);
+  }, [locale, expCards]); // Trigger when language or content changes
 
   return (
     <section id="experience" className="w-full section-padding">
@@ -124,12 +128,9 @@ const ExperienceSection = () => {
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {expCards.map((card, index) => (
-                        <div key={card.title} className="exp-card-wrapper">
+                        <div key={`${card.title}-${locale}`} className="exp-card-wrapper"> {/* Add locale to key */}
                            <div className="xl:w-2/6">
                                 <GlowCard card={card} index={index}>
-                                    {/* <div>
-                                        <img src={card.imgPath} alt={card.title} />
-                                    </div> */}
                                 </GlowCard>
                             </div>
                             <div className="xl:w-4/6 ">
