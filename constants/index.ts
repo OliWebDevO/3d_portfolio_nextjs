@@ -70,6 +70,18 @@ const translations = {
     techstack : {
       title: "Tech Stack",
       subtitle: "🛠️  My Toolbox"
+    },
+    contact: {
+      title: "Get in Touch",
+      subtitle: "📬  Let's connect",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send",
+      sending: "Sending..."
+    },
+    projectpage: {
+      visitProject: "Visit Project"
     }
   },
   fr: {
@@ -126,6 +138,18 @@ const translations = {
       title: "Tech Stack",
       subtitle: "🛠️  Mes Outils"
     },
+    contact : {
+      title: "Contactez-moi",
+      subtitle: "📬  Restons en contact",
+      name: " Nom",
+      email: "Email",
+      message: "Message",
+      send: "Envoyer",
+      sending: "Envoi en cours..."
+    },
+    projectpage: {
+      visitProject: "Visiter le projet"
+    }
   },
 };
 
@@ -502,123 +526,150 @@ const expLogos = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Oliver. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
-  },
-  {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Oliver was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Oliver was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Oliver's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Oliver is the ideal partner.",
-    imgPath: "/images/client2.png",
-  },
-  {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Oliver was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Oliver’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Oliver was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
-  },
-];
-
-const projects = [
+const projects = {
+  en: [
     {
-    slug: "library",
-    title: "BookWise : A library management system",
-    description: "Streamlining book management for libraries",
-    image: "/images/library1.png",
-    link: "https://university-library-v2-nu.vercel.app/",
-    techLogos: [
-      "/images/logos/nextjs.png",
-      "/images/logos/react.png",
-      "/images/logos/node.png",
-      "/images/logos/postgresql.png",
-      // "/images/logos/tailwind.png",
-    ],
-    bg: "#ffefdb",
-  },
-  {
-    slug: "artgallery",
-    title: "Art Gallery : A social platform for artists",
-    description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
-    image: "/images/ag2.png",
-    link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
-    techLogos: [
-      "/images/logos/react.png",
-      "/images/logos/node.png",
-      "/images/logos/sql.png",
-    ],
-    bg: "#1c1c21",
-  },
-  {
-    slug: "portfolio",
-    title: "Portfolio Website",
-    description: "An animated portfolio website showcasing my work.",
-    image: "/images/portfolioCover.png",
-    link: "https://olivervdb.com",
-    techLogos: [
-      "/images/logos/nextjs.png",
-      "/images/logos/react.png",
-      "/images/logos/node.png",
-      "/images/logos/tailwind.png",
-    ],
-    bg: "#ffefdb",
-  },
-  {
-    slug: "lenoyer",
-    title: "Le Noyer : Medical center website",
-    description: "A minimalist, elegant, and functional website",
-    image: "/images/lenoyer1.png",
-    link: "https://lenoyer.be",
-    techLogos: [
-      "/images/logos/html.png",
-      "/images/logos/css.png",
-      "/images/logos/js.png",
-      "/images/logos/wordpress.png",
-    ],
-    bg: "white",
-  },
-  {
-    slug: "annick",
-    title: "Annick Van Endert : Artist's website",
-    description: "A window into the paintress's world.",
-    image: "/images/annick1.png",
-    link: "https://annickvanendert.com",
-    techLogos: [
-       "/images/logos/html.png",
-      "/images/logos/css.png",
-      "/images/logos/js.png",
-      "/images/logos/wordpress.png",
-    ],
-    bg: "#ffefdb",
-  },
-];
+      slug: "library",
+      title: "BookWise : A library management system",
+      description: "Streamlining book management for libraries",
+      image: "/images/library1.png",
+      link: "https://university-library-v2-nu.vercel.app/",
+      techLogos: [
+        "/images/logos/nextjs.png",
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/postgresql.png",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "artgallery",
+      title: "Art Gallery : A social platform for artists",
+      description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
+      image: "/images/ag2.png",
+      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
+      techLogos: [
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/sql.png",
+      ],
+      bg: "#1c1c21",
+    },
+    {
+      slug: "portfolio",
+      title: "Portfolio Website",
+      description: "An animated portfolio website showcasing my work.",
+      image: "/images/portfolioCover.png",
+      link: "https://olivervdb.com",
+      techLogos: [
+        "/images/logos/nextjs.png",
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/tailwind.png",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "lenoyer",
+      title: "Le Noyer : Medical center website",
+      description: "A minimalist, elegant, and functional website",
+      image: "/images/lenoyer1.png",
+      link: "https://lenoyer.be",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "white",
+    },
+    {
+      slug: "annick",
+      title: "Annick Van Endert : Artist's website",
+      description: "A window into the paintress's world.",
+      image: "/images/annick1.png",
+      link: "https://annickvanendert.com",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "#ffefdb",
+    },
+  ],
+  fr: [
+    {
+      slug: "library",
+      title: "BookWise : Système de gestion de bibliothèque",
+      description: "Faciliter la gestion des livres au sein d'une bibliothèque universitaire",
+      image: "/images/library1.png", // Same image
+      link: "https://university-library-v2-nu.vercel.app/", // Same link
+      techLogos: [
+        "/images/logos/nextjs.png",
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/postgresql.png",
+      ],
+      bg: "#ffefdb", // Same background
+    },
+    {
+      slug: "artgallery",
+      title: "Art Gallery : Plateforme sociale pour artistes",
+      description: "Une plateforme qui permet aux artistes de créer des profils, télécharger leurs œuvres et se connecter avec les amateurs d'art.",
+      image: "/images/ag2.png",
+      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
+      techLogos: [
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/sql.png",
+      ],
+      bg: "#1c1c21",
+    },
+    {
+      slug: "portfolio",
+      title: "Site Web Portfolio",
+      description: "Un site portfolio animé présentant mon travail.",
+      image: "/images/portfolioCover.png",
+      link: "https://olivervdb.com",
+      techLogos: [
+        "/images/logos/nextjs.png",
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/tailwind.png",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "lenoyer",
+      title: "Le Noyer : Site web du centre médical",
+      description: "Un site web minimaliste, élégant et fonctionnel",
+      image: "/images/lenoyer1.png",
+      link: "https://lenoyer.be",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "white",
+    },
+    {
+      slug: "annick",
+      title: "Annick Van Endert : Site web d'artiste",
+      description: "Une fenêtre sur le monde de la peintre.",
+      image: "/images/annick1.png",
+      link: "https://annickvanendert.com",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "#ffefdb",
+    },
+  ]
+};
 
 const socialImgs = [
   // {
@@ -827,6 +878,52 @@ const projectDetailsCards = [
   ],
   },
 ];
+
+const testimonials = [
+  {
+    name: "Esther Howard",
+    mentions: "@estherhoward",
+    review:
+      "I can’t say enough good things about Oliver. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+    imgPath: "/images/client1.png",
+  },
+  {
+    name: "Wade Warren",
+    mentions: "@wadewarren",
+    review:
+      "Working with Oliver was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+    imgPath: "/images/client3.png",
+  },
+  {
+    name: "Guy Hawkins",
+    mentions: "@guyhawkins",
+    review:
+      "Collaborating with Oliver was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Oliver's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Oliver is the ideal partner.",
+    imgPath: "/images/client2.png",
+  },
+  {
+    name: "Marvin McKinney",
+    mentions: "@marvinmckinney",
+    review:
+      "Oliver was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+    imgPath: "/images/client5.png",
+  },
+  {
+    name: "Floyd Miles",
+    mentions: "@floydmiles",
+    review:
+      "Oliver’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+    imgPath: "/images/client4.png",
+  },
+  {
+    name: "Albert Flores",
+    mentions: "@albertflores",
+    review:
+      "Oliver was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+    imgPath: "/images/client6.png",
+  },
+];
+
 
 export {
   translations,

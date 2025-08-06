@@ -59,8 +59,12 @@ interface ProjectType {
   image: string;
   bg: string;
   techLogos?: string[];
+  link: string;
 }
-
+interface ProjectsType {
+  en: ProjectType[];
+  fr: ProjectType[];
+}
 
 interface WordType {
   id: number;
@@ -150,6 +154,18 @@ interface TechStackTranslations {
   title: string;
   subtitle: string;
 }
+interface ContactTranslations {
+  title: string;
+  subtitle: string;
+  name: string;
+  email: string;
+  message: string;
+  send: string;
+  sending: string;
+}
+interface ProjectPageTranslations {
+  visitProject: string;
+}
 
 interface Translations {
   nav: NavTranslations;
@@ -160,6 +176,8 @@ interface Translations {
   skills: SkillsTranslations;
   experience: ExperienceTranslations;
   techstack: TechStackTranslations;
+  contact: ContactTranslations;
+  projectpage: ProjectPageTranslations;
 }
 
 
@@ -174,6 +192,7 @@ interface LanguageContextType {
   abilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
+  projects: ProjectType[];
 }
 
 interface UseTranslationReturn {
@@ -186,4 +205,5 @@ interface UseTranslationReturn {
   abilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
+  projects: ProjectType[];
 }

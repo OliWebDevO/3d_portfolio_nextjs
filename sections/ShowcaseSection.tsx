@@ -4,7 +4,6 @@ import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-import { projects } from "@/constants";
 import Image from "next/image";
 import TitleHeader from "@/components/TitleHeader";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -13,7 +12,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
-  const { t } = useTranslation(); 
+  const { t, projects } = useTranslation(); 
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 

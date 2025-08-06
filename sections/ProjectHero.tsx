@@ -1,7 +1,8 @@
+// sections/ProjectHero.tsx
 'use client'
 import { useParams } from "next/navigation";
-// Removed: import Image from "next/image";
-import { projects } from "@/constants";
+// Remove this line: import { projects } from "@/constants";
+import { useTranslation } from "@/hooks/useTranslation"; // Add this
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -16,14 +17,15 @@ function getSlug(param: string | string[] | undefined): string {
 }
 
 export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
+  const { projects, t } = useTranslation(); // Add this to get translated projects
+  
   // Always call useParams
   const params = useParams();
   const paramSlug = getSlug(params?.slug);
 
   // Prefer staticSlug if provided, otherwise use paramSlug
   const slug = staticSlug || paramSlug;
-  const project = projects.find((p) => p.slug === slug);
-
+  const project = projects.find((p) => p.slug === slug); // Remove .en since projects is now an array
 
   const logoRefs = useRef<(HTMLImageElement | null)[]>([]);
 
@@ -53,8 +55,6 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
 
   if (!project) return <div>Project not found.</div>;
 
-
-
   return (
     <>
     <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
@@ -83,49 +83,10 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
           <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
-          <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text="Visit Project" href={project.link}/>
+          <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text={t.projectpage.visitProject} href={project.link}/>
         </div>
       </div>
     </section>
     </>
   );
 }
-
-
-{/* 
-
-      useGSAP(() => {
-    const clipAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#clip",
-        start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
-        pin: true,
-        pinSpacing: true,
-      },
-    });
-
-    clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
-    });
-  });
-
-    <div id="about" className="min-h-screen w-screen">
-      <div className="h-dvh w-screen" id="clip">
-        <div className="mask-clip-path about-image">
-          <img
-            src="/images/portfoliocover.png"
-            alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
-          />
-        </div>
-      </div>
-      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
-        <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
-        <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text="Visit Project" href={project.link}/>
-      </div>
-    </div> */}

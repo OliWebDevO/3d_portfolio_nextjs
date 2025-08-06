@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function useTranslation(): UseTranslationReturn {
-  const { language, t, navLinks, words, abilities, expCards, techStackIcons } = useLanguage();
+  const { language, t, navLinks, words, abilities, expCards, techStackIcons, projects } = useLanguage();
 
   return {
     t,
@@ -13,5 +13,6 @@ export function useTranslation(): UseTranslationReturn {
     abilities,
     expCards,
     techStackIcons,
+    projects,
   };
 }

@@ -3,10 +3,12 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
+import { usePathname } from "next/navigation"
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
     const { navLinks } = useTranslation() 
+    const pathname = usePathname()
     // const { t, navLinks } = useTranslation() 
     
     useEffect(() => {
@@ -20,6 +22,8 @@ const NavBar = () => {
         }
     }, [])
 
+    const isProjectPage = pathname?.startsWith('/projects/')
+
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
         <div className="inner">
@@ -30,7 +34,7 @@ const NavBar = () => {
                 <ul>
                     {navLinks.map(({link, name}) => (
                         <li key={name}>
-                            <Link href={link} className="group">
+                            <Link href={isProjectPage ? `/${link}` : link} className="group">
                                 <span>{name}</span>
                                 <span className="underline"/>
                             </Link>

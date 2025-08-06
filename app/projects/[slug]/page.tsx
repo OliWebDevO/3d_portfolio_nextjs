@@ -6,15 +6,17 @@ import ProjectDetailsSection from "@/sections/ProjectDetailsSection";
 import ProjectHero from "@/sections/ProjectHero";
 
 export async function generateStaticParams() {
-  return projects.map(project => ({ slug: project.slug }));
+  return projects.en.map(project => ({ slug: project.slug }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // Await params before using
+  
   return (
     <main>
       <NavBar />
-      <ProjectHero slug={params.slug} />
-      <ProjectDetailsSection slug={params.slug} />
+      <ProjectHero slug={slug} />
+      <ProjectDetailsSection slug={slug} />
       <Contact />
       <Footer />
     </main>
