@@ -106,6 +106,21 @@ interface ExpCardsType {
   fr: ExpCardType[];
 }
 
+interface ProjectDetailCard {
+  imgPath: string;
+  logoPath: string;
+  title: string;
+  details: string[];
+}
+
+interface ProjectDetailsType {
+  slug: string;
+  cards: ProjectDetailCard[];
+}
+interface ProjectDetailsTranlations {
+  en: ProjectDetailsType[];
+  fr: ProjectDetailsType[]; 
+}
 
 interface HeroTranslations {
   shaping: string;
@@ -193,6 +208,7 @@ interface LanguageContextType {
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
   projects: ProjectType[];
+  projectDetailsCards: ProjectDetailsType[];
 }
 
 interface UseTranslationReturn {
@@ -206,4 +222,5 @@ interface UseTranslationReturn {
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
   projects: ProjectType[];
+  projectDetailsCards: ProjectDetailsType[];
 }

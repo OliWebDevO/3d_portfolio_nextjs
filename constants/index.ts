@@ -694,190 +694,383 @@ const socialImgs = [
   },
 ];
 
-const projectDetailsCards = [
+const projectDetailsCards = {
+  en: [
     {
-  slug: "library",
-  cards: [
-    {
-      imgPath: "/images/library.png",
-      logoPath: "/images/asset1.png",
-      title: "BookWise: University Library Management System",
-      details: [
-        "BookWise is a comprehensive library management system built with Next.js and TypeScript, designed to streamline book management for universities and libraries.",
-        "The platform features a profile page for users, a borrowing system, and automated email notifications for onboarding.",
-        "Caching, rate-limiting, DDoS protection, and real-time image optimization are implemented to enhance performance and security.",
+      slug: "library",
+      cards: [
+        {
+          imgPath: "/images/library.png",
+          logoPath: "/images/asset1.png",
+          title: "BookWise: University Library Management System",
+          details: [
+            "BookWise is a comprehensive library management system built with Next.js and TypeScript, designed to streamline book management for universities and libraries.",
+            "The platform features a profile page for users, a borrowing system, and automated email notifications for onboarding.",
+            "Caching, rate-limiting, DDoS protection, and real-time image optimization are implemented to enhance performance and security.",
+          ],
+        },
+        {
+          imgPath: "/images/library3.png",
+          logoPath: "/images/asset2.png",
+          title: "Front End Technologies",
+          details: [
+            "Built with Next.js and TypeScript for scalable, maintainable development.",
+            "Tailwind CSS and ShadCN provide a modern, responsive UI/UX.",
+            "ImageKit is used for real-time image and video optimization.",
+          ],
+        },
+        {
+          imgPath: "/images/library2.png",
+          logoPath: "/images/asset3.png",
+          title: "Back End Technologies",
+          details: [
+            "PostgreSQL with Neon powers scalable and collaborative database management.",
+            "Upstash Redis is used for efficient caching, workflows, and triggers.",
+            "Drizzle ORM simplifies database interactions.",
+            "Resend handles automated email notifications for onboarding, reminders, and updates.",
+            "NextAuth provides robust authentication and role management.",
+          ],
+        },
       ],
     },
     {
-      imgPath: "/images/library3.png",
-      logoPath: "/images/asset2.png",
-      title: "Front End Technologies",
-      details: [
-        "Built with Next.js and TypeScript for scalable, maintainable development.",
-        "Tailwind CSS and ShadCN provide a modern, responsive UI/UX.",
-        "ImageKit is used for real-time image and video optimization.",
+      slug: "artgallery",
+      cards: [
+        {
+          imgPath: "/images/ag1.png",
+          logoPath: "/images/asset1.png",
+          title: "A social platform for artists",
+          details: [
+            "This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.",
+            "Through this project, I wanted to create a social network that allows artists to showcase and share their works, while enabling everyone to like and comment on each post. Users can create their own profile, where they can publish text and photos as posts. They can also display their artworks in a personal gallery.",
+          ],
+        },
+        {
+          imgPath: "/images/artg1.png",
+          logoPath: "/images/asset2.png",
+          title: "Front End Technologies",
+          details: [
+            "React Router Dom handles routing, navigation, and links.",
+            "MUI5 is used for the interface design.",
+            "Axios is used for managing API queries.",
+            "React Query is used for state management and data fetching.",
+            "Toastify is used for notifications and pop-ups."
+          ],
+        },
+        {
+          imgPath: "/images/ag3.png",
+          logoPath: "/images/asset3.png",
+          title: "Back End Technologies",
+          details: [
+            "Nodemon is used for server monitoring.",
+            "CORS is used for managing cross-origin requests.",
+            "Multer is used for file handling.",
+            "Bcrypt is used for password encryption.",
+            "JsonWebToken is used for authentication token management.",
+            "Cookie Parser is used to store these tokens via cookie management.",
+            "DotEnv is used for managing environment variables and securing sensitive information."
+          ],
+        },
       ],
     },
     {
-      imgPath: "/images/library2.png",
-      logoPath: "/images/asset3.png",
-      title: "Back End Technologies",
-      details: [
-        "PostgreSQL with Neon powers scalable and collaborative database management.",
-        "Upstash Redis is used for efficient caching, workflows, and triggers.",
-        "Drizzle ORM simplifies database interactions.",
-        "Resend handles automated email notifications for onboarding, reminders, and updates.",
-        "NextAuth provides robust authentication and role management.",
+      slug: "portfolio",
+      cards: [
+        {
+          imgPath: "/images/portfolioCover.png",
+          logoPath: "/images/asset1.png",
+          title: "Animated Portfolio Website",
+          details: [
+            "This portfolio website was designed and developed to showcase my work, skills, and experience as a front-end developer.",
+            "The site features interactive animations, a modern UI, and responsive design to provide an engaging user experience on all devices.",
+          ],
+        },
+        {
+          imgPath: "/images/portfolioCover2.png",
+          logoPath: "/images/asset2.png",
+          title: "Front End Technologies",
+          details: [
+            "Built with Next.js and React for fast, SEO-friendly rendering.",
+            "Tailwind CSS is used for rapid and consistent styling.",
+            "GSAP powers the smooth animations and transitions.",
+            "TypeScript ensures type safety and maintainability.",
+          ],
+        },
+        {
+          imgPath: "/images/portfolioCover3.png",
+          logoPath: "/images/asset3.png",
+          title: "Contact Me",
+          details: [
+            "Interested in working together or have a project in mind?",
+            "Feel free to reach out to discuss your ideas, get a quote, or just say hello!",
+            "I'm always open to new opportunities and collaborations.",
+            "Let's build something great together, contact me today!"
+          ],
+        },
+      ],
+    },
+    {
+      slug: "lenoyer",
+      cards: [
+        {
+          imgPath: "/images/lenoyer1.png",
+          logoPath: "/images/asset1.png",
+          title: "Medical Center Le Noyer",
+          details: [
+            "A minimalist, elegant, and functional website",
+            "Maison Médicale Le Noyer is a multidisciplinary team providing quality, accessible, continuous, comprehensive, and integrated healthcare in the municipality of Schaerbeek.",
+          ],
+        },
+        {
+          imgPath: "/images/lenoyer2.png",
+          logoPath: "/images/asset2.png",
+          title: "All the informations in a few clicks",
+          details: [
+            "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
+            "The site is personalized so that each section can be directly modified or updated by the medical center team. They can easily add or remove content at will via the Wordpress admin panel.",
+          ],
+        },
+        {
+          imgPath: "/images/lenoyer3.png",
+          logoPath: "/images/asset3.png",
+          title: "A responsive and user-friendly design",
+          details: [
+            "The site uses various plugins:",
+            "Wow.js & Animate.css are used for animations.",
+            "Slick Slider is used for managing carousels (for example: team page).",
+            "Magnific Popup is used to display images as a lightbox."
+          ],
+        },
+      ],
+    },
+    {
+      slug: "annick",
+      cards: [
+        {
+          imgPath: "/images/annick2.png",
+          logoPath: "/images/asset1.png",
+          title: "A professional painter's website",
+          details: [
+            "A window into the artist's world",
+            "Annick Van Endert is a painter, sculptor, and tattoo artist from Brussels. Through various mediums, her works highlight sharp and striking contrasts.",
+          ],
+        },
+        {
+          imgPath: "/images/annick3.png",
+          logoPath: "/images/asset2.png",
+          title: "A modern and visually engaging interface",
+          details: [
+            "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
+            "The site is designed so that each gallery and section can be easily updated, allowing Annick to add new artworks and content at any time through the Wordpress admin panel.",
+          ],
+        },
+        {
+          imgPath: "/images/annick4.png",
+          logoPath: "/images/asset3.png",
+          title: "Plugins and Features",
+          details: [
+            "To create this website, various plugins are used:",
+            "Wow.js & Animate.css are used for animations.",
+            "Swiper is used for the slider.",
+            "SimpleLightBox is used for displaying the gallery.",
+            "Lenis is used for smooth scrolling."
+          ],
+        },
       ],
     },
   ],
-},
-  {
-    slug: "artgallery",
-    cards: [
-      {
-        imgPath: "/images/ag1.png",
-        logoPath: "/images/asset1.png",
-        title: "A social platform for artists",
-        details: [
-          `This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.`,
-          "Through this project, I wanted to create a social network that allows artists to showcase and share their works, while enabling everyone to like and comment on each post. Users can create their own profile, where they can publish text and photos as posts. They can also display their artworks in a personal gallery.",
-        ],
-      },
-      {
-        imgPath: "/images/artg1.png",
-        logoPath: "/images/asset2.png",
-        title: "Front End Technologies",
-        details: [
-         "React Router Dom handles routing, navigation, and links.",
-          "MUI5 is used for the interface design.",
-          "Axios is used for managing API queries.",
-          "React Query is used for state management and data fetching.",
-          "Toastify is used for notifications and pop-ups."
-        ],
-      },
-      {
-        imgPath: "/images/ag3.png",
-        logoPath: "/images/asset3.png",
-        title: "Back End Technologies",
-        details: [
-          "Nodemon is used for server monitoring.",
-          "CORS is used for managing cross-origin requests.",
-          "Multer is used for file handling.",
-          "Bcrypt is used for password encryption.",
-          "JsonWebToken is used for authentication token management.",
-          "Cookie Parser is used to store these tokens via cookie management.",
-          "DotEnv is used for managing environment variables and securing sensitive information."
-        ],
-      },
-    ],
-  },
+  fr: [
     {
-     slug: "portfolio",
-  cards: [
-    {
-      imgPath: "/images/portfolioCover.png",
-      logoPath: "/images/asset1.png",
-      title: "Animated Portfolio Website",
-      details: [
-        "This portfolio website was designed and developed to showcase my work, skills, and experience as a front-end developer.",
-        "The site features interactive animations, a modern UI, and responsive design to provide an engaging user experience on all devices.",
+      slug: "library",
+      cards: [
+        {
+          imgPath: "/images/library.png",
+          logoPath: "/images/asset1.png",
+          title: "BookWise: Système de Gestion de Bibliothèque Universitaire",
+          details: [
+            "BookWise est un système complet de gestion de bibliothèque construit avec Next.js et TypeScript, conçu pour simplifier la gestion des livres pour les universités et bibliothèques.",
+            "La plateforme comprend une page de profil pour les utilisateurs, un système d'emprunt et des notifications automatiques par email pour l'intégration.",
+            "Le cache, la limitation de débit, la protection DDoS et l'optimisation d'images en temps réel sont implémentés pour améliorer les performances et la sécurité.",
+          ],
+        },
+        {
+          imgPath: "/images/library3.png",
+          logoPath: "/images/asset2.png",
+          title: "Technologies Front End",
+          details: [
+            "Construit avec Next.js et TypeScript pour un développement évolutif et maintenable.",
+            "Tailwind CSS et ShadCN fournissent une UI/UX moderne et responsive.",
+            "ImageKit est utilisé pour l'optimisation d'images et vidéos en temps réel.",
+          ],
+        },
+        {
+          imgPath: "/images/library2.png",
+          logoPath: "/images/asset3.png",
+          title: "Technologies Back End",
+          details: [
+            "PostgreSQL avec Neon alimente la gestion de base de données évolutive et collaborative.",
+            "Upstash Redis est utilisé pour le cache efficace, les workflows et les déclencheurs.",
+            "Drizzle ORM simplifie les interactions avec la base de données.",
+            "Resend gère les notifications automatiques par email pour l'intégration, les rappels et les mises à jour.",
+            "NextAuth fournit une authentification robuste et la gestion des rôles.",
+          ],
+        },
       ],
     },
     {
-      imgPath: "/images/portfolioCover2.png",
-      logoPath: "/images/asset2.png",
-      title: "Front End Technologies",
-      details: [
-        "Built with Next.js and React for fast, SEO-friendly rendering.",
-        "Tailwind CSS is used for rapid and consistent styling.",
-        "GSAP powers the smooth animations and transitions.",
-        "TypeScript ensures type safety and maintainability.",
+      slug: "artgallery",
+      cards: [
+        {
+          imgPath: "/images/ag1.png",
+          logoPath: "/images/asset1.png",
+          title: "Une plateforme sociale pour artistes",
+          details: [
+            "Cette application web est le résultat de mon projet final à Digital City. Le frontend est construit avec React, tandis que le backend est construit avec Node & Express. Les informations utilisateur sont stockées dans une base de données MySQL.",
+            "À travers ce projet, j'ai voulu créer un réseau social qui permet aux artistes de présenter et partager leurs œuvres, tout en permettant à chacun d'aimer et commenter chaque publication. Les utilisateurs peuvent créer leur propre profil, où ils peuvent publier du texte et des photos comme publications. Ils peuvent également afficher leurs œuvres d'art dans une galerie personnelle.",
+          ],
+        },
+        {
+          imgPath: "/images/artg1.png",
+          logoPath: "/images/asset2.png",
+          title: "Technologies Front End",
+          details: [
+            "React Router Dom gère le routage, la navigation et les liens.",
+            "MUI5 est utilisé pour la conception de l'interface.",
+            "Axios est utilisé pour gérer les requêtes API.",
+            "React Query est utilisé pour la gestion d'état et la récupération de données.",
+            "Toastify est utilisé pour les notifications et pop-ups."
+          ],
+        },
+        {
+          imgPath: "/images/ag3.png",
+          logoPath: "/images/asset3.png",
+          title: "Technologies Back End",
+          details: [
+            "Nodemon est utilisé pour la surveillance du serveur.",
+            "CORS est utilisé pour gérer les requêtes cross-origin.",
+            "Multer est utilisé pour la gestion des fichiers.",
+            "Bcrypt est utilisé pour le chiffrement des mots de passe.",
+            "JsonWebToken est utilisé pour la gestion des jetons d'authentification.",
+            "Cookie Parser est utilisé pour stocker ces jetons via la gestion des cookies.",
+            "DotEnv est utilisé pour gérer les variables d'environnement et sécuriser les informations sensibles."
+          ],
+        },
       ],
     },
     {
-    imgPath: "/images/portfolioCover3.png",
-    logoPath: "/images/asset3.png",
-    title: "Contact Me",
-    details: [
-      "Interested in working together or have a project in mind?",
-      "Feel free to reach out to discuss your ideas, get a quote, or just say hello!",
-      "I'm always open to new opportunities and collaborations.",
-      "Let's build something great together, contact me today!"
-      ],
-    },
-  ],
-  },
-   {
-     slug: "lenoyer",
-  cards: [
-    {
-      imgPath: "/images/lenoyer1.png",
-      logoPath: "/images/asset1.png",
-      title: "Medical Center Le Noyer",
-      details: [
-       "A minimalist, elegant, and functional website",
-        "Maison Médicale Le Noyer is a multidisciplinary team providing quality, accessible, continuous, comprehensive, and integrated healthcare in the municipality of Schaerbeek.",
-      ],
-    },
-    {
-      imgPath: "/images/lenoyer2.png",
-      logoPath: "/images/asset2.png",
-      title: "All the informations in a few clicks",
-      details: [
-       "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
-        "The site is personalized so that each section can be directly modified or updated by the medical center team. They can easily add or remove content at will via the Wordpress admin panel.",
-      ],
-    },
-    {
-    imgPath: "/images/lenoyer3.png",
-    logoPath: "/images/asset3.png",
-    title: "A responsive and user-friendly design",
-    details: [
-      "The site uses various plugins:",
-      "Wow.js & Animate.css are used for animations.",
-      "Slick Slider is used for managing carousels (for example: team page).",
-      "Magnific Popup is used to display images as a lightbox."
-      ],
-    },
-  ],
-  },
-   {
-     slug: "annick",
-  cards: [
-    {
-      imgPath: "/images/annick2.png",
-      logoPath: "/images/asset1.png",
-      title: "A professional painter's website",
-      details: [
-      "A window into the artist's world",
-      "Annick Van Endert is a painter, sculptor, and tattoo artist from Brussels. Through various mediums, her works highlight sharp and striking contrasts.",
+      slug: "portfolio",
+      cards: [
+        {
+          imgPath: "/images/portfolioCover.png",
+          logoPath: "/images/asset1.png",
+          title: "Site Web Portfolio Animé",
+          details: [
+            "Ce site web portfolio a été conçu et développé pour présenter mon travail, mes compétences et mon expérience en tant que développeur front-end.",
+            "Le site présente des animations interactives, une interface moderne et un design responsive pour offrir une expérience utilisateur engageante sur tous les appareils.",
+          ],
+        },
+        {
+          imgPath: "/images/portfolioCover2.png",
+          logoPath: "/images/asset2.png",
+          title: "Technologies Front End",
+          details: [
+            "Construit avec Next.js et React pour un rendu rapide et optimisé pour le SEO.",
+            "Tailwind CSS est utilisé pour un stylisme rapide et cohérent.",
+            "GSAP alimente les animations fluides et les transitions.",
+            "TypeScript assure la sécurité des types et la maintenabilité.",
+          ],
+        },
+        {
+          imgPath: "/images/portfolioCover3.png",
+          logoPath: "/images/asset3.png",
+          title: "Contactez-moi",
+          details: [
+            "Intéressé par une collaboration ou avez-vous un projet en tête ?",
+            "N'hésitez pas à me contacter pour discuter de vos idées, obtenir un devis ou simplement dire bonjour !",
+            "Je suis toujours ouvert aux nouvelles opportunités et collaborations.",
+            "Construisons quelque chose de fantastique ensemble, contactez-moi aujourd'hui !"
+          ],
+        },
       ],
     },
     {
-      imgPath: "/images/annick3.png",
-      logoPath: "/images/asset2.png",
-      title: "A modern and visually engaging interface",
-      details: [
-       "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
-        "The site is designed so that each gallery and section can be easily updated, allowing Annick to add new artworks and content at any time through the Wordpress admin panel.",
+      slug: "lenoyer",
+      cards: [
+        {
+          imgPath: "/images/lenoyer1.png",
+          logoPath: "/images/asset1.png",
+          title: "Centre Médical Le Noyer",
+          details: [
+            "Un site web minimaliste, élégant et fonctionnel",
+            "La Maison Médicale Le Noyer est une équipe multidisciplinaire offrant des soins de santé de qualité, accessibles, continus, complets et intégrés dans la commune de Schaerbeek.",
+          ],
+        },
+        {
+          imgPath: "/images/lenoyer2.png",
+          logoPath: "/images/asset2.png",
+          title: "Toutes les informations en quelques clics",
+          details: [
+            "Le site web résume la gamme de services de santé offerts par le centre médical à travers 7 onglets : Accueil, Comment ça marche, Services, Activités, Équipe, Journal et Contact & Accès.",
+            "Le site est personnalisé pour que chaque section puisse être directement modifiée ou mise à jour par l'équipe du centre médical. Ils peuvent facilement ajouter ou supprimer du contenu à volonté via le panneau d'administration WordPress.",
+          ],
+        },
+        {
+          imgPath: "/images/lenoyer3.png",
+          logoPath: "/images/asset3.png",
+          title: "Un design responsive et convivial",
+          details: [
+            "Le site utilise divers plugins :",
+            "Wow.js & Animate.css sont utilisés pour les animations.",
+            "Slick Slider est utilisé pour gérer les carrousels (par exemple : page équipe).",
+            "Magnific Popup est utilisé pour afficher les images en lightbox."
+          ],
+        },
       ],
     },
     {
-    imgPath: "/images/annick4.png",
-    logoPath: "/images/asset3.png",
-    title: "Pluggins and Features",
-    details: [
-     "To create this website, various plugins are used:",
-      "Wow.js & Animate.css are used for animations.",
-      "Swiper is used for the slider.",
-      "SimpleLightBox is used for displaying the gallery.",
-      "Lenis is used for smooth scrolling."
+      slug: "annick",
+      cards: [
+        {
+          imgPath: "/images/annick2.png",
+          logoPath: "/images/asset1.png",
+          title: "Site web d'une peintre professionnelle",
+          details: [
+            "Une fenêtre sur le monde de l'artiste",
+            "Annick Van Endert est une peintre, sculptrice et tatoueuse de Bruxelles. À travers divers médiums, ses œuvres mettent en évidence des contrastes nets et frappants.",
+          ],
+        },
+        {
+          imgPath: "/images/annick3.png",
+          logoPath: "/images/asset2.png",
+          title: "Une interface moderne et visuellement engageante",
+          details: [
+            "Le site web offre une fenêtre sur le monde d'Annick Van Endert, présentant ses peintures, sculptures et art du tatouage à travers une interface moderne et visuellement engageante.",
+            "Le site est conçu pour que chaque galerie et section puisse être facilement mise à jour, permettant à Annick d'ajouter de nouvelles œuvres d'art et du contenu à tout moment via le panneau d'administration WordPress.",
+          ],
+        },
+        {
+          imgPath: "/images/annick4.png",
+          logoPath: "/images/asset3.png",
+          title: "Plugins et Fonctionnalités",
+          details: [
+            "Pour créer ce site web, divers plugins sont utilisés :",
+            "Wow.js & Animate.css sont utilisés pour les animations.",
+            "Swiper est utilisé pour le slider.",
+            "SimpleLightBox est utilisé pour afficher la galerie.",
+            "Lenis est utilisé pour le défilement fluide."
+          ],
+        },
       ],
     },
-  ],
-  },
-];
+  ]
+};
+
+
+
+
+
+
+
 
 const testimonials = [
   {

@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { translations, navLinks, words, abilities, expCards, techStackIcons, projects } from '@/constants';
+import { translations, navLinks, words, abilities, expCards, techStackIcons, projects, projectDetailsCards } from '@/constants';
 
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -27,6 +27,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const currentExperience = expCards[language];
   const currentTechStackIcons = techStackIcons[language];
   const currentProjects = projects[language];
+  const currentProjectDetails = projectDetailsCards[language];
 
   return (
     <LanguageContext.Provider value={{ 
@@ -39,6 +40,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       expCards: currentExperience,
       techStackIcons: currentTechStackIcons,
       projects: currentProjects,
+      projectDetailsCards: currentProjectDetails,
     }}>
       {children}
     </LanguageContext.Provider>

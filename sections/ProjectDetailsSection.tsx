@@ -1,10 +1,10 @@
 'use client'
-import { projectDetailsCards } from "../constants"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import GlowCardDetails from "@/components/GlowCardDetails"
 import { useParams } from "next/navigation"
+import { useTranslation } from "@/hooks/useTranslation"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,16 +15,18 @@ function getSlug(param: string | string[] | undefined): string {
 }
 
 const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => {
-    
+    const { projectDetailsCards } = useTranslation();
     // Always call useParams
     const params = useParams();
     const paramSlug = getSlug(params?.slug);
 
     // Prefer staticSlug if provided, otherwise use paramSlug
     const slug = staticSlug || paramSlug;
-    const details = projectDetailsCards.find(p => p.slug === slug)?.cards;
+    const details = projectDetailsCards?.find(p => p.slug === slug)?.cards;
 
     useGSAP(() => {
+        if (!details) return; // Don't run animations if no details
+        
         gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
             gsap.from(card, {
                 xPercent: -100,
@@ -70,6 +72,11 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
         })
         
     }, [details] )
+
+    // Don't render if projectDetailsCards is not loaded yet
+    if (!projectDetailsCards || !details) {
+        return <div>Loading...</div>;
+    }
 
   return (
     <section id="experience" className="w-full md:mt-4 mt2 section-padding">
