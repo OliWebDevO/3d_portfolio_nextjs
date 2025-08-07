@@ -22,7 +22,7 @@ const Stable3DModel = React.memo(() => (
 Stable3DModel.displayName = 'Stable3DModel';
 
 const Hero = () => {
-    const { words, t } = useTranslation(); // Get translated words
+    const { words, t, isFrench } = useTranslation(); // Get translated words and language check
 
     useGSAP(() => {
         gsap.fromTo('.hero-text h1', 
@@ -43,6 +43,7 @@ return (
                     <div className="hero-text">
                         <h1>
                             {t.hero.shaping}
+                            {isFrench && <br className="md:hidden" />}
                             <span className="slide">
                                 <span className="wrapper">
                                     {words.map((word)=> (
@@ -61,18 +62,20 @@ return (
                         <h1>{t.hero.intoRealProjects}</h1>
                         <h1>{t.hero.deliverResults}</h1>
                     </div>
-                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none max-w-[50%]">
+                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
                         {t.hero.description}
                     </p>
                     <Button 
-                        className="md:w-80 md:h-16 w-60 h-12" 
+                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0" 
                         text={t.hero.buttonText}
                         href="#work"
                     />
                 </div>
             </header>
             {/* RIGHT : 3D MODEL */}
-            <Stable3DModel />
+            <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'top-32 md:top-24' : ''}`}>
+                <HeroExperience />
+            </div>
         </div>
     </section>
   )

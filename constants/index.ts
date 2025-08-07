@@ -89,7 +89,7 @@ const translations = {
       contact: "Contact"
     },
     hero: {
-      shaping: "Transformez vos ",
+      shaping: "Transformez vos",
       intoRealProjects: "En Projets Professionnels",
       deliverResults: "",
       description: "Bienvenue sur mon site. Je suis un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
