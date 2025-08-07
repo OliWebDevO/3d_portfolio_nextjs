@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import './effect-material.css';
 import './index.css';
 import Link from 'next/link';
@@ -47,7 +49,7 @@ export default function Slider() {
       const EffectMaterial = mod.default || mod;
       if (swiperRef.current) {
         swiperInstance = new Swiper(swiperRef.current, {
-          modules: [EffectMaterial],
+          modules: [EffectMaterial, Navigation],
           effect: 'material',
           materialEffect: {
             slideSplitRatio: 0.65,
@@ -57,6 +59,10 @@ export default function Slider() {
           centeredSlides: false,
           spaceBetween: 16,
           speed: 600,
+          navigation: {
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+          },
         } as unknown as SwiperOptions);
       }
     });
@@ -68,13 +74,34 @@ export default function Slider() {
   }, [slidesPerView]);
 
     return (
-    <section id="work" className=''>
+    <section id="work" className='relative'>
         <TitleHeader 
           title={t.slider.title} 
           sub={t.slider.subtitle} 
           cn=' pt-20 pb-14'  
         />
       <div className="demo-slider">
+        {/* Custom Navigation Arrows - positioned relative to slider */}
+        <div className="swiper-button-prev-custom">
+          <div className="arrow-nav-wrapper">
+            <img 
+              src="/images/arrow-right.svg" 
+              alt="Previous" 
+              className="arrow-nav-icon rotate-180"
+            />
+          </div>
+        </div>
+        
+        <div className="swiper-button-next-custom">
+          <div className="arrow-nav-wrapper">
+            <img 
+              src="/images/arrow-right.svg" 
+              alt="Next" 
+              className="arrow-nav-icon"
+            />
+          </div>
+        </div>
+
         <div className="swiper" ref={swiperRef}>
           <div className="swiper-wrapper">
             {images.map((img, idx) => (
