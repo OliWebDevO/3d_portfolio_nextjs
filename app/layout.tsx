@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Oliver Van Droogenbroeck | Web Developer",
   description: "Welcome to my portfolio website! I am Oliver Van Droogenbroeck, a web developer based in Belgium. Explore my projects, skills, and experiences. I am proficient in React, Next.js, and TypeScript, and I am passionate about creating innovative web solutions.",
+  keywords: ["web developer", "React", "Next.js", "TypeScript", "frontend developer", "Belgium", "freelance", "portfolio", "web design"],
+  authors: [{ name: "Oliver Van Droogenbroeck" }],
+  creator: "Oliver Van Droogenbroeck",
+  publisher: "Oliver Van Droogenbroeck",
   robots: "index, follow",
   metadataBase: new URL("https://www.olivervdb.com"),
   openGraph: {
