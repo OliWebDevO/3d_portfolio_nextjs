@@ -1,10 +1,8 @@
 'use client'
-import { useRef, useState } from "react";
+import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
-import emailjs from "@emailjs/browser";
 import TitleHeader from "../components/TitleHeader";
-// import ContactExperience from "../components/models/contact/ContactExperience";
 import dynamic from "next/dynamic";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -15,7 +13,6 @@ const ContactExperience = dynamic(
 
 const Contact = () => {
   const { t } = useTranslation();
-  const formRef = useRef<HTMLFormElement | null>(null);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -41,19 +38,20 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current as HTMLFormElement,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
 
-      // Reset form and stop loading
+      if (!response.ok) throw new Error('Failed to send');
+
+      // Reset form
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("Contact Error:", error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -68,7 +66,6 @@ const Contact = () => {
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
               <form
-                ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
               >
