@@ -10,7 +10,7 @@ const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
   <div className="flex-none flex-center marquee-item select-none" style={{ cursor: "grab" }}>
     <Image
       src={icon.imgPath}
-      alt={`Logo ${icon.id}`}
+      alt="Tech logo"
       width={100}
       height={100}
       draggable={false}
