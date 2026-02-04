@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import TitleHeader from "../components/TitleHeader";
@@ -21,6 +21,18 @@ const Contact = () => {
     message: "",
   });
   const [honeypot, setHoneypot] = useState("");
+
+  // Lock body scroll when popup is open
+  useEffect(() => {
+    if (showSuccess) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showSuccess]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -59,8 +71,14 @@ const Contact = () => {
     <>
       {/* Success Popup */}
       {showSuccess && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm">
-          <div className="bg-black-100 border border-black-50 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl">
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
+          onClick={() => setShowSuccess(false)}
+        >
+          <div
+            className="bg-black-100 border border-black-50 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
