@@ -1,74 +1,77 @@
 'use client'
 import { useEffect, useRef } from "react"
 import Lenis from "lenis"
+import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
-    const lenis = new Lenis({ lerp: 0.3, smoothWheel: true })
+    const lenis = new Lenis({
+      lerp: 0.12,
+      smoothWheel: true,
+      wheelMultiplier: 1.2,
+      syncTouch: true
+    })
     lenisRef.current = lenis
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
-
-    // Sync Lenis with ScrollTrigger
+    // Sync Lenis with GSAP ticker for smooth ScrollTrigger integration
     lenis.on('scroll', ScrollTrigger.update)
 
-    // --- Refresh Lenis & ScrollTrigger after all images are loaded ---
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+    gsap.ticker.lagSmoothing(0)
+
+    // Debounced refresh function
+    let refreshTimeout: NodeJS.Timeout
+    const debouncedRefresh = () => {
+      clearTimeout(refreshTimeout)
+      refreshTimeout = setTimeout(() => {
+        lenis.resize()
+        ScrollTrigger.refresh()
+      }, 150)
+    }
+
+    // --- Refresh after images load ---
     const images = Array.from(document.images)
     if (images.length) {
       let loaded = 0
+      const checkAllLoaded = () => {
+        loaded++
+        if (loaded === images.length) {
+          debouncedRefresh()
+        }
+      }
       images.forEach(img => {
         if (img.complete) {
-          loaded++
+          checkAllLoaded()
         } else {
-          img.addEventListener('load', () => {
-            loaded++
-            if (loaded === images.length) {
-              lenis.resize()
-              ScrollTrigger.refresh()
-            }
-          })
-          img.addEventListener('error', () => {
-            loaded++
-            if (loaded === images.length) {
-              lenis.resize()
-              ScrollTrigger.refresh()
-            }
-          })
+          img.addEventListener('load', checkAllLoaded)
+          img.addEventListener('error', checkAllLoaded)
         }
       })
-      if (loaded === images.length) {
-        lenis.resize()
-        ScrollTrigger.refresh()
-      }
-    } else {
-      lenis.resize()
-      ScrollTrigger.refresh()
     }
 
-    // --- Listen for 3D model loaded event and refresh Lenis & ScrollTrigger ---
-    const handleRoomLoaded = () => {
-      lenis.resize()
-      ScrollTrigger.refresh()
-    }
-    window.addEventListener("room-loaded", handleRoomLoaded)
+    // --- Listen for 3D model loaded events ---
+    window.addEventListener("room-loaded", debouncedRefresh)
+    window.addEventListener("model-loaded", debouncedRefresh)
 
-    // --- Fallback: refresh after a short timeout ---
-    const timeout = setTimeout(() => {
-      lenis.resize()
-      ScrollTrigger.refresh()
-    }, 1200)
+    // --- Fallback refreshes for async content ---
+    const timeouts = [500, 1500, 3500].map(delay =>
+      setTimeout(debouncedRefresh, delay)
+    )
 
     // Cleanup
     return () => {
-      window.removeEventListener("room-loaded", handleRoomLoaded)
-      clearTimeout(timeout)
+      clearTimeout(refreshTimeout)
+      timeouts.forEach(clearTimeout)
+      window.removeEventListener("room-loaded", debouncedRefresh)
+      window.removeEventListener("model-loaded", debouncedRefresh)
+      gsap.ticker.remove(lenis.raf)
       lenis.destroy()
     }
   }, [])

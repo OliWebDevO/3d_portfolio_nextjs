@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Image from "next/image";
 import TitleHeader from "@/components/TitleHeader";
 import { logoIconsList } from "../constants";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -7,9 +8,11 @@ import { useTranslation } from "@/hooks/useTranslation";
 const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
 
   <div className="flex-none flex-center marquee-item select-none" style={{ cursor: "grab" }}>
-    <img
+    <Image
       src={icon.imgPath}
-      alt={icon.imgPath}
+      alt={`Logo ${icon.id}`}
+      width={100}
+      height={100}
       draggable={false}
       onDragStart={e => e.preventDefault()}
     />

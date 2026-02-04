@@ -73,8 +73,6 @@ export const metadata: Metadata = {
     title: "Oliver Van Droogenbroeck | Frontend Developer Belgium",
     description: "Frontend web developer specializing in React, Next.js & TypeScript. Based in Belgium. View my portfolio of modern web applications and interactive projects.",
     images: ["/images/portfolioCover.png"],
-    creator: "@your_twitter_handle", // Add your Twitter handle if you have one
-    site: "@your_twitter_handle",
   },
   icons: {
     icon: "/fav.png",
@@ -101,6 +99,9 @@ export default function RootLayout({
         <meta name="rating" content="general" />
         <meta name="revisit-after" content="7 days" />
         <link rel="canonical" href="https://www.olivervdb.com" />
+        <link rel="alternate" hrefLang="en" href="https://www.olivervdb.com" />
+        <link rel="alternate" hrefLang="fr" href="https://www.olivervdb.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.olivervdb.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script

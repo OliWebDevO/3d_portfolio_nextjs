@@ -1,46 +1,72 @@
 'use client'
-import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei"
+import { Environment, Float, OrbitControls, useGLTF, Preload } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { useEffect } from "react"
+import { useEffect, useState, Suspense } from "react"
 import * as THREE from "three"
 
-const TechIcon = ({model} : ModelType) => {
+const Model = ({ model }: ModelType) => {
+  const scene = useGLTF(model.modelPath)
 
-    const scene = useGLTF(model.modelPath)
+  useEffect(() => {
+    // Dispatch event when model loads for ScrollTrigger refresh
+    window.dispatchEvent(new Event('model-loaded'));
 
-    useEffect(()=> {
-        if(model.name === 'Interactive Developer')  {
-            scene.scene.traverse((child) => {
-               if (
-                  child instanceof THREE.Mesh &&
-                  child.name === 'Object_5'
-                ) {
-                    child.material = new THREE.MeshStandardMaterial({
-                        color : 'white',
-                    })
-                }
-            })
+    if (model.name === 'Interactive Developer') {
+      scene.scene.traverse((child) => {
+        if (
+          child instanceof THREE.Mesh &&
+          child.name === 'Object_5'
+        ) {
+          child.material = new THREE.MeshStandardMaterial({
+            color: 'white',
+          })
         }
-    }, [scene, model.name])
-
+      })
+    }
+  }, [scene, model.name])
 
   return (
-   <Canvas>
-    <ambientLight intensity={0.3} />
-    <directionalLight position={[5, 5, 5]} intensity={1} />
-    <OrbitControls enableZoom={false} />
-    <Environment preset="city" />
     <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
-        <group>
-            <primitive
-                object={scene.scene}
-                scale={model.scale}
-                rotation={model.rotation}
-                position={[0, 0, 0]}
-            />
-        </group>
+      <group>
+        <primitive
+          object={scene.scene}
+          scale={model.scale}
+          rotation={model.rotation}
+          position={[0, 0, 0]}
+        />
+      </group>
     </Float>
-   </Canvas>
+  )
+}
+
+const TechIcon = ({ model }: ModelType) => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return <div style={{ width: '100%', height: '100%', minHeight: '200px' }} />
+  }
+
+  return (
+    <Canvas
+      style={{ width: '100%', height: '100%' }}
+      gl={{ preserveDrawingBuffer: true }}
+      onCreated={({ gl }) => {
+        gl.setClearColor('#000000', 0)
+      }}
+    >
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.3} />
+        <directionalLight position={[5, 5, 5]} intensity={1} />
+        <OrbitControls enableZoom={false} />
+        <Environment preset="city" />
+        <Model model={model} />
+        <Preload all />
+      </Suspense>
+    </Canvas>
   )
 }
 

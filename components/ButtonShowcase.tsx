@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 type ButtonProps = {
   className?: string;
   id?: string;
@@ -22,7 +24,7 @@ const ButtonShowcase = ({ className, text, onClick, children }: ButtonProps) => 
         <div className='bg-circle' />
         <p className='text'>{children ?? text}</p>
         <div className='arrow-wrapper'>
-          <img src="/images/arrow-down.svg" width={30} height={30} alt="arrow" />
+          <Image src="/images/arrow-down.svg" width={30} height={30} alt="arrow" />
         </div>
       </div>
     </a>

@@ -1,6 +1,7 @@
 'use client'
 import { useRef, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
+import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import TitleHeader from "../components/TitleHeader";
 // import ContactExperience from "../components/models/contact/ContactExperience";
@@ -21,6 +22,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState(""); // Spam protection
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,7 +31,14 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+
+    // Spam protection - if honeypot is filled, silently reject
+    if (honeypot) {
+      setForm({ name: "", email: "", message: "" });
+      return;
+    }
+
+    setLoading(true);
 
     try {
       await emailjs.sendForm(
@@ -63,6 +72,18 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
               >
+                {/* Honeypot field - hidden from users, catches bots */}
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="name">{t.contact.name}</label>
                   <input
@@ -109,7 +130,7 @@ const Contact = () => {
                       {loading ? t.contact.sending : t.contact.send}
                     </p>
                     <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
+                      <Image src="/images/arrow-down.svg" alt="arrow" width={24} height={24} />
                     </div>
                   </div>
                 </button>

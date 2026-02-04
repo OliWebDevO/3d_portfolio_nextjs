@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -88,7 +89,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                            <div className="xl:w-2/6">
                                 <GlowCardDetails index={index}>
                                     <div>
-                                        <img className="rounded-lg" src={card.imgPath} alt={card.imgPath} />
+                                        <Image className="rounded-lg" src={card.imgPath} alt={card.imgPath} width={400} height={300} />
                                     </div>
                                 </GlowCardDetails>
                             </div>
@@ -100,7 +101,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
-                                            <img src={card.logoPath} alt="logo" />
+                                            <Image src={card.logoPath} alt="logo" width={60} height={60} />
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>

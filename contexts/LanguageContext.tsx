@@ -10,8 +10,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') as Language;
+
     if (savedLanguage && ['en', 'fr'].includes(savedLanguage)) {
+      // User has a saved preference, use it
       setLanguage(savedLanguage);
+    } else {
+      // First visit: detect browser language
+      const browserLang = navigator.language.toLowerCase();
+      const detectedLang: Language = browserLang.startsWith('fr') ? 'fr' : 'en';
+      setLanguage(detectedLang);
+      localStorage.setItem('language', detectedLang);
     }
   }, []);
 
@@ -21,7 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = translations[language];
-  const currentNavLinks = navLinks[language]; 
+  const currentNavLinks = navLinks[language];
   const currentWords = words[language];
   const currentAbilities = abilities[language];
   const currentExperience = expCards[language];
@@ -30,9 +38,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const currentProjectDetails = projectDetailsCards[language];
 
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage: handleSetLanguage, 
+    <LanguageContext.Provider value={{
+      language,
+      setLanguage: handleSetLanguage,
       t,
       navLinks: currentNavLinks,
       words: currentWords,

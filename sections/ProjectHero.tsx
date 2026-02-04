@@ -1,5 +1,6 @@
 // sections/ProjectHero.tsx
 'use client'
+import Image from "next/image";
 import { useParams } from "next/navigation";
 // Remove this line: import { projects } from "@/constants";
 import { useTranslation } from "@/hooks/useTranslation"; // Add this
@@ -60,7 +61,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
     <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
       <div className="showcaselayout flex flex-col md:flex-row gap-10">
         <div className="image-wrapper group relative overflow-hidden rounded-xl" style={{ background: project.bg }}>
-          <img
+          <Image
             src={project.image}
             alt={project.title}
             width={600}
@@ -71,7 +72,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
         <div className="text-content flex flex-col justify-center gap-4">
           <div className="tech-logos flex gap-4 mb-3">
             {project.techLogos && project.techLogos.map((logo, idx) => (
-              <img
+              <Image
                 key={logo}
                 src={logo}
                 alt={`Tech logo ${idx + 1}`}

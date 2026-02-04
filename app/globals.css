@@ -167,13 +167,13 @@ section {
       @apply flex xl:flex-row flex-col gap-10 justify-between;
     }
     .first-project-wrapper .image-wrapper {
-        @apply flex items-center justify-center overflow-hidden rounded-xl relative 3xl:h-[58vh] xxl:h-[59vh] xl:h-[55vh] md:h-[40vh] h-[35vh] xl:px-5 2xl:px-5 py-0 px-2;
-      } 
+        @apply inline-flex items-center justify-center overflow-hidden rounded-xl relative p-2 md:p-3 xl:p-4 w-full;
+      }
     .first-project-wrapper {
       @apply h-full flex flex-col justify-between xl:w-[60%];
 
        .main-img {
-        @apply w-full h-fit object-cover object-center rounded-xl;
+        @apply w-full h-auto object-contain object-center rounded-xl;
       }
 
       .text-content {
@@ -193,10 +193,10 @@ section {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
         .image-wrapper {
-        @apply flex items-center justify-center overflow-hidden rounded-xl relative xxl:h-[37vh] xl:h-[35vh] md:h-52 lg:h-72 h-[32vh] xl:px-2 2xl:px-5 py-0 px-2;
+        @apply inline-flex items-center justify-center overflow-hidden rounded-xl relative p-2 md:p-3 xl:p-4 w-full;
       }
       .main-img {
-        @apply w-full h-fit object-cover object-center rounded-xl;
+        @apply w-full h-auto object-contain object-center rounded-xl;
       }
 
       h2 {

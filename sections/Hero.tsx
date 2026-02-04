@@ -1,6 +1,7 @@
 // sections/Hero.tsx
 'use client'
 import React from "react";
+import Image from "next/image";
 import Button from "../components/Button"
 import { useTranslation } from "@/hooks/useTranslation"
 import { useGSAP } from "@gsap/react"
@@ -34,7 +35,7 @@ const Hero = () => {
 return (
     <section id="hero" className="relative overflow-hidden 3xl:px-20 2xl:px-10 xl:px-6">
         <div className="absolute top-0 left-0 z-10">
-            <img src="/images/bg.png" alt="background" />
+            <Image src="/images/bg.png" alt="background" width={1920} height={1080} priority />
         </div>
         <div className="hero-layout">
             {/* LEFT : CONTENT */}
@@ -48,9 +49,11 @@ return (
                                 <span className="wrapper">
                                     {words.map((word)=> (
                                         <span key={word.id} className="flex items-center md:gap-3 gap-1 pb-2">
-                                            <img
+                                            <Image
                                                 src={word.imgPath}
                                                 alt={word.text}
+                                                width={48}
+                                                height={48}
                                                 className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                                             />
                                             <span>{word.text}</span>
@@ -73,7 +76,7 @@ return (
                 </div>
             </header>
             {/* RIGHT : 3D MODEL */}
-            <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'top-32 md:top-24' : ''}`}>
+            <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'max-md:top-32' : ''}`}>
                 <HeroExperience />
             </div>
         </div>

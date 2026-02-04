@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -84,9 +85,11 @@ export default function Slider() {
         {/* Custom Navigation Arrows - positioned relative to slider */}
         <div className="swiper-button-prev-custom">
           <div className="arrow-nav-wrapper">
-            <img 
-              src="/images/arrow-right.svg" 
-              alt="Previous" 
+            <Image
+              src="/images/arrow-right.svg"
+              alt="Previous"
+              width={24}
+              height={24}
               className="arrow-nav-icon rotate-180"
             />
           </div>
@@ -94,9 +97,11 @@ export default function Slider() {
         
         <div className="swiper-button-next-custom">
           <div className="arrow-nav-wrapper">
-            <img 
-              src="/images/arrow-right.svg" 
-              alt="Next" 
+            <Image
+              src="/images/arrow-right.svg"
+              alt="Next"
+              width={24}
+              height={24}
               className="arrow-nav-icon"
             />
           </div>

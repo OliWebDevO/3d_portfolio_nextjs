@@ -1,5 +1,3 @@
-'use client'
-
 const TitleHeader = ({title, sub, cn} : TitleHeaderProps) => {
   return (
     <div className={`flex flex-col items-center gap-5 ${cn}`}>

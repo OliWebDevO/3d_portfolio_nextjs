@@ -1,135 +1,80 @@
 'use client'
+import Image from "next/image"
 import GlowCard from "../components/GlowCard"
 import TitleHeader from "../components/TitleHeader"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useTranslation } from "@/hooks/useTranslation"
-import { useEffect } from "react"
+import { useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const ExperienceSection = () => {
-  const { t, expCards, locale } = useTranslation(); // Add locale to track language changes
+  const { t, expCards, locale } = useTranslation();
+  const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    // Responsive ScrollTrigger 
-    ScrollTrigger.matchMedia({
-      // Desktop
-      "(min-width: 768px)": function() {
-        gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
-          gsap.from(card, {
-            xPercent: -100,
-            opacity: 0,
-            transformOrigin: 'left left',
-            duration: 1,
-            ease: 'power2.inOut',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse',
-            }
-          });
-        });
+    if (!sectionRef.current) return;
 
-        gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
-          gsap.from(text, {
-            xPercent: 0,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-            scrollTrigger: {
-              trigger: text,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse',
-            }
-          });
-        });
-
-        gsap.to('.timeline', {
-          transformOrigin: 'bottom bottom',
-          ease: 'power1.inOut',
+    const ctx = gsap.context(() => {
+      // Cards animation
+      gsap.utils.toArray<HTMLElement>('.exp-timeline-card').forEach((card) => {
+        gsap.from(card, {
+          xPercent: -100,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.inOut',
           scrollTrigger: {
-            trigger: '.timeline',
-            start: 'top center',
-            end: '70% center',
-            scrub: true,
-            onUpdate: (self) => {
-              gsap.to('.timeline', {
-                scaleY: 1 - self.progress,
-              })
-            }
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
           }
         });
-      },
-      // Mobile
-      "(max-width: 767px)": function() {
-        gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
-          gsap.from(card, {
-            xPercent: -100,
-            opacity: 0,
-            transformOrigin: 'left left',
-            duration: 1,
-            ease: 'power2.inOut',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse',
-            }
-          });
-        });
+      });
 
-        gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
-          gsap.from(text, {
-            xPercent: 0,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-            scrollTrigger: {
-              trigger: text,
-              start: 'top 60%',
-              toggleActions: 'play none none reverse',
-            }
-          });
-        });
-
-        gsap.to('.timeline', {
-          transformOrigin: 'bottom bottom',
-          ease: 'power1.inOut',
+      // Text animation
+      gsap.utils.toArray<HTMLElement>('.exp-text').forEach((text) => {
+        gsap.from(text, {
+          opacity: 0,
+          y: 30,
+          duration: 1,
+          ease: 'power2.inOut',
           scrollTrigger: {
-            trigger: '.timeline',
-            start: 'top center',
-            end: '70% center',
-            scrub: true,
-            onUpdate: (self) => {
-              gsap.to('.timeline', {
-                scaleY: 1 - self.progress,
-              })
-            }
+            trigger: text,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
           }
         });
-      }
-    });
-  }, [locale]); // Add locale as dependency
+      });
 
-  // Refresh ScrollTrigger when language changes
-  useEffect(() => {
-    const refreshTimeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100); // Small delay to allow DOM to update
+      // Timeline (black background) - shrinks as you scroll
+      gsap.to('.timeline', {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true,
+        },
+        scaleY: 0,
+        transformOrigin: 'bottom center',
+        ease: 'none',
+      });
 
-    return () => clearTimeout(refreshTimeout);
-  }, [locale, expCards]); // Trigger when language or content changes
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [locale]);
 
   return (
-    <section id="experience" className="w-full section-padding">
+    <section id="experience" ref={sectionRef} className="w-full section-padding">
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader title={t.experience.title} sub={t.experience.subtitle} cn="mb-28"/>
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {expCards.map((card, index) => (
-                        <div key={`${card.title}-${locale}`} className="exp-card-wrapper"> {/* Add locale to key */}
-                           <div className="xl:w-2/6">
+                        <div key={`${card.title}-${locale}`} className="exp-card-wrapper">
+                           <div className="xl:w-2/6 exp-timeline-card">
                                 <GlowCard card={card} index={index}>
                                 </GlowCard>
                             </div>
@@ -137,11 +82,11 @@ const ExperienceSection = () => {
                                 <div className="flex items-start">
                                     <div className="timeline-wrapper">
                                         <div className="timeline"/>
-                                        <div className="gradient-line w-1 h-full"/> 
+                                        <div className="gradient-line w-1 h-full"/>
                                     </div>
-                                    <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
+                                    <div className="exp-text flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
-                                            <img src={card.logoPath} alt="logo" />
+                                            <Image src={card.logoPath} alt="logo" width={60} height={60} />
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>
