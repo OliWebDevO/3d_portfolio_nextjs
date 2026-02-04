@@ -177,6 +177,9 @@ interface ContactTranslations {
   message: string;
   send: string;
   sending: string;
+  successTitle: string;
+  successMessage: string;
+  close: string;
 }
 interface ProjectPageTranslations {
   visitProject: string;

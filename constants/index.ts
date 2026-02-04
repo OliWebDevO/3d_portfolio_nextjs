@@ -78,7 +78,10 @@ const translations = {
       email: "Email",
       message: "Message",
       send: "Send",
-      sending: "Sending..."
+      sending: "Sending...",
+      successTitle: "Message Sent!",
+      successMessage: "Thank you for reaching out. I'll get back to you as soon as possible.",
+      close: "Close"
     },
     projectpage: {
       visitProject: "Visit Project"
@@ -145,7 +148,10 @@ const translations = {
       email: "Email",
       message: "Message",
       send: "Envoyer",
-      sending: "Envoi en cours..."
+      sending: "Envoi en cours...",
+      successTitle: "Message Envoyé !",
+      successMessage: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+      close: "Fermer"
     },
     projectpage: {
       visitProject: "Visiter le projet"
