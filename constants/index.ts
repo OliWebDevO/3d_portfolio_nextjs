@@ -318,7 +318,7 @@ const expCards = {
       review:
         "Through those projects, I have developed strong technical skills and adaptability across modern stacks. My work is composed of web apps, portfolio sites, and client platforms, always with a focus on quality and user experience.",
       imgPath: "/images/exp1.png",
-      logoPath: "/images/asset1.png",
+      logoPath: "/images/Asset1.png",
       title: "Freelance Web Developer",
       date: "2024 – 2025",
       responsibilities: [
@@ -331,7 +331,7 @@ const expCards = {
       review:
         "During my training at DigitalCity, I built a solid foundation in frontend development, mastering modern tools and frameworks while delivering real-world projects.",
       imgPath: "/images/exp2.png",
-      logoPath: "/images/asset2.png",
+      logoPath: "/images/Asset2.png",
       title: "Front End Development Training",
       date: "2023 – 2024",
       responsibilities: [
@@ -344,7 +344,7 @@ const expCards = {
       review:
         "My working holiday in Australia helped me foster strong soft skills and adaptability, enriching my professional and personal growth through diverse experiences.",
       imgPath: "/images/exp3.png",
-      logoPath: "/images/asset3.png",
+      logoPath: "/images/Asset3.png",
       title: "Working Holiday & Soft Skills Development",
       date: "2019 – 2022",
       responsibilities: [
@@ -359,7 +359,7 @@ const expCards = {
       review:
         "À travers ces projets, j'ai développé de solides compétences techniques et une adaptabilité à travers les stacks modernes. Mon travail est composé d'applications web, de sites portfolio et de plateformes clients, toujours avec un focus sur la qualité et l'expérience utilisateur.",
       imgPath: "/images/exp1.png",
-      logoPath: "/images/asset1.png",
+      logoPath: "/images/Asset1.png",
       title: "Développeur Web Freelance",
       date: "2024 – 2025",
       responsibilities: [
@@ -372,7 +372,7 @@ const expCards = {
       review:
         "Pendant ma formation à DigitalCity, j'ai construit une base solide en développement frontend, maîtrisant les outils et frameworks modernes tout en livrant des projets concrets.",
       imgPath: "/images/exp2.png",
-      logoPath: "/images/asset2.png",
+      logoPath: "/images/Asset2.png",
       title: "Formation Développement Front End",
       date: "2023 – 2024",
       responsibilities: [
@@ -385,7 +385,7 @@ const expCards = {
       review:
         "Mon working holiday en Australie m'a aidé à développer de solides soft skills et une adaptabilité, enrichissant ma croissance professionnelle et personnelle à travers diverses expériences.",
       imgPath: "/images/exp3.png",
-      logoPath: "/images/asset3.png",
+      logoPath: "/images/Asset3.png",
       title: "Working Holiday & Développement des Soft Skills",
       date: "2019 – 2022",
       responsibilities: [
@@ -701,7 +701,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/library.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "BookWise: University Library Management System",
           details: [
             "BookWise is a comprehensive library management system built with Next.js and TypeScript, designed to streamline book management for universities and libraries.",
@@ -711,7 +711,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/library3.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Front End Technologies",
           details: [
             "Built with Next.js and TypeScript for scalable, maintainable development.",
@@ -721,7 +721,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/library2.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Back End Technologies",
           details: [
             "PostgreSQL with Neon powers scalable and collaborative database management.",
@@ -738,7 +738,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/ag1.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "A social platform for artists",
           details: [
             "This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.",
@@ -747,7 +747,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/artg1.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Front End Technologies",
           details: [
             "React Router Dom handles routing, navigation, and links.",
@@ -759,7 +759,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/ag3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Back End Technologies",
           details: [
             "Nodemon is used for server monitoring.",
@@ -778,7 +778,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/portfolioCover.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Animated Portfolio Website",
           details: [
             "This portfolio website was designed and developed to showcase my work, skills, and experience as a front-end developer.",
@@ -787,7 +787,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/portfolioCover2.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Front End Technologies",
           details: [
             "Built with Next.js and React for fast, SEO-friendly rendering.",
@@ -798,7 +798,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/portfolioCover3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Contact Me",
           details: [
             "Interested in working together or have a project in mind?",
@@ -814,7 +814,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/lenoyer1.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Medical Center Le Noyer",
           details: [
             "A minimalist, elegant, and functional website",
@@ -823,7 +823,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/lenoyer2.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "All the informations in a few clicks",
           details: [
             "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
@@ -832,7 +832,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/lenoyer3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "A responsive and user-friendly design",
           details: [
             "The site uses various plugins:",
@@ -848,7 +848,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/annick2.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "A professional painter's website",
           details: [
             "A window into the artist's world",
@@ -857,7 +857,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/annick3.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "A modern and visually engaging interface",
           details: [
             "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
@@ -866,7 +866,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/annick4.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Plugins and Features",
           details: [
             "To create this website, various plugins are used:",
@@ -885,7 +885,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/library.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "BookWise: Système de Gestion de Bibliothèque Universitaire",
           details: [
             "BookWise est un système complet de gestion de bibliothèque construit avec Next.js et TypeScript, conçu pour simplifier la gestion des livres pour les universités et bibliothèques.",
@@ -895,7 +895,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/library3.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Technologies Front End",
           details: [
             "Construit avec Next.js et TypeScript pour un développement évolutif et maintenable.",
@@ -905,7 +905,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/library2.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Technologies Back End",
           details: [
             "PostgreSQL avec Neon alimente la gestion de base de données évolutive et collaborative.",
@@ -922,7 +922,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/ag1.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Une plateforme sociale pour artistes",
           details: [
             "Cette application web est le résultat de mon projet final à Digital City. Le frontend est construit avec React, tandis que le backend est construit avec Node & Express. Les informations utilisateur sont stockées dans une base de données MySQL.",
@@ -931,7 +931,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/artg1.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Technologies Front End",
           details: [
             "React Router Dom gère le routage, la navigation et les liens.",
@@ -943,7 +943,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/ag3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Technologies Back End",
           details: [
             "Nodemon est utilisé pour la surveillance du serveur.",
@@ -962,7 +962,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/portfolioCover.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Site Web Portfolio Animé",
           details: [
             "Ce site web portfolio a été conçu et développé pour présenter mon travail, mes compétences et mon expérience en tant que développeur front-end.",
@@ -971,7 +971,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/portfolioCover2.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Technologies Front End",
           details: [
             "Construit avec Next.js et React pour un rendu rapide et optimisé pour le SEO.",
@@ -982,7 +982,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/portfolioCover3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Contactez-moi",
           details: [
             "Intéressé par une collaboration ou avez-vous un projet en tête ?",
@@ -998,7 +998,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/lenoyer1.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Centre Médical Le Noyer",
           details: [
             "Un site web minimaliste, élégant et fonctionnel",
@@ -1007,7 +1007,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/lenoyer2.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Toutes les informations en quelques clics",
           details: [
             "Le site web résume la gamme de services de santé offerts par le centre médical à travers 7 onglets : Accueil, Comment ça marche, Services, Activités, Équipe, Journal et Contact & Accès.",
@@ -1016,7 +1016,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/lenoyer3.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Un design responsive et convivial",
           details: [
             "Le site utilise divers plugins :",
@@ -1032,7 +1032,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/annick2.png",
-          logoPath: "/images/asset1.png",
+          logoPath: "/images/Asset1.png",
           title: "Site web d'une peintre professionnelle",
           details: [
             "Une fenêtre sur le monde de l'artiste",
@@ -1041,7 +1041,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/annick3.png",
-          logoPath: "/images/asset2.png",
+          logoPath: "/images/Asset2.png",
           title: "Une interface moderne et visuellement engageante",
           details: [
             "Le site web offre une fenêtre sur le monde d'Annick Van Endert, présentant ses peintures, sculptures et art du tatouage à travers une interface moderne et visuellement engageante.",
@@ -1050,7 +1050,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/annick4.png",
-          logoPath: "/images/asset3.png",
+          logoPath: "/images/Asset3.png",
           title: "Plugins et Fonctionnalités",
           details: [
             "Pour créer ce site web, divers plugins sont utilisés :",
