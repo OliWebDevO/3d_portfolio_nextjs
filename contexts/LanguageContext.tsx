@@ -12,10 +12,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const savedLanguage = localStorage.getItem('language') as Language;
 
     if (savedLanguage && ['en', 'fr'].includes(savedLanguage)) {
-      // User has a saved preference, use it
       setLanguage(savedLanguage);
     } else {
-      // First visit: detect browser language
       const browserLang = navigator.language.toLowerCase();
       const detectedLang: Language = browserLang.startsWith('fr') ? 'fr' : 'en';
       setLanguage(detectedLang);
