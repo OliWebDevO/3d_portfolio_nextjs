@@ -150,7 +150,7 @@ const translations = {
       send: "Envoyer",
       sending: "Envoi en cours...",
       successTitle: "Message Envoyé !",
-      successMessage: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+      successMessage: "Je vous répondrai dans les plus brefs délais.",
       close: "Fermer"
     },
     projectpage: {
