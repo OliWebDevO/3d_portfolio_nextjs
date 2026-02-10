@@ -143,7 +143,8 @@ interface ShowcaseTranslations {
 
 
 interface ProjectsTranslations {
-  library: ProjectTranslations;
+  "ovni-compta": ProjectTranslations;
+  fanal: ProjectTranslations;
   artgallery: ProjectTranslations;
   portfolio: ProjectTranslations;
   lenoyer: ProjectTranslations;

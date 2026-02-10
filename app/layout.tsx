@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Oliver Van Droogenbroeck | Frontend Web Developer | React & Next.js Expert Belgium",
-  description: "Portfolio of Oliver Van Droogenbroeck, a freelance frontend web developer based in Belgium specializing in React, Next.js, TypeScript, and modern web development. View my projects including library management systems, art galleries, and responsive websites.",
+  description: "Portfolio of Oliver Van Droogenbroeck, a freelance frontend web developer based in Belgium specializing in React, Next.js, TypeScript, and modern web development. View my projects including custom web apps, art galleries, and responsive websites.",
   keywords: [
     "développeur",
     "développeur web",
@@ -85,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistSans.variable}>
+    <html lang="en" data-scroll-behavior="smooth" className={geistSans.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />

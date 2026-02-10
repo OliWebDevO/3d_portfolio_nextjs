@@ -13,7 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/projects/library`,
+      url: `${baseUrl}/projects/ovni-compta`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/fanal`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

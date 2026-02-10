@@ -56,9 +56,10 @@ const ShowcaseSection = () => {
   };
   }, []);
 
-  // Split projects for layout: first two on left, others stacked right
-  const leftProjects = projects.slice(0, 2);
-  const rightProjects = projects.slice(2);
+  // Show only first 5 projects, split for layout: first two on left, others stacked right
+  const showcaseProjects = projects.slice(0, 5);
+  const leftProjects = showcaseProjects.slice(0, 2);
+  const rightProjects = showcaseProjects.slice(2);
 
   return (
     <>

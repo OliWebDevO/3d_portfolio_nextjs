@@ -37,9 +37,13 @@ const translations = {
       subtitle: "Take a deeper dive"
     },
     projects: {
-      library: {
-        title: "BookWise : A library management system",
-        description: "Streamlining book management for libraries"
+      "ovni-compta": {
+        title: "OVNI Compta : Custom accounting app for a Belgian NGO",
+        description: "A tailor-made web app to manage finances, members, and projects"
+      },
+      fanal: {
+        title: "Le Fanal des Chats : Custom platform for an animal shelter",
+        description: "A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations"
       },
       artgallery: {
         title: "Art Gallery : A social platform for artists",
@@ -99,7 +103,7 @@ const translations = {
       buttonText: "Mes Projets"
     },
     slider: {
-      title: "Swipez pour parcourir les projets",
+      title: "Découvrez mes projets",
       subtitle: "Aperçu rapide des projets"
     },
     showcase: {
@@ -107,9 +111,13 @@ const translations = {
       subtitle: "Une plongée dans mes projets"
     },
     projects: {
-      library: {
-        title: "BookWise : Système de gestion de bibliothèque",
-        description: "Faciliter la gestion des livres au sein d'une bibliothèque universitaire"
+      "ovni-compta": {
+        title: "OVNI Compta : Application comptable sur mesure pour ASBL",
+        description: "Une application web sur mesure pour gérer finances, membres et projets"
+      },
+      fanal: {
+        title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge animalier",
+        description: "Une plateforme WordPress complète avec quiz, formulaires multi-étapes, blog et dons en ligne"
       },
       artgallery: {
         title: "Art Gallery : Plateforme sociale pour artistes",
@@ -326,9 +334,11 @@ const expCards = {
       imgPath: "/images/exp1.png",
       logoPath: "/images/Asset1.png",
       title: "Freelance Web Developer",
-      date: "2024 – 2025",
+      date: "2024 – 2026",
       responsibilities: [
-        "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), and a personal portfolio (Next.js, React, GSAP).",
+        "Built OVNI Compta, a custom accounting web app for a Belgian NGO (Next.js, React, TypeScript, Supabase, Tailwind CSS).",
+        "Developed Le Fanal des Chats, a full-featured WordPress platform for an animal shelter with interactive quizzes, multi-step forms, blog, and online donations.",
+        "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5) and a personal portfolio (Next.js, React, GSAP).",
         "Built and deployed client websites such as annickvanendert.com and lenoyer.be using WordPress, HTML, CSS, and JavaScript.",
         "Managed all aspects of project delivery: design translation, frontend and backend development, deployment, and client communication.",
       ],
@@ -367,9 +377,11 @@ const expCards = {
       imgPath: "/images/exp1.png",
       logoPath: "/images/Asset1.png",
       title: "Développeur Web Freelance",
-      date: "2024 – 2025",
+      date: "2024 – 2026",
       responsibilities: [
-        "Développement d'applications web full-stack incluant Art Gallery (React, SQL, Node.js, Express, MUI5), University Library (React, Next.js, PostgreSQL), et un portfolio personnel (Next.js, React, GSAP).",
+        "Développement d'OVNI Compta, une application web comptable sur mesure pour une ASBL belge (Next.js, React, TypeScript, Supabase, Tailwind CSS).",
+        "Développement du Fanal des Chats, une plateforme WordPress complète pour un refuge animalier avec quiz interactifs, formulaires multi-étapes, blog et dons en ligne.",
+        "Développement d'applications web full-stack incluant Art Gallery (React, SQL, Node.js, Express, MUI5) et un portfolio personnel (Next.js, React, GSAP).",
         "Construction et déploiement de sites clients tels que annickvanendert.com et lenoyer.be en utilisant WordPress, HTML, CSS et JavaScript.",
         "Gestion de tous les aspects de livraison de projet : traduction de design, développement frontend et backend, déploiement et communication client.",
       ],
@@ -535,31 +547,60 @@ const expLogos = [
 const projects = {
   en: [
     {
-      slug: "library",
-      title: "BookWise : A library management system",
-      description: "Streamlining book management for libraries",
-      image: "/images/library1.png",
-      link: "https://university-library-v2-nu.vercel.app/",
+      slug: "lenoyer",
+      title: "Le Noyer : Medical center website",
+      description: "A minimalist, elegant, and functional website",
+      image: "/images/lenoyer1.png",
+      link: "https://lenoyer.be",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "white",
+    },
+    {
+      slug: "ovni-compta",
+      title: "OVNI Compta : Custom accounting app for a Belgian NGO",
+      description: "A tailor-made web app to manage finances, members, and projects",
+      image: "/images/asbl_ovni/ovni_dashboard.png",
+      link: "https://www.asbl-ovni.com/",
       techLogos: [
         "/images/logos/nextjs.png",
         "/images/logos/react.png",
-        "/images/logos/node.png",
+        "/images/logos/tailwind.png",
         "/images/logos/postgresql.png",
       ],
       bg: "#ffefdb",
     },
     {
-      slug: "artgallery",
-      title: "Art Gallery : A social platform for artists",
-      description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
-      image: "/images/ag2.png",
-      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
+      slug: "fanal",
+      title: "Le Fanal des Chats : Custom platform for an animal shelter",
+      description: "A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations",
+      image: "/images/fanal_des_chats/fanal_home.png",
+      link: "https://versiontest.site/",
       techLogos: [
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/sql.png",
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
       ],
-      bg: "#1c1c21",
+      bg: "#ffefdb",
+    },
+    {
+      slug: "annick",
+      title: "Annick Van Endert : Artist's website",
+      description: "A window into the paintress's world.",
+      image: "/images/annick1.png",
+      link: "https://annickvanendert.com",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "#ffefdb",
     },
     {
       slug: "portfolio",
@@ -576,9 +617,24 @@ const projects = {
       bg: "#ffefdb",
     },
     {
+      slug: "artgallery",
+      title: "Art Gallery : A social platform for artists",
+      description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
+      image: "/images/ag2.png",
+      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
+      techLogos: [
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/sql.png",
+      ],
+      bg: "#1c1c21",
+    },
+  ],
+  fr: [
+    {
       slug: "lenoyer",
-      title: "Le Noyer : Medical center website",
-      description: "A minimalist, elegant, and functional website",
+      title: "Le Noyer : Site web du centre médical",
+      description: "Un site web minimaliste, élégant et fonctionnel",
       image: "/images/lenoyer1.png",
       link: "https://lenoyer.be",
       techLogos: [
@@ -590,9 +646,37 @@ const projects = {
       bg: "white",
     },
     {
+      slug: "ovni-compta",
+      title: "OVNI Compta : Application comptable sur mesure pour ASBL",
+      description: "Une application web sur mesure pour gérer finances, membres et projets",
+      image: "/images/asbl_ovni/ovni_dashboard.png",
+      link: "https://www.asbl-ovni.com/",
+      techLogos: [
+        "/images/logos/nextjs.png",
+        "/images/logos/react.png",
+        "/images/logos/tailwind.png",
+        "/images/logos/postgresql.png",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "fanal",
+      title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge animalier",
+      description: "Une plateforme WordPress complète avec quiz, formulaires multi-étapes, blog et dons en ligne",
+      image: "/images/fanal_des_chats/fanal_home.png",
+      link: "https://versiontest.site/",
+      techLogos: [
+        "/images/logos/html.png",
+        "/images/logos/css.png",
+        "/images/logos/js.png",
+        "/images/logos/wordpress.png",
+      ],
+      bg: "#ffefdb",
+    },
+    {
       slug: "annick",
-      title: "Annick Van Endert : Artist's website",
-      description: "A window into the paintress's world.",
+      title: "Annick Van Endert : Site web d'artiste",
+      description: "Une fenêtre sur le monde de la peintre.",
       image: "/images/annick1.png",
       link: "https://annickvanendert.com",
       techLogos: [
@@ -602,35 +686,6 @@ const projects = {
         "/images/logos/wordpress.png",
       ],
       bg: "#ffefdb",
-    },
-  ],
-  fr: [
-    {
-      slug: "library",
-      title: "BookWise : Système de gestion de bibliothèque",
-      description: "Faciliter la gestion des livres au sein d'une bibliothèque universitaire",
-      image: "/images/library1.png", // Same image
-      link: "https://university-library-v2-nu.vercel.app/", // Same link
-      techLogos: [
-        "/images/logos/nextjs.png",
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/postgresql.png",
-      ],
-      bg: "#ffefdb", // Same background
-    },
-    {
-      slug: "artgallery",
-      title: "Art Gallery : Plateforme sociale pour artistes",
-      description: "Une plateforme qui permet aux artistes de créer des profils, télécharger leurs œuvres et se connecter avec les amateurs d'art.",
-      image: "/images/ag2.png",
-      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
-      techLogos: [
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/sql.png",
-      ],
-      bg: "#1c1c21",
     },
     {
       slug: "portfolio",
@@ -647,32 +702,17 @@ const projects = {
       bg: "#ffefdb",
     },
     {
-      slug: "lenoyer",
-      title: "Le Noyer : Site web du centre médical",
-      description: "Un site web minimaliste, élégant et fonctionnel",
-      image: "/images/lenoyer1.png",
-      link: "https://lenoyer.be",
+      slug: "artgallery",
+      title: "Art Gallery : Plateforme sociale pour artistes",
+      description: "Une plateforme qui permet aux artistes de créer des profils, télécharger leurs œuvres et se connecter avec les amateurs d'art.",
+      image: "/images/ag2.png",
+      link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/react.png",
+        "/images/logos/node.png",
+        "/images/logos/sql.png",
       ],
-      bg: "white",
-    },
-    {
-      slug: "annick",
-      title: "Annick Van Endert : Site web d'artiste",
-      description: "Une fenêtre sur le monde de la peintre.",
-      image: "/images/annick1.png",
-      link: "https://annickvanendert.com",
-      techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
-      ],
-      bg: "#ffefdb",
+      bg: "#1c1c21",
     },
   ]
 };
@@ -703,38 +743,71 @@ const socialImgs = [
 const projectDetailsCards = {
   en: [
     {
-      slug: "library",
+      slug: "ovni-compta",
       cards: [
         {
-          imgPath: "/images/library.png",
+          imgPath: "/images/asbl_ovni/ovni_artistes.png",
           logoPath: "/images/Asset1.png",
-          title: "BookWise: University Library Management System",
+          title: "OVNI Compta: Custom Accounting for a Belgian NGO",
           details: [
-            "BookWise is a comprehensive library management system built with Next.js and TypeScript, designed to streamline book management for universities and libraries.",
-            "The platform features a profile page for users, a borrowing system, and automated email notifications for onboarding.",
-            "Caching, rate-limiting, DDoS protection, and real-time image optimization are implemented to enhance performance and security.",
+            "A custom-built accounting web app developed for a Belgian cultural NGO (ASBL) to replace shared Excel files with a secure, centralized tool.",
+            "Manages finances at three levels: members, projects, and central treasury, with automated internal transfers that keep accounts balanced.",
+            "Accessible from any device, the app lets the client manage everything autonomously -- no technical intervention needed.",
           ],
         },
         {
-          imgPath: "/images/library3.png",
+          imgPath: "/images/asbl_ovni/ovni_transactions.png",
           logoPath: "/images/Asset2.png",
-          title: "Front End Technologies",
+          title: "Key Features",
           details: [
-            "Built with Next.js and TypeScript for scalable, maintainable development.",
-            "Tailwind CSS and ShadCN provide a modern, responsive UI/UX.",
-            "ImageKit is used for real-time image and video optimization.",
+            "Interactive dashboard with financial overview, charts, and recent transactions at a glance.",
+            "Member and project tracking with real-time balances, budget indicators, and full transaction history.",
+            "Automated financial reports (monthly, annual), CSV/PDF exports, and centralized document archiving.",
           ],
         },
         {
-          imgPath: "/images/library2.png",
+          imgPath: "/images/asbl_ovni/ovni_ressources.png",
           logoPath: "/images/Asset3.png",
-          title: "Back End Technologies",
+          title: "Technical Stack & Security",
           details: [
-            "PostgreSQL with Neon powers scalable and collaborative database management.",
-            "Upstash Redis is used for efficient caching, workflows, and triggers.",
-            "Drizzle ORM simplifies database interactions.",
-            "Resend handles automated email notifications for onboarding, reminders, and updates.",
-            "NextAuth provides robust authentication and role management.",
+            "Built with Next.js, React, TypeScript, and Tailwind CSS for a modern, responsive interface with dark/light mode.",
+            "PostgreSQL database via Supabase for scalable data management and secure file storage.",
+            "Invite-only access with three permission levels (Admin, Editor, Reader), encrypted credentials, and protection against common attacks.",
+          ],
+        },
+      ],
+    },
+    {
+      slug: "fanal",
+      cards: [
+        {
+          imgPath: "/images/fanal_des_chats/fanal_about.png",
+          logoPath: "/images/Asset1.png",
+          title: "Le Fanal des Chats: Custom Platform for an Animal Shelter",
+          details: [
+            "A fully custom WordPress platform built for a Belgian cat shelter, featuring 12 custom pages, 3 interactive quizzes, 2 multi-step forms, a blog with nested comments, and online donations.",
+            "Every page is managed via custom fields in the WordPress admin -- the client updates all content autonomously without any technical skills.",
+            "Designed to drive visitor engagement through structured journeys: adoption, volunteering, and donations.",
+          ],
+        },
+        {
+          imgPath: "/images/fanal_des_chats/fanal_service.png",
+          logoPath: "/images/Asset2.png",
+          title: "Interactive Features",
+          details: [
+            "3 interactive quizzes (adoption, volunteering, donation) with step-by-step visual progression and personalized results.",
+            "Multi-step forms with conditional fields and real-time client-side validation for adoption and volunteering applications.",
+            "Full blog system with pagination, 4 categories, photo galleries, social sharing buttons, and 3-level nested comments.",
+          ],
+        },
+        {
+          imgPath: "/images/fanal_des_chats/fanal_testimony.png",
+          logoPath: "/images/Asset3.png",
+          title: "Design & Technical Stack",
+          details: [
+            "100% custom WordPress theme -- no template, no page builder. Built with ACF PRO, Bootstrap 5, SASS, and jQuery.",
+            "Scroll animations (Animate.css, WOW.js), animated counters (Odometer.js), carousels (Slick, Swiper), and lightboxes (Fancybox).",
+            "Online donations via GiveWP, downloadable PDF publications archive, responsive mobile-first design.",
           ],
         },
       ],
@@ -887,38 +960,71 @@ const projectDetailsCards = {
   ],
   fr: [
     {
-      slug: "library",
+      slug: "ovni-compta",
       cards: [
         {
-          imgPath: "/images/library.png",
+          imgPath: "/images/asbl_ovni/ovni_artistes.png",
           logoPath: "/images/Asset1.png",
-          title: "BookWise: Système de Gestion de Bibliothèque Universitaire",
+          title: "OVNI Compta : Comptabilité sur mesure pour ASBL",
           details: [
-            "BookWise est un système complet de gestion de bibliothèque construit avec Next.js et TypeScript, conçu pour simplifier la gestion des livres pour les universités et bibliothèques.",
-            "La plateforme comprend une page de profil pour les utilisateurs, un système d'emprunt et des notifications automatiques par email pour l'intégration.",
-            "Le cache, la limitation de débit, la protection DDoS et l'optimisation d'images en temps réel sont implémentés pour améliorer les performances et la sécurité.",
+            "Application web comptable développée sur mesure pour une ASBL culturelle belge, en remplacement de fichiers Excel partagés par un outil centralisé et sécurisé.",
+            "Gestion des finances à trois niveaux : membres, projets et trésorerie centrale, avec virements internes automatisés qui maintiennent l'équilibre des comptes.",
+            "Accessible depuis n'importe quel appareil, l'application permet au client de tout gérer en autonomie, sans intervention technique.",
           ],
         },
         {
-          imgPath: "/images/library3.png",
+          imgPath: "/images/asbl_ovni/ovni_transactions.png",
           logoPath: "/images/Asset2.png",
-          title: "Technologies Front End",
+          title: "Fonctionnalités clés",
           details: [
-            "Construit avec Next.js et TypeScript pour un développement évolutif et maintenable.",
-            "Tailwind CSS et ShadCN fournissent une UI/UX moderne et responsive.",
-            "ImageKit est utilisé pour l'optimisation d'images et vidéos en temps réel.",
+            "Tableau de bord interactif avec vue d'ensemble financière, graphiques et dernières transactions en un coup d'œil.",
+            "Suivi des membres et projets avec soldes en temps réel, indicateurs de budget et historique complet des transactions.",
+            "Rapports financiers automatiques (mensuels, annuels), exports CSV/PDF et archivage centralisé de documents.",
           ],
         },
         {
-          imgPath: "/images/library2.png",
+          imgPath: "/images/asbl_ovni/ovni_ressources.png",
           logoPath: "/images/Asset3.png",
-          title: "Technologies Back End",
+          title: "Stack technique & Sécurité",
           details: [
-            "PostgreSQL avec Neon alimente la gestion de base de données évolutive et collaborative.",
-            "Upstash Redis est utilisé pour le cache efficace, les workflows et les déclencheurs.",
-            "Drizzle ORM simplifie les interactions avec la base de données.",
-            "Resend gère les notifications automatiques par email pour l'intégration, les rappels et les mises à jour.",
-            "NextAuth fournit une authentification robuste et la gestion des rôles.",
+            "Construit avec Next.js, React, TypeScript et Tailwind CSS pour une interface moderne et responsive avec mode sombre/clair.",
+            "Base de données PostgreSQL via Supabase pour une gestion de données évolutive et un stockage de fichiers sécurisé.",
+            "Accès sur invitation uniquement avec trois niveaux de droits (Admin, Éditeur, Lecteur), identifiants chiffrés et protection contre les attaques courantes.",
+          ],
+        },
+      ],
+    },
+    {
+      slug: "fanal",
+      cards: [
+        {
+          imgPath: "/images/fanal_des_chats/fanal_about.png",
+          logoPath: "/images/Asset1.png",
+          title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge",
+          details: [
+            "Plateforme WordPress entièrement sur mesure pour un refuge de chats belge : 12 pages personnalisées, 3 quiz interactifs, 2 formulaires multi-étapes, un blog avec commentaires imbriqués et des dons en ligne.",
+            "Chaque page est gérée via des champs personnalisés dans l'admin WordPress -- le client met à jour tout son contenu en autonomie, sans compétence technique.",
+            "Conçue pour guider les visiteurs dans des parcours d'engagement structurés : adoption, bénévolat et dons.",
+          ],
+        },
+        {
+          imgPath: "/images/fanal_des_chats/fanal_service.png",
+          logoPath: "/images/Asset2.png",
+          title: "Fonctionnalités interactives",
+          details: [
+            "3 quiz interactifs (adoption, bénévolat, don) avec progression visuelle étape par étape et résultats personnalisés.",
+            "Formulaires multi-étapes avec champs conditionnels et validation en temps réel pour les candidatures d'adoption et de bénévolat.",
+            "Système de blog complet avec pagination, 4 catégories, galeries photos, partage social et commentaires imbriqués sur 3 niveaux.",
+          ],
+        },
+        {
+          imgPath: "/images/fanal_des_chats/fanal_testimony.png",
+          logoPath: "/images/Asset3.png",
+          title: "Design & Stack technique",
+          details: [
+            "Thème WordPress 100% sur mesure -- aucun template, aucun page builder. Construit avec ACF PRO, Bootstrap 5, SASS et jQuery.",
+            "Animations au scroll (Animate.css, WOW.js), compteurs animés (Odometer.js), carrousels (Slick, Swiper) et lightboxes (Fancybox).",
+            "Dons en ligne via GiveWP, archive de publications PDF téléchargeables, design responsive mobile-first.",
           ],
         },
       ],

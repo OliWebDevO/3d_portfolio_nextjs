@@ -15,11 +15,12 @@ import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
-  { src: '/images/library.png', label: 'Library' },
-  { src: '/images/ag2.png', label: 'ArtGallery' },
-  { src: '/images/annick1.png', label: 'Annick' },
-  { src: '/images/lenoyer1.png', label: 'Lenoyer' },
-  { src: '/images/portfolioCover1.png', label: 'Portfolio' },
+  { src: '/images/lenoyer1.png', label: 'Lenoyer', slug: 'lenoyer' },
+  { src: '/images/asbl_ovni/ovni_dashboard.png', label: 'OVNI Compta', slug: 'ovni-compta' },
+  { src: '/images/fanal_des_chats/fanal_home.png', label: 'Le Fanal des Chats', slug: 'fanal' },
+  { src: '/images/annick1.png', label: 'Annick', slug: 'annick' },
+  { src: '/images/portfolioCover1.png', label: 'Portfolio', slug: 'portfolio' },
+  { src: '/images/ag2.png', label: 'ArtGallery', slug: 'artgallery' },
 ];
 
 export default function Slider() {
@@ -120,7 +121,7 @@ export default function Slider() {
                       alt={img.label}
                     />
                     <Link
-                      href={`/projects/${img.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      href={`/projects/${img.slug}`}
                       className="demo-material-label swiper-material-animate-opacity"
                     >
                       {img.label}

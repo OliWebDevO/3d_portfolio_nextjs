@@ -60,13 +60,13 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
     <>
     <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
       <div className="showcaselayout flex flex-col md:flex-row gap-10">
-        <div className="image-wrapper group relative overflow-hidden rounded-xl" style={{ background: project.bg }}>
+        <div className="image-wrapper group relative overflow-hidden rounded-xl h-fit" style={{ background: project.bg }}>
           <Image
             src={project.image}
             alt={project.title}
             width={600}
             height={400}
-            className="rounded-xl  card-border p-5"
+            className="rounded-xl card-border p-5 block"
           />
         </div>
         <div className="text-content flex flex-col justify-center gap-4">
