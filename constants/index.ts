@@ -338,9 +338,9 @@ const expCards = {
       responsibilities: [
         "Built OVNI Compta, a custom accounting web app for a Belgian NGO (Next.js, React, TypeScript, Supabase, Tailwind CSS).",
         "Developed Le Fanal des Chats, a full-featured WordPress platform for an animal shelter with interactive quizzes, multi-step forms, blog, and online donations.",
-        "Developed full-stack web apps including Art Gallery (React, SQL, Node.js, Express, MUI5) and a personal portfolio (Next.js, React, GSAP).",
         "Built and deployed client websites such as annickvanendert.com and lenoyer.be using WordPress, HTML, CSS, and JavaScript.",
         "Managed all aspects of project delivery: design translation, frontend and backend development, deployment, and client communication.",
+        "Developed a personal portfolio (Next.js, React, GSAP) and Art Gallery, a full-stack social platform for artists (React, SQL, Node.js, Express, MUI5).",
       ],
     },
     {
@@ -381,9 +381,9 @@ const expCards = {
       responsibilities: [
         "Développement d'OVNI Compta, une application web comptable sur mesure pour une ASBL belge (Next.js, React, TypeScript, Supabase, Tailwind CSS).",
         "Développement du Fanal des Chats, une plateforme WordPress complète pour un refuge animalier avec quiz interactifs, formulaires multi-étapes, blog et dons en ligne.",
-        "Développement d'applications web full-stack incluant Art Gallery (React, SQL, Node.js, Express, MUI5) et un portfolio personnel (Next.js, React, GSAP).",
         "Construction et déploiement de sites clients tels que annickvanendert.com et lenoyer.be en utilisant WordPress, HTML, CSS et JavaScript.",
         "Gestion de tous les aspects de livraison de projet : traduction de design, développement frontend et backend, déploiement et communication client.",
+        "Développement d'un portfolio personnel (Next.js, React, GSAP) et d'Art Gallery, une plateforme sociale pour artistes (React, SQL, Node.js, Express, MUI5).",
       ],
     },
     {
