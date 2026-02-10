@@ -564,7 +564,7 @@ const projects = {
       slug: "ovni-compta",
       title: "OVNI Compta : Custom accounting app for a Belgian NGO",
       description: "A tailor-made web app to manage finances, members, and projects",
-      image: "/images/asbl_ovni/ovni_dashboard.png",
+      image: "/images/asbl_ovni/ovni_dashboard.webp",
       link: "https://www.asbl-ovni.com/",
       techLogos: [
         "/images/logos/nextjs.png",
@@ -649,7 +649,7 @@ const projects = {
       slug: "ovni-compta",
       title: "OVNI Compta : Application comptable sur mesure pour ASBL",
       description: "Une application web sur mesure pour gérer finances, membres et projets",
-      image: "/images/asbl_ovni/ovni_dashboard.png",
+      image: "/images/asbl_ovni/ovni_dashboard.webp",
       link: "https://www.asbl-ovni.com/",
       techLogos: [
         "/images/logos/nextjs.png",
@@ -746,7 +746,7 @@ const projectDetailsCards = {
       slug: "ovni-compta",
       cards: [
         {
-          imgPath: "/images/asbl_ovni/ovni_artistes.png",
+          imgPath: "/images/asbl_ovni/ovni_artistes.webp",
           logoPath: "/images/Asset1.png",
           title: "OVNI Compta: Custom Accounting for a Belgian NGO",
           details: [
@@ -756,7 +756,7 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/asbl_ovni/ovni_transactions.png",
+          imgPath: "/images/asbl_ovni/ovni_transactions.webp",
           logoPath: "/images/Asset2.png",
           title: "Key Features",
           details: [
@@ -766,7 +766,7 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/asbl_ovni/ovni_ressources.png",
+          imgPath: "/images/asbl_ovni/ovni_ressources.webp",
           logoPath: "/images/Asset3.png",
           title: "Technical Stack & Security",
           details: [
@@ -963,7 +963,7 @@ const projectDetailsCards = {
       slug: "ovni-compta",
       cards: [
         {
-          imgPath: "/images/asbl_ovni/ovni_artistes.png",
+          imgPath: "/images/asbl_ovni/ovni_artistes.webp",
           logoPath: "/images/Asset1.png",
           title: "OVNI Compta : Comptabilité sur mesure pour ASBL",
           details: [
@@ -973,7 +973,7 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/asbl_ovni/ovni_transactions.png",
+          imgPath: "/images/asbl_ovni/ovni_transactions.webp",
           logoPath: "/images/Asset2.png",
           title: "Fonctionnalités clés",
           details: [
@@ -983,7 +983,7 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/asbl_ovni/ovni_ressources.png",
+          imgPath: "/images/asbl_ovni/ovni_ressources.webp",
           logoPath: "/images/Asset3.png",
           title: "Stack technique & Sécurité",
           details: [

@@ -16,7 +16,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
   { src: '/images/lenoyer1.png', label: 'Lenoyer', slug: 'lenoyer' },
-  { src: '/images/asbl_ovni/ovni_dashboard.png', label: 'OVNI Compta', slug: 'ovni-compta' },
+  { src: '/images/asbl_ovni/ovni_dashboard.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
   { src: '/images/fanal_des_chats/fanal_home.png', label: 'Le Fanal des Chats', slug: 'fanal' },
   { src: '/images/annick1.png', label: 'Annick', slug: 'annick' },
   { src: '/images/portfolioCover1.png', label: 'Portfolio', slug: 'portfolio' },
