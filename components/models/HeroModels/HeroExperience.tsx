@@ -29,7 +29,7 @@ const HeroExperience = () => {
   if (isMobile) {
     return (
       <Image
-        src="/images/hero-mobile.png"
+        src="/images/hero-mobile.webp"
         alt="Room Model"
         width={800}
         height={600}

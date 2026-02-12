@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Oliver Van Droogenbroeck - Web Developer Portfolio",
     images: [
       {
-        url: "/images/portfolioCover.png",
+        url: "/images/portfolioCover.webp",
         width: 1200,
         height: 630,
         alt: "Oliver Van Droogenbroeck - Frontend Web Developer Portfolio",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oliver Van Droogenbroeck | Frontend Developer Belgium",
     description: "Frontend web developer specializing in React, Next.js & TypeScript. Based in Belgium. View my portfolio of modern web applications and interactive projects.",
-    images: ["/images/portfolioCover.png"],
+    images: ["/images/portfolioCover.webp"],
   },
   icons: {
     icon: "/fav.png",
@@ -107,7 +107,7 @@ export default function RootLayout({
                 "@type": "Person",
                 name: "Oliver Van Droogenbroeck",
                 url: "https://olivervdb.com",
-                image: "https://olivervdb.com/images/portfolioCover.png",
+                image: "https://olivervdb.com/images/portfolioCover.webp",
                 description: "Frontend web developer specializing in React, Next.js, TypeScript, and modern web technologies",
                 sameAs: [
                   "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",

@@ -25,7 +25,7 @@ const ContactExperience = () => {
   if (!isDesktop) {
     return (
       <Image
-        src="/images/contact-mobile.png"
+        src="/images/contact-mobile.webp"
         alt="Computer Model"
         width={800}
         height={600}

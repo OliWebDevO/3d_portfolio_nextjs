@@ -201,31 +201,31 @@ const counterItems = [
 const logoIconsList = [
   {
     id: 1,
-    imgPath: "/images/logos/nextjs.png",
+    imgPath: "/images/logos/nextjs.webp",
   },
   {
     id: 2,
-    imgPath: "/images/logos/react.png",
+    imgPath: "/images/logos/react.webp",
   },
   {
     id: 3,
-    imgPath: "/images/logos/tailwind.png",
+    imgPath: "/images/logos/tailwind.webp",
   },
   {
     id: 4,
-    imgPath: "/images/logos/node.png",
+    imgPath: "/images/logos/node.webp",
   },
   {
     id: 5,
-    imgPath: "/images/logos/sql.png",
+    imgPath: "/images/logos/sql.webp",
   },
   {
     id: 6,
-    imgPath: "/images/logos/postgresql.png",
+    imgPath: "/images/logos/postgresql.webp",
   },
   {
     id: 7,
-    imgPath: "/images/logos/three.png",
+    imgPath: "/images/logos/three.webp",
   },
   {
     id: 8,
@@ -233,43 +233,43 @@ const logoIconsList = [
   },
   {
     id: 9,
-    imgPath: "/images/logos/html.png",
+    imgPath: "/images/logos/html.webp",
   },
   {
     id: 10, 
-    imgPath: "/images/logos/css.png",
+    imgPath: "/images/logos/css.webp",
   },
   {
     id: 11,
-    imgPath: "/images/logos/js.png",
+    imgPath: "/images/logos/js.webp",
   },
   {
     id: 12,
-    imgPath: "/images/logos/nextjs.png",
+    imgPath: "/images/logos/nextjs.webp",
   },
   {
     id: 13, 
-    imgPath: "/images/logos/react.png",
+    imgPath: "/images/logos/react.webp",
   },
   {
     id: 14,
-    imgPath: "/images/logos/tailwind.png",
+    imgPath: "/images/logos/tailwind.webp",
   },
   {
     id: 15,
-    imgPath: "/images/logos/node.png",
+    imgPath: "/images/logos/node.webp",
   },
   {
     id: 16,
-    imgPath: "/images/logos/sql.png",
+    imgPath: "/images/logos/sql.webp",
   },
   {
     id: 17,
-    imgPath: "/images/logos/postgresql.png",
+    imgPath: "/images/logos/postgresql.webp",
   },
   {
     id: 18,
-    imgPath: "/images/logos/three.png",
+    imgPath: "/images/logos/three.webp",
   },
   {
     id: 19,
@@ -277,49 +277,49 @@ const logoIconsList = [
   },
   {
     id: 20,
-    imgPath: "/images/logos/html.png",
+    imgPath: "/images/logos/html.webp",
   },
   {
     id: 21,
-    imgPath: "/images/logos/css.png",
+    imgPath: "/images/logos/css.webp",
   },
   {
     id: 22,
-    imgPath: "/images/logos/js.png",
+    imgPath: "/images/logos/js.webp",
   },
 ];
 
 const abilities = {
   en: [
     {
-      imgPath: "/images/seo.png",
+      imgPath: "/images/seo.webp",
       title: "Quality Focus",
       desc: "Delivering high-quality results while maintaining attention to every detail.",
     },
     {
-      imgPath: "/images/chat.png",
+      imgPath: "/images/chat.webp",
       title: "Reliable Communication",
       desc: "Keeping you updated at every step to ensure transparency and clarity.",
     },
     {
-      imgPath: "/images/time.png",
+      imgPath: "/images/time.webp",
       title: "On-Time Delivery",
       desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
     },
   ],
   fr: [
     {
-      imgPath: "/images/seo.png",
+      imgPath: "/images/seo.webp",
       title: "Focus Qualité",
       desc: "Livrer des résultats de haute qualité tout en maintenant l'attention sur chaque détail.",
     },
     {
-      imgPath: "/images/chat.png",
+      imgPath: "/images/chat.webp",
       title: "Communication Fiable",
       desc: "Vous tenir informé à chaque étape pour assurer transparence et clarté.",
     },
     {
-      imgPath: "/images/time.png",
+      imgPath: "/images/time.webp",
       title: "Livraison Ponctuelle",
       desc: "S'assurer que les projets sont terminés dans les délais, avec qualité et attention aux détails.",
     },
@@ -331,8 +331,8 @@ const expCards = {
     {
       review:
         "Through those projects, I have developed strong technical skills and adaptability across modern stacks. My work is composed of web apps, portfolio sites, and client platforms, always with a focus on quality and user experience.",
-      imgPath: "/images/exp1.png",
-      logoPath: "/images/Asset1.png",
+      imgPath: "/images/exp1.webp",
+      logoPath: "/images/Asset1.webp",
       title: "Freelance Web Developer",
       date: "2024 – 2026",
       responsibilities: [
@@ -346,8 +346,8 @@ const expCards = {
     {
       review:
         "During my training at DigitalCity, I built a solid foundation in frontend development, mastering modern tools and frameworks while delivering real-world projects.",
-      imgPath: "/images/exp2.png",
-      logoPath: "/images/Asset2.png",
+      imgPath: "/images/exp2.webp",
+      logoPath: "/images/Asset2.webp",
       title: "Front End Development Training",
       date: "2023 – 2024",
       responsibilities: [
@@ -359,8 +359,8 @@ const expCards = {
     {
       review:
         "My working holiday in Australia helped me foster strong soft skills and adaptability, enriching my professional and personal growth through diverse experiences.",
-      imgPath: "/images/exp3.png",
-      logoPath: "/images/Asset3.png",
+      imgPath: "/images/exp3.webp",
+      logoPath: "/images/Asset3.webp",
       title: "Working Holiday & Soft Skills Development",
       date: "2019 – 2022",
       responsibilities: [
@@ -374,8 +374,8 @@ const expCards = {
     {
       review:
         "À travers ces projets, j'ai développé de solides compétences techniques et une adaptabilité à travers les stacks modernes. Mon travail est composé d'applications web, de sites portfolio et de plateformes clients, toujours avec un focus sur la qualité et l'expérience utilisateur.",
-      imgPath: "/images/exp1.png",
-      logoPath: "/images/Asset1.png",
+      imgPath: "/images/exp1.webp",
+      logoPath: "/images/Asset1.webp",
       title: "Développeur Web Freelance",
       date: "2024 – 2026",
       responsibilities: [
@@ -389,8 +389,8 @@ const expCards = {
     {
       review:
         "Pendant ma formation à DigitalCity, j'ai construit une base solide en développement frontend, maîtrisant les outils et frameworks modernes tout en livrant des projets concrets.",
-      imgPath: "/images/exp2.png",
-      logoPath: "/images/Asset2.png",
+      imgPath: "/images/exp2.webp",
+      logoPath: "/images/Asset2.webp",
       title: "Formation Développement Front End",
       date: "2023 – 2024",
       responsibilities: [
@@ -402,8 +402,8 @@ const expCards = {
     {
       review:
         "Mon working holiday en Australie m'a aidé à développer de solides soft skills et une adaptabilité, enrichissant ma croissance professionnelle et personnelle à travers diverses expériences.",
-      imgPath: "/images/exp3.png",
-      logoPath: "/images/Asset3.png",
+      imgPath: "/images/exp3.webp",
+      logoPath: "/images/Asset3.webp",
       title: "Working Holiday & Développement des Soft Skills",
       date: "2019 – 2022",
       responsibilities: [
@@ -419,7 +419,7 @@ const techStackImgs = {
   en: [
     {
       name: "Frontend Developer",
-      imgPath: "/images/logos/react.png",
+      imgPath: "/images/logos/react.webp",
     },
     {
       name: "Python Developer",
@@ -427,11 +427,11 @@ const techStackImgs = {
     },
     {
       name: "Backend Developer",
-      imgPath: "/images/logos/node.png",
+      imgPath: "/images/logos/node.webp",
     },
     {
       name: "Interactive Developer",
-      imgPath: "/images/logos/three.png",
+      imgPath: "/images/logos/three.webp",
     },
     {
       name: "Project Management",
@@ -441,7 +441,7 @@ const techStackImgs = {
   fr: [
     {
       name: "Développeur Frontend",
-      imgPath: "/images/logos/react.png",
+      imgPath: "/images/logos/react.webp",
     },
     {
       name: "Développeur Python",
@@ -449,11 +449,11 @@ const techStackImgs = {
     },
     {
       name: "Développeur Backend",
-      imgPath: "/images/logos/node.png",
+      imgPath: "/images/logos/node.webp",
     },
     {
       name: "Développeur Interactif",
-      imgPath: "/images/logos/three.png",
+      imgPath: "/images/logos/three.webp",
     },
     {
       name: "Gestion de Projet",
@@ -532,15 +532,15 @@ const techStackIcons = {
 const expLogos = [
   {
     name: "logo1",
-    imgPath: "/images/logo1.png",
+    imgPath: "/images/logo1.webp",
   },
   {
     name: "logo2",
-    imgPath: "/images/logo2.png",
+    imgPath: "/images/logo2.webp",
   },
   {
     name: "logo3",
-    imgPath: "/images/logo3.png",
+    imgPath: "/images/logo3.webp",
   },
 ];
 
@@ -550,13 +550,13 @@ const projects = {
       slug: "lenoyer",
       title: "Le Noyer : Medical center website",
       description: "A minimalist, elegant, and functional website",
-      image: "/images/lenoyer1.png",
+      image: "/images/lenoyer1.webp",
       link: "https://lenoyer.be",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "white",
     },
@@ -567,10 +567,10 @@ const projects = {
       image: "/images/asbl_ovni/ovni_dashboard.webp",
       link: "https://www.asbl-ovni.com/",
       techLogos: [
-        "/images/logos/nextjs.png",
-        "/images/logos/react.png",
-        "/images/logos/tailwind.png",
-        "/images/logos/postgresql.png",
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/tailwind.webp",
+        "/images/logos/postgresql.webp",
       ],
       bg: "#ffefdb",
     },
@@ -578,13 +578,13 @@ const projects = {
       slug: "fanal",
       title: "Le Fanal des Chats : Custom platform for an animal shelter",
       description: "A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations",
-      image: "/images/fanal_des_chats/fanal_home.png",
+      image: "/images/fanal_des_chats/fanal_home.webp",
       link: "https://versiontest.site/",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "#ffefdb",
     },
@@ -592,13 +592,13 @@ const projects = {
       slug: "annick",
       title: "Annick Van Endert : Artist's website",
       description: "A window into the paintress's world.",
-      image: "/images/annick1.png",
+      image: "/images/annick1.webp",
       link: "https://annickvanendert.com",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "#ffefdb",
     },
@@ -606,13 +606,13 @@ const projects = {
       slug: "portfolio",
       title: "Portfolio Website",
       description: "An animated portfolio website showcasing my work.",
-      image: "/images/portfolioCover.png",
+      image: "/images/portfolioCover.webp",
       link: "https://olivervdb.com",
       techLogos: [
-        "/images/logos/nextjs.png",
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/tailwind.png",
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/node.webp",
+        "/images/logos/tailwind.webp",
       ],
       bg: "#ffefdb",
     },
@@ -620,12 +620,12 @@ const projects = {
       slug: "artgallery",
       title: "Art Gallery : A social platform for artists",
       description: "A platform that allows artists to create profiles, upload their artwork, and connect with art enthusiasts.",
-      image: "/images/ag2.png",
+      image: "/images/ag2.webp",
       link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
       techLogos: [
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/sql.png",
+        "/images/logos/react.webp",
+        "/images/logos/node.webp",
+        "/images/logos/sql.webp",
       ],
       bg: "#1c1c21",
     },
@@ -635,13 +635,13 @@ const projects = {
       slug: "lenoyer",
       title: "Le Noyer : Site web du centre médical",
       description: "Un site web minimaliste, élégant et fonctionnel",
-      image: "/images/lenoyer1.png",
+      image: "/images/lenoyer1.webp",
       link: "https://lenoyer.be",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "white",
     },
@@ -652,10 +652,10 @@ const projects = {
       image: "/images/asbl_ovni/ovni_dashboard.webp",
       link: "https://www.asbl-ovni.com/",
       techLogos: [
-        "/images/logos/nextjs.png",
-        "/images/logos/react.png",
-        "/images/logos/tailwind.png",
-        "/images/logos/postgresql.png",
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/tailwind.webp",
+        "/images/logos/postgresql.webp",
       ],
       bg: "#ffefdb",
     },
@@ -663,13 +663,13 @@ const projects = {
       slug: "fanal",
       title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge animalier",
       description: "Une plateforme WordPress complète avec quiz, formulaires multi-étapes, blog et dons en ligne",
-      image: "/images/fanal_des_chats/fanal_home.png",
+      image: "/images/fanal_des_chats/fanal_home.webp",
       link: "https://versiontest.site/",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "#ffefdb",
     },
@@ -677,13 +677,13 @@ const projects = {
       slug: "annick",
       title: "Annick Van Endert : Site web d'artiste",
       description: "Une fenêtre sur le monde de la peintre.",
-      image: "/images/annick1.png",
+      image: "/images/annick1.webp",
       link: "https://annickvanendert.com",
       techLogos: [
-        "/images/logos/html.png",
-        "/images/logos/css.png",
-        "/images/logos/js.png",
-        "/images/logos/wordpress.png",
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
       ],
       bg: "#ffefdb",
     },
@@ -691,13 +691,13 @@ const projects = {
       slug: "portfolio",
       title: "Site Web Portfolio",
       description: "Un site portfolio animé présentant mon travail.",
-      image: "/images/portfolioCover.png",
+      image: "/images/portfolioCover.webp",
       link: "https://olivervdb.com",
       techLogos: [
-        "/images/logos/nextjs.png",
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/tailwind.png",
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/node.webp",
+        "/images/logos/tailwind.webp",
       ],
       bg: "#ffefdb",
     },
@@ -705,12 +705,12 @@ const projects = {
       slug: "artgallery",
       title: "Art Gallery : Plateforme sociale pour artistes",
       description: "Une plateforme qui permet aux artistes de créer des profils, télécharger leurs œuvres et se connecter avec les amateurs d'art.",
-      image: "/images/ag2.png",
+      image: "/images/ag2.webp",
       link: "https://github.com/OliWebDevO/Art_Gallery_Front_End",
       techLogos: [
-        "/images/logos/react.png",
-        "/images/logos/node.png",
-        "/images/logos/sql.png",
+        "/images/logos/react.webp",
+        "/images/logos/node.webp",
+        "/images/logos/sql.webp",
       ],
       bg: "#1c1c21",
     },
@@ -721,22 +721,22 @@ const socialImgs = [
   // {
   //   name: "insta",
   //   url: "https://www.instagram.com/",
-  //   imgPath: "/images/insta.png",
+  //   imgPath: "/images/insta.webp",
   // },
   // {
   //   name: "fb",
   //   url: "https://www.facebook.com/",
-  //   imgPath: "/images/fb.png",
+  //   imgPath: "/images/fb.webp",
   // },
   // {
   //   name: "x",
   //   url: "https://www.x.com/",
-  //   imgPath: "/images/x.png",
+  //   imgPath: "/images/x.webp",
   // },
   {
     name: "linkedin",
     url: "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
-    imgPath: "/images/linkedin.png",
+    imgPath: "/images/linkedin.webp",
   },
 ];
 
@@ -747,7 +747,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/asbl_ovni/ovni_artistes.webp",
-          logoPath: "/images/Asset1.png",
+          logoPath: "/images/Asset1.webp",
           title: "OVNI Compta: Custom Accounting for a Belgian NGO",
           details: [
             "A custom-built accounting web app developed for a Belgian cultural NGO (ASBL) to replace shared Excel files with a secure, centralized tool.",
@@ -757,7 +757,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/asbl_ovni/ovni_transactions.webp",
-          logoPath: "/images/Asset2.png",
+          logoPath: "/images/Asset2.webp",
           title: "Key Features",
           details: [
             "Interactive dashboard with financial overview, charts, and recent transactions at a glance.",
@@ -767,7 +767,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/asbl_ovni/ovni_ressources.webp",
-          logoPath: "/images/Asset3.png",
+          logoPath: "/images/Asset3.webp",
           title: "Technical Stack & Security",
           details: [
             "Built with Next.js, React, TypeScript, and Tailwind CSS for a modern, responsive interface with dark/light mode.",
@@ -781,8 +781,8 @@ const projectDetailsCards = {
       slug: "fanal",
       cards: [
         {
-          imgPath: "/images/fanal_des_chats/fanal_about.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/fanal_des_chats/fanal_about.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Le Fanal des Chats: Custom Platform for an Animal Shelter",
           details: [
             "A fully custom WordPress platform built for a Belgian cat shelter, featuring 12 custom pages, 3 interactive quizzes, 2 multi-step forms, a blog with nested comments, and online donations.",
@@ -791,8 +791,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/fanal_des_chats/fanal_service.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/fanal_des_chats/fanal_service.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Interactive Features",
           details: [
             "3 interactive quizzes (adoption, volunteering, donation) with step-by-step visual progression and personalized results.",
@@ -801,8 +801,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/fanal_des_chats/fanal_testimony.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/fanal_des_chats/fanal_testimony.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Design & Technical Stack",
           details: [
             "100% custom WordPress theme -- no template, no page builder. Built with ACF PRO, Bootstrap 5, SASS, and jQuery.",
@@ -816,8 +816,8 @@ const projectDetailsCards = {
       slug: "artgallery",
       cards: [
         {
-          imgPath: "/images/ag1.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/ag1.webp",
+          logoPath: "/images/Asset1.webp",
           title: "A social platform for artists",
           details: [
             "This web app is the result of my final project at Digital City. The frontend is built with React, while the backend is constructed using Node & Express. User information is stored in a MySQL database.",
@@ -825,8 +825,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/artg1.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/artg1.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Front End Technologies",
           details: [
             "React Router Dom handles routing, navigation, and links.",
@@ -837,8 +837,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/ag3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/ag3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Back End Technologies",
           details: [
             "Nodemon is used for server monitoring.",
@@ -856,8 +856,8 @@ const projectDetailsCards = {
       slug: "portfolio",
       cards: [
         {
-          imgPath: "/images/portfolioCover.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/portfolioCover.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Animated Portfolio Website",
           details: [
             "This portfolio website was designed and developed to showcase my work, skills, and experience as a front-end developer.",
@@ -865,8 +865,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/portfolioCover2.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/portfolioCover2.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Front End Technologies",
           details: [
             "Built with Next.js and React for fast, SEO-friendly rendering.",
@@ -876,8 +876,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/portfolioCover3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/portfolioCover3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Contact Me",
           details: [
             "Interested in working together or have a project in mind?",
@@ -892,8 +892,8 @@ const projectDetailsCards = {
       slug: "lenoyer",
       cards: [
         {
-          imgPath: "/images/lenoyer1.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/lenoyer1.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Medical Center Le Noyer",
           details: [
             "A minimalist, elegant, and functional website",
@@ -901,8 +901,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lenoyer2.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/lenoyer2.webp",
+          logoPath: "/images/Asset2.webp",
           title: "All the informations in a few clicks",
           details: [
             "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
@@ -910,8 +910,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lenoyer3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/lenoyer3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "A responsive and user-friendly design",
           details: [
             "The site uses various plugins:",
@@ -926,8 +926,8 @@ const projectDetailsCards = {
       slug: "annick",
       cards: [
         {
-          imgPath: "/images/annick2.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/annick2.webp",
+          logoPath: "/images/Asset1.webp",
           title: "A professional painter's website",
           details: [
             "A window into the artist's world",
@@ -935,8 +935,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/annick3.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/annick3.webp",
+          logoPath: "/images/Asset2.webp",
           title: "A modern and visually engaging interface",
           details: [
             "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
@@ -944,8 +944,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/annick4.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/annick4.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Plugins and Features",
           details: [
             "To create this website, various plugins are used:",
@@ -964,7 +964,7 @@ const projectDetailsCards = {
       cards: [
         {
           imgPath: "/images/asbl_ovni/ovni_artistes.webp",
-          logoPath: "/images/Asset1.png",
+          logoPath: "/images/Asset1.webp",
           title: "OVNI Compta : Comptabilité sur mesure pour ASBL",
           details: [
             "Application web comptable développée sur mesure pour une ASBL culturelle belge, en remplacement de fichiers Excel partagés par un outil centralisé et sécurisé.",
@@ -974,7 +974,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/asbl_ovni/ovni_transactions.webp",
-          logoPath: "/images/Asset2.png",
+          logoPath: "/images/Asset2.webp",
           title: "Fonctionnalités clés",
           details: [
             "Tableau de bord interactif avec vue d'ensemble financière, graphiques et dernières transactions en un coup d'œil.",
@@ -984,7 +984,7 @@ const projectDetailsCards = {
         },
         {
           imgPath: "/images/asbl_ovni/ovni_ressources.webp",
-          logoPath: "/images/Asset3.png",
+          logoPath: "/images/Asset3.webp",
           title: "Stack technique & Sécurité",
           details: [
             "Construit avec Next.js, React, TypeScript et Tailwind CSS pour une interface moderne et responsive avec mode sombre/clair.",
@@ -998,8 +998,8 @@ const projectDetailsCards = {
       slug: "fanal",
       cards: [
         {
-          imgPath: "/images/fanal_des_chats/fanal_about.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/fanal_des_chats/fanal_about.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge",
           details: [
             "Plateforme WordPress entièrement sur mesure pour un refuge de chats belge : 12 pages personnalisées, 3 quiz interactifs, 2 formulaires multi-étapes, un blog avec commentaires imbriqués et des dons en ligne.",
@@ -1008,8 +1008,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/fanal_des_chats/fanal_service.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/fanal_des_chats/fanal_service.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Fonctionnalités interactives",
           details: [
             "3 quiz interactifs (adoption, bénévolat, don) avec progression visuelle étape par étape et résultats personnalisés.",
@@ -1018,8 +1018,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/fanal_des_chats/fanal_testimony.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/fanal_des_chats/fanal_testimony.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Design & Stack technique",
           details: [
             "Thème WordPress 100% sur mesure -- aucun template, aucun page builder. Construit avec ACF PRO, Bootstrap 5, SASS et jQuery.",
@@ -1033,8 +1033,8 @@ const projectDetailsCards = {
       slug: "artgallery",
       cards: [
         {
-          imgPath: "/images/ag1.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/ag1.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Une plateforme sociale pour artistes",
           details: [
             "Cette application web est le résultat de mon projet final à Digital City. Le frontend est construit avec React, tandis que le backend est construit avec Node & Express. Les informations utilisateur sont stockées dans une base de données MySQL.",
@@ -1042,8 +1042,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/artg1.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/artg1.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Technologies Front End",
           details: [
             "React Router Dom gère le routage, la navigation et les liens.",
@@ -1054,8 +1054,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/ag3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/ag3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Technologies Back End",
           details: [
             "Nodemon est utilisé pour la surveillance du serveur.",
@@ -1073,8 +1073,8 @@ const projectDetailsCards = {
       slug: "portfolio",
       cards: [
         {
-          imgPath: "/images/portfolioCover.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/portfolioCover.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Site Web Portfolio Animé",
           details: [
             "Ce site web portfolio a été conçu et développé pour présenter mon travail, mes compétences et mon expérience en tant que développeur front-end.",
@@ -1082,8 +1082,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/portfolioCover2.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/portfolioCover2.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Technologies Front End",
           details: [
             "Construit avec Next.js et React pour un rendu rapide et optimisé pour le SEO.",
@@ -1093,8 +1093,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/portfolioCover3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/portfolioCover3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Contactez-moi",
           details: [
             "Intéressé par une collaboration ou avez-vous un projet en tête ?",
@@ -1109,8 +1109,8 @@ const projectDetailsCards = {
       slug: "lenoyer",
       cards: [
         {
-          imgPath: "/images/lenoyer1.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/lenoyer1.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Centre Médical Le Noyer",
           details: [
             "Un site web minimaliste, élégant et fonctionnel",
@@ -1118,8 +1118,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lenoyer2.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/lenoyer2.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Toutes les informations en quelques clics",
           details: [
             "Le site web résume la gamme de services de santé offerts par le centre médical à travers 7 onglets : Accueil, Comment ça marche, Services, Activités, Équipe, Journal et Contact & Accès.",
@@ -1127,8 +1127,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lenoyer3.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/lenoyer3.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Un design responsive et convivial",
           details: [
             "Le site utilise divers plugins :",
@@ -1143,8 +1143,8 @@ const projectDetailsCards = {
       slug: "annick",
       cards: [
         {
-          imgPath: "/images/annick2.png",
-          logoPath: "/images/Asset1.png",
+          imgPath: "/images/annick2.webp",
+          logoPath: "/images/Asset1.webp",
           title: "Site web d'une peintre professionnelle",
           details: [
             "Une fenêtre sur le monde de l'artiste",
@@ -1152,8 +1152,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/annick3.png",
-          logoPath: "/images/Asset2.png",
+          imgPath: "/images/annick3.webp",
+          logoPath: "/images/Asset2.webp",
           title: "Une interface moderne et visuellement engageante",
           details: [
             "Le site web offre une fenêtre sur le monde d'Annick Van Endert, présentant ses peintures, sculptures et art du tatouage à travers une interface moderne et visuellement engageante.",
@@ -1161,8 +1161,8 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/annick4.png",
-          logoPath: "/images/Asset3.png",
+          imgPath: "/images/annick4.webp",
+          logoPath: "/images/Asset3.webp",
           title: "Plugins et Fonctionnalités",
           details: [
             "Pour créer ce site web, divers plugins sont utilisés :",
@@ -1190,42 +1190,42 @@ const testimonials = [
     mentions: "@estherhoward",
     review:
       "I can’t say enough good things about Oliver. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+    imgPath: "/images/client1.webp",
   },
   {
     name: "Wade Warren",
     mentions: "@wadewarren",
     review:
       "Working with Oliver was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+    imgPath: "/images/client3.webp",
   },
   {
     name: "Guy Hawkins",
     mentions: "@guyhawkins",
     review:
       "Collaborating with Oliver was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Oliver's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Oliver is the ideal partner.",
-    imgPath: "/images/client2.png",
+    imgPath: "/images/client2.webp",
   },
   {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
       "Oliver was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+    imgPath: "/images/client5.webp",
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
       "Oliver’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
+    imgPath: "/images/client4.webp",
   },
   {
     name: "Albert Flores",
     mentions: "@albertflores",
     review:
       "Oliver was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+    imgPath: "/images/client6.webp",
   },
 ];
 
