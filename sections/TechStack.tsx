@@ -1,10 +1,10 @@
 'use client'
 import { useGSAP } from "@gsap/react"
 import TitleHeader from "../components/TitleHeader"
-// import TechIcon from "../components/models/techlogos/TechIcon"
-// import { techStackImgs } from "../constants"
-import { gsap }from "gsap"
+import { gsap } from "gsap"
 import { useTranslation } from "@/hooks/useTranslation";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import dynamic from "next/dynamic";
 const TechIcon = dynamic(
@@ -14,14 +14,23 @@ const TechIcon = dynamic(
 
 
 const TechStack = () => {
-    const { t, techStackIcons } = useTranslation();
+    const { t, techStackIcons, techStackImgs } = useTranslation();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const check = () => setIsMobile(window.innerWidth < 768);
+      check();
+      window.addEventListener("resize", check);
+      return () => window.removeEventListener("resize", check);
+    }, []);
+
     useGSAP(() => {
         gsap.fromTo('.tech-card',
             { y: 50, opacity: 0 },
-            {   y: 0, 
-                opacity: 1, 
+            {   y: 0,
+                opacity: 1,
                 duration: 1,
-                stagger: 0.2, 
+                stagger: 0.2,
                 ease: "power2.inOut",
                 scrollTrigger: {
                     trigger: '#skills',
@@ -37,34 +46,34 @@ const TechStack = () => {
         <div className="w-full h-full 3xl:px-28 2xl:px-20 xl:px-12">
             <TitleHeader title={t.techstack.title} sub={t.techstack.subtitle} />
             <div className="tech-grid">
-                {techStackIcons.map((icon) => (
-                    <div key={icon.modelPath} className="card-border tech-card overflow-hidden group rounded-xl relative">
+                {isMobile
+                  ? techStackImgs.map((img) => (
+                      <div key={img.name} className="card-border tech-card overflow-hidden group rounded-lg xl:rounded-xl">
                         <div className="tech-card-animated-bg" />
                         <div className="tech-card-content">
-                            <div className="tech-icon-wrapper">
-                                <TechIcon model={icon}/>
-                            </div>
-                            <div className="padding-x w-full">
-                                <p>{icon.name}</p>
-                            </div>
+                          <div className="tech-icon-wrapper">
+                            <Image src={img.imgPath} alt={img.name} width={100} height={100} />
+                          </div>
+                          <div className="padding-x w-full">
+                            <p>{img.name}</p>
+                          </div>
                         </div>
-                    </div>
-                ))}
-                {/* {techStackImgs.map((img)=> (
-                    <div key={img.name} className="card-border tech-chard overflow-hidden group rounded-lg xl:rounded-xl">
-                        <div className="tech-chard-animated-bg">
-                            <div className="tech-card-content">
-                                <div className="tech-icon-wrapper">
-                                    <img src={img.imgPath} alt={img.name} />
-                                </div>
-                                <div className="padding-x w-full">
-                                    <p>{img.name}</p>
-                                </div>
-
-                            </div>
+                      </div>
+                    ))
+                  : techStackIcons.map((icon) => (
+                      <div key={icon.modelPath} className="card-border tech-card overflow-hidden group rounded-xl relative">
+                        <div className="tech-card-animated-bg" />
+                        <div className="tech-card-content">
+                          <div className="tech-icon-wrapper">
+                            <TechIcon model={icon} />
+                          </div>
+                          <div className="padding-x w-full">
+                            <p>{icon.name}</p>
+                          </div>
                         </div>
-                    </div>
-                    ))} */}
+                      </div>
+                    ))
+                }
             </div>
         </div>
     </div>

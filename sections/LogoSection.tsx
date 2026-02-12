@@ -13,6 +13,7 @@ const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
       alt="Tech logo"
       width={100}
       height={100}
+      loading="lazy"
       draggable={false}
       onDragStart={e => e.preventDefault()}
     />

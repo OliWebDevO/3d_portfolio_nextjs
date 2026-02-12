@@ -10,11 +10,13 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
+    // Disable Lenis on mobile - native scroll works fine and saves CPU
+    if (window.innerWidth < 768) return;
+
     const lenis = new Lenis({
       lerp: 0.12,
       smoothWheel: true,
       wheelMultiplier: 1.2,
-      syncTouch: true
     })
     lenisRef.current = lenis
 

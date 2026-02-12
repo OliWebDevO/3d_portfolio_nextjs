@@ -8,14 +8,15 @@ import { useEffect, useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
-import * as THREE from "three";
+import { Mesh, BufferGeometry, Material, MeshPhongMaterial, MeshStandardMaterial, Object3D } from "three";
+import type { Mesh as MeshType } from "three";
 
 interface RoomGLTFResult {
   nodes: {
-    [key: string]: THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]>; // Ensure nodes are Mesh objects
+    [key: string]: Mesh<BufferGeometry, Material | Material[]>;
   };
   materials: {
-    [key: string]: THREE.Material; // Materials remain as Material objects
+    [key: string]: Material;
   };
 }
 
@@ -28,34 +29,34 @@ export function Room(props: React.ComponentProps<'group'>) {
 
   const { nodes, materials } = useGLTF('/models/optimized-room.glb') as unknown as RoomGLTFResult; // Use 'unknown' first, then cast to RoomGLTFResult
 
-  const screensRef = useRef<THREE.Mesh>(null);
+  const screensRef = useRef<MeshType>(null);
   const matcapTexture = useTexture("/images/textures/mat1.png");
 
-  const curtainMaterial = new THREE.MeshPhongMaterial({
+  const curtainMaterial = new MeshPhongMaterial({
     color: "#d90429",
   });
 
-  const bodyMaterial = new THREE.MeshPhongMaterial({
+  const bodyMaterial = new MeshPhongMaterial({
     map: matcapTexture,
   });
 
-  const tableMaterial = new THREE.MeshPhongMaterial({
+  const tableMaterial = new MeshPhongMaterial({
     color: "#582f0e",
   });
 
-  const radiatorMaterial = new THREE.MeshPhongMaterial({
+  const radiatorMaterial = new MeshPhongMaterial({
     color: "#fff",
   });
 
-  const compMaterial = new THREE.MeshStandardMaterial({
+  const compMaterial = new MeshStandardMaterial({
     color: "#fff",
   });
 
-  const pillowMaterial = new THREE.MeshPhongMaterial({
+  const pillowMaterial = new MeshPhongMaterial({
     color: "#8338ec",
   });
 
-  const chairMaterial = new THREE.MeshPhongMaterial({
+  const chairMaterial = new MeshPhongMaterial({
     color: "#000",
   });
 
@@ -63,7 +64,7 @@ export function Room(props: React.ComponentProps<'group'>) {
     <group {...props} dispose={null}>
       <EffectComposer>
         <SelectiveBloom
-          selection={screensRef as unknown as THREE.Object3D}
+          selection={screensRef as unknown as Object3D}
           intensity={1.5}
           luminanceThreshold={0.2}
           luminanceSmoothing={0.9}

@@ -37,7 +37,7 @@ const FeatureCards = () => {
               >
                 <div className="glow" />
                 <div className="size-14 flex items-center justify-center rounded-full">
-                    <Image src={ability.imgPath} alt={ability.title} width={56} height={56} />
+                    <Image src={ability.imgPath} alt={ability.title} width={56} height={56} loading="lazy" />
                 </div>
                   <h3 className="text-2xl font-semibold text-white">{ability.title}</h3>
                   <p className="text-white-50 text-lg">{ability.desc}</p>

@@ -33,6 +33,9 @@ const HeroExperience = () => {
         alt="Room Model"
         width={800}
         height={600}
+        quality={80}
+        sizes="100vw"
+        loading="lazy"
         style={{ width: "100%", height: "auto", marginTop: "15rem" }}
       />
     )

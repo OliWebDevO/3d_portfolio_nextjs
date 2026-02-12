@@ -2,7 +2,7 @@
 import { Environment, Float, OrbitControls, useGLTF, Preload } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useEffect, useState, Suspense } from "react"
-import * as THREE from "three"
+import { Mesh, MeshStandardMaterial } from "three"
 
 const Model = ({ model }: ModelType) => {
   const scene = useGLTF(model.modelPath)
@@ -14,10 +14,10 @@ const Model = ({ model }: ModelType) => {
     if (model.name === 'Interactive Developer') {
       scene.scene.traverse((child) => {
         if (
-          child instanceof THREE.Mesh &&
+          child instanceof Mesh &&
           child.name === 'Object_5'
         ) {
-          child.material = new THREE.MeshStandardMaterial({
+          child.material = new MeshStandardMaterial({
             color: 'white',
           })
         }

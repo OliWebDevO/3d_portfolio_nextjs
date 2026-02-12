@@ -202,6 +202,11 @@ interface Translations {
 
 type Language = 'en' | 'fr';
 
+interface TechStackImgType {
+  name: string;
+  imgPath: string;
+}
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -211,6 +216,7 @@ interface LanguageContextType {
   abilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
+  techStackImgs: TechStackImgType[];
   projects: ProjectType[];
   projectDetailsCards: ProjectDetailsType[];
 }
@@ -225,6 +231,7 @@ interface UseTranslationReturn {
   abilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
+  techStackImgs: TechStackImgType[];
   projects: ProjectType[];
   projectDetailsCards: ProjectDetailsType[];
 }

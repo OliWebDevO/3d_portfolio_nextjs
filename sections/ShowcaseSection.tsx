@@ -93,6 +93,9 @@ const ShowcaseSection = () => {
                       alt={project.title}
                       width={1800}
                       height={1200}
+                      quality={80}
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                      loading="lazy"
                       className="rounded-xl object-contain main-img"
                     />
                     <div className="showcase-animated-bg flex items-center justify-center">
@@ -104,6 +107,7 @@ const ShowcaseSection = () => {
                             alt={`Tech logo ${logoIdx + 1}`}
                             width={80}
                             height={80}
+                            loading="lazy"
                             className="opacity-100 hover:opacity-80 hover:scale-90  duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
                           />
                         ))}
@@ -134,6 +138,9 @@ const ShowcaseSection = () => {
                       alt={project.title}
                       width={600}
                       height={400}
+                      quality={80}
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      loading="lazy"
                       className=" main-img "
                     />
                     <div className="showcase-animated-bg flex items-center justify-center">
@@ -145,6 +152,7 @@ const ShowcaseSection = () => {
                             alt={`Tech logo ${logoIdx + 1}`}
                             width={80}
                             height={80}
+                            loading="lazy"
                             className="opacity-100 hover:opacity-80 hover:scale-90 duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
                           />
                         ))}

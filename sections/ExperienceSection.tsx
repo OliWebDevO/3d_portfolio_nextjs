@@ -86,7 +86,7 @@ const ExperienceSection = () => {
                                     </div>
                                     <div className="exp-text flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
-                                            <Image src={card.logoPath} alt="logo" width={60} height={60} />
+                                            <Image src={card.logoPath} alt="logo" width={60} height={60} loading="lazy" />
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>

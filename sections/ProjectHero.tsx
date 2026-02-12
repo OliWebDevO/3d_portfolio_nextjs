@@ -66,6 +66,9 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
             alt={project.title}
             width={600}
             height={400}
+            quality={80}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
             className="rounded-xl card-border p-5 block"
           />
         </div>
@@ -78,6 +81,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
                 alt={`Tech logo ${idx + 1}`}
                 width={80}
                 height={80}
+                loading="lazy"
                 ref={el => {logoRefs.current[idx] = el}}
               />
             ))}

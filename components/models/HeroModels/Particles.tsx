@@ -1,7 +1,7 @@
 'use client';
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { Points } from "three";
 
 interface Particle {
   position: [number, number, number];
@@ -14,7 +14,7 @@ interface ParticlesProps {
 
 const Particles: React.FC<ParticlesProps> = ({ count = 200 }) => {
   // Properly type the mesh reference as THREE.Points or null
-  const mesh = useRef<THREE.Points | null>(null);
+  const mesh = useRef<Points | null>(null);
 
   // UseMemo to generate particles with proper typing
   const particles = useMemo<Particle[]>(() => {

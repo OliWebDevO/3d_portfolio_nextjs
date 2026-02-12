@@ -89,7 +89,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                            <div className="xl:w-2/6">
                                 <GlowCardDetails index={index}>
                                     <div>
-                                        <Image className="rounded-lg" src={card.imgPath} alt={card.imgPath} width={400} height={300} />
+                                        <Image className="rounded-lg" src={card.imgPath} alt={card.imgPath} width={400} height={300} quality={80} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
                                     </div>
                                 </GlowCardDetails>
                             </div>
@@ -101,7 +101,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
-                                            <Image src={card.logoPath} alt="logo" width={60} height={60} />
+                                            <Image src={card.logoPath} alt="logo" width={60} height={60} loading="lazy" />
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>

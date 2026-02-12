@@ -29,6 +29,9 @@ const ContactExperience = () => {
         alt="Computer Model"
         width={800}
         height={600}
+        quality={80}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        loading="lazy"
         style={{ width: "100%", height: "auto" }}
       />
     );

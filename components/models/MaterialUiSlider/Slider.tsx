@@ -119,6 +119,10 @@ export default function Slider() {
                       data-swiper-material-scale="1.25"
                       src={img.src}
                       alt={img.label}
+                      loading="lazy"
+                      decoding="async"
+                      width={1200}
+                      height={800}
                     />
                     <Link
                       href={`/projects/${img.slug}`}

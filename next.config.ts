@@ -39,6 +39,9 @@ const nextConfig: NextConfig = {
       }
     ]
   },
+  experimental: {
+    optimizePackageImports: ['gsap', 'three', '@react-three/drei', 'swiper'],
+  },
   // Compression
   compress: true,
   // Optimize images

@@ -1,15 +1,15 @@
 import { useGLTF } from "@react-three/drei";
-import * as THREE from "three";
+import { Mesh, Material } from "three";
 import type { ComponentProps } from "react";
 
 
 interface GLTFResult {
   nodes: {
-    Cube000_ComputerDesk_0001_1: THREE.Mesh;
-    Cube000_ComputerDesk_0001_2: THREE.Mesh;
+    Cube000_ComputerDesk_0001_1: Mesh;
+    Cube000_ComputerDesk_0001_2: Mesh;
   };
   materials: {
-    [name: string]: THREE.Material;
+    [name: string]: Material;
   };
 }
 
