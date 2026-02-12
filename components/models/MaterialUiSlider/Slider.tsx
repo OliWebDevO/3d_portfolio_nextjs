@@ -26,18 +26,15 @@ const images = [
 export default function Slider() {
   const { t } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
-  const [slidesPerView, setSlidesPerView] = useState<number>(2);
+  const [slidesPerView, setSlidesPerView] = useState<number>(
+    () => (typeof window !== 'undefined' && window.innerWidth < 768) ? 1 : 2
+  );
 
-  // Responsive slidesPerView: 2 for desktop, 1 for mobile
+  // Responsive slidesPerView on resize
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 768) {
-        setSlidesPerView(1);
-      } else {
-        setSlidesPerView(2);
-      }
+      setSlidesPerView(window.innerWidth < 768 ? 1 : 2);
     }
-    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);

@@ -48,7 +48,7 @@ const TechStack = () => {
             <div className="tech-grid">
                 {isMobile
                   ? techStackImgs.map((img) => (
-                      <div key={img.name} className="card-border tech-card overflow-hidden group rounded-lg xl:rounded-xl">
+                      <div key={img.name} className="card-border tech-card overflow-hidden group rounded-lg xl:rounded-xl relative">
                         <div className="tech-card-animated-bg" />
                         <div className="tech-card-content">
                           <div className="tech-icon-wrapper">

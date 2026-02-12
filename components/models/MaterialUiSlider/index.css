@@ -145,20 +145,20 @@
   .swiper-button-next-custom {
     display: flex;
   }
-  
+
   .swiper-button-prev-custom {
     left: 5px;
   }
-  
+
   .swiper-button-next-custom {
     right: 5px;
   }
-  
+
   .arrow-nav-wrapper {
     width: 40px;
     height: 40px;
   }
-  
+
   .arrow-nav-icon {
     width: 16px;
     height: 16px;
