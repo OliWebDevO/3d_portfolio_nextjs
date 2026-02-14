@@ -128,6 +128,7 @@ interface HeroTranslations {
   deliverResults: string;
   description: string;
   buttonText: string;
+  buttonTextMobile: string;
 }
 
 interface SliderTranslations {
