@@ -40,7 +40,7 @@ return (
         <div className="hero-layout">
             {/* LEFT : CONTENT */}
             <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-                <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-16 md:gap-7">
                     <div className="hero-text">
                         <h1>
                             {t.hero.shaping}

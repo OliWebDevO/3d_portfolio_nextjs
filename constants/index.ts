@@ -25,7 +25,7 @@ const translations = {
       shaping: "Shapping",
       intoRealProjects: "Into Real Projects",
       deliverResults: "that Deliver Results",
-      description: "Hi I'm Oliver, a developer based in Belgium with a passion for creating immersive designs.",
+      description: "Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.",
       buttonText: "See My Work",
       buttonTextMobile: "Contact Me"
     },
@@ -100,7 +100,7 @@ const translations = {
       shaping: "Transformez vos",
       intoRealProjects: "En Projets Professionnels",
       deliverResults: "",
-      description: "Bienvenue sur mon site. Je suis un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
+      description: "Basé à Bruxelles, je transforme vos idées en sites vitrines percutants, plateformes web interactives ou applications de gestion complètes. Mon but : Simplifier votre quotidien.",
       buttonText: "Mes Projets",
       buttonTextMobile: "Contactez-moi"
     },
