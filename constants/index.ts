@@ -54,8 +54,8 @@ const translations = {
         description: "An animated portfolio website showcasing my work."
       },
       lenoyer: {
-        title: "Le Noyer : Medical center website",
-        description: "A minimalist, elegant, and functional website"
+        title: "Le Noyer : Professional website for a medical center",
+        description: "A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously"
       },
       annick: {
         title: "Annick Van Endert : Artist's website",
@@ -128,8 +128,8 @@ const translations = {
         description: "Un site portfolio animé présentant mon travail."
       },
       lenoyer: {
-        title: "Le Noyer : Site web du centre médical",
-        description: "Un site web minimaliste, élégant et fonctionnel"
+        title: "Le Noyer : Site professionnel pour un centre médical",
+        description: "Un site WordPress sur mesure conçu pour inspirer confiance, informer les patients et permettre une gestion autonome du contenu"
       },
       annick: {
         title: "Annick Van Endert : Site web d'artiste",
@@ -548,8 +548,8 @@ const projects = {
   en: [
     {
       slug: "lenoyer",
-      title: "Le Noyer : Medical center website",
-      description: "A minimalist, elegant, and functional website",
+      title: "Le Noyer : Professional website for a medical center",
+      description: "A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously",
       image: "/images/lenoyer1.webp",
       link: "https://lenoyer.be",
       techLogos: [
@@ -633,8 +633,8 @@ const projects = {
   fr: [
     {
       slug: "lenoyer",
-      title: "Le Noyer : Site web du centre médical",
-      description: "Un site web minimaliste, élégant et fonctionnel",
+      title: "Le Noyer : Site professionnel pour un centre médical",
+      description: "Un site WordPress sur mesure conçu pour inspirer confiance, informer les patients et permettre une gestion autonome du contenu",
       image: "/images/lenoyer1.webp",
       link: "https://lenoyer.be",
       techLogos: [
@@ -894,30 +894,31 @@ const projectDetailsCards = {
         {
           imgPath: "/images/lenoyer1.webp",
           logoPath: "/images/Asset1.webp",
-          title: "Medical Center Le Noyer",
+          title: "Le Noyer: A Trustworthy Online Presence for Healthcare",
           details: [
-            "A minimalist, elegant, and functional website",
-            "Maison Médicale Le Noyer is a multidisciplinary team providing quality, accessible, continuous, comprehensive, and integrated healthcare in the municipality of Schaerbeek.",
+            "Custom WordPress website for a multidisciplinary medical center in Schaerbeek, Brussels. Designed to convey trust and professionalism from the first visit.",
+            "7 structured sections covering everything patients need: services, team, activities, how it works, blog, and contact with access info.",
+            "The client manages all content independently through WordPress admin -- no developer needed for updates, schedule changes, or team announcements.",
           ],
         },
         {
           imgPath: "/images/lenoyer2.webp",
           logoPath: "/images/Asset2.webp",
-          title: "All the informations in a few clicks",
+          title: "Designed for Patient Engagement",
           details: [
-            "The website summarizes the range of healthcare services offered by the medical center through 7 tabs: Home, How it works, Services, Activities, Team, Journal, and Contact & Access.",
-            "The site is personalized so that each section can be directly modified or updated by the medical center team. They can easily add or remove content at will via the Wordpress admin panel.",
+            "Clean, minimalist design that puts essential information front and center -- patients find what they need in seconds, not minutes.",
+            "Fully responsive layout ensuring a seamless experience on mobile, tablet, and desktop -- critical for healthcare sites where users often search on the go.",
+            "Smooth scroll animations and interactive carousels bring the content to life while maintaining a professional, reassuring tone.",
           ],
         },
         {
           imgPath: "/images/lenoyer3.webp",
           logoPath: "/images/Asset3.webp",
-          title: "A responsive and user-friendly design",
+          title: "Custom WordPress Theme & Technical Stack",
           details: [
-            "The site uses various plugins:",
-            "Wow.js & Animate.css are used for animations.",
-            "Slick Slider is used for managing carousels (for example: team page).",
-            "Magnific Popup is used to display images as a lightbox."
+            "100% custom WordPress theme -- no generic template, no page builder. Every element is tailored to the medical center's needs and branding.",
+            "Built with ACF PRO for flexible content management, Slick Slider for team and gallery carousels, and Magnific Popup for image lightboxes.",
+            "Scroll animations (WOW.js, Animate.css) add polish without compromising page speed or accessibility.",
           ],
         },
       ],
@@ -1111,30 +1112,31 @@ const projectDetailsCards = {
         {
           imgPath: "/images/lenoyer1.webp",
           logoPath: "/images/Asset1.webp",
-          title: "Centre Médical Le Noyer",
+          title: "Le Noyer : Une présence en ligne de confiance pour le secteur médical",
           details: [
-            "Un site web minimaliste, élégant et fonctionnel",
-            "La Maison Médicale Le Noyer est une équipe multidisciplinaire offrant des soins de santé de qualité, accessibles, continus, complets et intégrés dans la commune de Schaerbeek.",
+            "Site WordPress sur mesure pour une maison médicale pluridisciplinaire à Schaerbeek, Bruxelles. Conçu pour transmettre confiance et professionnalisme dès la première visite.",
+            "7 sections structurées couvrant tout ce dont les patients ont besoin : services, équipe, activités, fonctionnement, blog, et contact avec infos d'accès.",
+            "Le client gère tout son contenu en autonomie via l'admin WordPress -- aucun développeur nécessaire pour les mises à jour, changements d'horaires ou annonces d'équipe.",
           ],
         },
         {
           imgPath: "/images/lenoyer2.webp",
           logoPath: "/images/Asset2.webp",
-          title: "Toutes les informations en quelques clics",
+          title: "Conçu pour l'engagement des patients",
           details: [
-            "Le site web résume la gamme de services de santé offerts par le centre médical à travers 7 onglets : Accueil, Comment ça marche, Services, Activités, Équipe, Journal et Contact & Accès.",
-            "Le site est personnalisé pour que chaque section puisse être directement modifiée ou mise à jour par l'équipe du centre médical. Ils peuvent facilement ajouter ou supprimer du contenu à volonté via le panneau d'administration WordPress.",
+            "Design épuré et minimaliste qui met l'essentiel au premier plan -- les patients trouvent ce qu'ils cherchent en quelques secondes.",
+            "Mise en page entièrement responsive garantissant une expérience fluide sur mobile, tablette et desktop -- essentiel pour un site de santé où les utilisateurs consultent souvent en déplacement.",
+            "Animations au scroll et carrousels interactifs donnent vie au contenu tout en maintenant un ton professionnel et rassurant.",
           ],
         },
         {
           imgPath: "/images/lenoyer3.webp",
           logoPath: "/images/Asset3.webp",
-          title: "Un design responsive et convivial",
+          title: "Thème WordPress sur mesure & Stack technique",
           details: [
-            "Le site utilise divers plugins :",
-            "Wow.js & Animate.css sont utilisés pour les animations.",
-            "Slick Slider est utilisé pour gérer les carrousels (par exemple : page équipe).",
-            "Magnific Popup est utilisé pour afficher les images en lightbox."
+            "Thème WordPress 100% sur mesure -- aucun template générique, aucun page builder. Chaque élément est adapté aux besoins et à l'identité du centre médical.",
+            "Construit avec ACF PRO pour une gestion de contenu flexible, Slick Slider pour les carrousels d'équipe et galeries, et Magnific Popup pour les lightboxes d'images.",
+            "Animations au scroll (WOW.js, Animate.css) apportent du dynamisme sans compromettre la vitesse de chargement ni l'accessibilité.",
           ],
         },
       ],

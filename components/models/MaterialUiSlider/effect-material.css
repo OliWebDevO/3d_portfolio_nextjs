@@ -13,15 +13,25 @@
   top: 0;
   box-sizing: border-box;
   pointer-events: auto;
+  will-change: transform, width;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .swiper-material-content {
   position: absolute;
-
   transform: translate3d(0, 0, 0);
   font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.swiper-material .swiper-slide {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 .swiper-horizontal .swiper-material-content {
   height: 100%;

@@ -64,6 +64,9 @@
   object-fit: cover;
   display: block;
   border-radius: var(--swiper-material-slide-border-radius);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .demo-material-label {
   position: absolute;
@@ -97,7 +100,6 @@
   transform: translateY(-50%);
   z-index: 10;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .swiper-button-prev-custom {
@@ -116,8 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -132,7 +133,7 @@
   width: 20px;
   height: 20px;
   filter: invert(0);
-  transition: all 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .arrow-nav-wrapper:hover .arrow-nav-icon {

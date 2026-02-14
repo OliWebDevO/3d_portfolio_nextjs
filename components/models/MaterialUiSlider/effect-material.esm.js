@@ -346,7 +346,7 @@ export default function EffectMaterial({ swiper, on, extendParams }) {
         );
         if (Number.isNaN(elementScale) || (!elementScale && elementScale !== 0))
           elementScale = 1;
-        scaleEl.style.transform = `scale(${
+        scaleEl.style.transform = `translate3d(0,0,0) scale(${
           1 + (elementScale - 1) * (1 - scale)
         })`;
       });
