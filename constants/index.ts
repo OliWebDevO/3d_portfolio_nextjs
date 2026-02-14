@@ -896,9 +896,9 @@ const projectDetailsCards = {
         {
           imgPath: "/images/lenoyer1.webp",
           logoPath: "/images/Asset1.webp",
-          title: "Le Noyer: A Trustworthy Online Presence for Healthcare",
+          title: "Le Noyer: A Professional Showcase for Healthcare",
           details: [
-            "Custom WordPress website for a multidisciplinary medical center in Schaerbeek, Brussels. Designed to convey trust and professionalism from the first visit.",
+            "Custom WordPress website for a multidisciplinary medical center in Schaerbeek, Brussels. Designed to reflect the center's professionalism from the first visit.",
             "7 structured sections covering everything patients need: services, team, activities, how it works, blog, and contact with access info.",
             "The client manages all content independently through WordPress admin : no developer needed for updates, schedule changes, or team announcements.",
           ],
@@ -1114,9 +1114,9 @@ const projectDetailsCards = {
         {
           imgPath: "/images/lenoyer1.webp",
           logoPath: "/images/Asset1.webp",
-          title: "Le Noyer : Une présence en ligne de confiance pour le secteur médical",
+          title: "Le Noyer : Une vitrine professionnelle pour le secteur médical",
           details: [
-            "Site WordPress sur mesure pour une maison médicale pluridisciplinaire à Schaerbeek, Bruxelles. Conçu pour transmettre confiance et professionnalisme dès la première visite.",
+            "Site WordPress sur mesure pour une maison médicale pluridisciplinaire à Schaerbeek, Bruxelles. Conçu pour refléter le professionnalisme du centre dès la première visite.",
             "7 sections structurées couvrant tout ce dont les patients ont besoin : services, équipe, activités, fonctionnement, blog, et contact avec infos d'accès.",
             "Le client gère tout son contenu en autonomie via l'admin WordPress : aucun développeur nécessaire pour les mises à jour, changements d'horaires ou annonces d'équipe.",
           ],
