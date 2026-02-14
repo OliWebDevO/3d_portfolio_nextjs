@@ -98,7 +98,7 @@ const ExperienceSection = () => {
                                             </p>
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
                                                 {card.responsibilities.map((responsibility, index) => (
-                                                    <li key={index} className="text-lg text-justify">
+                                                    <li key={index} className="text-lg md:text-justify">
                                                         {responsibility}
                                                     </li>
                                                 ))}
