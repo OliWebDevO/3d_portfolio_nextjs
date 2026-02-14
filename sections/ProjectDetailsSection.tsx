@@ -107,7 +107,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
                                                 {card.details?.map((detail, index) => (
-                                                    <li key={index} className="text-lg">
+                                                    <li key={index} className="text-lg text-justify">
                                                         {detail}
                                                     </li>
                                                 ))}
