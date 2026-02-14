@@ -65,7 +65,7 @@ return (
                         <h1>{t.hero.intoRealProjects}</h1>
                         <h1>{t.hero.deliverResults}</h1>
                     </div>
-                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none md:max-w-[50%] text-justify">
+                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
                         {t.hero.description}
                     </p>
                     <Button
