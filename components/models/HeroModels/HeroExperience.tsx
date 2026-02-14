@@ -26,6 +26,7 @@ const HeroExperience = () => {
     return <div style={{ width: "100%", height: "100%", minHeight: "50vh" }} />
   }
 
+  /* Mobile fallback image — commented out, uncomment to restore
   if (isMobile) {
     return (
       <Image
@@ -39,6 +40,10 @@ const HeroExperience = () => {
         style={{ width: "100%", height: "auto", marginTop: "15rem" }}
       />
     )
+  }
+  */
+  if (isMobile) {
+    return null
   }
 
   return (

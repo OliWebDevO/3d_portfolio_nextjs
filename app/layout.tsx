@@ -3,6 +3,7 @@ import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./providers/LenisProvider"
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -215,6 +216,7 @@ export default function RootLayout({
         <LanguageProvider>
           <LenisProvider>
           {children}
+          <ScrollToTop />
         </LenisProvider>
         </LanguageProvider>
         </body>

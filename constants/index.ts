@@ -26,7 +26,8 @@ const translations = {
       intoRealProjects: "Into Real Projects",
       deliverResults: "that Deliver Results",
       description: "Hi I'm Oliver, a developer based in Belgium with a passion for creating immersive designs.",
-      buttonText: "See My Work"
+      buttonText: "See My Work",
+      buttonTextMobile: "Contact Me"
     },
     slider: {
       title: "Swipe through the projects",
@@ -100,7 +101,8 @@ const translations = {
       intoRealProjects: "En Projets Professionnels",
       deliverResults: "",
       description: "Bienvenue sur mon site. Je suis un développeur basé en Belgique avec une passion pour la création de designs immersifs.",
-      buttonText: "Mes Projets"
+      buttonText: "Mes Projets",
+      buttonTextMobile: "Contactez-moi"
     },
     slider: {
       title: "Découvrez mes projets",

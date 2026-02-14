@@ -68,15 +68,20 @@ return (
                     <p className="text-white-50 md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
                         {t.hero.description}
                     </p>
-                    <Button 
-                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0" 
+                    <Button
+                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0 hidden md:block"
                         text={t.hero.buttonText}
                         href="#work"
                     />
+                    <Button
+                        className="w-60 h-12 mb-4 block md:hidden"
+                        text={t.hero.buttonTextMobile}
+                        href="#contact"
+                    />
                 </div>
             </header>
-            {/* RIGHT : 3D MODEL */}
-            <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'max-md:top-32' : ''}`}>
+            {/* RIGHT : 3D MODEL — hidden on mobile since no content */}
+            <div className={`hero-3d-layout hover:cursor-grab md:block hidden ${isFrench ? 'max-md:top-32' : ''}`}>
                 <HeroExperience />
             </div>
         </div>
