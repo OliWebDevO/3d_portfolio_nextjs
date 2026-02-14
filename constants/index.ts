@@ -754,7 +754,7 @@ const projectDetailsCards = {
           details: [
             "A custom-built accounting web app developed for a Belgian cultural NGO (ASBL) to replace shared Excel files with a secure, centralized tool.",
             "Manages finances at three levels: members, projects, and central treasury, with automated internal transfers that keep accounts balanced.",
-            "Accessible from any device, the app lets the client manage everything autonomously -- no technical intervention needed.",
+            "Accessible from any device, the app lets the client manage everything autonomously : no technical intervention needed.",
           ],
         },
         {
@@ -788,7 +788,7 @@ const projectDetailsCards = {
           title: "Le Fanal des Chats: Custom Platform for an Animal Shelter",
           details: [
             "A fully custom WordPress platform built for a Belgian cat shelter, featuring 12 custom pages, 3 interactive quizzes, 2 multi-step forms, a blog with nested comments, and online donations.",
-            "Every page is managed via custom fields in the WordPress admin -- the client updates all content autonomously without any technical skills.",
+            "Every page is managed via custom fields in the WordPress admin : the client updates all content autonomously without any technical skills.",
             "Designed to drive visitor engagement through structured journeys: adoption, volunteering, and donations.",
           ],
         },
@@ -807,7 +807,7 @@ const projectDetailsCards = {
           logoPath: "/images/Asset3.webp",
           title: "Design & Technical Stack",
           details: [
-            "100% custom WordPress theme -- no template, no page builder. Built with ACF PRO, Bootstrap 5, SASS, and jQuery.",
+            "100% custom WordPress theme : no template, no page builder. Built with ACF PRO, Bootstrap 5, SASS, and jQuery.",
             "Scroll animations (Animate.css, WOW.js), animated counters (Odometer.js), carousels (Slick, Swiper), and lightboxes (Fancybox).",
             "Online donations via GiveWP, downloadable PDF publications archive, responsive mobile-first design.",
           ],
@@ -900,7 +900,7 @@ const projectDetailsCards = {
           details: [
             "Custom WordPress website for a multidisciplinary medical center in Schaerbeek, Brussels. Designed to convey trust and professionalism from the first visit.",
             "7 structured sections covering everything patients need: services, team, activities, how it works, blog, and contact with access info.",
-            "The client manages all content independently through WordPress admin -- no developer needed for updates, schedule changes, or team announcements.",
+            "The client manages all content independently through WordPress admin : no developer needed for updates, schedule changes, or team announcements.",
           ],
         },
         {
@@ -908,8 +908,8 @@ const projectDetailsCards = {
           logoPath: "/images/Asset2.webp",
           title: "Designed for Patient Engagement",
           details: [
-            "Clean, minimalist design that puts essential information front and center -- patients find what they need in seconds, not minutes.",
-            "Fully responsive layout ensuring a seamless experience on mobile, tablet, and desktop -- critical for healthcare sites where users often search on the go.",
+            "Clean, minimalist design that puts essential information front and center : patients find what they need in seconds, not minutes.",
+            "Fully responsive layout ensuring a seamless experience on mobile, tablet, and desktop : critical for healthcare sites where users often search on the go.",
             "Smooth scroll animations and interactive carousels bring the content to life while maintaining a professional, reassuring tone.",
           ],
         },
@@ -918,7 +918,7 @@ const projectDetailsCards = {
           logoPath: "/images/Asset3.webp",
           title: "Custom WordPress Theme & Technical Stack",
           details: [
-            "100% custom WordPress theme -- no generic template, no page builder. Every element is tailored to the medical center's needs and branding.",
+            "100% custom WordPress theme : no generic template, no page builder. Every element is tailored to the medical center's needs and branding.",
             "Built with ACF PRO for flexible content management, Slick Slider for team and gallery carousels, and Magnific Popup for image lightboxes.",
             "Scroll animations (WOW.js, Animate.css) add polish without compromising page speed or accessibility.",
           ],
@@ -1006,7 +1006,7 @@ const projectDetailsCards = {
           title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge",
           details: [
             "Plateforme WordPress entièrement sur mesure pour un refuge de chats belge : 12 pages personnalisées, 3 quiz interactifs, 2 formulaires multi-étapes, un blog avec commentaires imbriqués et des dons en ligne.",
-            "Chaque page est gérée via des champs personnalisés dans l'admin WordPress -- le client met à jour tout son contenu en autonomie, sans compétence technique.",
+            "Chaque page est gérée via des champs personnalisés dans l'admin WordPress : le client met à jour tout son contenu en autonomie, sans compétence technique.",
             "Conçue pour guider les visiteurs dans des parcours d'engagement structurés : adoption, bénévolat et dons.",
           ],
         },
@@ -1025,7 +1025,7 @@ const projectDetailsCards = {
           logoPath: "/images/Asset3.webp",
           title: "Design & Stack technique",
           details: [
-            "Thème WordPress 100% sur mesure -- aucun template, aucun page builder. Construit avec ACF PRO, Bootstrap 5, SASS et jQuery.",
+            "Thème WordPress 100% sur mesure : aucun template, aucun page builder. Construit avec ACF PRO, Bootstrap 5, SASS et jQuery.",
             "Animations au scroll (Animate.css, WOW.js), compteurs animés (Odometer.js), carrousels (Slick, Swiper) et lightboxes (Fancybox).",
             "Dons en ligne via GiveWP, archive de publications PDF téléchargeables, design responsive mobile-first.",
           ],
@@ -1118,7 +1118,7 @@ const projectDetailsCards = {
           details: [
             "Site WordPress sur mesure pour une maison médicale pluridisciplinaire à Schaerbeek, Bruxelles. Conçu pour transmettre confiance et professionnalisme dès la première visite.",
             "7 sections structurées couvrant tout ce dont les patients ont besoin : services, équipe, activités, fonctionnement, blog, et contact avec infos d'accès.",
-            "Le client gère tout son contenu en autonomie via l'admin WordPress -- aucun développeur nécessaire pour les mises à jour, changements d'horaires ou annonces d'équipe.",
+            "Le client gère tout son contenu en autonomie via l'admin WordPress : aucun développeur nécessaire pour les mises à jour, changements d'horaires ou annonces d'équipe.",
           ],
         },
         {
@@ -1126,8 +1126,8 @@ const projectDetailsCards = {
           logoPath: "/images/Asset2.webp",
           title: "Conçu pour l'engagement des patients",
           details: [
-            "Design épuré et minimaliste qui met l'essentiel au premier plan -- les patients trouvent ce qu'ils cherchent en quelques secondes.",
-            "Mise en page entièrement responsive garantissant une expérience fluide sur mobile, tablette et desktop -- essentiel pour un site de santé où les utilisateurs consultent souvent en déplacement.",
+            "Design épuré et minimaliste qui met l'essentiel au premier plan : les patients trouvent ce qu'ils cherchent en quelques secondes.",
+            "Mise en page entièrement responsive garantissant une expérience fluide sur mobile, tablette et desktop : essentiel pour un site de santé où les utilisateurs consultent souvent en déplacement.",
             "Animations au scroll et carrousels interactifs donnent vie au contenu tout en maintenant un ton professionnel et rassurant.",
           ],
         },
@@ -1136,7 +1136,7 @@ const projectDetailsCards = {
           logoPath: "/images/Asset3.webp",
           title: "Thème WordPress sur mesure & Stack technique",
           details: [
-            "Thème WordPress 100% sur mesure -- aucun template générique, aucun page builder. Chaque élément est adapté aux besoins et à l'identité du centre médical.",
+            "Thème WordPress 100% sur mesure : aucun template générique, aucun page builder. Chaque élément est adapté aux besoins et à l'identité du centre médical.",
             "Construit avec ACF PRO pour une gestion de contenu flexible, Slick Slider pour les carrousels d'équipe et galeries, et Magnific Popup pour les lightboxes d'images.",
             "Animations au scroll (WOW.js, Animate.css) apportent du dynamisme sans compromettre la vitesse de chargement ni l'accessibilité.",
           ],
