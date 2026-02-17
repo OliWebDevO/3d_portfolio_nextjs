@@ -106,7 +106,11 @@ section {
 
   .navbar {
     @apply fixed w-full left-1/2 py-5 px-5 xl:px-[6vw] md:px-20 -translate-x-1/2 z-[100] duration-300 ease-in-out;
-    transition-property: background-color, top;
+    transition-property: background-color, top, transform;
+
+    &.nav-hidden {
+      @apply -translate-y-full;
+    }
 
     &.scrolled {
       @apply top-0 bg-black;

@@ -7,25 +7,39 @@ import { usePathname } from "next/navigation"
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
-    const { navLinks } = useTranslation() 
+    const [hidden, setHidden] = useState(false)
+    const { navLinks } = useTranslation()
     const pathname = usePathname()
-    // const { t, navLinks } = useTranslation() 
-    
+
     useEffect(() => {
+        let lastY = window.scrollY;
+        const isMobile = () => window.innerWidth < 768;
+
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 10;
-            setScrolled(isScrolled);
+            const currentY = window.scrollY;
+            setScrolled(currentY > 10);
+
+            // Hide/show on scroll direction — mobile only
+            if (isMobile()) {
+                if (currentY > lastY && currentY > 80) {
+                    setHidden(true);
+                } else {
+                    setHidden(false);
+                }
+            } else {
+                setHidden(false);
+            }
+
+            lastY = currentY;
         }
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [])
 
     const isProjectPage = pathname?.startsWith('/projects/')
 
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
+    <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${hidden ? 'nav-hidden' : ''}`}>
         <div className="inner">
             <Link className="logo" href="/#hero">
                 Oliver Van Droogenbroeck
