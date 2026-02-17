@@ -116,8 +116,16 @@ section {
       @apply top-0 bg-black;
     }
 
+    &.scrolled.home {
+      @apply md:bg-black bg-transparent;
+    }
+
     &.not-scrolled {
       @apply md:top-10 top-0 md:bg-transparent bg-black;
+    }
+
+    &.not-scrolled.home {
+      @apply bg-transparent;
     }
 
     .inner {

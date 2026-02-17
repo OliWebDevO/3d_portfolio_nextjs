@@ -81,11 +81,13 @@ export default function Slider() {
 
     return (
     <section id="work" className='relative'>
-        <TitleHeader 
-          title={t.slider.title} 
-          sub={t.slider.subtitle} 
-          cn=' pt-20 pb-14'  
-        />
+        <div className="hidden md:block">
+          <TitleHeader
+            title={t.slider.title}
+            sub={t.slider.subtitle}
+            cn=' pt-20 pb-14'
+          />
+        </div>
       <div className="demo-slider">
         {/* Custom Navigation Arrows - positioned relative to slider */}
         <div className="swiper-button-prev-custom">

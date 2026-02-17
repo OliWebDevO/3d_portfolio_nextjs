@@ -37,11 +37,12 @@ const NavBar = () => {
     }, [])
 
     const isProjectPage = pathname?.startsWith('/projects/')
+    const isHomePage = pathname === '/'
 
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${hidden ? 'nav-hidden' : ''}`}>
+    <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${hidden ? 'nav-hidden' : ''} ${isHomePage ? 'home' : ''}`}>
         <div className="inner">
-            <Link className="logo" href="/#hero">
+            <Link className={`logo ${isHomePage ? 'hidden md:block' : ''}`} href="/#hero">
                 Oliver Van Droogenbroeck
             </Link>
             <nav className="desktop">
