@@ -51,7 +51,7 @@
 }
 
 .swiper-material {
-  height: 45vh;
+  height: 45dvh;
   width: calc(100% - 32px);
   max-width: 88vw;
 }

@@ -11,35 +11,35 @@ const Preloader = dynamic(
 
 const Slider = dynamic(() => import("@/components/models/MaterialUiSlider/Slider"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "80vh" }} />,
+  loading: () => <div style={{ minHeight: "80dvh" }} />,
 });
 const ShowcaseSection = dynamic(() => import("@/sections/ShowcaseSection"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "100vh" }} />,
+  loading: () => <div style={{ minHeight: "100dvh" }} />,
 });
 const LogoSection = dynamic(() => import("@/sections/LogoSection"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "20vh" }} />,
+  loading: () => <div style={{ minHeight: "20dvh" }} />,
 });
 const FeatureCards = dynamic(() => import("@/sections/FeatureCards"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "40vh" }} />,
+  loading: () => <div style={{ minHeight: "40dvh" }} />,
 });
 const ExperienceSection = dynamic(() => import("@/sections/ExperienceSection"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "100vh" }} />,
+  loading: () => <div style={{ minHeight: "100dvh" }} />,
 });
 const TechStack = dynamic(() => import("@/sections/TechStack"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "60vh" }} />,
+  loading: () => <div style={{ minHeight: "60dvh" }} />,
 });
 const Contact = dynamic(() => import("@/sections/Contact"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "60vh" }} />,
+  loading: () => <div style={{ minHeight: "60dvh" }} />,
 });
 const Footer = dynamic(() => import("@/sections/Footer"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: "10vh" }} />,
+  loading: () => <div style={{ minHeight: "10dvh" }} />,
 });
 
 export default function PreloaderWrapper() {

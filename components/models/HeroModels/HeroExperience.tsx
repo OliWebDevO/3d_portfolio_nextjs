@@ -23,7 +23,7 @@ const HeroExperience = () => {
 
   // Don't render anything on server or before client check
   if (!isClient) {
-    return <div style={{ width: "100%", height: "100%", minHeight: "50vh" }} />
+    return <div style={{ width: "100%", height: "100%", minHeight: "50dvh" }} />
   }
 
   /* Mobile fallback image — commented out, uncomment to restore

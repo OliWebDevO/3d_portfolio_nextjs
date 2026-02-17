@@ -49,11 +49,12 @@ const ExperienceSection = () => {
       });
 
       // Timeline (black background) - shrinks as you scroll
+      const isMobile = window.innerWidth < 768;
       gsap.to('.timeline', {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top center',
-          end: 'bottom center',
+          start: isMobile ? 'top 20%' : 'top center',
+          end: isMobile ? 'bottom 20%' : 'bottom center',
           scrub: true,
         },
         scaleY: 0,
