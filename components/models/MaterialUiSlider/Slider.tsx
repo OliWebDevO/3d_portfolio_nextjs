@@ -116,7 +116,8 @@ export default function Slider() {
                       data-swiper-material-scale="1.25"
                       src={img.src}
                       alt={img.label}
-                      loading="eager"
+                      loading="lazy"
+                      decoding="async"
                       draggable={false}
                     />
                     <Link

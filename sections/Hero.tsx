@@ -1,6 +1,6 @@
 // sections/Hero.tsx
 'use client'
-import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "../components/Button"
 import { useTranslation } from "@/hooks/useTranslation"
@@ -12,22 +12,21 @@ const HeroExperience = dynamic(
   () => import("@/components/models/HeroModels/HeroExperience"),
   { ssr: false }
 );
-const Stable3DModel = React.memo(() => (
-  <figure>
-    <div className="hero-3d-layout hover:cursor-grab">
-      <HeroExperience />
-    </div>
-  </figure>
-));
-
-Stable3DModel.displayName = 'Stable3DModel';
 
 const Hero = () => {
-    const { words, t, isFrench } = useTranslation(); // Get translated words and language check
+    const { words, t, isFrench } = useTranslation();
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+      setIsDesktop(window.innerWidth > 768);
+      const check = () => setIsDesktop(window.innerWidth > 768);
+      window.addEventListener('resize', check);
+      return () => window.removeEventListener('resize', check);
+    }, []);
 
     useGSAP(() => {
-        gsap.fromTo('.hero-text h1', 
-            { y: 50, opacity: 0 }, 
+        gsap.fromTo('.hero-text h1',
+            { y: 50, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
         )
     })
@@ -80,10 +79,12 @@ return (
                     />
                 </div>
             </header>
-            {/* RIGHT : 3D MODEL — hidden on mobile since no content */}
-            <div className={`hero-3d-layout hover:cursor-grab md:block hidden ${isFrench ? 'max-md:top-32' : ''}`}>
-                <HeroExperience />
-            </div>
+            {/* RIGHT : 3D MODEL — only loaded on desktop (prevents Three.js bundle on mobile) */}
+            {isDesktop && (
+              <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'max-md:top-32' : ''}`}>
+                  <HeroExperience />
+              </div>
+            )}
         </div>
     </section>
   )

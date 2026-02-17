@@ -47,6 +47,7 @@ const nextConfig: NextConfig = {
   // Optimize images
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 80],
   },
   // Production optimizations
   poweredByHeader: false,

@@ -14,6 +14,14 @@ const ContactExperience = dynamic(
 const Contact = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 1280); // xl breakpoint
+    const check = () => setIsDesktop(window.innerWidth >= 1280);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const [showSuccess, setShowSuccess] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -171,12 +179,14 @@ const Contact = () => {
                 </form>
               </div>
             </div>
-            {/* 3D model — hidden on mobile */}
-            <div className="xl:col-span-7 min-h-96 hidden xl:block">
-              <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-                <ContactExperience />
+            {/* 3D model — only loaded on desktop (prevents Three.js bundle on mobile/tablet) */}
+            {isDesktop && (
+              <div className="xl:col-span-7 min-h-96">
+                <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+                  <ContactExperience />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

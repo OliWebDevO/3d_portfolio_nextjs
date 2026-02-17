@@ -52,6 +52,15 @@ export default function PreloaderWrapper() {
       return;
     }
 
+    const isMobile = window.innerWidth <= 768;
+
+    // On mobile, no 3D loads — skip preloader immediately
+    if (isMobile) {
+      setLoading(false);
+      localStorage.setItem("hasVisited", "true");
+      return;
+    }
+
     const handleRoomLoaded = () => {
       setLoading(false);
       localStorage.setItem("hasVisited", "true");
