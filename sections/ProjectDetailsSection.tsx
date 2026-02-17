@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import GlowCardDetails from "@/components/GlowCardDetails"
 import { useParams } from "next/navigation"
 import { useTranslation } from "@/hooks/useTranslation"
+import { useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -17,6 +18,7 @@ function getSlug(param: string | string[] | undefined): string {
 
 const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => {
     const { projectDetailsCards } = useTranslation();
+    const sectionRef = useRef<HTMLElement>(null);
     // Always call useParams
     const params = useParams();
     const paramSlug = getSlug(params?.slug);
@@ -26,8 +28,8 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
     const details = projectDetailsCards?.find(p => p.slug === slug)?.cards;
 
     useGSAP(() => {
-        if (!details) return; // Don't run animations if no details
-        
+        if (!details) return;
+
         gsap.utils.toArray<HTMLElement>('.timeline-card').forEach((card) => {
             gsap.from(card, {
                 xPercent: -100,
@@ -44,18 +46,16 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
         });
 
         gsap.to('.timeline', {
-            transformOrigin: 'bottom bottom',
-            ease: 'power1.inOut',
+            scaleY: 0,
+            transformOrigin: 'bottom center',
+            ease: 'none',
             scrollTrigger: {
-                trigger: '.timeline',
-                start: 'top center',
-                end: '70% center',
-                onUpdate: (self) => {
-                    gsap.to('.timeline', {
-                        scaleY: 1 - self.progress,
-                    })
-                }
-            }
+                trigger: sectionRef.current,
+                start: 'top 60%',
+                end: 'bottom 60%',
+                scrub: true,
+                invalidateOnRefresh: true,
+            },
         });
 
         gsap.utils.toArray<HTMLElement>('.expText').forEach((text) => {
@@ -71,8 +71,10 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                 }
             })
         })
-        
-    }, [details] )
+
+        const timeoutId = setTimeout(() => ScrollTrigger.refresh(), 200);
+        return () => clearTimeout(timeoutId);
+    }, { scope: sectionRef, dependencies: [details], revertOnUpdate: true })
 
     // Don't render if projectDetailsCards is not loaded yet
     if (!projectDetailsCards || !details) {
@@ -80,7 +82,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
     }
 
   return (
-    <section id="experience" className="w-full md:mt-4 mt2 section-padding">
+    <section id="project-details" ref={sectionRef} className="w-full md:mt-4 mt2 section-padding">
         <div className="w-full h-full md:px-20 px-5">
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">

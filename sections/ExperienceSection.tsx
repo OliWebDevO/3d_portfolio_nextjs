@@ -15,57 +15,54 @@ const ExperienceSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Cards animation
-      gsap.utils.toArray<HTMLElement>('.exp-timeline-card').forEach((card) => {
-        gsap.from(card, {
-          xPercent: -100,
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          }
-        });
-      });
-
-      // Text animation
-      gsap.utils.toArray<HTMLElement>('.exp-text').forEach((text) => {
-        gsap.from(text, {
-          opacity: 0,
-          y: 30,
-          duration: 1,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: text,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          }
-        });
-      });
-
-      // Timeline (black background) - shrinks as you scroll
-      const isMobile = window.innerWidth < 768;
-      gsap.to('.timeline', {
+    // Cards animation
+    gsap.utils.toArray<HTMLElement>('.exp-timeline-card').forEach((card) => {
+      gsap.from(card, {
+        xPercent: -100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut',
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: isMobile ? 'top 20%' : 'top center',
-          end: isMobile ? 'bottom 20%' : 'bottom center',
-          scrub: true,
-        },
-        scaleY: 0,
-        transformOrigin: 'bottom center',
-        ease: 'none',
+          trigger: card,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        }
       });
+    });
 
-    }, sectionRef);
+    // Text animation
+    gsap.utils.toArray<HTMLElement>('.exp-text').forEach((text) => {
+      gsap.from(text, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: text,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        }
+      });
+    });
 
-    return () => ctx.revert();
-  }, [locale]);
+    // Timeline (black background) - shrinks as you scroll
+    gsap.to('.timeline', {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      scaleY: 0,
+      transformOrigin: 'bottom center',
+      ease: 'none',
+    });
+
+    // Deferred refresh: recalculate positions after hash navigation (#hero) settles
+    const timeoutId = setTimeout(() => ScrollTrigger.refresh(), 200);
+    return () => clearTimeout(timeoutId);
+  }, { scope: sectionRef, dependencies: [locale], revertOnUpdate: true });
 
   return (
     <section id="experience" ref={sectionRef} className="w-full section-padding">
@@ -75,7 +72,7 @@ const ExperienceSection = () => {
                 <div className="relative z-50 xl:space-y-32 space-y-10">
                     {expCards.map((card, index) => (
                         <div key={`${card.title}-${locale}`} className="exp-card-wrapper">
-                           <div className="xl:w-2/6 exp-timeline-card">
+                           <div className="xl:w-2/6 exp-timeline-card relative z-50 md:z-auto">
                                 <GlowCard card={card} index={index}>
                                 </GlowCard>
                             </div>
