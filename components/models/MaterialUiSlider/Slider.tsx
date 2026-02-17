@@ -30,10 +30,15 @@ export default function Slider() {
     () => (typeof window !== 'undefined' && window.innerWidth < 768) ? 1 : 2
   );
 
-  // Responsive slidesPerView on resize
+  // Responsive slidesPerView on resize — only react to width changes
+  // to avoid re-init when mobile browser chrome shows/hides (which only changes height)
   useEffect(() => {
+    let lastWidth = window.innerWidth;
     function handleResize() {
-      setSlidesPerView(window.innerWidth < 768 ? 1 : 2);
+      const newWidth = window.innerWidth;
+      if (newWidth === lastWidth) return;
+      lastWidth = newWidth;
+      setSlidesPerView(newWidth < 768 ? 1 : 2);
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

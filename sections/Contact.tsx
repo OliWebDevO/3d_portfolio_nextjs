@@ -17,8 +17,14 @@ const Contact = () => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    setIsDesktop(window.innerWidth >= 1280); // xl breakpoint
-    const check = () => setIsDesktop(window.innerWidth >= 1280);
+    let lastWidth = window.innerWidth;
+    setIsDesktop(lastWidth >= 1280); // xl breakpoint
+    const check = () => {
+      const newWidth = window.innerWidth;
+      if (newWidth === lastWidth) return;
+      lastWidth = newWidth;
+      setIsDesktop(newWidth >= 1280);
+    };
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);

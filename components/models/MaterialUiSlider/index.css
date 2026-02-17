@@ -51,7 +51,7 @@
 }
 
 .swiper-material {
-  height: 45dvh;
+  height: 45svh;
   width: calc(100% - 32px);
   max-width: 88vw;
 }
@@ -142,8 +142,18 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+  #work {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
   .demo-slider {
-    contain: layout style;
+    contain: layout style paint;
+    transform: translateZ(0);
+  }
+
+  .swiper {
+    touch-action: pan-y pinch-zoom;
   }
 
   .demo-material-image {

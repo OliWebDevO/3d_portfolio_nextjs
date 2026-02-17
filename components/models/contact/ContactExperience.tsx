@@ -10,9 +10,15 @@ const ContactExperience = () => {
 
   useEffect(() => {
     setIsClient(true);
-    setIsDesktop(window.innerWidth >= 768);
+    let lastWidth = window.innerWidth;
+    setIsDesktop(lastWidth >= 768);
 
-    const check = () => setIsDesktop(window.innerWidth >= 768);
+    const check = () => {
+      const newWidth = window.innerWidth;
+      if (newWidth === lastWidth) return;
+      lastWidth = newWidth;
+      setIsDesktop(newWidth >= 768);
+    };
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);

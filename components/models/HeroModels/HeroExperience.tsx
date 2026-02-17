@@ -14,16 +14,22 @@ const HeroExperience = () => {
 
   useEffect(() => {
     setIsClient(true)
-    setIsMobile(window.innerWidth <= 768)
+    let lastWidth = window.innerWidth
+    setIsMobile(lastWidth <= 768)
 
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    const checkMobile = () => {
+      const newWidth = window.innerWidth
+      if (newWidth === lastWidth) return
+      lastWidth = newWidth
+      setIsMobile(newWidth <= 768)
+    }
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   // Don't render anything on server or before client check
   if (!isClient) {
-    return <div style={{ width: "100%", height: "100%", minHeight: "50dvh" }} />
+    return <div style={{ width: "100%", height: "100%", minHeight: "50svh" }} />
   }
 
   /* Mobile fallback image — commented out, uncomment to restore

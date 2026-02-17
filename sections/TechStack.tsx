@@ -18,8 +18,14 @@ const TechStack = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-      const check = () => setIsMobile(window.innerWidth < 768);
-      check();
+      let lastWidth = window.innerWidth;
+      const check = () => {
+        const newWidth = window.innerWidth;
+        if (newWidth === lastWidth) return;
+        lastWidth = newWidth;
+        setIsMobile(newWidth < 768);
+      };
+      setIsMobile(lastWidth < 768);
       window.addEventListener("resize", check);
       return () => window.removeEventListener("resize", check);
     }, []);
