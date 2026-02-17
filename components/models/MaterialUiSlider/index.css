@@ -142,18 +142,8 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  #work {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 500px;
-  }
-
   .demo-slider {
-    contain: layout style paint;
-    transform: translateZ(0);
-  }
-
-  .swiper {
-    touch-action: pan-y pinch-zoom;
+    contain: layout style;
   }
 
   .demo-material-image {
