@@ -20,10 +20,10 @@ export default function ScrollToTop() {
 
   return (
     <button
-      onClick={handleClick}
+      onPointerDown={handleClick}
       aria-label="Scroll to top"
       style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
-      className={`fixed bottom-20 md:bottom-6 right-6 z-50 size-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center transition-opacity duration-300 cursor-pointer ${
+      className={`fixed bottom-6 right-6 z-50 size-12 rounded-full bg-white/90 shadow-lg flex items-center justify-center transition-opacity duration-300 cursor-pointer ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
