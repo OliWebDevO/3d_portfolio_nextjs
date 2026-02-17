@@ -28,6 +28,15 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+@media (max-width: 768px) {
+  .swiper-material-wrapper {
+    will-change: auto;
+    transform: translate3d(0, 0, 0);
+  }
+  .swiper-material-content {
+    will-change: auto;
+  }
+}
 .swiper-material .swiper-slide {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

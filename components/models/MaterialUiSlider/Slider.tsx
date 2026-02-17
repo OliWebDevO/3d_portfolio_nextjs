@@ -58,6 +58,8 @@ export default function Slider() {
           centeredSlides: false,
           spaceBetween: 16,
           speed: 600,
+          passiveListeners: true,
+          touchMoveStopPropagation: false,
           navigation: {
             nextEl: '.swiper-button-next-custom',
             prevEl: '.swiper-button-prev-custom',
