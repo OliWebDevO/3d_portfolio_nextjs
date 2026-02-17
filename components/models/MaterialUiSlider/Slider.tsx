@@ -17,7 +17,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 const images = [
   { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
   { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
-  { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Lenoyer', slug: 'lenoyer' },
+  { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Le Noyer', slug: 'lenoyer' },
   { src: '/images/asbl_ovni/ovni_dashboard.webp', mobileSrc: '/images/slider-mobile/ovni-compta.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
   { src: '/images/portfolioCover1.webp', mobileSrc: '/images/slider-mobile/portfolio.webp', label: 'Portfolio', slug: 'portfolio' },
   { src: '/images/ag2.webp', mobileSrc: null, label: 'ArtGallery', slug: 'artgallery' },
@@ -117,7 +117,7 @@ export default function Slider() {
 
         <div className="swiper" ref={swiperRef}>
           <div className="swiper-wrapper">
-            {images.map((img, idx) => (
+            {(isMobile ? images.filter(img => img.mobileSrc) : images).map((img, idx) => (
               <div className="swiper-slide" key={idx}>
                 <div className="swiper-material-wrapper">
                   <div className="swiper-material-content">
