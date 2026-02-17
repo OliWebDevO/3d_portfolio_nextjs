@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,14 +15,9 @@ const ShowcaseSection = () => {
   const { t, projects } = useTranslation();
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
-
   useGSAP(() => {
     if (!open) return;
+    const mobile = window.innerWidth < 768;
     cardRefs.current.forEach((card, index) => {
       if (!card) return;
       gsap.fromTo(
@@ -31,8 +26,8 @@ const ShowcaseSection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: isMobile ? 0.8 : 1.5,
-          delay: isMobile ? 0 : 0.3 * (index + 0.3),
+          duration: mobile ? 0.8 : 1.5,
+          delay: mobile ? 0 : 0.3 * (index + 0.3),
           scrollTrigger: {
             trigger: card,
             start: "top bottom-=100",
