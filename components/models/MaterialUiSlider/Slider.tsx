@@ -15,9 +15,9 @@ import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
+  { src: '/images/fanal_des_chats/fanal_home.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
   { src: '/images/lenoyer1.webp', label: 'Lenoyer', slug: 'lenoyer' },
   { src: '/images/asbl_ovni/ovni_dashboard.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
-  { src: '/images/fanal_des_chats/fanal_home.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
   { src: '/images/annick1.webp', label: 'Annick', slug: 'annick' },
   { src: '/images/portfolioCover1.webp', label: 'Portfolio', slug: 'portfolio' },
   { src: '/images/ag2.webp', label: 'ArtGallery', slug: 'artgallery' },

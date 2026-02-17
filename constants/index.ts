@@ -23,8 +23,8 @@ const translations = {
     },
     hero: {
       shaping: "Shapping",
-      intoRealProjects: "Into Real Projects",
-      deliverResults: "that Deliver Results",
+      intoRealProjects: "into real projects",
+      deliverResults: "that deliver results",
       description: "Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.",
       buttonText: "See My Work",
       buttonTextMobile: "Contact Me"
@@ -98,7 +98,7 @@ const translations = {
     },
     hero: {
       shaping: "Transformez vos",
-      intoRealProjects: "En Projets Professionnels",
+      intoRealProjects: "en projets professionnels",
       deliverResults: "",
       description: "Basé à Bruxelles, je transforme vos idées en sites vitrines percutants, plateformes web interactives ou applications de gestion complètes. Mon but : Simplifier votre quotidien.",
       buttonText: "Mes Projets",

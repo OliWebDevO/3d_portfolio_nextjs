@@ -40,7 +40,7 @@ return (
             {/* LEFT : CONTENT */}
             <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
                 <div className="flex flex-col gap-16 md:gap-7">
-                    <div className="hero-text">
+                    <div className="hero-text mt-8 md:mt-0">
                         <h1>
                             {t.hero.shaping}
                             {isFrench && <br className="md:hidden" />}
