@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import TitleHeader from "@/components/TitleHeader";
 import { useTranslation } from "@/hooks/useTranslation";
-// import ButtonShowcase from "@/components/ButtonShowcase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +42,6 @@ const ShowcaseSection = () => {
     );
      return () => {
     ScrollTrigger.getAll().forEach(trigger => {
-      // Only kill triggers whose trigger is inside this section
       if (
         trigger.trigger &&
         showcaseRef.current &&
@@ -62,11 +60,6 @@ const ShowcaseSection = () => {
 
   return (
     <>
-      {/* <div className="flex items-center gap-4 mb-6 w-full justify-center">
-        <ButtonShowcase className="md:w-80 md:h-16 w-60 h-12" text={open ? "Hide Projects" : "Show Projects"} onClick={() => setOpen(v => !v)}>
-
-        </ButtonShowcase>
-      </div> */}
   <section
     className="app-showcase"
     ref={showcaseRef}

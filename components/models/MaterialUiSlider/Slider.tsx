@@ -15,22 +15,23 @@ import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
-  { src: '/images/fanal_des_chats/fanal_home.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
-  { src: '/images/lenoyer1.webp', label: 'Lenoyer', slug: 'lenoyer' },
-  { src: '/images/annick1.webp', label: 'Annick', slug: 'annick' },
-  { src: '/images/asbl_ovni/ovni_dashboard.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
-  { src: '/images/portfolioCover1.webp', label: 'Portfolio', slug: 'portfolio' },
-  { src: '/images/ag2.webp', label: 'ArtGallery', slug: 'artgallery' },
+  { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
+  { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
+  { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Lenoyer', slug: 'lenoyer' },
+  { src: '/images/asbl_ovni/ovni_dashboard.webp', mobileSrc: '/images/slider-mobile/ovni-compta.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
+  { src: '/images/portfolioCover1.webp', mobileSrc: '/images/slider-mobile/portfolio.webp', label: 'Portfolio', slug: 'portfolio' },
+  { src: '/images/ag2.webp', mobileSrc: null, label: 'ArtGallery', slug: 'artgallery' },
 ];
 
 export default function Slider() {
   const { t } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
-  const [slidesPerView, setSlidesPerView] = useState<number>(
-    () => (typeof window !== 'undefined' && window.innerWidth < 768) ? 1 : 2
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => typeof window !== 'undefined' && window.innerWidth < 768
   );
+  const slidesPerView = isMobile ? 1 : 2;
 
-  // Responsive slidesPerView on resize — only react to width changes
+  // Responsive on resize — only react to width changes
   // to avoid re-init when mobile browser chrome shows/hides (which only changes height)
   useEffect(() => {
     let lastWidth = window.innerWidth;
@@ -38,7 +39,7 @@ export default function Slider() {
       const newWidth = window.innerWidth;
       if (newWidth === lastWidth) return;
       lastWidth = newWidth;
-      setSlidesPerView(newWidth < 768 ? 1 : 2);
+      setIsMobile(newWidth < 768);
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -123,7 +124,7 @@ export default function Slider() {
                     <img
                       className="demo-material-image"
                       data-swiper-material-scale="1.25"
-                      src={img.src}
+                      src={isMobile && img.mobileSrc ? img.mobileSrc : img.src}
                       alt={img.label}
                       loading="lazy"
                       decoding="async"
