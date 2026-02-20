@@ -7,8 +7,8 @@ export default function LanguageSwitcher({ variant = 'dark' }: { variant?: 'dark
   const isLight = variant === 'light';
 
   return (
-    <div className={`flex items-center gap-1 border rounded-lg p-1 ${
-      isLight ? 'border-black-300/30 bg-black/5' : 'border-black-50 bg-black-100'
+    <div className={`flex items-center gap-1 rounded-lg p-1 ${
+      isLight ? 'bg-black/5' : 'bg-black-100'
     }`}>
       <button
         onClick={() => setLanguage('en')}

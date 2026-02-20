@@ -175,21 +175,17 @@ const words = {
     { id: 1, text: "Ideas", imgPath: "/images/ideas.svg" },
     { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
     { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 4, text: "Code", imgPath: "/images/code.svg" },
-    { id: 5, text: "Ideas", imgPath: "/images/ideas.svg" },
-    { id: 6, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 7, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 8, text: "Code", imgPath: "/images/code.svg" },
+    { id: 4, text: "Ideas", imgPath: "/images/ideas.svg" },
+    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 6, text: "Designs", imgPath: "/images/designs.svg" },
   ],
   fr: [
     { id: 1, text: "Idées", imgPath: "/images/ideas.svg" },
     { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
     { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 4, text: "Code", imgPath: "/images/code.svg" },
-    { id: 5, text: "Idées", imgPath: "/images/ideas.svg" },
-    { id: 6, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 7, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 8, text: "Code", imgPath: "/images/code.svg" },
+    { id: 4, text: "Idées", imgPath: "/images/ideas.svg" },
+    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg" },
+    { id: 6, text: "Designs", imgPath: "/images/designs.svg" },
   ]
 };
 
