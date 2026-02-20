@@ -1,13 +1,13 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import TitleHeader from "@/components/TitleHeader";
 import { logoIconsList } from "../constants";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
-
-  <div className="flex-none flex-center marquee-item select-none" style={{ cursor: "grab" }}>
+  <div className="flex-none flex-center marquee-item select-none">
     <Image
       src={icon.imgPath}
       alt="Tech logo"
@@ -15,107 +15,108 @@ const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
       height={100}
       loading="lazy"
       draggable={false}
-      onDragStart={e => e.preventDefault()}
+      onDragStart={(e) => e.preventDefault()}
     />
   </div>
 );
 
 const LogoSection = () => {
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
+  const momentumRef = useRef<gsap.core.Tween | null>(null);
   const isDownRef = useRef(false);
   const startXRef = useRef(0);
-  const scrollLeftRef = useRef(0);
-  const { t } = useTranslation(); 
-
-  // For momentum
+  const startProgressRef = useRef(0);
   const lastXRef = useRef(0);
   const lastTimeRef = useRef(0);
   const velocityRef = useRef(0);
-  const momentumFrame = useRef<number | null>(null);
+  const { t } = useTranslation();
 
-  // Drag-to-scroll handlers with velocity tracking
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
+  useEffect(() => {
+    const box = boxRef.current;
+    if (!box) return;
+
+    const totalWidth = box.scrollWidth / 2;
+
+    const tween = gsap.to(box, {
+      x: -totalWidth,
+      duration: 60,
+      ease: "none",
+      repeat: -1,
+    });
+
+    tweenRef.current = tween;
+    return () => {
+      tween.kill();
+      momentumRef.current?.kill();
+    };
+  }, []);
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse") return;
+    if (e.button !== 0) return;
+
+    momentumRef.current?.kill();
     isDownRef.current = true;
-    marqueeRef.current?.classList.add("marquee-interactive");
     startXRef.current = e.pageX;
-    scrollLeftRef.current = marqueeRef.current?.scrollLeft || 0;
     lastXRef.current = e.pageX;
     lastTimeRef.current = performance.now();
     velocityRef.current = 0;
-    if (momentumFrame.current) {
-      cancelAnimationFrame(momentumFrame.current);
-      momentumFrame.current = null;
-    }
+    startProgressRef.current = tweenRef.current?.progress() || 0;
+    tweenRef.current?.pause();
+
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerup", handlePointerUp);
   };
 
   const handlePointerMove = (e: PointerEvent) => {
-    if (!isDownRef.current) return;
+    if (!isDownRef.current || !tweenRef.current || !boxRef.current) return;
     e.preventDefault();
-    const x = e.pageX;
-    const walk = x - startXRef.current;
-    if (marqueeRef.current) {
-      marqueeRef.current.scrollLeft = scrollLeftRef.current - walk;
-    }
-    // Calculate velocity
+
     const now = performance.now();
-    const dx = x - lastXRef.current;
     const dt = now - lastTimeRef.current;
     if (dt > 0) {
-      velocityRef.current = dx / dt;
+      velocityRef.current = (e.pageX - lastXRef.current) / dt;
     }
-    lastXRef.current = x;
+    lastXRef.current = e.pageX;
     lastTimeRef.current = now;
+
+    const totalWidth = boxRef.current.scrollWidth / 2;
+    const dx = e.pageX - startXRef.current;
+    const progressDelta = -dx / totalWidth;
+    let newProgress = startProgressRef.current + progressDelta;
+    newProgress = ((newProgress % 1) + 1) % 1;
+    tweenRef.current.progress(newProgress);
   };
 
   const handlePointerUp = () => {
     isDownRef.current = false;
-    marqueeRef.current?.classList.remove("marquee-interactive");
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
-    // Start momentum
-    momentumScroll();
-  };
 
-  // Momentum/inertia scroll
-  const momentumScroll = () => {
-    const marquee = marqueeRef.current;
-    if (!marquee) return;
-    let velocity = velocityRef.current * 16; // scale to px/frame (assuming ~60fps)
-    const friction = 0.95; // Lower = more friction, higher = longer glide
+    const tween = tweenRef.current;
+    const box = boxRef.current;
+    if (!tween || !box) return;
 
-    function animate() {
-      if (!marquee) return;
-      if (Math.abs(velocity) > 0.1) {
-        marquee.scrollLeft -= velocity;
-        velocity *= friction;
-        // Infinite scroll logic
-        const totalWidth = marquee.scrollWidth / 2;
-        if (marquee.scrollLeft >= totalWidth) {
-          marquee.scrollLeft -= totalWidth;
-        } else if (marquee.scrollLeft <= 0) {
-          marquee.scrollLeft += totalWidth;
-        }
-        momentumFrame.current = requestAnimationFrame(animate);
-      } else {
-        momentumFrame.current = null;
-      }
-    }
-    animate();
-  };
+    const velocity = velocityRef.current;
+    const totalWidth = box.scrollWidth / 2;
+    const glideDistance = velocity * 800;
+    const progressGlide = -glideDistance / totalWidth;
+    const targetProgress = ((tween.progress() + progressGlide) % 1 + 1) % 1;
 
-  // Infinite scroll effect
-  const handleScroll = () => {
-    const marquee = marqueeRef.current;
-    if (!marquee) return;
-    const totalWidth = marquee.scrollWidth / 2;
-    if (marquee.scrollLeft >= totalWidth) {
-      marquee.scrollLeft -= totalWidth;
-    } else if (marquee.scrollLeft <= 0) {
-      marquee.scrollLeft += totalWidth;
-    }
+    const momentum = gsap.to(tween, {
+      progress: targetProgress,
+      duration: 1.2,
+      ease: "power3.out",
+      onUpdate: () => {
+        tween.progress(((tween.progress() % 1) + 1) % 1);
+      },
+      onComplete: () => {
+        tween.resume();
+      },
+    });
+
+    momentumRef.current = momentum;
   };
 
   return (
@@ -125,13 +126,10 @@ const LogoSection = () => {
         <div className="gradient-edge"></div>
         <div className="gradient-edge"></div>
         <div
-          className="marquee h-52"
-          ref={marqueeRef}
+          className="marquee h-52 md:cursor-grab active:md:cursor-grabbing"
           onPointerDown={handlePointerDown}
-          onScroll={handleScroll}
-          style={{ touchAction: "pan-x", overflowX: "auto", whiteSpace: "nowrap" }}
         >
-          <div className="marquee-box md:gap-12 gap-5" style={{ display: "flex", width: "max-content" }}>
+          <div className="marquee-box md:gap-12 gap-5" ref={boxRef}>
             {logoIconsList.concat(logoIconsList).map((icon, idx) => (
               <LogoIcon key={icon.id + "-" + idx} icon={icon} />
             ))}
