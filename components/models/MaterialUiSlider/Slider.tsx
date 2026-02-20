@@ -13,6 +13,11 @@ import type { SwiperOptions } from 'swiper/types';
 import '@/app/globals.css';
 import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const images = [
   { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
@@ -26,6 +31,7 @@ const images = [
 export default function Slider() {
   const { t } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState<boolean>(
     () => typeof window !== 'undefined' && window.innerWidth < 768
   );
@@ -44,6 +50,43 @@ export default function Slider() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Mobile sphere-to-fullscreen reveal animation
+  useGSAP(() => {
+    if (!isMobile || !sectionRef.current) return;
+
+    // Enter: bubble from top-left
+    gsap.fromTo(
+      sectionRef.current,
+      { clipPath: 'circle(8% at 0% 0%)' },
+      {
+        clipPath: 'circle(150% at 0% 0%)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: 1,
+        },
+      }
+    );
+
+    // Exit: shrink to bubble bottom-right
+    gsap.fromTo(
+      sectionRef.current,
+      { clipPath: 'circle(150% at 100% 100%)' },
+      {
+        clipPath: 'circle(8% at 100% 100%)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'bottom 80%',
+          end: 'bottom 20%',
+          scrub: 1,
+        },
+      }
+    );
+  }, [isMobile]);
 
   useEffect(() => {
     let swiperInstance: Swiper | undefined;
@@ -81,7 +124,7 @@ export default function Slider() {
   }, [slidesPerView]);
 
     return (
-    <section id="work" className='relative'>
+    <section id="work" ref={sectionRef} className='relative'>
         <div className="hidden md:block">
           <TitleHeader
             title={t.slider.title}
@@ -102,7 +145,7 @@ export default function Slider() {
             />
           </div>
         </div>
-        
+
         <div className="swiper-button-next-custom">
           <div className="arrow-nav-wrapper">
             <Image
