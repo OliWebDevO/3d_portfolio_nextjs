@@ -93,14 +93,12 @@ const NavBar = () => {
         if (!menuOpen) {
             setMenuOpen(true)
             setHidden(false)
-            // Build new timeline and play
             const tl = buildTimeline()
             tlRef.current = tl
             tl.timeScale(1)
             tl.play()
             document.body.style.overflow = 'hidden'
         } else {
-            // Reverse from current position, faster
             if (tlRef.current) {
                 tlRef.current.timeScale(1.8)
                 tlRef.current.reverse()
