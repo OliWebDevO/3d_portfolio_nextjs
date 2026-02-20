@@ -48,6 +48,16 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     qualities: [75, 80],
+    localPatterns: [
+      {
+        pathname: '/images/**',
+        search: '',
+      },
+      {
+        pathname: '/images/asbl_ovni/**',
+        search: '?v=2',
+      },
+    ],
   },
   // Production optimizations
   poweredByHeader: false,
