@@ -55,31 +55,32 @@ export default function Slider() {
   useGSAP(() => {
     if (!isMobile || !sectionRef.current) return;
 
-    // Enter: bubble from top-left
-    gsap.fromTo(
-      sectionRef.current,
-      { clipPath: 'circle(8% at 0% 0%)' },
-      {
-        clipPath: 'circle(150% at 0% 0%)',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
-        },
-      }
-    );
+    const el = sectionRef.current;
 
-    // Exit: shrink to bubble bottom-right
-    gsap.fromTo(
-      sectionRef.current,
+    // Initial state
+    gsap.set(el, { clipPath: 'circle(8% at 0% 0%)' });
+
+    // Enter: expand from top-left
+    gsap.to(el, {
+      clipPath: 'circle(150% at 0% 0%)',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 1,
+      },
+    });
+
+    // Exit: shrink to bottom-right
+    gsap.fromTo(el,
       { clipPath: 'circle(150% at 100% 100%)' },
       {
         clipPath: 'circle(8% at 100% 100%)',
         ease: 'none',
+        immediateRender: false,
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: el,
           start: 'bottom 80%',
           end: 'bottom 20%',
           scrub: 1,

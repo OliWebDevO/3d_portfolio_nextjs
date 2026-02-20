@@ -169,6 +169,10 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+  #work {
+    clip-path: circle(8% at 0% 0%);
+  }
+
   .swiper-material {
     height: 100svh;
     width: 100%;
