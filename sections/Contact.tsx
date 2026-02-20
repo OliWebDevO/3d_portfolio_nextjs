@@ -118,7 +118,7 @@ const Contact = () => {
           />
           <div className="grid-12-cols mt-16">
             <div className="xl:col-span-5">
-              <div className="flex-center card-border rounded-xl p-10">
+              <div id="contact-form" className="flex-center card-border rounded-xl p-10">
                 <form
                   onSubmit={handleSubmit}
                   className="w-full flex flex-col gap-7"

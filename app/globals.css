@@ -128,6 +128,10 @@ section {
       @apply bg-transparent;
     }
 
+    &.menu-open {
+      @apply bg-transparent translate-y-0 z-[110];
+    }
+
     .inner {
       @apply mx-auto flex items-center justify-between ;
     }
