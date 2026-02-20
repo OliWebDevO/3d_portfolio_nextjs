@@ -175,7 +175,9 @@ interface ContactTranslations {
   title: string;
   subtitle: string;
   name: string;
-  email: string;
+  subject: string;
+  subjectPlaceholder: string;
+  scenarios: string[];
   message: string;
   send: string;
   sending: string;

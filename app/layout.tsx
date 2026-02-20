@@ -82,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={monaSans.variable}>
+    <html lang="en" data-scroll-behavior="smooth" className={monaSans.variable} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
@@ -212,6 +212,7 @@ export default function RootLayout({
       </head>
         <body
           className={`${monaSans.variable} antialiased`}
+          suppressHydrationWarning
         >
         <LanguageProvider>
           <LenisProvider>

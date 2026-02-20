@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-import type { ChangeEvent, FormEvent } from "react";
+import type { ChangeEvent, FormEvent, SelectHTMLAttributes } from "react";
 import Image from "next/image";
 import TitleHeader from "../components/TitleHeader";
 import dynamic from "next/dynamic";
@@ -31,7 +31,7 @@ const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [form, setForm] = useState({
     name: "",
-    email: "",
+    subject: "",
     message: "",
   });
   const [honeypot, setHoneypot] = useState("");
@@ -48,7 +48,7 @@ const Contact = () => {
     };
   }, [showSuccess]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
@@ -57,7 +57,7 @@ const Contact = () => {
     e.preventDefault();
 
     if (honeypot) {
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", subject: "", message: "" });
       return;
     }
 
@@ -72,7 +72,7 @@ const Contact = () => {
 
       if (!response.ok) throw new Error('Failed to send');
 
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", subject: "", message: "" });
       setShowSuccess(true);
     } catch (error) {
       console.error("Contact Error:", error);
@@ -148,15 +148,21 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email">{t.contact.email}</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={form.email}
+                    <label htmlFor="subject">{t.contact.subject}</label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={form.subject}
                       onChange={handleChange}
                       required
-                    />
+                      suppressHydrationWarning
+                      className="w-full px-4 py-4 text-base bg-blue-100 rounded-md text-white-50"
+                    >
+                      <option value="" suppressHydrationWarning>{t.contact.subjectPlaceholder}</option>
+                      {t.contact.scenarios.map((scenario: string) => (
+                        <option key={scenario} value={scenario}>{scenario}</option>
+                      ))}
+                    </select>
                   </div>
 
                   <div>
