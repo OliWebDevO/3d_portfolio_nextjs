@@ -33,10 +33,10 @@ const TechStack = dynamic(() => import("@/sections/TechStack"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "60svh" }} />,
 });
-const Contact = dynamic(() => import("@/sections/Contact"), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: "60svh" }} />,
-});
+// const Contact = dynamic(() => import("@/sections/Contact"), {
+//   ssr: false,
+//   loading: () => <div style={{ minHeight: "60svh" }} />,
+// });
 const Footer = dynamic(() => import("@/sections/Footer"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "10svh" }} />,
@@ -91,7 +91,8 @@ export default function PreloaderWrapper() {
         <FeatureCards />
         <ExperienceSection />
         <TechStack />
-        <Contact />
+        {/* Spacer to give last-section animations enough scroll room */}
+        <div className="h-[30svh] md:h-[40svh]" aria-hidden="true" />
         <Footer />
       </main>
     </>

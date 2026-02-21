@@ -51,13 +51,15 @@ const NavBar = () => {
     const projectsTitleRef = useRef<HTMLHeadingElement | null>(null)
     const contactTitleRef = useRef<HTMLHeadingElement | null>(null)
     const dtlRef = useRef<gsap.core.Timeline | null>(null)
+    const successTlRef = useRef<gsap.core.Timeline | null>(null)
     const [desktopContactOpen, setDesktopContactOpen] = useState(false)
 
     // Contact form state
     const [contactForm, setContactForm] = useState({ name: '', subject: '', message: '' })
     const [honeypot, setHoneypot] = useState('')
     const [contactLoading, setContactLoading] = useState(false)
-    const [showSuccess, setShowSuccess] = useState(false)
+    const mobileContactRef = useRef(false)
+    const mobileSuccessTlRef = useRef<gsap.core.Timeline | null>(null)
 
     useEffect(() => {
         let lastY = window.scrollY;
@@ -95,7 +97,26 @@ const NavBar = () => {
             defaults: { ease: "power3.inOut" },
             onReverseComplete: () => {
                 setMenuOpen(false)
+                mobileContactRef.current = false
                 document.body.style.overflow = ''
+                // Clean up mobile contact/success styles
+                gsap.set('.mobile-contact-form', { display: 'none', clearProps: 'opacity' })
+                gsap.set('.mobile-success-svg', { display: 'none', clearProps: 'opacity' })
+                gsap.set(['.mobile-field-1', '.mobile-field-2', '.mobile-field-3', '.mobile-field-4'], { clearProps: 'all' })
+                gsap.set(['.m-svg-hand', '.m-svg-lines-pink', '.m-svg-shape-purple', '.m-svg-shape-green', '.m-svg-stars', '.m-svg-shape-blue', '.m-svg-cursor'], { clearProps: 'all' })
+                gsap.set('.mobile-success-text', { clearProps: 'all' })
+                gsap.set('.mobile-success-letter', { clearProps: 'all' })
+                gsap.set('.mobile-success-subtitle', { clearProps: 'all' })
+                const mItems = menuItemsRef.current.filter(Boolean)
+                gsap.set(mItems, { clearProps: 'all' })
+                if (bubblesPanelRef.current) gsap.set(bubblesPanelRef.current, { clearProps: 'all' })
+                const mBubbles = bubblesRef.current.filter(Boolean)
+                if (mBubbles.length > 0) gsap.set(mBubbles, { clearProps: 'all' })
+                if (langRef.current) gsap.set(langRef.current, { clearProps: 'visibility' })
+                if (mobileSuccessTlRef.current) {
+                    mobileSuccessTlRef.current.kill()
+                    mobileSuccessTlRef.current = null
+                }
                 // If scrolled past 80px, keep lang hidden
                 if (window.scrollY > 80 && langRef.current) {
                     gsap.set(langRef.current, { x: -100, opacity: 0 })
@@ -192,9 +213,36 @@ const NavBar = () => {
             document.body.style.overflow = 'hidden'
             scrollStateRef.current = 'visible'
         } else {
-            if (tlRef.current) {
-                tlRef.current.timeScale(1.8)
-                tlRef.current.reverse()
+            if (mobileContactRef.current) {
+                // Close from contact form or success state
+                const hasSuccess = !!mobileSuccessTlRef.current
+                const target = hasSuccess ? '.mobile-success-svg' : '.mobile-contact-form'
+                gsap.to(target, {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        gsap.set(target, { display: 'none' })
+                        if (mobileSuccessTlRef.current) {
+                            mobileSuccessTlRef.current.kill()
+                            mobileSuccessTlRef.current = null
+                        }
+                        // Hide nav items so they don't flash during reverse
+                        const items = menuItemsRef.current.filter(Boolean)
+                        gsap.set(items, { visibility: 'hidden' })
+                        if (bubblesPanelRef.current) gsap.set(bubblesPanelRef.current, { visibility: 'hidden' })
+                        if (langRef.current) gsap.set(langRef.current, { visibility: 'hidden' })
+                        if (tlRef.current) {
+                            tlRef.current.timeScale(1.8)
+                            tlRef.current.reverse()
+                        }
+                    }
+                })
+            } else {
+                if (tlRef.current) {
+                    tlRef.current.timeScale(1.8)
+                    tlRef.current.reverse()
+                }
             }
         }
     }, [menuOpen, buildTimeline])
@@ -220,12 +268,203 @@ const NavBar = () => {
             })
             if (!response.ok) throw new Error('Failed to send')
             setContactForm({ name: '', subject: '', message: '' })
-            setShowSuccess(true)
+            if (mobileContactRef.current) {
+                playMobileSuccess()
+            } else {
+                playDesktopSuccess()
+            }
         } catch (error) {
             console.error('Contact Error:', error)
         } finally {
             setContactLoading(false)
         }
+    }
+
+    const playDesktopSuccess = () => {
+        const tl = gsap.timeline()
+
+        // Phase 1: Form fields disappear in reverse order
+        tl.to('.desktop-field-4', { opacity: 0, y: 30, duration: 0.3, ease: "power3.in" })
+          .to('.desktop-field-3', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+          .to('.desktop-field-2', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+          .to('.desktop-field-1', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+
+        // Hide the entire form card (border, background, everything)
+        if (desktopFormRef.current) {
+            tl.to(desktopFormRef.current, { opacity: 0, y: 20, duration: 0.3, ease: "power3.in" }, "-=0.15")
+        }
+
+        // Project bubbles slide out
+        const bubbles = desktopBubblesRef.current.filter(Boolean)
+        if (bubbles.length > 0) {
+            tl.to(bubbles, { opacity: 0, x: 80, duration: 0.3, stagger: 0.05, ease: "power3.in" }, "-=0.3")
+        }
+
+        // Bubbles panel background
+        if (desktopBubblesPanelRef.current) {
+            tl.to(desktopBubblesPanelRef.current, { opacity: 0, duration: 0.2, ease: "power3.in" }, "-=0.2")
+        }
+
+        // Titles disappear
+        if (projectsTitleRef.current) {
+            const letters = projectsTitleRef.current.querySelectorAll('span')
+            tl.to(letters, { y: '-100%', opacity: 0, duration: 0.3, ease: "power3.in" }, "-=0.3")
+        }
+        if (contactTitleRef.current) {
+            const letters = contactTitleRef.current.querySelectorAll('span')
+            tl.to(letters, { y: '-100%', opacity: 0, duration: 0.3, ease: "power3.in" }, "-=0.3")
+        }
+
+        // Phase 2: Show SVG composition
+        tl.set('.desktop-success-svg', { display: 'flex' })
+          .fromTo('.desktop-success-svg', { opacity: 0 }, { opacity: 1, duration: 0.4 })
+
+        // Phase 3: SVG elements animate in with staggered timing
+        tl.fromTo('.svg-hand',
+            { opacity: 0, scale: 0.3, y: 50 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(1.4)" }
+          )
+          .fromTo('.svg-lines-pink',
+            { opacity: 0, x: -60 },
+            { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+            "-=0.35"
+          )
+          .fromTo('.svg-shape-purple',
+            { opacity: 0, scale: 0, rotation: -90 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" },
+            "-=0.25"
+          )
+          .fromTo('.svg-shape-green',
+            { opacity: 0, y: 50, scale: 0.5 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo('.svg-stars',
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(3)" },
+            "-=0.2"
+          )
+          .fromTo('.svg-shape-blue',
+            { opacity: 0, x: 40, scale: 0.5 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo('.svg-cursor',
+            { opacity: 0, x: -300, y: 300 },
+            { opacity: 1, x: 0, y: 0, duration: 0.9, ease: "power3.out" },
+            "-=0.3"
+          )
+          // Title: letter-by-letter stagger (like the logo)
+          .set('.desktop-success-text', { opacity: 1 })
+          .fromTo('.desktop-success-letter',
+            { y: '100%', opacity: 0 },
+            { y: '0%', opacity: 1, duration: 0.5, stagger: 0.03, ease: "power3.out" },
+            "-=0.2"
+          )
+          // Subtitle: fade in from bottom, all at once, after title is done
+          .fromTo('.desktop-success-subtitle',
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
+          )
+
+        successTlRef.current = tl
+    }
+
+    const showMobileContact = () => {
+        mobileContactRef.current = true
+        const items = menuItemsRef.current.filter(Boolean)
+        const bubbles = bubblesRef.current.filter(Boolean)
+        const tl = gsap.timeline()
+
+        // Animate nav items + lang switcher out
+        if (items.length > 0) {
+            tl.to([...items].reverse(), { x: -80, opacity: 0, duration: 0.3, stagger: 0.05, ease: "power3.in" }, 0)
+        }
+        if (bubblesPanelRef.current) {
+            tl.to(bubblesPanelRef.current, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power3.in" }, 0)
+        }
+        if (bubbles.length > 0) {
+            tl.to(bubbles, { opacity: 0, duration: 0.2, ease: "power3.in" }, 0)
+        }
+        if (langRef.current) {
+            tl.to(langRef.current, { x: -100, opacity: 0, duration: 0.3, ease: "power3.in" }, 0)
+        }
+
+        // Show form
+        tl.set('.mobile-contact-form', { display: 'flex' })
+          .fromTo('.mobile-field-1',
+            { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" })
+          .fromTo('.mobile-field-2',
+            { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, "-=0.15")
+          .fromTo('.mobile-field-3',
+            { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, "-=0.15")
+          .fromTo('.mobile-field-4',
+            { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, "-=0.15")
+    }
+
+    const playMobileSuccess = () => {
+        const tl = gsap.timeline()
+
+        // Form fields disappear in reverse
+        tl.to('.mobile-field-4', { opacity: 0, y: 30, duration: 0.3, ease: "power3.in" })
+          .to('.mobile-field-3', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+          .to('.mobile-field-2', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+          .to('.mobile-field-1', { opacity: 0, y: 30, duration: 0.25, ease: "power3.in" }, "-=0.1")
+          .set('.mobile-contact-form', { display: 'none' })
+
+        // Show SVG composition
+        tl.set('.mobile-success-svg', { display: 'flex' })
+          .fromTo('.mobile-success-svg', { opacity: 0 }, { opacity: 1, duration: 0.4 })
+
+        // SVG elements animate in
+        tl.fromTo('.m-svg-hand',
+            { opacity: 0, scale: 0.3, y: 30 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(1.4)" }
+          )
+          .fromTo('.m-svg-lines-pink',
+            { opacity: 0, x: -40 },
+            { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+            "-=0.35"
+          )
+          .fromTo('.m-svg-shape-purple',
+            { opacity: 0, scale: 0, rotation: -90 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" },
+            "-=0.25"
+          )
+          .fromTo('.m-svg-shape-green',
+            { opacity: 0, y: 30, scale: 0.5 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo('.m-svg-stars',
+            { opacity: 0, scale: 0 },
+            { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(3)" },
+            "-=0.2"
+          )
+          .fromTo('.m-svg-shape-blue',
+            { opacity: 0, x: 30, scale: 0.5 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+            "-=0.3"
+          )
+          .fromTo('.m-svg-cursor',
+            { opacity: 0, x: -200, y: 200 },
+            { opacity: 1, x: 0, y: 0, duration: 0.9, ease: "power3.out" },
+            "-=0.3"
+          )
+          // Title: letter stagger
+          .set('.mobile-success-text', { opacity: 1 })
+          .fromTo('.mobile-success-letter',
+            { y: '100%', opacity: 0 },
+            { y: '0%', opacity: 1, duration: 0.5, stagger: 0.03, ease: "power3.out" },
+            "-=0.2"
+          )
+          // Subtitle: fade in from bottom
+          .fromTo('.mobile-success-subtitle',
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
+          )
+
+        mobileSuccessTlRef.current = tl
     }
 
     // Desktop contact overlay timeline
@@ -245,6 +484,26 @@ const NavBar = () => {
                     gsap.set(logoLetters, { clearProps: 'all' })
                     gsap.set(logoRef.current, { clearProps: 'color' })
                 }
+                // Clear any leftover success animation styles for next open
+                gsap.set(
+                    ['.desktop-field-1', '.desktop-field-2', '.desktop-field-3', '.desktop-field-4'],
+                    { clearProps: 'all' }
+                )
+                if (desktopFormRef.current) gsap.set(desktopFormRef.current, { clearProps: 'all' })
+                if (desktopBubblesPanelRef.current) gsap.set(desktopBubblesPanelRef.current, { clearProps: 'all' })
+                const bs = desktopBubblesRef.current.filter(Boolean)
+                if (bs.length > 0) gsap.set(bs, { clearProps: 'all' })
+                if (projectsTitleRef.current) {
+                    gsap.set(projectsTitleRef.current, { clearProps: 'visibility' })
+                    gsap.set(projectsTitleRef.current.querySelectorAll('span'), { clearProps: 'all' })
+                }
+                if (contactTitleRef.current) {
+                    gsap.set(contactTitleRef.current, { clearProps: 'visibility' })
+                    gsap.set(contactTitleRef.current.querySelectorAll('span'), { clearProps: 'all' })
+                }
+                gsap.set('.desktop-success-text', { clearProps: 'all' })
+                gsap.set('.desktop-success-letter', { clearProps: 'all' })
+                gsap.set('.desktop-success-subtitle', { clearProps: 'all' })
                 if (pendingNavRef.current) {
                     const dest = pendingNavRef.current
                     pendingNavRef.current = null
@@ -362,12 +621,45 @@ const NavBar = () => {
             tl.play()
             document.body.style.overflow = 'hidden'
         } else {
-            if (dtlRef.current) {
-                dtlRef.current.timeScale(1.8)
-                dtlRef.current.reverse()
+            // If success animation is showing, clean it up first
+            if (successTlRef.current) {
+                gsap.to('.desktop-success-svg', {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        gsap.set('.desktop-success-svg', { display: 'none' })
+                        successTlRef.current?.kill()
+                        successTlRef.current = null
+                        // Hide all content with visibility so nothing flashes during overlay reverse
+                        if (desktopFormRef.current) gsap.set(desktopFormRef.current, { visibility: 'hidden' })
+                        if (desktopBubblesPanelRef.current) gsap.set(desktopBubblesPanelRef.current, { visibility: 'hidden' })
+                        const bubbles = desktopBubblesRef.current.filter(Boolean)
+                        if (bubbles.length > 0) gsap.set(bubbles, { visibility: 'hidden' })
+                        if (projectsTitleRef.current) gsap.set(projectsTitleRef.current, { visibility: 'hidden' })
+                        if (contactTitleRef.current) gsap.set(contactTitleRef.current, { visibility: 'hidden' })
+                        // Reverse overlay — only blob + header/nav/logo animate visually
+                        if (dtlRef.current) {
+                            dtlRef.current.timeScale(1.8)
+                            dtlRef.current.reverse()
+                        }
+                    }
+                })
+            } else {
+                if (dtlRef.current) {
+                    dtlRef.current.timeScale(1.8)
+                    dtlRef.current.reverse()
+                }
             }
         }
     }, [desktopContactOpen, buildDesktopTimeline])
+
+    const forceScrollTo = (hash: string) => {
+        const el = document.querySelector(hash)
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
         // For page-navigating links, defer navigation until animation finishes
@@ -388,20 +680,40 @@ const NavBar = () => {
             return
         }
 
+        // On mobile, show contact form inside the overlay
+        if (link === '#contact' && menuOpen && window.innerWidth < 768) {
+            e.preventDefault()
+            showMobileContact()
+            return
+        }
+
+        // Hash links: on project pages, navigate to home + hash; on home, force scroll
+        if (link.startsWith('#')) {
+            e.preventDefault()
+            if (isProjectPage) {
+                const dest = `/${link}`
+                if (menuOpen && tlRef.current) {
+                    pendingNavRef.current = dest
+                    tlRef.current.timeScale(1.8)
+                    tlRef.current.reverse()
+                } else {
+                    router.push(dest)
+                }
+            } else {
+                if (menuOpen && tlRef.current) {
+                    tlRef.current.timeScale(1.8)
+                    tlRef.current.reverse()
+                    setTimeout(() => forceScrollTo(link), 600)
+                } else {
+                    forceScrollTo(link)
+                }
+            }
+            return
+        }
+
         if (menuOpen && tlRef.current) {
             tlRef.current.timeScale(1.8)
             tlRef.current.reverse()
-        }
-
-        // On mobile, scroll to the form itself for contact
-        if (link === '#contact' && window.innerWidth < 768) {
-            e.preventDefault()
-            const formEl = document.getElementById('contact-form')
-            if (formEl) {
-                setTimeout(() => {
-                    formEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                }, 800)
-            }
         }
     }
 
@@ -447,13 +759,16 @@ const NavBar = () => {
                     <Link
                         ref={logoRef}
                         className={`logo ${isHomePage ? 'hidden md:block' : 'hidden md:block'} overflow-hidden`}
-                        href="/#hero"
+                        href="/"
                         onClick={(e) => {
                             if (desktopContactOpen && dtlRef.current) {
                                 e.preventDefault()
-                                pendingNavRef.current = '/#hero'
+                                pendingNavRef.current = '/'
                                 dtlRef.current.timeScale(1.8)
                                 dtlRef.current.reverse()
+                            } else if (isHomePage) {
+                                e.preventDefault()
+                                window.scrollTo({ top: 0, behavior: 'smooth' })
                             }
                         }}
                     >
@@ -465,7 +780,11 @@ const NavBar = () => {
                         <ul>
                             {navLinks.filter(({link}) => link !== '#contact').map(({link, name}) => (
                                 <li key={name}>
-                                    <Link href={isProjectPage ? `/${link}` : link} className="group">
+                                    <Link
+                                        href={isProjectPage ? `/${link}` : link}
+                                        className="group"
+                                        onClick={(e) => handleNavClick(e, link)}
+                                    >
                                         <span>{name}</span>
                                         <span className="underline"/>
                                     </Link>
@@ -615,6 +934,117 @@ const NavBar = () => {
                         })()}
                     </ul>
                 </nav>
+
+                {/* Mobile contact form */}
+                <div
+                    className="mobile-contact-form absolute inset-0 z-20 flex flex-col items-center justify-center px-6 pointer-events-auto"
+                    style={{ display: 'none' }}
+                >
+                    <div className="w-full max-w-md">
+                        <div className="card-border rounded-xl p-6">
+                            <form
+                                onSubmit={handleContactSubmit}
+                                className="w-full flex flex-col gap-5"
+                            >
+                                {/* Honeypot */}
+                                <div className="absolute -left-[9999px]" aria-hidden="true">
+                                    <input
+                                        type="text"
+                                        name="website"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        value={honeypot}
+                                        onChange={(e) => setHoneypot(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="mobile-field-1">
+                                    <label htmlFor="m-name">{t.contact.name}</label>
+                                    <input
+                                        type="text"
+                                        id="m-name"
+                                        name="name"
+                                        value={contactForm.name}
+                                        onChange={handleContactChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="mobile-field-2">
+                                    <label htmlFor="m-subject">{t.contact.subject}</label>
+                                    <select
+                                        id="m-subject"
+                                        name="subject"
+                                        value={contactForm.subject}
+                                        onChange={handleContactChange}
+                                        required
+                                        suppressHydrationWarning
+                                        className="w-full px-4 py-4 text-base bg-blue-100 rounded-md text-white-50"
+                                    >
+                                        <option value="" suppressHydrationWarning>{t.contact.subjectPlaceholder}</option>
+                                        {t.contact.scenarios.map((scenario: string) => (
+                                            <option key={scenario} value={scenario}>{scenario}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div className="mobile-field-3">
+                                    <label htmlFor="m-message">{t.contact.message}</label>
+                                    <textarea
+                                        id="m-message"
+                                        name="message"
+                                        value={contactForm.message}
+                                        onChange={handleContactChange}
+                                        rows={4}
+                                        required
+                                    />
+                                </div>
+
+                                <button type="submit" className="mobile-field-4">
+                                    <div className="cta-button group">
+                                        <div className="bg-circle" />
+                                        <p className="text">
+                                            {contactLoading ? t.contact.sending : t.contact.send}
+                                        </p>
+                                        <div className="arrow-wrapper">
+                                            <Image src="/images/arrow-down.svg" alt="arrow" width={24} height={24} />
+                                        </div>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile success SVG composition */}
+                <div
+                    className="mobile-success-svg absolute inset-0 z-20 flex flex-col items-center justify-center px-6 pointer-events-auto"
+                    style={{ display: 'none' }}
+                >
+                    <div
+                        className="relative w-full max-w-xs mx-auto"
+                        style={{ aspectRatio: '960 / 720' }}
+                    >
+                        <img src="/images/mail-svg/Lines.svg" alt="" className="m-svg-lines-pink absolute" style={{ left: '19.13%', top: '10.64%', width: '67.92%', height: '78.75%' }} />
+                        <img src="/images/mail-svg/Stars.svg" alt="" className="m-svg-stars absolute" style={{ left: '15.03%', top: '14.43%', width: '69.90%', height: '66.11%' }} />
+                        <img src="/images/mail-svg/Shape.svg" alt="" className="m-svg-shape-purple absolute" style={{ left: '59.57%', top: '19.03%', width: '12.60%', height: '11.53%' }} />
+                        <img src="/images/mail-svg/Shape1.svg" alt="" className="m-svg-shape-green absolute" style={{ left: '19.46%', top: '50.88%', width: '24.90%', height: '30.56%' }} />
+                        <img src="/images/mail-svg/Hand2.svg" alt="" className="m-svg-hand absolute" style={{ left: '26.70%', top: '25.45%', width: '47.29%', height: '60.42%' }} />
+                        <img src="/images/mail-svg/Mouse_Pointer.svg" alt="" className="m-svg-cursor absolute" style={{ left: '32.38%', top: '50.88%', width: '8.85%', height: '13.89%' }} />
+                        <img src="/images/mail-svg/Shape2.svg" alt="" className="m-svg-shape-blue absolute" style={{ left: '65.67%', top: '49.03%', width: '16.46%', height: '20.97%' }} />
+                    </div>
+
+                    <div className="mobile-success-text text-center mt-4 px-4 opacity-0">
+                        <h3 className="text-xl font-bold text-black mb-2 overflow-hidden">
+                            {t.contact.successTitle.split('').map((letter: string, i: number) => (
+                                <span key={i} className="mobile-success-letter inline-block translate-y-full opacity-0">
+                                    {letter === ' ' ? '\u00A0' : letter}
+                                </span>
+                            ))}
+                        </h3>
+                        <p className="mobile-success-subtitle text-black/60 text-sm mb-4 opacity-0">{t.contact.successMessage}</p>
+                    </div>
+                </div>
             </div>
 
             {/* Desktop fullscreen contact overlay */}
@@ -700,7 +1130,7 @@ const NavBar = () => {
                                     />
                                 </div>
 
-                                <div>
+                                <div className="desktop-field-1">
                                     <label htmlFor="nav-name">{t.contact.name}</label>
                                     <input
                                         type="text"
@@ -712,7 +1142,7 @@ const NavBar = () => {
                                     />
                                 </div>
 
-                                <div>
+                                <div className="desktop-field-2">
                                     <label htmlFor="nav-subject">{t.contact.subject}</label>
                                     <select
                                         id="nav-subject"
@@ -730,7 +1160,7 @@ const NavBar = () => {
                                     </select>
                                 </div>
 
-                                <div>
+                                <div className="desktop-field-3">
                                     <label htmlFor="nav-message">{t.contact.message}</label>
                                     <textarea
                                         id="nav-message"
@@ -742,7 +1172,7 @@ const NavBar = () => {
                                     />
                                 </div>
 
-                                <button type="submit">
+                                <button type="submit" className="desktop-field-4">
                                     <div className="cta-button group">
                                         <div className="bg-circle" />
                                         <p className="text">
@@ -765,35 +1195,38 @@ const NavBar = () => {
                         </h2>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Success Popup */}
-            {showSuccess && (
-                <div
-                    className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80"
-                    onClick={() => setShowSuccess(false)}
-                >
+                    {/* Success SVG composition — centered in the white overlay */}
                     <div
-                        className="bg-black-100 border border-black-50 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl"
-                        onClick={(e) => e.stopPropagation()}
+                        className="desktop-success-svg absolute inset-0 flex flex-col items-center justify-center"
+                        style={{ display: 'none' }}
                     >
-                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{t.contact.successTitle}</h3>
-                        <p className="text-white-50 mb-6">{t.contact.successMessage}</p>
-                        <button
-                            onClick={() => setShowSuccess(false)}
-                            className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+                        <div
+                            className="relative w-full max-w-2xl mx-auto"
+                            style={{ aspectRatio: '960 / 720' }}
                         >
-                            {t.contact.close}
-                        </button>
+                            <img src="/images/mail-svg/Lines.svg" alt="" className="svg-lines-pink absolute" style={{ left: '19.13%', top: '10.64%', width: '67.92%', height: '78.75%' }} />
+                            <img src="/images/mail-svg/Stars.svg" alt="" className="svg-stars absolute" style={{ left: '15.03%', top: '14.43%', width: '69.90%', height: '66.11%' }} />
+                            <img src="/images/mail-svg/Shape.svg" alt="" className="svg-shape-purple absolute" style={{ left: '59.57%', top: '19.03%', width: '12.60%', height: '11.53%' }} />
+                            <img src="/images/mail-svg/Shape1.svg" alt="" className="svg-shape-green absolute" style={{ left: '19.46%', top: '50.88%', width: '24.90%', height: '30.56%' }} />
+                            <img src="/images/mail-svg/Hand2.svg" alt="" className="svg-hand absolute" style={{ left: '26.70%', top: '25.45%', width: '47.29%', height: '60.42%' }} />
+                            <img src="/images/mail-svg/Mouse_Pointer.svg" alt="" className="svg-cursor absolute" style={{ left: '32.38%', top: '50.88%', width: '8.85%', height: '13.89%' }} />
+                            <img src="/images/mail-svg/Shape2.svg" alt="" className="svg-shape-blue absolute" style={{ left: '65.67%', top: '49.03%', width: '16.46%', height: '20.97%' }} />
+                        </div>
+
+                        <div className="desktop-success-text text-center mt-6 px-4">
+                            <h3 className="text-2xl font-bold text-black mb-2 overflow-hidden">
+                                {t.contact.successTitle.split('').map((letter: string, i: number) => (
+                                    <span key={i} className="desktop-success-letter inline-block translate-y-full opacity-0">
+                                        {letter === ' ' ? '\u00A0' : letter}
+                                    </span>
+                                ))}
+                            </h3>
+                            <p className="desktop-success-subtitle text-black/60 mb-4 opacity-0">{t.contact.successMessage}</p>
+                        </div>
                     </div>
                 </div>
-            )}
+            </div>
         </>
     )
 }
