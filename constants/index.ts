@@ -59,8 +59,8 @@ const translations = {
         description: "A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously"
       },
       annick: {
-        title: "Annick Van Endert : Artist's website",
-        description: "A window into the paintress's world."
+        title: "Annick Van Endert : Where Art Meets the Web",
+        description: "A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist."
       }
     },
     skills: {
@@ -143,8 +143,8 @@ const translations = {
         description: "Un site WordPress sur mesure conçu pour inspirer confiance, informer les patients et permettre une gestion autonome du contenu"
       },
       annick: {
-        title: "Annick Van Endert : Site web d'artiste",
-        description: "Une fenêtre sur le monde de la peintre."
+        title: "Annick Van Endert : Quand l'art rencontre le web",
+        description: "Une vitrine immersive pour une peintre, sculptrice et tatoueuse bruxelloise."
       }
     },
     skills: {
@@ -563,18 +563,18 @@ const expLogos = [
 const projects = {
   en: [
     {
-      slug: "lenoyer",
-      title: "Le Noyer : Professional website for a medical center",
-      description: "A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously",
-      image: "/images/lenoyer1.webp",
-      link: "https://lenoyer.be",
+      slug: "annick",
+      title: "Annick Van Endert : Where Art Meets the Web",
+      description: "A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist.",
+      image: "/images/annick1.webp",
+      link: "https://annickvanendert.com",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
         "/images/logos/js.webp",
         "/images/logos/wordpress.webp",
       ],
-      bg: "white",
+      bg: "#ffefdb",
     },
     {
       slug: "ovni-compta",
@@ -605,18 +605,18 @@ const projects = {
       bg: "#ffefdb",
     },
     {
-      slug: "annick",
-      title: "Annick Van Endert : Artist's website",
-      description: "A window into the paintress's world.",
-      image: "/images/annick1.webp",
-      link: "https://annickvanendert.com",
+      slug: "lenoyer",
+      title: "Le Noyer : Professional website for a medical center",
+      description: "A custom WordPress site built to inspire trust, inform patients, and let the team manage content autonomously",
+      image: "/images/lenoyer1.webp",
+      link: "https://lenoyer.be",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
         "/images/logos/js.webp",
         "/images/logos/wordpress.webp",
       ],
-      bg: "#ffefdb",
+      bg: "white",
     },
     {
       slug: "portfolio",
@@ -648,18 +648,18 @@ const projects = {
   ],
   fr: [
     {
-      slug: "lenoyer",
-      title: "Le Noyer : Site professionnel pour un centre médical",
-      description: "Un site WordPress sur mesure conçu pour inspirer confiance, informer les patients et permettre une gestion autonome du contenu",
-      image: "/images/lenoyer1.webp",
-      link: "https://lenoyer.be",
+      slug: "annick",
+      title: "Annick Van Endert : Quand l'art rencontre le web",
+      description: "Une vitrine immersive pour une peintre, sculptrice et tatoueuse bruxelloise.",
+      image: "/images/annick1.webp",
+      link: "https://annickvanendert.com",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
         "/images/logos/js.webp",
         "/images/logos/wordpress.webp",
       ],
-      bg: "white",
+      bg: "#ffefdb",
     },
     {
       slug: "ovni-compta",
@@ -690,18 +690,18 @@ const projects = {
       bg: "#ffefdb",
     },
     {
-      slug: "annick",
-      title: "Annick Van Endert : Site web d'artiste",
-      description: "Une fenêtre sur le monde de la peintre.",
-      image: "/images/annick1.webp",
-      link: "https://annickvanendert.com",
+      slug: "lenoyer",
+      title: "Le Noyer : Site professionnel pour un centre médical",
+      description: "Un site WordPress sur mesure conçu pour inspirer confiance, informer les patients et permettre une gestion autonome du contenu",
+      image: "/images/lenoyer1.webp",
+      link: "https://lenoyer.be",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
         "/images/logos/js.webp",
         "/images/logos/wordpress.webp",
       ],
-      bg: "#ffefdb",
+      bg: "white",
     },
     {
       slug: "portfolio",
@@ -905,6 +905,38 @@ const projectDetailsCards = {
       ],
     },
     {
+      slug: "annick",
+      cards: [
+        {
+          imgPath: "/images/annick2.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "An Artist's Universe, Brought Online",
+          details: [
+            "Annick Van Endert is a Brussels-based painter, sculptor, and tattoo artist whose work thrives on raw contrasts and bold expression.",
+            "The challenge : build a site that feels as vivid and textured as her art — a digital space that draws visitors in and lets the work speak for itself.",
+          ],
+        },
+        {
+          imgPath: "/images/annick3.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Designed to Let the Art Shine",
+          details: [
+            "Every layout decision serves one goal : put the artwork front and center. Clean compositions, fluid transitions, and full-bleed galleries create a cinematic browsing experience across paintings, sculptures, and tattoo art.",
+            "Built on WordPress with a fully custom theme, Annick updates her galleries, adds new pieces, and manages content on her own — no developer needed.",
+          ],
+        },
+        {
+          imgPath: "/images/annick4.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "Smooth Animations & Immersive Browsing",
+          details: [
+            "Scroll-triggered animations (WOW.js & Animate.css) reveal content progressively, keeping the experience dynamic without overwhelming the art.",
+            "Swiper powers the image sliders, SimpleLightBox opens high-res gallery views, and Lenis ensures buttery-smooth scrolling throughout the site.",
+          ],
+        },
+      ],
+    },
+    {
       slug: "lenoyer",
       cards: [
         {
@@ -935,41 +967,6 @@ const projectDetailsCards = {
             "100% custom WordPress theme : no generic template, no page builder. Every element is tailored to the medical center's needs and branding.",
             "Built with ACF PRO for flexible content management, Slick Slider for team and gallery carousels, and Magnific Popup for image lightboxes.",
             "Scroll animations (WOW.js, Animate.css) add polish without compromising page speed or accessibility.",
-          ],
-        },
-      ],
-    },
-    {
-      slug: "annick",
-      cards: [
-        {
-          imgPath: "/images/annick2.webp",
-          logoPath: "/images/Asset1.webp",
-          title: "A professional painter's website",
-          details: [
-            "A window into the artist's world",
-            "Annick Van Endert is a painter, sculptor, and tattoo artist from Brussels. Through various mediums, her works highlight sharp and striking contrasts.",
-          ],
-        },
-        {
-          imgPath: "/images/annick3.webp",
-          logoPath: "/images/Asset2.webp",
-          title: "A modern and visually engaging interface",
-          details: [
-            "The website offers a window into the world of Annick Van Endert, showcasing her paintings, sculptures, and tattoo art through a modern and visually engaging interface.",
-            "The site is designed so that each gallery and section can be easily updated, allowing Annick to add new artworks and content at any time through the Wordpress admin panel.",
-          ],
-        },
-        {
-          imgPath: "/images/annick4.webp",
-          logoPath: "/images/Asset3.webp",
-          title: "Plugins and Features",
-          details: [
-            "To create this website, various plugins are used:",
-            "Wow.js & Animate.css are used for animations.",
-            "Swiper is used for the slider.",
-            "SimpleLightBox is used for displaying the gallery.",
-            "Lenis is used for smooth scrolling."
           ],
         },
       ],
@@ -1123,6 +1120,38 @@ const projectDetailsCards = {
       ],
     },
     {
+      slug: "annick",
+      cards: [
+        {
+          imgPath: "/images/annick2.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "L'univers d'une artiste, mis en ligne",
+          details: [
+            "Annick Van Endert est une peintre, sculptrice et tatoueuse bruxelloise dont le travail vit de contrastes bruts et d'une expression sans compromis.",
+            "Le défi : créer un site aussi vivant et texturé que son art — un espace digital qui attire le visiteur et laisse les œuvres parler d'elles-mêmes.",
+          ],
+        },
+        {
+          imgPath: "/images/annick3.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Conçu pour sublimer les œuvres",
+          details: [
+            "Chaque choix de mise en page sert un seul objectif : mettre l'art au premier plan. Compositions épurées, transitions fluides et galeries plein écran créent une expérience de navigation cinématographique à travers peintures, sculptures et tatouages.",
+            "Construit sur WordPress avec un thème entièrement sur mesure, Annick met à jour ses galeries, ajoute de nouvelles pièces et gère son contenu en toute autonomie — sans intervention technique.",
+          ],
+        },
+        {
+          imgPath: "/images/annick4.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "Animations fluides & navigation immersive",
+          details: [
+            "Des animations déclenchées au scroll (WOW.js & Animate.css) révèlent le contenu progressivement, gardant l'expérience dynamique sans éclipser l'art.",
+            "Swiper anime les sliders d'images, SimpleLightBox ouvre les galeries en haute résolution, et Lenis assure un défilement parfaitement fluide sur l'ensemble du site.",
+          ],
+        },
+      ],
+    },
+    {
       slug: "lenoyer",
       cards: [
         {
@@ -1153,41 +1182,6 @@ const projectDetailsCards = {
             "Thème WordPress 100% sur mesure : aucun template générique, aucun page builder. Chaque élément est adapté aux besoins et à l'identité du centre médical.",
             "Construit avec ACF PRO pour une gestion de contenu flexible, Slick Slider pour les carrousels d'équipe et galeries, et Magnific Popup pour les lightboxes d'images.",
             "Animations au scroll (WOW.js, Animate.css) apportent du dynamisme sans compromettre la vitesse de chargement ni l'accessibilité.",
-          ],
-        },
-      ],
-    },
-    {
-      slug: "annick",
-      cards: [
-        {
-          imgPath: "/images/annick2.webp",
-          logoPath: "/images/Asset1.webp",
-          title: "Site web d'une peintre professionnelle",
-          details: [
-            "Une fenêtre sur le monde de l'artiste",
-            "Annick Van Endert est une peintre, sculptrice et tatoueuse de Bruxelles. À travers divers médiums, ses œuvres mettent en évidence des contrastes nets et frappants.",
-          ],
-        },
-        {
-          imgPath: "/images/annick3.webp",
-          logoPath: "/images/Asset2.webp",
-          title: "Une interface moderne et visuellement engageante",
-          details: [
-            "Le site web offre une fenêtre sur le monde d'Annick Van Endert, présentant ses peintures, sculptures et art du tatouage à travers une interface moderne et visuellement engageante.",
-            "Le site est conçu pour que chaque galerie et section puisse être facilement mise à jour, permettant à Annick d'ajouter de nouvelles œuvres d'art et du contenu à tout moment via le panneau d'administration WordPress.",
-          ],
-        },
-        {
-          imgPath: "/images/annick4.webp",
-          logoPath: "/images/Asset3.webp",
-          title: "Plugins et Fonctionnalités",
-          details: [
-            "Pour créer ce site web, divers plugins sont utilisés :",
-            "Wow.js & Animate.css sont utilisés pour les animations.",
-            "Swiper est utilisé pour le slider.",
-            "SimpleLightBox est utilisé pour afficher la galerie.",
-            "Lenis est utilisé pour le défilement fluide."
           ],
         },
       ],
