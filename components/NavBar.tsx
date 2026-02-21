@@ -103,7 +103,7 @@ const NavBar = () => {
                 gsap.set('.mobile-contact-form', { display: 'none', clearProps: 'opacity' })
                 gsap.set('.mobile-success-svg', { display: 'none', clearProps: 'opacity' })
                 gsap.set(['.mobile-field-1', '.mobile-field-2', '.mobile-field-3', '.mobile-field-4'], { clearProps: 'all' })
-                gsap.set(['.m-svg-hand', '.m-svg-lines-pink', '.m-svg-shape-purple', '.m-svg-shape-green', '.m-svg-stars', '.m-svg-shape-blue', '.m-svg-cursor'], { clearProps: 'all' })
+                gsap.set(['.m-svg-hand', '.m-svg-lines-pink', '.m-svg-shape-purple', '.m-svg-shape-green', '.m-svg-stars', '.m-svg-shape-blue', '.m-svg-cursor'], { clearProps: 'transform,opacity' })
                 gsap.set('.mobile-success-text', { clearProps: 'all' })
                 gsap.set('.mobile-success-letter', { clearProps: 'all' })
                 gsap.set('.mobile-success-subtitle', { clearProps: 'all' })
@@ -764,8 +764,31 @@ const NavBar = () => {
                             if (desktopContactOpen && dtlRef.current) {
                                 e.preventDefault()
                                 pendingNavRef.current = '/'
-                                dtlRef.current.timeScale(1.8)
-                                dtlRef.current.reverse()
+                                if (successTlRef.current) {
+                                    gsap.to('.desktop-success-svg', {
+                                        opacity: 0,
+                                        duration: 0.3,
+                                        ease: "power2.inOut",
+                                        onComplete: () => {
+                                            gsap.set('.desktop-success-svg', { display: 'none' })
+                                            successTlRef.current?.kill()
+                                            successTlRef.current = null
+                                            if (desktopFormRef.current) gsap.set(desktopFormRef.current, { visibility: 'hidden' })
+                                            if (desktopBubblesPanelRef.current) gsap.set(desktopBubblesPanelRef.current, { visibility: 'hidden' })
+                                            const bubbles = desktopBubblesRef.current.filter(Boolean)
+                                            if (bubbles.length > 0) gsap.set(bubbles, { visibility: 'hidden' })
+                                            if (projectsTitleRef.current) gsap.set(projectsTitleRef.current, { visibility: 'hidden' })
+                                            if (contactTitleRef.current) gsap.set(contactTitleRef.current, { visibility: 'hidden' })
+                                            if (dtlRef.current) {
+                                                dtlRef.current.timeScale(1.8)
+                                                dtlRef.current.reverse()
+                                            }
+                                        }
+                                    })
+                                } else {
+                                    dtlRef.current.timeScale(1.8)
+                                    dtlRef.current.reverse()
+                                }
                             } else if (isHomePage) {
                                 e.preventDefault()
                                 window.scrollTo({ top: 0, behavior: 'smooth' })
