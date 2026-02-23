@@ -61,14 +61,9 @@ return (
                         {t.hero.description}
                     </p>
                     <Button
-                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0 hidden md:block"
+                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0"
                         text={t.hero.buttonText}
                         href="#work"
-                    />
-                    <Button
-                        className="w-60 h-12 mb-4 block md:hidden"
-                        text={t.hero.buttonTextMobile}
-                        href="#contact"
                     />
                 </div>
             </header>
