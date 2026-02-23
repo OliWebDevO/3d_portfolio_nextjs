@@ -20,7 +20,29 @@ const LogoIcon = ({ icon }: { icon: LogoIconType }) => (
   </div>
 );
 
-const LogoSection = () => {
+// Gradient colors following the step balls progression
+const serviceColors = [
+  "#c4b5fd", // purple (step 1)
+  "#a5b4fc", // indigo (step 2)
+  "#fbb4d0", // rose (step 3)
+  "#f9a8d4", // pink (step 4)
+  "#93c5fd", // blue (step 5)
+  "#7dd3fc", // sky (step 6)
+  "#c4b5fd", // loop back to purple
+];
+
+const TextItem = ({ text, color }: { text: string; color?: string }) => (
+  <div className="flex-none flex-center select-none px-6">
+    <span
+      className="text-2xl md:text-3xl font-semibold whitespace-nowrap"
+      style={{ color: color || "#fff" }}
+    >
+      {text}
+    </span>
+  </div>
+);
+
+const LogoSection = ({ mode = "logos" }: { mode?: "logos" | "text" }) => {
   const boxRef = useRef<HTMLDivElement>(null);
   const tweenRef = useRef<gsap.core.Tween | null>(null);
   const momentumRef = useRef<gsap.core.Tween | null>(null);
@@ -30,7 +52,7 @@ const LogoSection = () => {
   const lastXRef = useRef(0);
   const lastTimeRef = useRef(0);
   const velocityRef = useRef(0);
-  const { t } = useTranslation();
+  const { t, serviceKeywords } = useTranslation();
 
   useEffect(() => {
     const box = boxRef.current;
@@ -102,16 +124,18 @@ const LogoSection = () => {
     const totalWidth = box.scrollWidth / 2;
     const glideDistance = velocity * 800;
     const progressGlide = -glideDistance / totalWidth;
-    const targetProgress = ((tween.progress() + progressGlide) % 1 + 1) % 1;
+    const proxy = { value: tween.progress() };
+    const targetValue = proxy.value + progressGlide;
 
-    const momentum = gsap.to(tween, {
-      progress: targetProgress,
+    const momentum = gsap.to(proxy, {
+      value: targetValue,
       duration: 1.2,
       ease: "power3.out",
       onUpdate: () => {
-        tween.progress(((tween.progress() % 1) + 1) % 1);
+        tween.progress(((proxy.value % 1) + 1) % 1);
       },
       onComplete: () => {
+        tween.progress(((proxy.value % 1) + 1) % 1);
         tween.resume();
       },
     });
@@ -119,9 +143,18 @@ const LogoSection = () => {
     momentumRef.current = momentum;
   };
 
+  const sectionId = mode === "text" ? "services" : "skills";
+  const title = mode === "text" ? t.home.services.title : t.skills.title;
+  const subtitle = mode === "text" ? t.home.services.subtitle : t.skills.subtitle;
+
+  // For text mode, duplicate keywords for seamless loop
+  const textItems = mode === "text"
+    ? [...serviceKeywords, ...serviceKeywords]
+    : [];
+
   return (
-    <section id="skills" className="section-padding md:pb-20 pb-10">
-      <TitleHeader title={t.skills.title} sub={t.skills.subtitle} />
+    <section id={sectionId} className="section-padding md:pb-20 pb-10">
+      <TitleHeader title={title} sub={subtitle} />
       <div className="md:my-15 my-25 relative overflow-hidden">
         <div className="gradient-edge"></div>
         <div className="gradient-edge"></div>
@@ -130,9 +163,14 @@ const LogoSection = () => {
           onPointerDown={handlePointerDown}
         >
           <div className="marquee-box md:gap-12 gap-5" ref={boxRef}>
-            {logoIconsList.concat(logoIconsList).map((icon, idx) => (
-              <LogoIcon key={icon.id + "-" + idx} icon={icon} />
-            ))}
+            {mode === "text"
+              ? textItems.map((keyword, idx) => (
+                  <TextItem key={`${keyword}-${idx}`} text={keyword} color={serviceColors[idx % serviceKeywords.length]} />
+                ))
+              : logoIconsList.concat(logoIconsList).map((icon, idx) => (
+                  <LogoIcon key={icon.id + "-" + idx} icon={icon} />
+                ))
+            }
           </div>
         </div>
       </div>

@@ -25,11 +25,11 @@ const FeatureCards = dynamic(() => import("@/sections/FeatureCards"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "40svh" }} />,
 });
-const ExperienceSection = dynamic(() => import("@/sections/ExperienceSection"), {
+const StepsSection = dynamic(() => import("@/sections/StepsSection"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "100svh" }} />,
 });
-const TechStack = dynamic(() => import("@/sections/TechStack"), {
+const ProductsSection = dynamic(() => import("@/sections/ProductsSection"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "60svh" }} />,
 });
@@ -38,7 +38,7 @@ const Footer = dynamic(() => import("@/sections/Footer"), {
   loading: () => <div style={{ minHeight: "10svh" }} />,
 });
 
-export default function PreloaderWrapper() {
+export default function HomeWrapper() {
   const loading = usePreloader();
 
   return (
@@ -49,10 +49,10 @@ export default function PreloaderWrapper() {
         <Hero />
         <Slider />
         <ShowcaseSection />
-        <LogoSection />
-        <FeatureCards />
-        <ExperienceSection />
-        <TechStack />
+        <LogoSection mode="text" />
+        <FeatureCards variant="home" />
+        <ProductsSection />
+        <StepsSection />
         {/* Spacer to give last-section animations enough scroll room */}
         <div className="h-[30svh] md:h-[40svh]" aria-hidden="true" />
         <Footer />

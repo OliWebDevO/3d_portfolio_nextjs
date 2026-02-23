@@ -8,6 +8,30 @@ import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
 import { usePathname, useRouter } from "next/navigation"
 
+// Pre-computed gradient colors for "Oliver Van Droogenbroeck" (25 chars)
+// Interpolates from purple (#c4b5fd) through pink (#f9a8d4) to blue (#93c5fd)
+const logoName = 'Oliver Van Droogenbroeck'
+const logoColors = logoName.split('').map((_, i) => {
+    const t = i / (logoName.length - 1)
+    // purple → pink → blue
+    const r1 = 196, g1 = 181, b1 = 253 // #c4b5fd
+    const r2 = 249, g2 = 168, b2 = 212 // #f9a8d4
+    const r3 = 147, g3 = 197, b3 = 253 // #93c5fd
+    let r, g, b
+    if (t < 0.5) {
+        const p = t * 2
+        r = Math.round(r1 + (r2 - r1) * p)
+        g = Math.round(g1 + (g2 - g1) * p)
+        b = Math.round(b1 + (b2 - b1) * p)
+    } else {
+        const p = (t - 0.5) * 2
+        r = Math.round(r2 + (r3 - r2) * p)
+        g = Math.round(g2 + (g3 - g2) * p)
+        b = Math.round(b2 + (b3 - b2) * p)
+    }
+    return `rgb(${r},${g},${b})`
+})
+
 const projectBubbles = [
     { src: '/images/annick1.webp', srcMobile: '/images/slider-mobile/annick.webp', slug: 'annick', label: 'Annick', bg: '#1c1c21' },
     { src: '/images/fanal_des_chats/fanal_home.webp', srcMobile: '/images/slider-mobile/fanal.webp', slug: 'fanal', label: 'Fanal', bg: '#ffefdb' },
@@ -18,7 +42,7 @@ const projectBubbles = [
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
-    const { t, navLinks, isFrench } = useTranslation()
+    const { t, navLinks: resumeNavLinks, homeNavLinks, isFrench } = useTranslation()
     const pathname = usePathname()
     const router = useRouter()
     const pendingNavRef = useRef<string | null>(null)
@@ -482,7 +506,10 @@ const NavBar = () => {
                 if (logoRef.current) {
                     const logoLetters = logoRef.current.querySelectorAll('span')
                     gsap.set(logoLetters, { clearProps: 'all' })
-                    gsap.set(logoRef.current, { clearProps: 'color' })
+                    // Restore gradient colors per letter
+                    logoLetters.forEach((span, i) => {
+                        (span as HTMLElement).style.color = logoColors[i]
+                    })
                 }
                 // Clear any leftover success animation styles for next open
                 gsap.set(
@@ -528,7 +555,9 @@ const NavBar = () => {
             if (logoLetters.length > 0) {
                 tl.to(logoLetters, { y: '100%', duration: 0.3, ease: "power3.in" }, 0)
             }
-            tl.set(logoRef.current, { color: '#000' }, 0.35)
+            // Override logo span colors to black for contact overlay
+            const logoSpans = logoRef.current.querySelectorAll('span')
+            tl.to(logoSpans, { color: '#000', duration: 0.01 }, 0.35)
         }
 
         // Blob scales up organically
@@ -746,10 +775,12 @@ const NavBar = () => {
     const isProjectPage = pathname?.startsWith('/projects/')
     isProjectPageRef.current = !!isProjectPage
     const isHomePage = pathname === '/'
+    const isResumePage = pathname === '/resume'
+    const navLinks = isResumePage ? resumeNavLinks : homeNavLinks
 
     return (
         <>
-            <header ref={headerRef} className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${isHomePage ? 'home' : ''} ${menuOpen || desktopContactOpen ? 'menu-open' : ''}`}>
+            <header ref={headerRef} className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${isHomePage || isResumePage ? 'home' : ''} ${menuOpen || desktopContactOpen ? 'menu-open' : ''}`}>
                 <div className="inner">
                     {/* Mobile: EN/FR left, Burger right */}
                     <div ref={langRef} className="md:hidden">
@@ -789,14 +820,14 @@ const NavBar = () => {
                                     dtlRef.current.timeScale(1.8)
                                     dtlRef.current.reverse()
                                 }
-                            } else if (isHomePage) {
+                            } else if (isHomePage || isResumePage) {
                                 e.preventDefault()
                                 window.scrollTo({ top: 0, behavior: 'smooth' })
                             }
                         }}
                     >
-                        {'Oliver Van Droogenbroeck'.split('').map((letter, i) => (
-                            <span key={i} className="inline-block">{letter === ' ' ? '\u00A0' : letter}</span>
+                        {logoName.split('').map((letter, i) => (
+                            <span key={i} className="inline-block" style={{ color: logoColors[i] }}>{letter === ' ' ? '\u00A0' : letter}</span>
                         ))}
                     </Link>
                     <nav ref={desktopNavRef} className="desktop">
@@ -1097,10 +1128,10 @@ const NavBar = () => {
                         <div className="flex flex-col justify-between">
                             <h2
                                 ref={(el) => { projectsTitleRef.current = el }}
-                                className="text-black text-4xl font-bold overflow-hidden text-right mb-4"
+                                className="text-4xl font-bold overflow-hidden text-right mb-4"
                             >
                                 {(isFrench ? 'Projets' : 'Work').split('').map((letter, i) => (
-                                    <span key={i} className="inline-block translate-y-full opacity-0">{letter}</span>
+                                    <span key={i} className="inline-block translate-y-full opacity-0 text-black">{letter}</span>
                                 ))}
                             </h2>
                             <div
@@ -1210,10 +1241,10 @@ const NavBar = () => {
                         </div>
                         <h2
                             ref={(el) => { contactTitleRef.current = el }}
-                            className="absolute left-full bottom-0 ml-4 text-black text-4xl font-bold overflow-hidden whitespace-nowrap"
+                            className="absolute left-full bottom-0 ml-4 text-4xl font-bold overflow-hidden whitespace-nowrap"
                         >
                             {'Contact'.split('').map((letter, i) => (
-                                <span key={i} className="inline-block translate-y-full opacity-0">{letter}</span>
+                                <span key={i} className="inline-block translate-y-full opacity-0 text-black">{letter}</span>
                             ))}
                         </h2>
                         </div>

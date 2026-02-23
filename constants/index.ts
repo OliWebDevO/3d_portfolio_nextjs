@@ -16,6 +16,283 @@ const navLinks = {
   ]
 };
 
+const homeNavLinks = {
+  en: [
+    { name: "Work", link: "#work" },
+    { name: "Services", link: "#services" },
+    { name: "Products", link: "#products" },
+    { name: "Steps", link: "#process" },
+    { name: "Contact", link: "#contact" },
+  ],
+  fr: [
+    { name: "Projets", link: "#work" },
+    { name: "Services", link: "#services" },
+    { name: "Produits", link: "#products" },
+    { name: "Étapes", link: "#process" },
+    { name: "Contact", link: "#contact" },
+  ]
+};
+
+const serviceKeywords = {
+  en: ["Consulting", "Digital Strategy", "Visual Identity", "Design", "Animation", "Development", "Process Automation"],
+  fr: ["Conseil", "Stratégie Digitale", "Identité Visuelle", "Design", "Animation", "Développement", "Automatisation de Processus"],
+};
+
+const homeAbilities = {
+  en: [
+    {
+      imgPath: "/images/services/tailored.svg",
+      title: "Tailored to You",
+      desc: "Every project is built from scratch for your brand. No templates, no compromises.",
+    },
+    {
+      imgPath: "/images/services/partnership.svg",
+      title: "Transparent Partnership",
+      desc: "Involved at every step. Regular updates, clear deadlines, honest communication.",
+    },
+    {
+      imgPath: "/images/services/results.svg",
+      title: "Results That Last",
+      desc: "Fast, SEO-optimized, and designed to grow with your business.",
+    },
+  ],
+  fr: [
+    {
+      imgPath: "/images/services/tailored.svg",
+      title: "Sur Mesure",
+      desc: "Chaque projet est construit de zéro pour votre marque. Pas de templates, pas de compromis.",
+    },
+    {
+      imgPath: "/images/services/partnership.svg",
+      title: "Partenariat Transparent",
+      desc: "Impliqué à chaque étape. Mises à jour régulières, délais clairs, communication honnête.",
+    },
+    {
+      imgPath: "/images/services/results.svg",
+      title: "Des Résultats Durables",
+      desc: "Rapide, optimisé SEO, conçu pour grandir avec votre activité.",
+    },
+  ],
+};
+
+const processSteps = {
+  en: [
+    {
+      number: 1,
+      title: "Initial Contact",
+      shortTitle: "Contact",
+      review: "Everything starts with a conversation. We discuss your project, your goals, and the vision you have in mind so I can fully understand what you need.",
+      checkpoints: [
+        "Free discovery call to discuss your project",
+        "Analysis of your needs, target audience and objectives",
+        "First recommendations on the best approach",
+        "Clear overview of how we can work together",
+      ],
+    },
+    {
+      number: 2,
+      title: "Proposal & Quote",
+      shortTitle: "Quote",
+      review: "Based on our exchange, I put together a detailed proposal that outlines the approach, timeline, and pricing — no surprises, everything transparent from day one.",
+      checkpoints: [
+        "Detailed proposal with scope and deliverables",
+        "Clear timeline with key milestones",
+        "Transparent pricing — no hidden costs",
+        "Adjustments until the plan fits perfectly",
+      ],
+    },
+    {
+      number: 3,
+      title: "Design & Mockup",
+      shortTitle: "Design",
+      review: "Before writing a single line of code, we shape the visual identity of your project together. You see and approve every screen before development starts.",
+      checkpoints: [
+        "Wireframes to map out structure and user flow",
+        "Visual mockups reflecting your brand identity",
+        "Feedback rounds until the design feels right",
+        "Final sign-off before moving to development",
+      ],
+    },
+    {
+      number: 4,
+      title: "Development",
+      shortTitle: "Development",
+      review: "Your project comes to life. I build it with modern, reliable technologies and keep you in the loop with regular demos so nothing comes as a surprise.",
+      checkpoints: [
+        "Built with the latest web technologies",
+        "Development in phases with regular check-ins",
+        "Live demos so you can follow the progress",
+        "Clean, maintainable code for the long run",
+      ],
+    },
+    {
+      number: 5,
+      title: "Testing & Revisions",
+      shortTitle: "Testing",
+      review: "Every detail is tested — performance, responsiveness, SEO. Your feedback is actively integrated to make sure the result matches your expectations.",
+      checkpoints: [
+        "Cross-browser and cross-device testing",
+        "Performance optimization and SEO audit",
+        "Your revision requests applied and validated",
+        "Final review before launch",
+      ],
+    },
+    {
+      number: 6,
+      title: "Deployment",
+      shortTitle: "Deployment",
+      review: "Your site goes live. I handle the full deployment process so you can focus on what matters — your business.",
+      checkpoints: [
+        "Deployment and domain/hosting setup",
+        "SSL certificate and security configuration",
+        "Performance checks in production",
+        "Training on how to manage your content",
+      ],
+    },
+    {
+      number: 7,
+      title: "Follow-Up",
+      shortTitle: "Follow-Up",
+      review: "It doesn't stop at launch. I stay available to make sure everything runs smoothly and to support your future needs.",
+      checkpoints: [
+        "Post-launch support for peace of mind",
+        "Bug fixes and adjustments included",
+        "Available for future updates and evolution",
+        "Long-term partnership mindset",
+      ],
+    },
+  ],
+  fr: [
+    {
+      number: 1,
+      title: "Prise de Contact",
+      shortTitle: "Contact",
+      review: "Tout commence par une conversation. On discute de votre projet, de vos objectifs et de la vision que vous avez en tête pour que je comprenne exactement ce dont vous avez besoin.",
+      checkpoints: [
+        "Appel découverte gratuit pour discuter du projet",
+        "Analyse de vos besoins, cible et objectifs",
+        "Premières recommandations sur la meilleure approche",
+        "Vue claire de comment on peut travailler ensemble",
+      ],
+    },
+    {
+      number: 2,
+      title: "Proposition & Devis",
+      shortTitle: "Devis",
+      review: "Sur base de notre échange, je prépare une proposition détaillée avec l'approche, le planning et le tarif — pas de surprises, tout est transparent dès le départ.",
+      checkpoints: [
+        "Proposition détaillée avec périmètre et livrables",
+        "Planning clair avec jalons clés",
+        "Tarification transparente — pas de coûts cachés",
+        "Ajustements jusqu'à ce que le plan soit parfait",
+      ],
+    },
+    {
+      number: 3,
+      title: "Design & Maquette",
+      shortTitle: "Design",
+      review: "Avant d'écrire la moindre ligne de code, on construit ensemble l'identité visuelle de votre projet. Vous voyez et validez chaque écran avant le développement.",
+      checkpoints: [
+        "Wireframes pour définir la structure et le parcours utilisateur",
+        "Maquettes visuelles reflétant votre identité de marque",
+        "Allers-retours jusqu'à ce que le design vous convienne",
+        "Validation finale avant de passer au développement",
+      ],
+    },
+    {
+      number: 4,
+      title: "Développement",
+      shortTitle: "Création",
+      review: "Votre projet prend vie. Je le construis avec des technologies modernes et fiables, et je vous tiens informé avec des démos régulières pour que rien ne soit une surprise.",
+      checkpoints: [
+        "Construit avec les dernières technologies web",
+        "Développement par phases avec points réguliers",
+        "Démos en direct pour suivre l'avancement",
+        "Code propre et maintenable sur le long terme",
+      ],
+    },
+    {
+      number: 5,
+      title: "Tests & Révisions",
+      shortTitle: "Tests",
+      review: "Chaque détail est testé — performance, responsive, SEO. Vos retours sont activement intégrés pour que le résultat corresponde parfaitement à vos attentes.",
+      checkpoints: [
+        "Tests multi-navigateurs et multi-appareils",
+        "Optimisation des performances et audit SEO",
+        "Vos demandes de révision appliquées et validées",
+        "Revue finale avant la mise en ligne",
+      ],
+    },
+    {
+      number: 6,
+      title: "Déploiement",
+      shortTitle: "Déploiement",
+      review: "Votre site est en ligne. Je gère le déploiement complet pour que vous puissiez vous concentrer sur l'essentiel — votre activité.",
+      checkpoints: [
+        "Configuration domaine et hébergement",
+        "Certificat SSL et configuration sécurité",
+        "Vérifications de performance en production",
+        "Formation à la gestion de votre contenu",
+      ],
+    },
+    {
+      number: 7,
+      title: "Suivi",
+      shortTitle: "Suivi",
+      review: "Ça ne s'arrête pas au lancement. Je reste disponible pour m'assurer que tout fonctionne parfaitement et vous accompagner dans vos besoins futurs.",
+      checkpoints: [
+        "Support post-lancement pour votre tranquillité",
+        "Corrections et ajustements inclus",
+        "Disponible pour les mises à jour et évolutions",
+        "Partenariat sur le long terme",
+      ],
+    },
+  ],
+};
+
+const productCards = {
+  en: [
+    {
+      title: "Showcase Website",
+      description: "A professional online presence with WordPress admin so you can manage your content independently.",
+      features: ["Custom Design", "WordPress CMS", "SEO Optimized", "Responsive"],
+      imgPath: "/images/products/showcase.svg",
+    },
+    {
+      title: "Interactive Platform",
+      description: "Dynamic web applications with advanced features: member areas, bookings, payments.",
+      features: ["Custom Features", "User Accounts", "API Integrations", "Interactive UI"],
+      imgPath: "/images/products/platform.svg",
+    },
+    {
+      title: "Management App",
+      description: "Custom-built tools to optimize your operations and workflows.",
+      features: ["Dashboard", "Role-Based Access", "Data Management", "Automation"],
+      imgPath: "/images/products/management.svg",
+    },
+  ],
+  fr: [
+    {
+      title: "Site Vitrine",
+      description: "Présence en ligne professionnelle avec WordPress admin pour gérer le contenu en autonomie.",
+      features: ["Design sur mesure", "CMS WordPress", "Optimisé SEO", "Responsive"],
+      imgPath: "/images/products/showcase.svg",
+    },
+    {
+      title: "Plateforme Interactive",
+      description: "Applications web dynamiques avec fonctionnalités avancées : espace membre, réservations, paiement.",
+      features: ["Fonctionnalités sur mesure", "Comptes utilisateurs", "Intégrations API", "Interface interactive"],
+      imgPath: "/images/products/platform.svg",
+    },
+    {
+      title: "Application de Gestion",
+      description: "Outils sur mesure pour optimiser opérations et flux de travail.",
+      features: ["Tableau de bord", "Accès par rôles", "Gestion de données", "Automatisation"],
+      imgPath: "/images/products/management.svg",
+    },
+  ],
+};
+
 const translations = {
   en: {
     nav: {
@@ -99,6 +376,20 @@ const translations = {
     },
     projectpage: {
       visitProject: "Visit Project"
+    },
+    home: {
+      services: {
+        title: "Services",
+        subtitle: "💡 What I bring to the table",
+      },
+      process: {
+        title: "Steps",
+        subtitle: "🔄 How we work together",
+      },
+      products: {
+        title: "Products",
+        subtitle: "📦 What I build",
+      },
     }
   },
   fr: {
@@ -183,6 +474,20 @@ const translations = {
     },
     projectpage: {
       visitProject: "Visiter le projet"
+    },
+    home: {
+      services: {
+        title: "Services",
+        subtitle: "💡 Ce que j'apporte",
+      },
+      process: {
+        title: "Étapes",
+        subtitle: "🔄 Comment on travaille ensemble",
+      },
+      products: {
+        title: "Produits",
+        subtitle: "📦 Ce que je construis",
+      },
     }
   },
 };
@@ -190,20 +495,20 @@ const translations = {
 
 const words = {
   en: [
-    { id: 1, text: "Ideas", imgPath: "/images/ideas.svg" },
-    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 4, text: "Ideas", imgPath: "/images/ideas.svg" },
-    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 6, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 1, text: "Ideas", imgPath: "/images/ideas.svg", color: "#c4b5fd" },
+    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4" },
+    { id: 3, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd" },
+    { id: 4, text: "Ideas", imgPath: "/images/ideas.svg", color: "#c4b5fd" },
+    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4" },
+    { id: 6, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd" },
   ],
   fr: [
-    { id: 1, text: "Idées", imgPath: "/images/ideas.svg" },
-    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 3, text: "Designs", imgPath: "/images/designs.svg" },
-    { id: 4, text: "Idées", imgPath: "/images/ideas.svg" },
-    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg" },
-    { id: 6, text: "Designs", imgPath: "/images/designs.svg" },
+    { id: 1, text: "Idées", imgPath: "/images/ideas.svg", color: "#c4b5fd" },
+    { id: 2, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4" },
+    { id: 3, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd" },
+    { id: 4, text: "Idées", imgPath: "/images/ideas.svg", color: "#c4b5fd" },
+    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4" },
+    { id: 6, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd" },
   ]
 };
 
@@ -1246,6 +1551,7 @@ export {
   translations,
   words,
   abilities,
+  homeAbilities,
   logoIconsList,
   counterItems,
   expCards,
@@ -1255,6 +1561,10 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  homeNavLinks,
+  serviceKeywords,
+  processSteps,
+  productCards,
   projects,
   projectDetailsCards,
 };

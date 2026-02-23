@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { translations, navLinks, words, abilities, expCards, techStackIcons, techStackImgs, projects, projectDetailsCards } from '@/constants';
+import { translations, navLinks, homeNavLinks, words, abilities, homeAbilities, expCards, techStackIcons, techStackImgs, projects, projectDetailsCards, serviceKeywords, processSteps, productCards } from '@/constants';
 
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -28,13 +28,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = translations[language];
   const currentNavLinks = navLinks[language];
+  const currentHomeNavLinks = homeNavLinks[language];
   const currentWords = words[language];
   const currentAbilities = abilities[language];
+  const currentHomeAbilities = homeAbilities[language];
   const currentExperience = expCards[language];
   const currentTechStackIcons = techStackIcons[language];
   const currentTechStackImgs = techStackImgs[language];
   const currentProjects = projects[language];
   const currentProjectDetails = projectDetailsCards[language];
+  const currentServiceKeywords = serviceKeywords[language];
+  const currentProcessSteps = processSteps[language];
+  const currentProductCards = productCards[language];
 
   return (
     <LanguageContext.Provider value={{
@@ -42,13 +47,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLanguage: handleSetLanguage,
       t,
       navLinks: currentNavLinks,
+      homeNavLinks: currentHomeNavLinks,
       words: currentWords,
       abilities: currentAbilities,
+      homeAbilities: currentHomeAbilities,
       expCards: currentExperience,
       techStackIcons: currentTechStackIcons,
       techStackImgs: currentTechStackImgs,
       projects: currentProjects,
       projectDetailsCards: currentProjectDetails,
+      serviceKeywords: currentServiceKeywords,
+      processSteps: currentProcessSteps,
+      productCards: currentProductCards,
     }}>
       {children}
     </LanguageContext.Provider>

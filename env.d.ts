@@ -92,6 +92,27 @@ interface AbilitiesTranslations {
   fr: AbilityType[];
 }
 
+interface StepType {
+  number: number;
+  title: string;
+  shortTitle: string;
+  review: string;
+  checkpoints: string[];
+}
+
+interface ProductCardType {
+  title: string;
+  description: string;
+  features: string[];
+  imgPath: string;
+}
+
+interface HomeTranslations {
+  services: { title: string; subtitle: string };
+  process: { title: string; subtitle: string };
+  products: { title: string; subtitle: string };
+}
+
 interface ExpCardType {
   review: string;
   imgPath: string;
@@ -200,6 +221,7 @@ interface Translations {
   techstack: TechStackTranslations;
   contact: ContactTranslations;
   projectpage: ProjectPageTranslations;
+  home: HomeTranslations;
 }
 
 
@@ -215,13 +237,18 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: Translations;
   navLinks: { name: string; link: string }[];
+  homeNavLinks: { name: string; link: string }[];
   words: WordType[];
   abilities: AbilityType[];
+  homeAbilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
   techStackImgs: TechStackImgType[];
   projects: ProjectType[];
   projectDetailsCards: ProjectDetailsType[];
+  serviceKeywords: string[];
+  processSteps: StepType[];
+  productCards: ProductCardType[];
 }
 
 interface UseTranslationReturn {
@@ -230,11 +257,16 @@ interface UseTranslationReturn {
   isEnglish: boolean;
   isFrench: boolean;
   navLinks: { name: string; link: string }[];
+  homeNavLinks: { name: string; link: string }[];
   words: WordType[];
   abilities: AbilityType[];
+  homeAbilities: AbilityType[];
   expCards: ExpCardType[];
   techStackIcons: TechStackIconsType[];
   techStackImgs: TechStackImgType[];
   projects: ProjectType[];
   projectDetailsCards: ProjectDetailsType[];
+  serviceKeywords: string[];
+  processSteps: StepType[];
+  productCards: ProductCardType[];
 }

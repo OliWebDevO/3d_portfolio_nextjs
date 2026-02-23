@@ -15,7 +15,6 @@ const ShowcaseSection = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   useGSAP(() => {
-    if (!open) return;
     const mobile = window.innerWidth < 768;
     cardRefs.current.forEach((card, index) => {
       if (!card) return;
@@ -25,7 +24,7 @@ const ShowcaseSection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: mobile ? 0.8 : 1.5,
+          duration: mobile ? 0.8 : 1,
           delay: mobile ? 0 : 0.3 * (index + 0.3),
           scrollTrigger: {
             trigger: card,
@@ -35,22 +34,17 @@ const ShowcaseSection = () => {
       );
     });
 
-    gsap.fromTo(
-      showcaseRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
-    );
-     return () => {
-    ScrollTrigger.getAll().forEach(trigger => {
-      if (
-        trigger.trigger &&
-        showcaseRef.current &&
-        showcaseRef.current.contains(trigger.trigger as Node)
-      ) {
-        trigger.kill();
-      }
-    });
-  };
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (
+          trigger.trigger &&
+          showcaseRef.current &&
+          showcaseRef.current.contains(trigger.trigger as Node)
+        ) {
+          trigger.kill();
+        }
+      });
+    };
   }, []);
 
   // Show only first 5 projects, split for layout: first two on left, others stacked right
@@ -90,21 +84,7 @@ const ShowcaseSection = () => {
                       loading="lazy"
                       className="rounded-xl object-contain main-img"
                     />
-                    <div className="showcase-animated-bg flex items-center justify-center">
-                      {project.techLogos &&
-                        project.techLogos.map((logo, logoIdx) => (
-                          <Image
-                            key={logo}
-                            src={logo}
-                            alt={`Tech logo ${logoIdx + 1}`}
-                            width={80}
-                            height={80}
-                            loading="lazy"
-                            className="opacity-100 hover:opacity-80 hover:scale-90  duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
-                          />
-                        ))}
                     </div>
-                  </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
                     <p className="text-white-50 md:text-xl mt-4">{t.projects[project.slug].description}</p>
@@ -135,20 +115,6 @@ const ShowcaseSection = () => {
                       loading="lazy"
                       className=" main-img "
                     />
-                    <div className="showcase-animated-bg flex items-center justify-center">
-                      {project.techLogos &&
-                        project.techLogos.map((logo, logoIdx) => (
-                          <Image
-                            key={logo}
-                            src={logo}
-                            alt={`Tech logo ${logoIdx + 1}`}
-                            width={80}
-                            height={80}
-                            loading="lazy"
-                            className="opacity-100 hover:opacity-80 hover:scale-90 duration-500 transition-all-ease-in-out 3xl:h-32 xxl:h-28 xl:h-24 h-12 w-fit"
-                          />
-                        ))}
-                    </div>
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>

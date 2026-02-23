@@ -1,34 +1,20 @@
 // sections/Hero.tsx
 'use client'
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "../components/Button"
 import { useTranslation } from "@/hooks/useTranslation"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import dynamic from "next/dynamic";
 
-const HeroExperience = dynamic(
-  () => import("@/components/models/HeroModels/HeroExperience"),
-  { ssr: false }
-);
+// 3D model disabled — kept for reference
+// import dynamic from "next/dynamic";
+// const HeroExperience = dynamic(
+//   () => import("@/components/models/HeroModels/HeroExperience"),
+//   { ssr: false }
+// );
 
 const Hero = () => {
     const { words, t, isFrench } = useTranslation();
-    const [isDesktop, setIsDesktop] = useState(false);
-
-    useEffect(() => {
-      let lastWidth = window.innerWidth;
-      setIsDesktop(lastWidth > 768);
-      const check = () => {
-        const newWidth = window.innerWidth;
-        if (newWidth === lastWidth) return;
-        lastWidth = newWidth;
-        setIsDesktop(newWidth > 768);
-      };
-      window.addEventListener('resize', check);
-      return () => window.removeEventListener('resize', check);
-    }, []);
 
     useGSAP(() => {
         gsap.fromTo('.hero-text h1',
@@ -59,9 +45,10 @@ return (
                                                 alt={word.text}
                                                 width={48}
                                                 height={48}
-                                                className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                                                className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full"
+                                                style={{ backgroundColor: word.color }}
                                             />
-                                            <span>{word.text}</span>
+                                            <span style={{ color: word.color }}>{word.text}</span>
                                         </span>
                                     ))}
                                 </span>
@@ -86,11 +73,11 @@ return (
                 </div>
             </header>
             {/* RIGHT : 3D MODEL — only loaded on desktop (prevents Three.js bundle on mobile) */}
-            {isDesktop && (
+            {/* {isDesktop && (
               <div className={`hero-3d-layout hover:cursor-grab ${isFrench ? 'max-md:top-32' : ''}`}>
                   <HeroExperience />
               </div>
-            )}
+            )} */}
         </div>
     </section>
   )

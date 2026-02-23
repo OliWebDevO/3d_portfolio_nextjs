@@ -4,31 +4,33 @@ import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 
 
-const FeatureCards = () => {
+const FeatureCards = ({ variant = "resume" }: { variant?: "resume" | "home" }) => {
    const cardRefs = useRef<HTMLDivElement[]>([]);
-   const { abilities } = useTranslation();
+   const { abilities, homeAbilities } = useTranslation();
+
+   const items = variant === "home" ? homeAbilities : abilities;
 
     const handleMouseMove = (index: number) => (e: React.MouseEvent<HTMLDivElement>) => {
       const card = cardRefs.current[index];
       if (!card) return;
-      //Get the mouse position 
+      //Get the mouse position
       const rect = card.getBoundingClientRect();
       const mouseX = e.clientX - rect.left - rect.width / 2;
       const mouseY = e.clientY - rect.top - rect.height / 2;
       // Calculate the angle
       let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
       angle = (angle + 360) % 360;
-  
+
       card.style.setProperty('--start', (angle + 60).toString());
     };
-  
+
   return (
-    
-    <div className="w-full padding-x-lg md:pb-40 pb20">
+
+    <div id={variant === "home" ? "services" : "skills"} className="w-full padding-x-lg md:pb-40 pb20">
         <div className="mx-auto grid-3-cols 3xl:px-20 2xl:px-10 xl:px-6">
-            {abilities.map((ability, index) => (
-              <div 
-              key={ability.imgPath} 
+            {items.map((ability, index) => (
+              <div
+              key={ability.imgPath}
               className=" bg-black-100 card  rounded-xl p-8 flex flex-col gap-4"
               onMouseMove={handleMouseMove(index)}
               ref={(el) => {

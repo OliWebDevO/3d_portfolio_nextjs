@@ -38,7 +38,7 @@ const Footer = dynamic(() => import("@/sections/Footer"), {
   loading: () => <div style={{ minHeight: "10svh" }} />,
 });
 
-export default function PreloaderWrapper() {
+export default function ResumeWrapper() {
   const loading = usePreloader();
 
   return (
@@ -49,8 +49,8 @@ export default function PreloaderWrapper() {
         <Hero />
         <Slider />
         <ShowcaseSection />
-        <LogoSection />
-        <FeatureCards />
+        <LogoSection mode="logos" />
+        <FeatureCards variant="resume" />
         <ExperienceSection />
         <TechStack />
         {/* Spacer to give last-section animations enough scroll room */}

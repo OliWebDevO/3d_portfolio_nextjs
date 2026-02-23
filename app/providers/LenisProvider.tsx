@@ -58,12 +58,8 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       })
     }
 
-    // --- Listen for 3D model loaded events ---
-    window.addEventListener("room-loaded", debouncedRefresh)
-    window.addEventListener("model-loaded", debouncedRefresh)
-
-    // --- Fallback refreshes for async content ---
-    const timeouts = [500, 1500, 3500].map(delay =>
+    // --- Fallback refreshes for async/dynamic content ---
+    const timeouts = [500, 1500, 3000].map(delay =>
       setTimeout(debouncedRefresh, delay)
     )
 
@@ -71,8 +67,6 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     return () => {
       clearTimeout(refreshTimeout)
       timeouts.forEach(clearTimeout)
-      window.removeEventListener("room-loaded", debouncedRefresh)
-      window.removeEventListener("model-loaded", debouncedRefresh)
       gsap.ticker.remove(lenis.raf)
       lenis.destroy()
     }

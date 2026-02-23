@@ -1,5 +1,5 @@
-import PreloaderWrapper from "@/components/PreloaderWrapper";
+import HomeWrapper from "@/components/HomeWrapper";
 
 export default function Home() {
-  return <PreloaderWrapper />;
+  return <HomeWrapper />;
 }
