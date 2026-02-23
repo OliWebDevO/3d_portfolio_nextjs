@@ -70,6 +70,7 @@ interface WordType {
   id: number;
   text: string;
   imgPath: string;
+  color: string;
 }
 
 interface WordsType {
