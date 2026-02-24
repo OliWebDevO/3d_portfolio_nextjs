@@ -59,17 +59,17 @@ const homeAbilities = {
   fr: [
     {
       imgPath: "/images/services/tailored.svg",
-      title: "Sur Mesure",
+      title: "Réalisation sur mesure",
       desc: "Chaque ligne de code est écrite pour vous. Design, fonctionnalités, performance : tout est pensé pour répondre à vos objectifs.",
     },
     {
       imgPath: "/images/services/partnership.svg",
-      title: "Partenariat Transparent",
+      title: "Partenariat transparent",
       desc: "Chaque décision est prise ensemble. Vous savez toujours où en est votre projet, sans surprises.",
     },
     {
       imgPath: "/images/services/results.svg",
-      title: "Des Résultats Durables",
+      title: "Résultats durables",
       desc: "Votre site performe dès le premier jour. Rapide, optimisé et construit pour s'adapter à mesure que vous grandissez.",
     },
   ],
