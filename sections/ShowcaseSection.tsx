@@ -72,7 +72,6 @@ const ShowcaseSection = () => {
                   <div
                     ref={el => { cardRefs.current[idx] = el; }}
                     className="image-wrapper group relative overflow-hidden rounded-xl"
-                    style={{ background: project.bg }}
                   >
                     <Image
                       src={project.image}
@@ -82,7 +81,7 @@ const ShowcaseSection = () => {
                       quality={80}
                       sizes="(max-width: 768px) 100vw, 60vw"
                       loading="lazy"
-                      className="rounded-xl object-contain main-img"
+                      className="rounded-xl object-cover main-img w-full"
                     />
                     </div>
                   <div className="text-content flex flex-col justify-center mt-4">
@@ -103,7 +102,6 @@ const ShowcaseSection = () => {
                   <div
                     ref={el => { cardRefs.current[idx + leftProjects.length] = el; }}
                     className="image-wrapper group relative overflow-hidden rounded-xl"
-                    style={{ background: project.bg }}
                   >
                     <Image
                       src={project.image}
@@ -113,7 +111,7 @@ const ShowcaseSection = () => {
                       quality={80}
                       sizes="(max-width: 768px) 100vw, 40vw"
                       loading="lazy"
-                      className=" main-img "
+                      className="rounded-xl main-img w-full"
                     />
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">

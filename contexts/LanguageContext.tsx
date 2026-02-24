@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { translations, navLinks, homeNavLinks, words, abilities, homeAbilities, expCards, techStackIcons, techStackImgs, projects, projectDetailsCards, serviceKeywords, processSteps, productCards } from '@/constants';
+import { translations, navLinks, homeNavLinks, words, abilities, homeAbilities, expCards, techStackIcons, techStackImgs, projects, projectDetailsCards, serviceKeywords, processSteps, productCards, faqItems } from '@/constants';
 
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -40,6 +40,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const currentServiceKeywords = serviceKeywords[language];
   const currentProcessSteps = processSteps[language];
   const currentProductCards = productCards[language];
+  const currentFaqItems = faqItems[language];
 
   return (
     <LanguageContext.Provider value={{
@@ -59,6 +60,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       serviceKeywords: currentServiceKeywords,
       processSteps: currentProcessSteps,
       productCards: currentProductCards,
+      faqItems: currentFaqItems,
     }}>
       {children}
     </LanguageContext.Provider>

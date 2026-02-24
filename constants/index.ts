@@ -22,6 +22,7 @@ const homeNavLinks = {
     { name: "Services", link: "#services" },
     { name: "Products", link: "#products" },
     { name: "Steps", link: "#process" },
+    { name: "FAQ", link: "#faq" },
     { name: "Contact", link: "#contact" },
   ],
   fr: [
@@ -29,6 +30,7 @@ const homeNavLinks = {
     { name: "Services", link: "#services" },
     { name: "Produits", link: "#products" },
     { name: "Étapes", link: "#process" },
+    { name: "FAQ", link: "#faq" },
     { name: "Contact", link: "#contact" },
   ]
 };
@@ -105,7 +107,7 @@ const processSteps = {
       number: 3,
       title: "Design & Mockup",
       shortTitle: "Design",
-      review: "Before writing a single line of code, we shape the visual identity of your project together. You see and approve every screen before development starts.",
+      review: "Before writing a single line of code, we shape the visual identity of your project together. You see and approve every design before development starts.",
       checkpoints: [
         "Clear architecture and intuitive navigation",
         "A design that reflects your identity and values",
@@ -191,7 +193,7 @@ const processSteps = {
       number: 3,
       title: "Design & Maquette",
       shortTitle: "Design",
-      review: "Avant d'écrire la moindre ligne de code, on construit ensemble l'identité visuelle de votre projet. Vous voyez et validez chaque écran avant le développement.",
+      review: "Avant d'écrire la moindre ligne de code, on construit ensemble l'identité visuelle de votre projet. Vous voyez et validez chaque design avant le développement.",
       checkpoints: [
         "Architecture claire et navigation intuitive",
         "Un design qui reflète votre identité et vos valeurs",
@@ -390,6 +392,10 @@ const translations = {
         title: "Products",
         subtitle: "📦 What I build",
       },
+      faq: {
+        title: "FAQ",
+        subtitle: "❓ Common questions answered",
+      },
     }
   },
   fr: {
@@ -488,10 +494,124 @@ const translations = {
         title: "Produits",
         subtitle: "📦 Ce que je construis",
       },
+      faq: {
+        title: "FAQ",
+        subtitle: "❓ Questions fréquentes",
+      },
     }
   },
 };
 
+const faqItems = {
+  en: [
+    {
+      category: "Initial Contact",
+      items: [
+        { question: "How does the first contact work?", answer: "We start with a call or an in-person meeting, with no commitment. The goal is to understand your project, your objectives and your constraints. From there, I give you an initial overview of what's feasible, the timeline and an approximate budget." },
+        { question: "I don't have a clear idea yet, can you still help?", answer: "Of course. Most projects start with a vague idea. We take the time to analyze your business, your target audience and your goals to define together the most suitable solution, whether it's a showcase site, a platform or something else." },
+        { question: "What's the difference between a showcase site, an interactive platform and a management app?", answer: "A showcase site highlights your business, services and achievements. It's designed to inform, build trust and convert visitors into clients. An interactive platform goes further by integrating features like a member area, a booking system, advanced forms or an e-commerce section. A management app is a custom-built tool, often internal, designed to automate and simplify your processes: order tracking, inventory management, dashboards, etc." },
+      ],
+    },
+    {
+      category: "Proposal & Quote",
+      items: [
+        { question: "How is the price calculated?", answer: "The price is based on the number of pages, the features requested, the level of customization and the estimated development time. You receive a detailed line-by-line quote before committing, with no surprises or hidden fees along the way." },
+        { question: "Do I need to pay everything upfront?", answer: "No. Payment is split into two parts: a deposit when the project starts, then the balance upon final delivery. No intermediate payments, no surprises. You only pay the rest once the result meets your expectations." },
+      ],
+    },
+    {
+      category: "Design & Mockup",
+      items: [
+        { question: "Do I see the design before development?", answer: "Yes, always. I create several design proposals based on your needs, and we choose together the direction that suits you best. Nothing is developed until the visual result is approved. You stay involved throughout the entire process." },
+        { question: "Is everything custom or do you use templates?", answer: "It depends on the project and your needs. Sometimes we start from scratch, sometimes we use an existing base to move faster. Either way, everything is fully customized to match your branding, colors and identity. The end result is always unique." },
+        { question: "What if I don't like the design?", answer: "We adjust. Each phase includes revisions: you share your feedback, I make the changes, and we repeat until the result matches exactly what you had in mind. There's no strict limit on back-and-forth." },
+      ],
+    },
+    {
+      category: "Development",
+      items: [
+        { question: "How long does development take?", answer: "A showcase site typically takes between 2 and 8 weeks. An interactive platform or management app, depending on its complexity, can range from 1 to 4 months. Exact timelines depend on the number of pages, features and how quickly feedback is provided during approvals." },
+        { question: "Can I follow the progress?", answer: "Yes. You receive regular demos with a preview link to see the project in real conditions. We check in at every key milestone to make sure we stay aligned with your expectations." },
+      ],
+    },
+    {
+      category: "Testing & Revisions",
+      items: [
+        { question: "How many revisions are included?", answer: "Each phase of the project (wireframes, mockups, development) includes multiple revision rounds. The goal isn't to count back-and-forth, but to make sure the final result truly matches your expectations before moving to the next step." },
+        { question: "Will my site be mobile and SEO optimized?", answer: "Yes. Every project is built with responsive design to adapt to all screens: mobile, tablet and desktop. On the SEO side, site structure, meta tags, loading speed and best practices are integrated from the start for strong organic search rankings." },
+      ],
+    },
+    {
+      category: "Deployment",
+      items: [
+        { question: "Who handles hosting and domain?", answer: "I handle everything from A to Z: choosing the right hosting for your project, configuring the domain name, installing the SSL certificate (for https) and deploying to production. You don't need to set up anything on your end." },
+        { question: "Can I update the content myself?", answer: "Yes. Depending on the project, you'll have access to a CMS like WordPress with custom fields, or a tailored admin interface. I also train you on how to use it so you can update your texts, images and content on your own." },
+      ],
+    },
+    {
+      category: "Follow-Up",
+      items: [
+        { question: "What happens after launch?", answer: "I stay available after launch to fix any bugs, make adjustments and answer your questions. If you need regular updates or new features over time, we can set up a monthly support plan tailored to your needs." },
+        { question: "Can features be added later?", answer: "Yes. The code is structured in a clean and modular way from the start, which makes it easy to add new pages, features or integrations without rebuilding everything. Your project can grow alongside your business." },
+        { question: "Is my data secure?", answer: "Yes. Every project follows security best practices: SSL certificate, protection against common attacks (injections, XSS), access management and backups. If your project handles sensitive data, additional measures are put in place." },
+      ],
+    },
+  ],
+  fr: [
+    {
+      category: "Prise de contact",
+      items: [
+        { question: "Comment se passe le premier contact ?", answer: "On commence par un échange par appel ou en personne, sans engagement. L'idée est de comprendre votre projet, vos objectifs et vos contraintes. À partir de là, je vous donne une première orientation sur ce qui est faisable, les délais et le budget approximatif." },
+        { question: "Je n'ai pas d'idée précise, vous pouvez quand même m'aider ?", answer: "Bien sûr. La plupart des projets commencent avec une idée vague. On prend le temps d'analyser votre activité, votre public cible et vos objectifs pour définir ensemble la solution la plus adaptée, que ce soit un site vitrine, une plateforme ou autre chose." },
+        { question: "Quelle est la différence entre un site vitrine, une plateforme interactive et une app de gestion ?", answer: "Un site vitrine met en avant votre activité, vos services et vos réalisations. Il sert à informer, rassurer et convertir vos visiteurs en clients. Une plateforme interactive va plus loin en intégrant des fonctionnalités comme un espace membre, un système de réservation, un formulaire avancé ou un espace e-commerce. Une app de gestion est un outil sur mesure, souvent interne, conçu pour automatiser et simplifier vos processus : suivi de commandes, gestion de stocks, tableaux de bord, etc." },
+      ],
+    },
+    {
+      category: "Proposition & Devis",
+      items: [
+        { question: "Comment est calculé le prix ?", answer: "Le prix est basé sur le nombre de pages, les fonctionnalités demandées, le niveau de personnalisation et le temps de développement estimé. Vous recevez un devis détaillé ligne par ligne avant de vous engager, sans surprise ni frais cachés en cours de route." },
+        { question: "Faut-il payer tout d'avance ?", answer: "Non. Le paiement se fait en deux temps : un acompte au démarrage du projet, puis le solde à la livraison finale. Pas de paiements intermédiaires, pas de surprises. Vous ne réglez le reste que lorsque le résultat vous convient." },
+      ],
+    },
+    {
+      category: "Design & Maquette",
+      items: [
+        { question: "Est-ce que je vois le design avant le développement ?", answer: "Oui, toujours. Je crée plusieurs propositions de design en fonction de vos besoins, et on choisit ensemble la direction qui vous correspond le mieux. Rien n'est développé tant que le rendu visuel n'est pas validé. Vous restez impliqué tout au long du processus." },
+        { question: "Tout est sur mesure ou vous utilisez des templates ?", answer: "Ça dépend du projet et de vos besoins. Parfois on part de zéro, parfois on s'appuie sur une base existante pour aller plus vite. Dans tous les cas, tout est modifié et adapté pour correspondre à votre image, vos couleurs et votre identité. Le résultat final est toujours unique." },
+        { question: "Et si le design ne me convient pas ?", answer: "On ajuste. Chaque phase inclut des révisions : vous donnez vos retours, je modifie, et on recommence jusqu'à ce que le résultat corresponde exactement à ce que vous aviez en tête. Il n'y a pas de limite stricte sur les allers-retours." },
+      ],
+    },
+    {
+      category: "Développement",
+      items: [
+        { question: "Combien de temps dure le développement ?", answer: "Un site vitrine prend généralement entre 2 et 8 semaines. Une plateforme interactive ou une app de gestion, selon sa complexité, peut aller de 1 à 4 mois. Les délais exacts dépendent du nombre de pages, des fonctionnalités et de la rapidité des retours lors des validations." },
+        { question: "Est-ce que je peux suivre l'avancement ?", answer: "Oui. Vous recevez des démos régulières avec un lien de prévisualisation pour voir le projet en conditions réelles. On fait un point à chaque étape clé pour s'assurer qu'on reste alignés sur vos attentes." },
+      ],
+    },
+    {
+      category: "Tests & Révisions",
+      items: [
+        { question: "Combien de révisions sont incluses ?", answer: "Chaque phase du projet (wireframes, maquettes, développement) inclut plusieurs tours de révisions. L'objectif n'est pas de compter les allers-retours, mais de s'assurer que le résultat final correspond vraiment à vos attentes avant de passer à l'étape suivante." },
+        { question: "Mon site sera-t-il optimisé pour le mobile et le SEO ?", answer: "Oui. Chaque projet est conçu en responsive design pour s'adapter à tous les écrans : mobile, tablette et desktop. Côté SEO, la structure du site, les balises, la vitesse de chargement et les bonnes pratiques sont intégrées dès le départ pour un bon référencement naturel." },
+      ],
+    },
+    {
+      category: "Déploiement",
+      items: [
+        { question: "Qui s'occupe de l'hébergement et du nom de domaine ?", answer: "Je gère tout de A à Z : choix de l'hébergeur adapté à votre projet, configuration du nom de domaine, installation du certificat SSL (pour le https) et déploiement en production. Vous n'avez rien à configurer de votre côté." },
+        { question: "Est-ce que je pourrai modifier le contenu moi-même ?", answer: "Oui. Selon le projet, vous aurez accès à un CMS comme WordPress avec des champs personnalisés, ou une interface d'administration sur mesure. Je vous forme à l'utilisation pour que vous puissiez modifier vos textes, images et contenus en toute autonomie." },
+      ],
+    },
+    {
+      category: "Suivi",
+      items: [
+        { question: "Que se passe-t-il après la mise en ligne ?", answer: "Je reste disponible après le lancement pour corriger d'éventuels bugs, faire des ajustements et répondre à vos questions. Si vous avez besoin de mises à jour régulières ou d'évolutions, on peut mettre en place un suivi mensuel adapté à vos besoins." },
+        { question: "Peut-on ajouter des fonctionnalités plus tard ?", answer: "Oui. Le code est structuré de manière propre et modulaire dès le départ, ce qui permet d'ajouter de nouvelles pages, fonctionnalités ou intégrations sans devoir tout reconstruire. Votre projet peut évoluer avec votre activité." },
+        { question: "Mes données sont-elles sécurisées ?", answer: "Oui. Chaque projet intègre les bonnes pratiques de sécurité : certificat SSL, protection contre les attaques courantes (injections, XSS), gestion des accès et sauvegardes. Si votre projet traite des données sensibles, des mesures supplémentaires sont mises en place." },
+      ],
+    },
+  ],
+};
 
 const words = {
   en: [
@@ -1567,4 +1687,5 @@ export {
   productCards,
   projects,
   projectDetailsCards,
+  faqItems,
 };

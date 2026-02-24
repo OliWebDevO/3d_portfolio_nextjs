@@ -33,6 +33,10 @@ const ProductsSection = dynamic(() => import("@/sections/ProductsSection"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "60svh" }} />,
 });
+const FAQSection = dynamic(() => import("@/sections/FAQSection"), {
+  ssr: false,
+  loading: () => <div style={{ minHeight: "60svh" }} />,
+});
 const Footer = dynamic(() => import("@/sections/Footer"), {
   ssr: false,
   loading: () => <div style={{ minHeight: "10svh" }} />,
@@ -53,8 +57,9 @@ export default function HomeWrapper() {
         <FeatureCards variant="home" />
         <ProductsSection />
         <StepsSection />
+        <FAQSection />
         {/* Spacer to give last-section animations enough scroll room */}
-        <div className="h-[30svh] md:h-[40svh]" aria-hidden="true" />
+        <div className="h-[15svh] md:h-[20svh]" aria-hidden="true" />
         <Footer />
       </main>
     </>

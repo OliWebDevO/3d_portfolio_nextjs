@@ -112,6 +112,7 @@ interface HomeTranslations {
   services: { title: string; subtitle: string };
   process: { title: string; subtitle: string };
   products: { title: string; subtitle: string };
+  faq: { title: string; subtitle: string };
 }
 
 interface ExpCardType {
@@ -233,6 +234,16 @@ interface TechStackImgType {
   imgPath: string;
 }
 
+interface FaqItemType {
+  question: string;
+  answer: string;
+}
+
+interface FaqCategoryType {
+  category: string;
+  items: FaqItemType[];
+}
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -250,6 +261,7 @@ interface LanguageContextType {
   serviceKeywords: string[];
   processSteps: StepType[];
   productCards: ProductCardType[];
+  faqItems: FaqCategoryType[];
 }
 
 interface UseTranslationReturn {
@@ -270,4 +282,5 @@ interface UseTranslationReturn {
   serviceKeywords: string[];
   processSteps: StepType[];
   productCards: ProductCardType[];
+  faqItems: FaqCategoryType[];
 }
