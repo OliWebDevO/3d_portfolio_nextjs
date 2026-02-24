@@ -43,34 +43,34 @@ const homeAbilities = {
     {
       imgPath: "/images/services/tailored.svg",
       title: "Tailored to You",
-      desc: "Every project is built from scratch for your brand. No templates, no compromises.",
+      desc: "Every line of code is written for you. Design, features, performance : all crafted to meet your goals.",
     },
     {
       imgPath: "/images/services/partnership.svg",
       title: "Transparent Partnership",
-      desc: "Involved at every step. Regular updates, clear deadlines, honest communication.",
+      desc: "Every decision is made together. You always know where your project stands, no surprises.",
     },
     {
       imgPath: "/images/services/results.svg",
       title: "Results That Last",
-      desc: "Fast, SEO-optimized, and designed to grow with your business.",
+      desc: "Your site performs from day one. Fast, optimized and built to adapt as you grow.",
     },
   ],
   fr: [
     {
       imgPath: "/images/services/tailored.svg",
       title: "Sur Mesure",
-      desc: "Chaque projet est construit de zéro pour votre marque. Pas de templates, pas de compromis.",
+      desc: "Chaque ligne de code est écrite pour vous. Design, fonctionnalités, performance : tout est pensé pour répondre à vos objectifs.",
     },
     {
       imgPath: "/images/services/partnership.svg",
       title: "Partenariat Transparent",
-      desc: "Impliqué à chaque étape. Mises à jour régulières, délais clairs, communication honnête.",
+      desc: "Chaque décision est prise ensemble. Vous savez toujours où en est votre projet, sans surprises.",
     },
     {
       imgPath: "/images/services/results.svg",
       title: "Des Résultats Durables",
-      desc: "Rapide, optimisé SEO, conçu pour grandir avec votre activité.",
+      desc: "Votre site performe dès le premier jour. Rapide, optimisé et construit pour s'adapter à mesure que vous grandissez.",
     },
   ],
 };
@@ -398,14 +398,14 @@ const translations = {
     },
     hero: {
       shaping: "Transformez vos",
-      intoRealProjects: "en projets professionnels",
+      intoRealProjects: "en solutions concrètes",
       deliverResults: "",
       description: "Basé à Bruxelles, je transforme vos idées en sites vitrines percutants, plateformes web interactives ou applications de gestion complètes. Mon but : Simplifier votre quotidien.",
       buttonText: "Mes Projets",
       buttonTextMobile: "Contactez-moi"
     },
     slider: {
-      title: "Découvrez mes projets",
+      title: "Projets",
       subtitle: "Aperçu rapide des projets"
     },
     showcase: {
