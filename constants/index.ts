@@ -83,10 +83,10 @@ const processSteps = {
       shortTitle: "Contact",
       review: "Everything starts with a conversation. We discuss your project, your goals, and the vision you have in mind so I can fully understand what you need.",
       checkpoints: [
-        "Free discovery call to discuss your project",
+        "Call or meeting to discuss your project",
         "Analysis of your needs, target audience and objectives",
         "First recommendations on the best approach",
-        "Clear overview of how we can work together",
+        "A clear plan to move forward together",
       ],
     },
     {
@@ -95,9 +95,9 @@ const processSteps = {
       shortTitle: "Quote",
       review: "Based on our exchange, I put together a detailed proposal that outlines the approach, timeline, and pricing — no surprises, everything transparent from day one.",
       checkpoints: [
-        "Detailed proposal with scope and deliverables",
+        "Every aspect of the project is defined and validated together",
         "Clear timeline with key milestones",
-        "Transparent pricing — no hidden costs",
+        "Transparent pricing, no hidden costs",
         "Adjustments until the plan fits perfectly",
       ],
     },
@@ -107,8 +107,8 @@ const processSteps = {
       shortTitle: "Design",
       review: "Before writing a single line of code, we shape the visual identity of your project together. You see and approve every screen before development starts.",
       checkpoints: [
-        "Wireframes to map out structure and user flow",
-        "Visual mockups reflecting your brand identity",
+        "Clear architecture and intuitive navigation",
+        "A design that reflects your identity and values",
         "Feedback rounds until the design feels right",
         "Final sign-off before moving to development",
       ],
@@ -169,10 +169,10 @@ const processSteps = {
       shortTitle: "Contact",
       review: "Tout commence par une conversation. On discute de votre projet, de vos objectifs et de la vision que vous avez en tête pour que je comprenne exactement ce dont vous avez besoin.",
       checkpoints: [
-        "Appel découverte gratuit pour discuter du projet",
+        "Appel ou rencontre pour discuter du projet",
         "Analyse de vos besoins, cible et objectifs",
         "Premières recommandations sur la meilleure approche",
-        "Vue claire de comment on peut travailler ensemble",
+        "Un plan précis pour avancer ensemble",
       ],
     },
     {
@@ -181,9 +181,9 @@ const processSteps = {
       shortTitle: "Devis",
       review: "Sur base de notre échange, je prépare une proposition détaillée avec l'approche, le planning et le tarif — pas de surprises, tout est transparent dès le départ.",
       checkpoints: [
-        "Proposition détaillée avec périmètre et livrables",
+        "Chaque aspect du projet est défini et validé ensemble",
         "Planning clair avec jalons clés",
-        "Tarification transparente — pas de coûts cachés",
+        "Tarification transparente, pas de coûts cachés",
         "Ajustements jusqu'à ce que le plan soit parfait",
       ],
     },
@@ -193,8 +193,8 @@ const processSteps = {
       shortTitle: "Design",
       review: "Avant d'écrire la moindre ligne de code, on construit ensemble l'identité visuelle de votre projet. Vous voyez et validez chaque écran avant le développement.",
       checkpoints: [
-        "Wireframes pour définir la structure et le parcours utilisateur",
-        "Maquettes visuelles reflétant votre identité de marque",
+        "Architecture claire et navigation intuitive",
+        "Un design qui reflète votre identité et vos valeurs",
         "Allers-retours jusqu'à ce que le design vous convienne",
         "Validation finale avant de passer au développement",
       ],
@@ -300,14 +300,14 @@ const translations = {
     },
     hero: {
       shaping: "Shapping",
-      intoRealProjects: "into real projects",
-      deliverResults: "that deliver results",
+      intoRealProjects: "into concrete solutions",
+      deliverResults: "",
       description: "Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.",
       buttonText: "See My Work",
       buttonTextMobile: "Contact Me"
     },
     slider: {
-      title: "Swipe through the projects",
+      title: "Projects",
       subtitle: "Quick Dive into the projects"
     },
     showcase: {
