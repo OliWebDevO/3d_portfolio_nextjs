@@ -32,6 +32,17 @@ const logoColors = logoName.split('').map((_, i) => {
     return `rgb(${r},${g},${b})`
 })
 
+// Nav link hover colors — matches stepGradients "from" colors in StepsSection
+const navHoverColors = [
+    '#a78bfa', // soft purple
+    '#818cf8', // indigo
+    '#e879a8', // rose
+    '#f472b6', // pink
+    '#60a5fa', // blue
+    '#38bdf8', // sky
+    '#67e8f9', // cyan
+]
+
 const projectBubbles = [
     { src: '/images/annick1.webp', srcMobile: '/images/slider-mobile/annick.webp', slug: 'annick', label: 'Annick', bg: '#1c1c21' },
     { src: '/images/fanal_des_chats/fanal_home.webp', srcMobile: '/images/slider-mobile/fanal.webp', slug: 'fanal', label: 'Fanal', bg: '#ffefdb' },
@@ -832,8 +843,8 @@ const NavBar = () => {
                     </Link>
                     <nav ref={desktopNavRef} className="desktop">
                         <ul>
-                            {navLinks.filter(({link}) => link !== '#contact').map(({link, name}) => (
-                                <li key={name}>
+                            {navLinks.filter(({link}) => link !== '#contact').map(({link, name}, i) => (
+                                <li key={name} style={{ '--nav-hover': navHoverColors[i % navHoverColors.length] } as React.CSSProperties}>
                                     <Link
                                         href={isProjectPage ? `/${link}` : link}
                                         className="group"

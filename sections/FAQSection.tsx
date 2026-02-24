@@ -8,6 +8,16 @@ import { useTranslation } from "@/hooks/useTranslation"
 
 gsap.registerPlugin(ScrollTrigger)
 
+const categoryGradients = [
+  "from-[#a78bfa] to-[#3b1f7e]", // soft purple
+  "from-[#818cf8] to-[#2e1a6e]", // indigo
+  "from-[#e879a8] to-[#6e1a3d]", // rose
+  "from-[#f472b6] to-[#831843]", // pink
+  "from-[#60a5fa] to-[#1e3a5f]", // blue
+  "from-[#38bdf8] to-[#0c4a6e]", // sky
+  "from-[#67e8f9] to-[#083344]", // cyan
+]
+
 const FAQSection = () => {
   const { t, faqItems, locale } = useTranslation()
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
