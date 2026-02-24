@@ -9,14 +9,14 @@ import LanguageSwitcher from './LanguageSwitcher'
 import { usePathname, useRouter } from "next/navigation"
 
 // Pre-computed gradient colors for "Oliver Van Droogenbroeck" (25 chars)
-// Interpolates from purple (#c4b5fd) through pink (#f9a8d4) to blue (#93c5fd)
+// Matches the 3 service card icon colors: Sur Mesure → Partenariat → Résultats
 const logoName = 'Oliver Van Droogenbroeck'
 const logoColors = logoName.split('').map((_, i) => {
     const t = i / (logoName.length - 1)
-    // purple → pink → blue
-    const r1 = 196, g1 = 181, b1 = 253 // #c4b5fd
-    const r2 = 249, g2 = 168, b2 = 212 // #f9a8d4
-    const r3 = 147, g3 = 197, b3 = 253 // #93c5fd
+    // pink → purple → blue (service card icon gradients)
+    const r1 = 251, g1 = 180, b1 = 208 // #fbb4d0 (Résultats Durables)
+    const r2 = 196, g2 = 181, b2 = 253 // #c4b5fd (Sur Mesure)
+    const r3 = 147, g3 = 197, b3 = 253 // #93c5fd (Partenariat Transparent)
     let r, g, b
     if (t < 0.5) {
         const p = t * 2
