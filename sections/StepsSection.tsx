@@ -9,13 +9,13 @@ import { useTranslation } from "@/hooks/useTranslation"
 import { useRef } from "react"
 
 const stepLogos = [
-  "/images/steps/step1.svg",
-  "/images/steps/step2.svg",
-  "/images/steps/step3.svg",
-  "/images/steps/step4.svg",
-  "/images/steps/step5.svg",
-  "/images/steps/step6.svg",
-  "/images/steps/step7.svg",
+  "/images/steps/step1.svg", // soft purple
+  "/images/steps/step2.svg", // indigo
+  "/images/steps/step3.svg", // rose
+  "/images/steps/step4.svg", // pink
+  "/images/steps/step5.svg", // blue
+  "/images/steps/step6.svg", // sky
+  "/images/steps/step7.svg", // cyan
 ];
 
 const stepGradients = [

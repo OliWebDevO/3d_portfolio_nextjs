@@ -384,27 +384,24 @@ section {
 .wrapper {
   display: flex;
   flex-direction: column;
-  animation: wordSlider 16s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+  animation: wordSlider 13.5s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
 }
 
 @keyframes wordSlider {
   0% {
     transform: translateY(0.5%);
   }
-  16.667% {
-    transform: translateY(-16.667%);
+  20% {
+    transform: translateY(-20%);
   }
-  33.333% {
-    transform: translateY(-33.333%);
+  40% {
+    transform: translateY(-40%);
   }
-  50% {
-    transform: translateY(-50%);
+  60% {
+    transform: translateY(-60%);
   }
-  66.667% {
-    transform: translateY(-66.667%);
-  }
-  83.333% {
-    transform: translateY(-83.333%);
+  80% {
+    transform: translateY(-80%);
   }
 }
 

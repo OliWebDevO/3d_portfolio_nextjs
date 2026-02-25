@@ -618,17 +618,15 @@ const words = {
     { id: 1, text: "Ideas", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
     { id: 2, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
     { id: 3, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd", gradientFrom: "#96c4f7", gradientTo: "#326298" },
-    { id: 4, text: "Ideas", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
-    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
-    { id: 6, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd", gradientFrom: "#96c4f7", gradientTo: "#326298" },
+    { id: 4, text: "Projects", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
+    { id: 5, text: "Creations", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
   ],
   fr: [
     { id: 1, text: "Idées", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
     { id: 2, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
     { id: 3, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd", gradientFrom: "#96c4f7", gradientTo: "#326298" },
-    { id: 4, text: "Idées", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
-    { id: 5, text: "Concepts", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
-    { id: 6, text: "Designs", imgPath: "/images/designs.svg", color: "#93c5fd", gradientFrom: "#96c4f7", gradientTo: "#326298" },
+    { id: 4, text: "Projets", imgPath: "/images/ideas.svg", color: "#c4b5fd", gradientFrom: "#c9b8fd", gradientTo: "#5f3ea6" },
+    { id: 5, text: "Créations", imgPath: "/images/concepts.svg", color: "#f9a8d4", gradientFrom: "#f49bc8", gradientTo: "#a63868" },
   ]
 };
 

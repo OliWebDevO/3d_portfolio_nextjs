@@ -34,10 +34,10 @@ const logoColors = logoName.split('').map((_, i) => {
 
 // Nav link hover colors — matches stepGradients "from" colors in StepsSection
 const navHoverColors = [
-    '#a78bfa', // soft purple
-    '#818cf8', // indigo
     '#e879a8', // rose
     '#f472b6', // pink
+    '#a78bfa', // soft purple
+    '#818cf8', // indigo
     '#60a5fa', // blue
     '#38bdf8', // sky
     '#67e8f9', // cyan
