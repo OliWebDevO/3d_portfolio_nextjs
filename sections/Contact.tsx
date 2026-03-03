@@ -86,11 +86,12 @@ const Contact = () => {
       {/* Success Popup */}
       {showSuccess && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(var(--color-edge-fade), 0.8)' }}
           onClick={() => setShowSuccess(false)}
         >
           <div
-            className="bg-black-100 border border-black-50 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl"
+            className="bg-th-surface border border-th-border rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -98,11 +99,12 @@ const Contact = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">{t.contact.successTitle}</h3>
-            <p className="text-white-50 mb-6">{t.contact.successMessage}</p>
+            <h3 className="text-2xl font-bold text-th-text mb-2">{t.contact.successTitle}</h3>
+            <p className="text-th-muted mb-6">{t.contact.successMessage}</p>
             <button
               onClick={() => setShowSuccess(false)}
-              className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+              className="px-6 py-3 font-semibold rounded-lg transition-colors"
+              style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-bg)' }}
             >
               {t.contact.close}
             </button>
@@ -156,7 +158,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       suppressHydrationWarning
-                      className="w-full px-4 py-4 text-base bg-blue-100 rounded-md text-white-50"
+                      className="w-full px-4 py-4 text-base bg-th-input rounded-md text-th-muted"
                     >
                       <option value="" suppressHydrationWarning>{t.contact.subjectPlaceholder}</option>
                       {t.contact.scenarios.map((scenario: string) => (

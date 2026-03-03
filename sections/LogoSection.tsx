@@ -35,7 +35,7 @@ const TextItem = ({ text, color }: { text: string; color?: string }) => (
   <div className="flex-none flex-center select-none px-6">
     <span
       className="text-2xl md:text-3xl font-semibold whitespace-nowrap"
-      style={{ color: color || "#fff" }}
+      style={{ color: color || 'var(--color-text)' }}
     >
       {text}
     </span>

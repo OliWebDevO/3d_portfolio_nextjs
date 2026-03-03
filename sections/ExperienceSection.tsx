@@ -88,13 +88,13 @@ const ExperienceSection = () => {
                                         </div>
                                         <div className="">
                                             <h1 className="font-semibold text-3xl">{card.title}</h1>
-                                            <p className="my-5 text-white-50">
+                                            <p className="my-5 text-th-muted">
                                                 📅 {card.date}
                                             </p>
-                                            <p className="text-[#839cb5] italic">
+                                            <p className="text-th-placeholder italic">
                                                {t.experience.resp}
                                             </p>
-                                            <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-white-50">
+                                            <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-th-muted">
                                                 {card.responsibilities.map((responsibility, index) => (
                                                     <li key={index} className="text-lg md:text-justify">
                                                         {responsibility}

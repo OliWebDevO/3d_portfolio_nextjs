@@ -3,6 +3,7 @@ import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./providers/LenisProvider"
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import ScrollToTop from '@/components/ScrollToTop';
 
 const monaSans = Mona_Sans({
@@ -82,8 +83,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={monaSans.variable} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" data-scroll-behavior="smooth" className={monaSans.variable} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}})()` }} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
@@ -214,12 +216,16 @@ export default function RootLayout({
           className={`${monaSans.variable} antialiased`}
           suppressHydrationWarning
         >
+        <ThemeProvider>
         <LanguageProvider>
           <LenisProvider>
-          {children}
-          <ScrollToTop />
+          <div id="theme-content">
+            {children}
+            <ScrollToTop />
+          </div>
         </LenisProvider>
         </LanguageProvider>
+        </ThemeProvider>
         </body>
       
     </html>

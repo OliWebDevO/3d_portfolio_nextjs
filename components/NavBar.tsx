@@ -6,6 +6,7 @@ import Image from "next/image"
 import gsap from "gsap"
 import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
+import ThemeToggle from './ThemeToggle'
 import { usePathname, useRouter } from "next/navigation"
 
 // Pre-computed gradient colors for "Oliver Van Droogenbroeck" (25 chars)
@@ -534,11 +535,11 @@ const NavBar = () => {
                 if (bs.length > 0) gsap.set(bs, { clearProps: 'all' })
                 if (projectsTitleRef.current) {
                     gsap.set(projectsTitleRef.current, { clearProps: 'visibility' })
-                    gsap.set(projectsTitleRef.current.querySelectorAll('span'), { clearProps: 'all' })
+                    gsap.set(projectsTitleRef.current.querySelectorAll('span'), { clearProps: 'transform,opacity' })
                 }
                 if (contactTitleRef.current) {
                     gsap.set(contactTitleRef.current, { clearProps: 'visibility' })
-                    gsap.set(contactTitleRef.current.querySelectorAll('span'), { clearProps: 'all' })
+                    gsap.set(contactTitleRef.current.querySelectorAll('span'), { clearProps: 'transform,opacity' })
                 }
                 gsap.set('.desktop-success-text', { clearProps: 'all' })
                 gsap.set('.desktop-success-letter', { clearProps: 'all' })
@@ -569,7 +570,7 @@ const NavBar = () => {
             }
             // Override logo span colors to black for contact overlay
             const logoSpans = logoRef.current.querySelectorAll('span')
-            tl.to(logoSpans, { color: '#000', duration: 0.01 }, 0.35)
+            tl.to(logoSpans, { color: 'var(--color-overlay-text)', duration: 0.01 }, 0.35)
         }
 
         // Blob scales up organically
@@ -794,8 +795,9 @@ const NavBar = () => {
         <>
             <header ref={headerRef} className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} ${isHomePage || isResumePage ? 'home' : ''} ${menuOpen || desktopContactOpen ? 'menu-open' : ''}`}>
                 <div className="inner">
-                    {/* Mobile: EN/FR left, Burger right */}
-                    <div ref={langRef} className="md:hidden">
+                    {/* Mobile: Theme + EN/FR left, Burger right */}
+                    <div ref={langRef} className="md:hidden flex items-center gap-2">
+                        <ThemeToggle />
                         <LanguageSwitcher />
                     </div>
 
@@ -860,6 +862,9 @@ const NavBar = () => {
                     </nav>
 
                     <div className="flex items-center gap-4">
+                        <div className="hidden md:block">
+                            <ThemeToggle />
+                        </div>
                         <div ref={desktopLangRef} className="hidden md:block">
                             <LanguageSwitcher />
                         </div>
@@ -878,17 +883,18 @@ const NavBar = () => {
                         {/* Burger button — mobile only */}
                         <button
                             ref={burgerRef}
-                            className={`burger-btn md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-lg transition-colors duration-300 ${
-                                menuOpen
-                                    ? 'border border-black-300/30 bg-black'
-                                    : 'bg-white'
-                            }`}
+                            className="burger-btn md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-lg transition-colors duration-300"
+                            style={{
+                                backgroundColor: menuOpen ? 'var(--color-overlay-text)' : 'var(--color-text)',
+                                borderColor: menuOpen ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                borderWidth: menuOpen ? 1 : 0,
+                            }}
                             onClick={toggleMenu}
                             aria-label="Menu"
                         >
-                            <span ref={line1Ref} className={`block w-5 h-[2px] origin-center transition-colors duration-300 ${menuOpen ? 'bg-white' : 'bg-black'}`} />
-                            <span ref={line2Ref} className={`block w-5 h-[2px] origin-center transition-colors duration-300 ${menuOpen ? 'bg-white' : 'bg-black'}`} />
-                            <span ref={line3Ref} className={`block w-5 h-[2px] origin-center transition-colors duration-300 ${menuOpen ? 'bg-white' : 'bg-black'}`} />
+                            <span ref={line1Ref} className="block w-5 h-[2px] origin-center transition-colors duration-300" style={{ backgroundColor: menuOpen ? 'var(--color-overlay-blob)' : 'var(--color-bg)' }} />
+                            <span ref={line2Ref} className="block w-5 h-[2px] origin-center transition-colors duration-300" style={{ backgroundColor: menuOpen ? 'var(--color-overlay-blob)' : 'var(--color-bg)' }} />
+                            <span ref={line3Ref} className="block w-5 h-[2px] origin-center transition-colors duration-300" style={{ backgroundColor: menuOpen ? 'var(--color-overlay-blob)' : 'var(--color-bg)' }} />
                         </button>
                     </div>
                 </div>
@@ -902,7 +908,7 @@ const NavBar = () => {
                 {/* Organic blob background */}
                 <div
                     ref={blobRef}
-                    className="absolute bg-white"
+                    className="absolute"
                     style={{
                         width: '250vmax',
                         height: '250vmax',
@@ -910,6 +916,7 @@ const NavBar = () => {
                         right: '-100vmax',
                         borderRadius: '43% 57% 69% 31% / 34% 65% 35% 66%',
                         transform: 'scale(0)',
+                        backgroundColor: 'var(--color-overlay-blob)',
                     }}
                 />
 
@@ -923,7 +930,8 @@ const NavBar = () => {
                             >
                                 <Link
                                     href="/"
-                                    className="text-black text-4xl font-bold hover:text-black-300 transition-colors duration-200"
+                                    className="text-4xl font-bold transition-colors duration-200"
+                                    style={{ color: 'var(--color-overlay-text)' }}
                                     onClick={(e) => handleNavClick(e, '/')}
                                 >
                                     {isFrench ? 'Accueil' : 'Home'}
@@ -948,7 +956,8 @@ const NavBar = () => {
                                         >
                                             <Link
                                                 href={isProjectPage ? `/${first.link}` : first.link}
-                                                className="text-black text-4xl font-bold hover:text-black-300 transition-colors duration-200"
+                                                className="text-4xl font-bold transition-colors duration-200"
+                                                style={{ color: 'var(--color-overlay-text)' }}
                                                 onClick={(e) => handleNavClick(e, first.link)}
                                             >
                                                 {first.name}
@@ -958,7 +967,8 @@ const NavBar = () => {
                                     <li className={`-mt-3 ml-2 ${menuOpen ? '' : 'opacity-0'}`}>
                                         <div
                                             ref={(el) => { bubblesPanelRef.current = el }}
-                                            className="inline-flex gap-2.5 bg-black-100 rounded-full px-3 py-1.5 opacity-0"
+                                            className="inline-flex gap-2.5 rounded-full px-3 py-1.5 opacity-0"
+                                            style={{ backgroundColor: 'var(--color-overlay-surface)' }}
                                         >
                                             {projectBubbles.map((bubble, i) => (
                                                 <Link
@@ -988,7 +998,8 @@ const NavBar = () => {
                                         >
                                             <Link
                                                 href={isProjectPage ? `/${link}` : link}
-                                                className="text-black text-4xl font-bold hover:text-black-300 transition-colors duration-200"
+                                                className="text-4xl font-bold transition-colors duration-200"
+                                                style={{ color: 'var(--color-overlay-text)' }}
                                                 onClick={(e) => handleNavClick(e, link)}
                                             >
                                                 {name}
@@ -1045,7 +1056,8 @@ const NavBar = () => {
                                         onChange={handleContactChange}
                                         required
                                         suppressHydrationWarning
-                                        className="w-full px-4 py-4 text-base bg-blue-100 rounded-md text-white-50"
+                                        className="w-full px-4 py-4 text-base rounded-md"
+
                                     >
                                         <option value="" suppressHydrationWarning>{t.contact.subjectPlaceholder}</option>
                                         {t.contact.scenarios.map((scenario: string) => (
@@ -1101,14 +1113,14 @@ const NavBar = () => {
                     </div>
 
                     <div className="mobile-success-text text-center mt-4 px-4 opacity-0">
-                        <h3 className="text-xl font-bold text-black mb-2 overflow-hidden">
+                        <h3 className="text-xl font-bold mb-2 overflow-hidden" style={{ color: 'var(--color-overlay-text)' }}>
                             {t.contact.successTitle.split('').map((letter: string, i: number) => (
                                 <span key={i} className="mobile-success-letter inline-block translate-y-full opacity-0">
                                     {letter === ' ' ? '\u00A0' : letter}
                                 </span>
                             ))}
                         </h3>
-                        <p className="mobile-success-subtitle text-black/60 text-sm mb-4 opacity-0">{t.contact.successMessage}</p>
+                        <p className="mobile-success-subtitle text-sm mb-4 opacity-0" style={{ color: 'var(--color-overlay-text)', opacity: 0.6 }}>{t.contact.successMessage}</p>
                     </div>
                 </div>
             </div>
@@ -1121,7 +1133,7 @@ const NavBar = () => {
                 {/* Organic blob background */}
                 <div
                     ref={desktopBlobRef}
-                    className="absolute bg-white"
+                    className="absolute"
                     style={{
                         width: '250vmax',
                         height: '250vmax',
@@ -1129,6 +1141,7 @@ const NavBar = () => {
                         right: '-100vmax',
                         borderRadius: '43% 57% 69% 31% / 34% 65% 35% 66%',
                         transform: 'scale(0)',
+                        backgroundColor: 'var(--color-overlay-blob)',
                     }}
                 />
 
@@ -1143,7 +1156,7 @@ const NavBar = () => {
                                 className="text-4xl font-bold overflow-hidden text-right mb-4"
                             >
                                 {(isFrench ? 'Projets' : 'Work').split('').map((letter, i) => (
-                                    <span key={i} className="inline-block translate-y-full opacity-0 text-black">{letter}</span>
+                                    <span key={i} className="inline-block translate-y-full opacity-0" style={{ color: 'var(--color-overlay-text)' }}>{letter}</span>
                                 ))}
                             </h2>
                             <div
@@ -1217,7 +1230,8 @@ const NavBar = () => {
                                         onChange={handleContactChange}
                                         required
                                         suppressHydrationWarning
-                                        className="w-full px-4 py-4 text-base bg-blue-100 rounded-md text-white-50"
+                                        className="w-full px-4 py-4 text-base rounded-md"
+
                                     >
                                         <option value="" suppressHydrationWarning>{t.contact.subjectPlaceholder}</option>
                                         {t.contact.scenarios.map((scenario: string) => (
@@ -1256,7 +1270,7 @@ const NavBar = () => {
                             className="absolute left-full bottom-0 ml-4 text-4xl font-bold overflow-hidden whitespace-nowrap"
                         >
                             {'Contact'.split('').map((letter, i) => (
-                                <span key={i} className="inline-block translate-y-full opacity-0 text-black">{letter}</span>
+                                <span key={i} className="inline-block translate-y-full opacity-0" style={{ color: 'var(--color-overlay-text)' }}>{letter}</span>
                             ))}
                         </h2>
                         </div>
@@ -1281,14 +1295,14 @@ const NavBar = () => {
                         </div>
 
                         <div className="desktop-success-text text-center mt-6 px-4">
-                            <h3 className="text-2xl font-bold text-black mb-2 overflow-hidden">
+                            <h3 className="text-2xl font-bold mb-2 overflow-hidden" style={{ color: 'var(--color-overlay-text)' }}>
                                 {t.contact.successTitle.split('').map((letter: string, i: number) => (
                                     <span key={i} className="desktop-success-letter inline-block translate-y-full opacity-0">
                                         {letter === ' ' ? '\u00A0' : letter}
                                     </span>
                                 ))}
                             </h3>
-                            <p className="desktop-success-subtitle text-black/60 mb-4 opacity-0">{t.contact.successMessage}</p>
+                            <p className="desktop-success-subtitle mb-4 opacity-0" style={{ color: 'var(--color-overlay-text)', opacity: 0.6 }}>{t.contact.successMessage}</p>
                         </div>
                     </div>
                 </div>

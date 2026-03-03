@@ -25,7 +25,7 @@ const Hero = () => {
 
 return (
     <section id="hero" className="relative overflow-hidden 3xl:px-20 2xl:px-10 xl:px-6">
-        <div className="absolute top-0 left-0 z-10">
+        <div className="hero-bg absolute top-0 left-0 z-10">
             <Image src="/images/bg.webp" alt="background" width={1920} height={1080} priority quality={80} sizes="100vw" />
         </div>
         <div className="hero-layout">
@@ -57,7 +57,7 @@ return (
                         <h1>{t.hero.intoRealProjects}</h1>
                         <h1>{t.hero.deliverResults}</h1>
                     </div>
-                    <p className="text-white-50 md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
+                    <p className="text-th-muted md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
                         {t.hero.description}
                     </p>
                     <Button

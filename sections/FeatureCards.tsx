@@ -31,7 +31,7 @@ const FeatureCards = ({ variant = "resume" }: { variant?: "resume" | "home" }) =
             {items.map((ability, index) => (
               <div
               key={ability.imgPath}
-              className=" bg-black-100 card  rounded-xl p-8 flex flex-col gap-4"
+              className="bg-th-surface card card-inverted rounded-xl p-8 flex flex-col gap-4"
               onMouseMove={handleMouseMove(index)}
               ref={(el) => {
                 if (el) cardRefs.current[index] = el;
@@ -41,8 +41,8 @@ const FeatureCards = ({ variant = "resume" }: { variant?: "resume" | "home" }) =
                 <div className="size-14 flex items-center justify-center rounded-full">
                     <Image src={ability.imgPath} alt={ability.title} width={56} height={56} loading="lazy" />
                 </div>
-                  <h3 className="text-2xl font-semibold text-white">{ability.title}</h3>
-                  <p className="text-white-50 text-lg md:text-justify">{ability.desc}</p>
+                  <h3 className="text-2xl font-semibold text-th-text">{ability.title}</h3>
+                  <p className="text-th-muted text-lg md:text-justify">{ability.desc}</p>
               </div>
             ))}
         </div>

@@ -74,7 +74,7 @@ const FAQSection = () => {
         <div className="mt-16 max-w-4xl mx-auto flex flex-col gap-10">
           {faqItems.map((category, catIdx) => (
             <div key={catIdx} className="faq-category">
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 pl-1">
+              <h3 className="text-xl md:text-2xl font-semibold text-th-text mb-4 pl-1">
                 {category.category}
               </h3>
               <div className="flex flex-col gap-2">
@@ -84,17 +84,17 @@ const FAQSection = () => {
                   return (
                     <div
                       key={key}
-                      className="bg-black-200 rounded-xl overflow-hidden border border-black-50"
+                      className="bg-th-surface-alt rounded-xl overflow-hidden border border-th-border faq-item"
                     >
                       <button
                         onClick={() => toggle(key)}
                         className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
                       >
-                        <span className="text-white text-base md:text-lg font-medium pr-4">
+                        <span className="text-th-text text-base md:text-lg font-medium pr-4">
                           {item.question}
                         </span>
                         <svg
-                          className={`flex-none w-5 h-5 text-white-50 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                          className={`flex-none w-5 h-5 text-th-muted transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -106,7 +106,7 @@ const FAQSection = () => {
                         className="overflow-hidden"
                         style={{ height: 0 }}
                       >
-                        <p className="px-5 md:px-6 pb-5 md:pb-6 text-white-50 text-base md:text-lg leading-relaxed">
+                        <p className="px-5 md:px-6 pb-5 md:pb-6 text-th-muted text-base md:text-lg leading-relaxed">
                           {item.answer}
                         </p>
                       </div>

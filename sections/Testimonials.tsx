@@ -10,7 +10,7 @@ const Testimonials = () => {
         <div className="w-full h-full md:px-10 px-5">
             <TitleHeader title='Testimonials' sub='💬  What People Say'/>
             <div className="text-center max-w-3xl mx-auto mt-8 mb-12">
-                <p className="text-white-50 md:text-lg">
+                <p className="text-th-muted md:text-lg">
                     Don&apos;t just take my word for it. Here&apos;s what clients and collaborators have to say about working with me on their web development projects.
                 </p>
             </div>
@@ -23,15 +23,15 @@ const Testimonials = () => {
                             </div>
                             <div>
                                 <p className="font-bold">{name}</p>
-                                <p className="text-white-50"> {mentions}</p>
+                                <p className="text-th-muted"> {mentions}</p>
                             </div>
                         </div>
                     </GlowCard>
                 ))}
             </div>
             <div className="text-center mt-12">
-                <p className="text-white-50 text-sm md:text-base">
-                    Ready to start your project? <span className="text-white font-semibold">Let&apos;s create something amazing together.</span>
+                <p className="text-th-muted text-sm md:text-base">
+                    Ready to start your project? <span className="text-th-text font-semibold">Let&apos;s create something amazing together.</span>
                 </p>
             </div>
         </div>

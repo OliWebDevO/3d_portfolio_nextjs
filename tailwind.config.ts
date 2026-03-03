@@ -10,8 +10,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--color-bg)",
+        foreground: "var(--color-text)",
+        'th-text': 'var(--color-text)',
+        'th-muted': 'var(--color-text-muted)',
+        'th-surface': 'var(--color-surface)',
+        'th-surface-alt': 'var(--color-surface-alt)',
+        'th-border': 'var(--color-border)',
+        'th-input': 'var(--color-input)',
+        'th-placeholder': 'var(--color-placeholder)',
+        // Keep originals for backward compat
         'white-50': '#d9ecff',
         'black-50': '#1c1c21',
         'black-100': '#0e0e10',

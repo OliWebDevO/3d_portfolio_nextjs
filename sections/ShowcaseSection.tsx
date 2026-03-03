@@ -71,7 +71,7 @@ const ShowcaseSection = () => {
                 >
                   <div
                     ref={el => { cardRefs.current[idx] = el; }}
-                    className="image-wrapper group relative overflow-hidden rounded-xl"
+                    className="image-wrapper card-border card-inverted card-frame group relative overflow-hidden rounded-xl p-3"
                   >
                     <Image
                       src={project.image}
@@ -86,7 +86,7 @@ const ShowcaseSection = () => {
                     </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
-                    <p className="text-white-50 md:text-xl mt-4">{t.projects[project.slug].description}</p>
+                    <p className="text-th-muted md:text-xl mt-4">{t.projects[project.slug].description}</p>
                   </div>
                 </Link>
               ))}
@@ -101,7 +101,7 @@ const ShowcaseSection = () => {
                 >
                   <div
                     ref={el => { cardRefs.current[idx + leftProjects.length] = el; }}
-                    className="image-wrapper group relative overflow-hidden rounded-xl"
+                    className="image-wrapper card-border card-inverted card-frame group relative overflow-hidden rounded-xl p-3"
                   >
                     <Image
                       src={project.image}
@@ -116,7 +116,7 @@ const ShowcaseSection = () => {
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
-                    <p className="text-white-50 md:text-xl mt-4">{t.projects[project.slug].description}</p>
+                    <p className="text-th-muted md:text-xl mt-4">{t.projects[project.slug].description}</p>
                   </div>
                 </Link>
               ))}

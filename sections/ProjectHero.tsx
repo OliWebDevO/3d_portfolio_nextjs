@@ -69,7 +69,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
             quality={80}
             sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
-            className="rounded-xl card-border p-5 block"
+            className="rounded-xl card-border card-inverted card-frame p-5 block"
           />
         </div>
         <div className="text-content flex flex-col justify-center gap-4">
@@ -87,7 +87,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
             ))}
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
-          <p className="text-white-50 md:text-xl mt-4">{project.description}</p>
+          <p className="text-th-muted md:text-xl mt-4">{project.description}</p>
           <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text={t.projectpage.visitProject} href={project.link}/>
         </div>
       </div>

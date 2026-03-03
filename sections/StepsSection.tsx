@@ -92,7 +92,7 @@ const StepsSection = () => {
                     {processSteps.map((step, index) => (
                         <div key={`${step.title}-${locale}`} className="exp-card-wrapper">
                            <div className="xl:w-2/6 step-timeline-card relative z-50 md:z-auto">
-                                <GlowCard card={{ review: step.review }} index={index}>
+                                <GlowCard card={{ review: step.review }} index={index} className="card-inverted card-steps">
                                 </GlowCard>
                             </div>
                             <div className="xl:w-4/6">
@@ -115,15 +115,15 @@ const StepsSection = () => {
                                                 <span className="-translate-y-1 hidden md:inline">{step.title}</span>
                                                 <span className="-translate-y-1 md:hidden">{step.shortTitle}</span>
                                             </h1>
-                                            <div className="border border-white/20 rounded-xl p-5 flex flex-col gap-3">
+                                            <div className="card-inverted card-steps bg-th-surface border border-th-border rounded-xl p-5 flex flex-col gap-3">
                                                 {step.checkpoints.map((point, i) => (
                                                     <div key={i} className="flex items-start gap-3">
-                                                        <div className="flex-none mt-1 w-5 h-5 rounded-md bg-black-200 border border-black-300 flex items-center justify-center">
+                                                        <div className="tick-light flex-none mt-1 w-5 h-5 rounded-md bg-th-surface-alt border border-th-border flex items-center justify-center">
                                                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                                             </svg>
                                                         </div>
-                                                        <p className="text-white-50 text-lg">{point}</p>
+                                                        <p className="text-th-muted text-lg">{point}</p>
                                                     </div>
                                                 ))}
                                             </div>

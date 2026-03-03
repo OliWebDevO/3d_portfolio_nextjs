@@ -47,7 +47,7 @@ const ProductsSection = () => {
                 {productCards.map((product, index) => (
                     <div
                         key={product.title}
-                        className="card-border card product-card overflow-hidden rounded-xl relative"
+                        className="card-border card card-inverted product-card overflow-hidden rounded-xl relative"
                         onMouseMove={handleMouseMove(index)}
                         ref={(el) => { if (el) cardRefs.current[index] = el; }}
                     >
@@ -61,17 +61,17 @@ const ProductsSection = () => {
                                     loading="lazy"
                                 />
                             </div>
-                            <h3 className="text-2xl font-semibold text-white">{product.title}</h3>
-                            <p className="text-white-50 text-lg md:text-justify">{product.description}</p>
+                            <h3 className="text-2xl font-semibold text-th-text">{product.title}</h3>
+                            <p className="text-th-muted text-lg md:text-justify">{product.description}</p>
                             <ul className="mt-auto flex flex-col gap-3">
                                 {product.features.map((feature) => (
                                     <li key={feature} className="flex items-center gap-3">
-                                        <div className="flex-none w-5 h-5 rounded-md bg-black-200 border border-black-300 flex items-center justify-center">
+                                        <div className="tick-light flex-none w-5 h-5 rounded-md bg-th-surface-alt border border-th-border flex items-center justify-center">
                                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                             </svg>
                                         </div>
-                                        <span className="text-white-50 text-lg">{feature}</span>
+                                        <span className="text-th-muted text-lg">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
