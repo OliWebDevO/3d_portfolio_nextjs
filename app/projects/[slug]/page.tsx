@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/sections/Footer";
 import ProjectDetailsSection from "@/sections/ProjectDetailsSection";
 import ProjectHero from "@/sections/ProjectHero";
+import ProjectNavigation from "@/components/ProjectNavigation";
 
 export async function generateStaticParams() {
   return projects.en.map(project => ({ slug: project.slug }));
@@ -33,8 +34,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <NavBar />
       <ProjectHero slug={slug} />
       <ProjectDetailsSection slug={slug} />
+      <ProjectNavigation slug={slug} />
       {/* Spacer to give last-section animations enough scroll room */}
-      <div className="h-[30svh] md:h-[40svh]" aria-hidden="true" />
+      <div className="h-[5svh] md:h-[10svh]" aria-hidden="true" />
       <Footer />
     </main>
   );
