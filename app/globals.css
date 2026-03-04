@@ -445,6 +445,22 @@ section {
     @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
   }
 
+  /* StepsSection centered timeline */
+  .step-card-wrapper {
+    @apply relative flex flex-col-reverse xl:flex-row xl:items-center gap-10 xl:justify-between;
+  }
+  .step-timeline-wrapper {
+    @apply absolute top-0 md:left-10 left-5 h-full flex justify-center;
+  }
+  .step-center-line {
+    @apply z-10;
+  }
+  .step-timeline-logo {
+    @apply md:size-20 size-10 z-30 flex-none rounded-full flex justify-center items-center p-1 md:p-4 border;
+    border-color: var(--color-border);
+    background-color: var(--color-surface);
+  }
+
   .gradient-edge {
     @apply w-36 h-full absolute bottom-0 z-20;
   }
@@ -554,7 +570,8 @@ section {
 
 }
 
-[data-theme="light"] .timeline-logo {
+[data-theme="light"] .timeline-logo,
+[data-theme="light"] .step-timeline-logo {
   border-color: transparent;
   background-color: #eef0f4;
 }

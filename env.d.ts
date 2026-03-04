@@ -212,6 +212,11 @@ interface ProjectPageTranslations {
   visitProject: string;
 }
 
+interface CtaTranslations {
+  create: string;
+  contact: string;
+}
+
 interface Translations {
   nav: NavTranslations;
   hero: HeroTranslations;
@@ -224,6 +229,7 @@ interface Translations {
   contact: ContactTranslations;
   projectpage: ProjectPageTranslations;
   home: HomeTranslations;
+  cta: CtaTranslations;
 }
 
 

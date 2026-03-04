@@ -34,6 +34,7 @@ const StepsSection = () => {
   const { t, processSteps, locale } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
 
+
   useGSAP(() => {
     // Cards animation
     gsap.utils.toArray<HTMLElement>('.step-timeline-card').forEach((card) => {
@@ -65,11 +66,29 @@ const StepsSection = () => {
       });
     });
 
-    // Timeline (black background) - shrinks as you scroll
+    // Align title+checkpoints with ball center on XL
+    gsap.utils.toArray<HTMLElement>('.step-card-wrapper').forEach((card) => {
+      const content = card.querySelector<HTMLElement>('.step-content');
+      if (content && window.innerWidth >= 1280) {
+        const ballY = card.offsetHeight / 2;
+        const contentY = content.getBoundingClientRect().top - card.getBoundingClientRect().top;
+        gsap.set(content, { y: ballY - contentY + 18 });
+      }
+    });
+
+    // Offset line to start at first ball center and adjust height accordingly
+    const firstCard = sectionRef.current?.querySelector('.step-card-wrapper') as HTMLElement;
+    const stepsContainer = sectionRef.current?.querySelector('.step-line')?.parentElement as HTMLElement;
+    if (firstCard && stepsContainer) {
+      const offset = firstCard.offsetHeight / 2;
+      gsap.set('.step-line', { top: offset, height: stepsContainer.offsetHeight - offset });
+    }
+
+    // Timeline overlay shrinks top-down as you scroll past each ball
     gsap.to('.step-timeline', {
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top center',
+        trigger: '.step-line',
+        start: 'top 80%',
         end: 'bottom center',
         scrub: true,
         invalidateOnRefresh: true,
@@ -84,30 +103,38 @@ const StepsSection = () => {
   }, { scope: sectionRef, dependencies: [locale], revertOnUpdate: true });
 
   return (
-    <section id="process" ref={sectionRef} className="w-full section-padding">
+    <section id="process" ref={sectionRef} className="w-full section-padding pb-44">
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader title={t.home.process.title} sub={t.home.process.subtitle} cn="mb-28"/>
             <div className="mt-3 relative">
                 <div className="relative z-50 xl:space-y-32 space-y-10">
+                    {/* Single continuous centered line (xl only) */}
+                    <div className="step-line hidden xl:flex absolute left-1/2 -translate-x-1/2 top-0 justify-center z-10">
+                        <div className="step-timeline timeline"/>
+                        <div className="gradient-line w-1 h-full"/>
+                    </div>
                     {processSteps.map((step, index) => (
-                        <div key={`${step.title}-${locale}`} className="exp-card-wrapper">
-                           <div className="xl:w-2/6 step-timeline-card relative z-50 md:z-auto">
+                        <div key={`${step.title}-${locale}`} className="step-card-wrapper">
+                           {/* Left: GlowCard */}
+                           <div className="xl:w-[calc(50%-6rem)] step-timeline-card relative z-50 md:z-auto">
                                 <GlowCard card={{ review: step.review }} index={index} className="card-inverted card-steps">
                                 </GlowCard>
                             </div>
-                            <div className="xl:w-4/6">
+                            {/* Right: content */}
+                            <div className="xl:w-[calc(50%-6rem)]">
                                 <div className="flex items-start">
-                                    <div className="timeline-wrapper">
+                                    {/* Mobile/tablet line (hidden on xl) */}
+                                    <div className="step-timeline-wrapper xl:hidden">
                                         <div className="step-timeline timeline"/>
                                         <div className="gradient-line w-1 h-full"/>
                                     </div>
-                                    <div className="step-text flex xl:gap-20 md:gap-10 gap-5 relative z-20 min-w-0">
-                                        <div className="flex-none flex flex-col items-center">
-                                            <div className="timeline-logo xl:translate-x-5 2xl:translate-x-7 3xl:translate-x-10">
+                                    <div className="step-text flex xl:gap-10 md:gap-10 gap-5 relative z-20 min-w-0">
+                                        <div className="flex-none flex flex-col items-center xl:hidden">
+                                            <div className="step-timeline-logo">
                                                 <Image src={stepLogos[index % stepLogos.length]} alt="" width={60} height={60} loading="lazy" />
                                             </div>
                                         </div>
-                                        <div className="min-w-0 max-w-[calc(100vw-8rem)] md:max-w-none">
+                                        <div className="step-content min-w-0 max-w-[calc(100vw-8rem)] md:max-w-none">
                                             <h1 className="font-semibold text-3xl flex gap-3 md:h-20 h-10 items-baseline mb-5 md:-translate-y-6 -translate-y-2">
                                                 <span className={`text-5xl md:text-7xl font-black bg-gradient-to-b ${stepGradients[index % stepGradients.length]} bg-clip-text text-transparent`}>
                                                     {step.number}
@@ -129,6 +156,12 @@ const StepsSection = () => {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            {/* Centered logo on the line (xl only) */}
+                            <div className="step-text hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+                                <div className="step-timeline-logo">
+                                    <Image src={stepLogos[index % stepLogos.length]} alt="" width={60} height={60} loading="lazy" />
                                 </div>
                             </div>
                         </div>
