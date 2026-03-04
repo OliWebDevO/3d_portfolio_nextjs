@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
 import Hero from "@/sections/Hero";
+import ImageRect from "@/components/ImageRect";
 import { usePreloader } from "@/hooks/usePreloader";
 
 const Preloader = dynamic(
@@ -57,6 +58,7 @@ export default function HomeWrapper() {
         <FeatureCards variant="home" />
         <ProductsSection />
         <StepsSection />
+        <ImageRect />
         <FAQSection />
         {/* Spacer to give last-section animations enough scroll room */}
         <div className="h-[15svh] md:h-[20svh]" aria-hidden="true" />

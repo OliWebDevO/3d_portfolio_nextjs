@@ -136,6 +136,7 @@ const StepsSection = () => {
                 </div>
             </div>
         </div>
+
     </section>
   )
 }

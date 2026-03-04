@@ -122,6 +122,15 @@ section {
   opacity: 0.08;
 }
 
+.hero-triangle {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  top: 15%;
+  bottom: 20%;
+  left: 50%;
+}
+
 
 /* @theme {
   --font-sans: "Mona Sans", sans-serif;

@@ -308,6 +308,10 @@ const translations = {
       buttonText: "See My Work",
       buttonTextMobile: "Contact Me"
     },
+    cta: {
+      create: "Let's build together",
+      contact: "Contact me",
+    },
     slider: {
       title: "Projects",
       subtitle: "Quick Dive into the projects"
@@ -409,6 +413,10 @@ const translations = {
       description: "Basé à Bruxelles, je transforme vos idées en sites vitrines percutants, plateformes web interactives ou applications de gestion complètes. Mon but : Simplifier votre quotidien.",
       buttonText: "Mes Projets",
       buttonTextMobile: "Contactez-moi"
+    },
+    cta: {
+      create: "Créons ensemble",
+      contact: "Contactez-moi",
     },
     slider: {
       title: "Projets",
