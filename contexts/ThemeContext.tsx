@@ -20,6 +20,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     if (saved && ['dark', 'light'].includes(saved)) {
       setThemeState(saved);
       document.documentElement.setAttribute('data-theme', saved);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const system: Theme = prefersDark ? 'dark' : 'light';
+      setThemeState(system);
+      document.documentElement.setAttribute('data-theme', system);
     }
   }, []);
 
