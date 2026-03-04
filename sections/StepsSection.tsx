@@ -76,7 +76,7 @@ const StepsSection = () => {
       }
     });
 
-    // Offset line to start at first ball center and adjust height accordingly
+    // Offset lines to start at first ball center and adjust height
     const firstCard = sectionRef.current?.querySelector('.step-card-wrapper') as HTMLElement;
     const stepsContainer = sectionRef.current?.querySelector('.step-line')?.parentElement as HTMLElement;
     if (firstCard && stepsContainer) {
@@ -84,10 +84,24 @@ const StepsSection = () => {
       gsap.set('.step-line', { top: offset, height: stepsContainer.offsetHeight - offset });
     }
 
-    // Timeline overlay shrinks top-down as you scroll past each ball
-    gsap.to('.step-timeline', {
+    // Timeline overlay shrinks top-down (xl)
+    gsap.to('.step-line .step-timeline', {
       scrollTrigger: {
         trigger: '.step-line',
+        start: 'top 80%',
+        end: 'bottom center',
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      scaleY: 0,
+      transformOrigin: 'bottom center',
+      ease: 'none',
+    });
+
+    // Timeline overlay shrinks top-down (mobile/tablet)
+    gsap.to('.step-timeline-mobile', {
+      scrollTrigger: {
+        trigger: '.step-line-mobile',
         start: 'top 80%',
         end: 'bottom center',
         scrub: true,
@@ -107,12 +121,18 @@ const StepsSection = () => {
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader title={t.home.process.title} sub={t.home.process.subtitle} cn="mb-28"/>
             <div className="mt-3 relative">
-                <div className="relative z-50 xl:space-y-32 space-y-10">
-                    {/* Single continuous centered line (xl only) */}
+                <div className="relative z-50">
+                    {/* Lines inside z-50 but outside space-y */}
                     <div className="step-line hidden xl:flex absolute left-1/2 -translate-x-1/2 top-0 justify-center z-10">
                         <div className="step-timeline timeline"/>
                         <div className="gradient-line w-1 h-full"/>
                     </div>
+                    <div className="step-line-mobile xl:hidden absolute md:left-10 left-5 top-5 md:top-10 h-full flex justify-center z-10">
+                        <div className="step-timeline-mobile timeline"/>
+                        <div className="gradient-line w-1 h-full"/>
+                    </div>
+                    {/* Cards wrapper with space-y */}
+                    <div className="xl:space-y-32 space-y-10">
                     {processSteps.map((step, index) => (
                         <div key={`${step.title}-${locale}`} className="step-card-wrapper">
                            {/* Left: GlowCard */}
@@ -123,11 +143,6 @@ const StepsSection = () => {
                             {/* Right: content */}
                             <div className="xl:w-[calc(50%-6rem)]">
                                 <div className="flex items-start">
-                                    {/* Mobile/tablet line (hidden on xl) */}
-                                    <div className="step-timeline-wrapper xl:hidden">
-                                        <div className="step-timeline timeline"/>
-                                        <div className="gradient-line w-1 h-full"/>
-                                    </div>
                                     <div className="step-text flex xl:gap-10 md:gap-10 gap-5 relative z-20 min-w-0">
                                         <div className="flex-none flex flex-col items-center xl:hidden">
                                             <div className="step-timeline-logo">
@@ -166,6 +181,7 @@ const StepsSection = () => {
                             </div>
                         </div>
                     ))}
+                    </div>
                 </div>
             </div>
         </div>

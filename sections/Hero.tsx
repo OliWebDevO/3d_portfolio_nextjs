@@ -137,7 +137,7 @@ return (
                         {t.hero.description}
                     </p>
                     <Button
-                        className="md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0 md:mt-16"
+                        className={`md:w-80 md:h-16 w-60 h-12 mb-4 md:mb-0 ${isDark ? 'md:mt-16' : 'md:mt-32'}`}
                         text={t.hero.buttonText}
                         href="#work"
                     />

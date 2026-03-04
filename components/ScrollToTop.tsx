@@ -25,7 +25,7 @@ export default function ScrollToTop() {
       className={`fixed bottom-6 right-6 z-50 size-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
-      style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-bg)' }}
+      style={{ backgroundColor: '#ffffff', color: '#000000' }}
     >
       <Image
         src="/images/arrow-down.svg"

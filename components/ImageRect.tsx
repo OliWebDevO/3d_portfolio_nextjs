@@ -94,7 +94,7 @@ const ImageRect = () => {
     if (isDark) return null;
 
     return (
-        <div ref={containerRef} className="w-full md:px-20 px-5 py-16 space-y-24 xl:space-y-32">
+        <div ref={containerRef} className="hidden xl:block w-full md:px-20 px-5 py-16 space-y-24 xl:space-y-32">
             {/* SVG clip path defs */}
             <svg width="0" height="0" className="absolute">
                 <defs>
