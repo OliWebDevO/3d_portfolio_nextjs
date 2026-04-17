@@ -4,7 +4,7 @@
 > **Type** : Site WordPress personnalisé, sans template, 100% sur mesure
 > **Secteur** : Associatif / Protection animale (Belgique)
 > **Statut** : En cours de développement
-> **Version de présentation** : [https://versiontest.site/](https://versiontest.site/)
+> **Version de présentation** : [https://www.lefanaldeschats.org/](https://www.lefanaldeschats.org/)
 
 ---
 

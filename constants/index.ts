@@ -1026,7 +1026,7 @@ const projects = {
       title: "Le Fanal des Chats : Custom platform for an animal shelter",
       description: "A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations",
       image: "/images/fanal_des_chats/fanal_home.webp",
-      link: "https://versiontest.site/",
+      link: "https://www.lefanaldeschats.org/",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
@@ -1111,7 +1111,7 @@ const projects = {
       title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge animalier",
       description: "Une plateforme WordPress complète avec quiz, formulaires multi-étapes, blog et dons en ligne",
       image: "/images/fanal_des_chats/fanal_home.webp",
-      link: "https://versiontest.site/",
+      link: "https://www.lefanaldeschats.org/",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
