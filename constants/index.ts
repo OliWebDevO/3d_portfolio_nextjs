@@ -321,6 +321,10 @@ const translations = {
       subtitle: "Take a deeper dive"
     },
     projects: {
+      lesarts: {
+        title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
+        description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery — the first step toward a future e-commerce store and management app"
+      },
       "ovni-compta": {
         title: "OVNI Compta : Custom accounting app for a Belgian NGO",
         description: "A tailor-made web app to manage finances, members, and projects"
@@ -427,6 +431,10 @@ const translations = {
       subtitle: "Une plongée dans mes projets"
     },
     projects: {
+      lesarts: {
+        title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
+        description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois — première étape vers un futur e-commerce et une application de gestion"
+      },
       "ovni-compta": {
         title: "OVNI Compta : Application comptable sur mesure pour ASBL",
         description: "Une application web sur mesure pour gérer finances, membres et projets"
@@ -994,6 +1002,20 @@ const expLogos = [
 const projects = {
   en: [
     {
+      slug: "lesarts",
+      title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
+      description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery — the first step toward a future e-commerce store and management app",
+      image: "/images/lesarts/lesarts_cover.webp",
+      link: "https://www.versiontest.site/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ece4d8",
+    },
+    {
       slug: "annick",
       title: "Annick Van Endert : Where Art Meets the Web",
       description: "A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist.",
@@ -1078,6 +1100,20 @@ const projects = {
     },
   ],
   fr: [
+    {
+      slug: "lesarts",
+      title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
+      description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois — première étape vers un futur e-commerce et une application de gestion",
+      image: "/images/lesarts/lesarts_cover.webp",
+      link: "https://www.versiontest.site/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ece4d8",
+    },
     {
       slug: "annick",
       title: "Annick Van Endert : Quand l'art rencontre le web",
@@ -1189,6 +1225,41 @@ const socialImgs = [
 
 const projectDetailsCards = {
   en: [
+    {
+      slug: "lesarts",
+      cards: [
+        {
+          imgPath: "/images/lesarts/lesarts_atelier.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "LESARTS: A Framing Atelier, Reimagined Online",
+          details: [
+            "LESARTS is a Brussels atelier specialized in custom framing, based on rue du Bailli in Ixelles, where every artwork, photo, and poster is sublimated with precision and passion.",
+            "The brief: a bold, modern, high-impact showcase site that feels as crafted as the framing itself — built to draw visitors in and let the work breathe.",
+            "This showcase is phase one of a larger vision: an online store and a custom management app will follow to handle quotes, orders, and the gallery's day-to-day.",
+          ],
+        },
+        {
+          imgPath: "/images/lesarts/lesarts_realisations.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Bold Design & Crafted Experience",
+          details: [
+            "Editorial, oversized typography and full-bleed framing photography create a striking, gallery-like atmosphere across every section.",
+            "Structured journeys guide visitors through the craft: custom framing of photos & posters, framing of artworks, gallery & artist exhibitions, and tailor-made advice with quotes.",
+            "A mobile-first responsive layout keeps the experience immersive and legible on every device, from desktop to phone.",
+          ],
+        },
+        {
+          imgPath: "/images/lesarts/lesarts_services.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "GSAP Animations & WordPress-Ready",
+          details: [
+            "Rich GSAP and ScrollTrigger animations drive scroll reveals, transitions, and micro-interactions that bring the atelier's universe to life.",
+            "The site will be transformed into a fully custom WordPress theme so the client can edit galleries, services, and content autonomously — no developer needed.",
+            "Currently in active development, this prototype lays the foundation for the upcoming e-commerce store and management application.",
+          ],
+        },
+      ],
+    },
     {
       slug: "ovni-compta",
       cards: [
@@ -1404,6 +1475,41 @@ const projectDetailsCards = {
     },
   ],
   fr: [
+    {
+      slug: "lesarts",
+      cards: [
+        {
+          imgPath: "/images/lesarts/lesarts_atelier.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "LESARTS : Un atelier d'encadrement, réinventé en ligne",
+          details: [
+            "LESARTS est un atelier bruxellois spécialisé dans l'encadrement sur mesure, situé rue du Bailli à Ixelles, où chaque œuvre, photo et affiche est sublimée avec précision et passion.",
+            "Le brief : un site vitrine audacieux, moderne et percutant, aussi soigné que l'encadrement lui-même — pensé pour capter le visiteur et laisser respirer les œuvres.",
+            "Cette vitrine n'est que la première étape d'une vision plus large : une boutique en ligne et une application de gestion sur mesure suivront pour gérer devis, commandes et le quotidien de la galerie.",
+          ],
+        },
+        {
+          imgPath: "/images/lesarts/lesarts_realisations.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Design audacieux & expérience soignée",
+          details: [
+            "Une typographie éditoriale surdimensionnée et des photographies d'encadrement plein écran créent une atmosphère saisissante, digne d'une galerie, dans chaque section.",
+            "Des parcours structurés guident le visiteur à travers le métier : encadrement de photos & affiches, encadrement d'œuvres d'art, galerie & expositions d'artistes, et conseil personnalisé avec devis.",
+            "Une mise en page responsive mobile-first garde l'expérience immersive et lisible sur tous les écrans, du desktop au smartphone.",
+          ],
+        },
+        {
+          imgPath: "/images/lesarts/lesarts_services.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "Animations GSAP & prêt pour WordPress",
+          details: [
+            "De riches animations GSAP et ScrollTrigger orchestrent révélations au scroll, transitions et micro-interactions qui donnent vie à l'univers de l'atelier.",
+            "Le site sera transformé en thème WordPress entièrement sur mesure pour que le client modifie galeries, services et contenu en toute autonomie — sans développeur.",
+            "Actuellement en cours de réalisation, ce prototype pose les fondations du futur e-commerce et de l'application de gestion.",
+          ],
+        },
+      ],
+    },
     {
       slug: "ovni-compta",
       cards: [
