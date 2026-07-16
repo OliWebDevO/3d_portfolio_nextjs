@@ -323,7 +323,7 @@ const translations = {
     projects: {
       lesarts: {
         title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
-        description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery — the first step toward a future e-commerce store and management app"
+        description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery"
       },
       "ovni-compta": {
         title: "OVNI Compta : Custom accounting app for a Belgian NGO",
@@ -387,6 +387,9 @@ const translations = {
     projectpage: {
       visitProject: "Visit Project"
     },
+    badges: {
+      inDevelopment: "In Development"
+    },
     home: {
       services: {
         title: "Services",
@@ -433,7 +436,7 @@ const translations = {
     projects: {
       lesarts: {
         title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
-        description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois — première étape vers un futur e-commerce et une application de gestion"
+        description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois"
       },
       "ovni-compta": {
         title: "OVNI Compta : Application comptable sur mesure pour ASBL",
@@ -496,6 +499,9 @@ const translations = {
     },
     projectpage: {
       visitProject: "Visiter le projet"
+    },
+    badges: {
+      inDevelopment: "En Développement"
     },
     home: {
       services: {
@@ -1002,48 +1008,6 @@ const expLogos = [
 const projects = {
   en: [
     {
-      slug: "lesarts",
-      title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
-      description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery — the first step toward a future e-commerce store and management app",
-      image: "/images/lesarts/lesarts_cover.webp",
-      link: "https://www.versiontest.site/",
-      techLogos: [
-        "/images/logos/html.webp",
-        "/images/logos/css.webp",
-        "/images/logos/js.webp",
-        "/images/logos/wordpress.webp",
-      ],
-      bg: "#ece4d8",
-    },
-    {
-      slug: "annick",
-      title: "Annick Van Endert : Where Art Meets the Web",
-      description: "A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist.",
-      image: "/images/annick1.webp",
-      link: "https://annickvanendert.com",
-      techLogos: [
-        "/images/logos/html.webp",
-        "/images/logos/css.webp",
-        "/images/logos/js.webp",
-        "/images/logos/wordpress.webp",
-      ],
-      bg: "#ffefdb",
-    },
-    {
-      slug: "ovni-compta",
-      title: "OVNI Compta : Custom accounting app for a Belgian NGO",
-      description: "A tailor-made web app to manage finances, members, and projects",
-      image: "/images/asbl_ovni/ovni_dashboard.webp?v=2",
-      link: "https://www.asbl-ovni.com/",
-      techLogos: [
-        "/images/logos/nextjs.webp",
-        "/images/logos/react.webp",
-        "/images/logos/tailwind.webp",
-        "/images/logos/postgresql.webp",
-      ],
-      bg: "#ffefdb",
-    },
-    {
       slug: "fanal",
       title: "Le Fanal des Chats : Custom platform for an animal shelter",
       description: "A full-featured WordPress platform with quizzes, multi-step forms, blog, and online donations",
@@ -1070,6 +1034,48 @@ const projects = {
         "/images/logos/wordpress.webp",
       ],
       bg: "white",
+    },
+    {
+      slug: "annick",
+      title: "Annick Van Endert : Where Art Meets the Web",
+      description: "A bold, immersive showcase for a Brussels-based painter, sculptor, and tattoo artist.",
+      image: "/images/annick1.webp",
+      link: "https://annickvanendert.com",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "lesarts",
+      title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
+      description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery",
+      image: "/images/lesarts/lesarts_cover.webp",
+      link: "https://www.versiontest.site/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ece4d8",
+    },
+    {
+      slug: "ovni-compta",
+      title: "OVNI Compta : Custom accounting app for a Belgian NGO",
+      description: "A tailor-made web app to manage finances, members, and projects",
+      image: "/images/asbl_ovni/ovni_dashboard.webp?v=2",
+      link: "https://www.asbl-ovni.com/",
+      techLogos: [
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/tailwind.webp",
+        "/images/logos/postgresql.webp",
+      ],
+      bg: "#ffefdb",
     },
     {
       slug: "portfolio",
@@ -1101,48 +1107,6 @@ const projects = {
   ],
   fr: [
     {
-      slug: "lesarts",
-      title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
-      description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois — première étape vers un futur e-commerce et une application de gestion",
-      image: "/images/lesarts/lesarts_cover.webp",
-      link: "https://www.versiontest.site/",
-      techLogos: [
-        "/images/logos/html.webp",
-        "/images/logos/css.webp",
-        "/images/logos/js.webp",
-        "/images/logos/wordpress.webp",
-      ],
-      bg: "#ece4d8",
-    },
-    {
-      slug: "annick",
-      title: "Annick Van Endert : Quand l'art rencontre le web",
-      description: "Une vitrine immersive pour une peintre, sculptrice et tatoueuse bruxelloise.",
-      image: "/images/annick1.webp",
-      link: "https://annickvanendert.com",
-      techLogos: [
-        "/images/logos/html.webp",
-        "/images/logos/css.webp",
-        "/images/logos/js.webp",
-        "/images/logos/wordpress.webp",
-      ],
-      bg: "#ffefdb",
-    },
-    {
-      slug: "ovni-compta",
-      title: "OVNI Compta : Application comptable sur mesure pour ASBL",
-      description: "Une application web sur mesure pour gérer finances, membres et projets",
-      image: "/images/asbl_ovni/ovni_dashboard.webp?v=2",
-      link: "https://www.asbl-ovni.com/",
-      techLogos: [
-        "/images/logos/nextjs.webp",
-        "/images/logos/react.webp",
-        "/images/logos/tailwind.webp",
-        "/images/logos/postgresql.webp",
-      ],
-      bg: "#ffefdb",
-    },
-    {
       slug: "fanal",
       title: "Le Fanal des Chats : Plateforme sur mesure pour un refuge animalier",
       description: "Une plateforme WordPress complète avec quiz, formulaires multi-étapes, blog et dons en ligne",
@@ -1169,6 +1133,48 @@ const projects = {
         "/images/logos/wordpress.webp",
       ],
       bg: "white",
+    },
+    {
+      slug: "annick",
+      title: "Annick Van Endert : Quand l'art rencontre le web",
+      description: "Une vitrine immersive pour une peintre, sculptrice et tatoueuse bruxelloise.",
+      image: "/images/annick1.webp",
+      link: "https://annickvanendert.com",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ffefdb",
+    },
+    {
+      slug: "lesarts",
+      title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
+      description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois",
+      image: "/images/lesarts/lesarts_cover.webp",
+      link: "https://www.versiontest.site/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#ece4d8",
+    },
+    {
+      slug: "ovni-compta",
+      title: "OVNI Compta : Application comptable sur mesure pour ASBL",
+      description: "Une application web sur mesure pour gérer finances, membres et projets",
+      image: "/images/asbl_ovni/ovni_dashboard.webp?v=2",
+      link: "https://www.asbl-ovni.com/",
+      techLogos: [
+        "/images/logos/nextjs.webp",
+        "/images/logos/react.webp",
+        "/images/logos/tailwind.webp",
+        "/images/logos/postgresql.webp",
+      ],
+      bg: "#ffefdb",
     },
     {
       slug: "portfolio",

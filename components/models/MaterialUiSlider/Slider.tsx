@@ -13,17 +13,12 @@ import type { SwiperOptions } from 'swiper/types';
 import '@/app/globals.css';
 import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const images = [
-  { src: '/images/lesarts/lesarts_cover.webp', mobileSrc: '/images/slider-mobile/lesarts.webp', label: 'LESARTS', slug: 'lesarts' },
-  { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
   { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
   { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Le Noyer', slug: 'lenoyer' },
+  { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
+  { src: '/images/lesarts/lesarts_cover.webp', mobileSrc: '/images/slider-mobile/lesarts.webp', label: 'LESARTS', slug: 'lesarts' },
   { src: '/images/asbl_ovni/ovni_dashboard.webp', mobileSrc: '/images/slider-mobile/ovni-compta.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
   { src: '/images/portfolioCover1.webp', mobileSrc: '/images/slider-mobile/portfolio.webp', label: 'Portfolio', slug: 'portfolio' },
   { src: '/images/ag2.webp', mobileSrc: null, label: 'ArtGallery', slug: 'artgallery' },
@@ -32,7 +27,6 @@ const images = [
 export default function Slider() {
   const { t } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState<boolean>(
     () => typeof window !== 'undefined' && window.innerWidth < 768
   );
@@ -51,44 +45,6 @@ export default function Slider() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // Mobile sphere-to-fullscreen reveal animation
-  useGSAP(() => {
-    if (!isMobile || !sectionRef.current) return;
-
-    const el = sectionRef.current;
-
-    // Initial state
-    gsap.set(el, { clipPath: 'circle(8% at 0% 0%)' });
-
-    // Enter: expand from top-left
-    gsap.to(el, {
-      clipPath: 'circle(150% at 0% 0%)',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top bottom',
-        end: 'top top',
-        scrub: 1,
-      },
-    });
-
-    // Exit: shrink to bottom-right
-    gsap.fromTo(el,
-      { clipPath: 'circle(150% at 100% 100%)' },
-      {
-        clipPath: 'circle(8% at 100% 100%)',
-        ease: 'none',
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: el,
-          start: 'bottom 80%',
-          end: 'bottom 20%',
-          scrub: 1,
-        },
-      }
-    );
-  }, [isMobile]);
 
   useEffect(() => {
     let swiperInstance: Swiper | undefined;
@@ -126,7 +82,7 @@ export default function Slider() {
   }, [slidesPerView]);
 
     return (
-    <section id="work" ref={sectionRef} className='relative'>
+    <section id="work" className='relative'>
         <div className="hidden md:block">
           <TitleHeader
             title={t.slider.title}
@@ -182,6 +138,11 @@ export default function Slider() {
                       {img.label}
                     </Link>
                   </div>
+                  {img.slug === 'lesarts' && (
+                    <div className="dev-ribbon" aria-hidden="true">
+                      <span className="dev-ribbon__label">{t.badges.inDevelopment}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

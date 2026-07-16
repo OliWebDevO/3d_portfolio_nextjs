@@ -83,6 +83,11 @@ const ShowcaseSection = () => {
                       loading="lazy"
                       className="rounded-xl object-cover main-img w-full"
                     />
+                    {project.slug === "lesarts" && (
+                      <div className="dev-ribbon" aria-hidden="true">
+                        <span className="dev-ribbon__label">{t.badges.inDevelopment}</span>
+                      </div>
+                    )}
                     </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
@@ -113,6 +118,11 @@ const ShowcaseSection = () => {
                       loading="lazy"
                       className="rounded-xl main-img w-full"
                     />
+                    {project.slug === "lesarts" && (
+                      <div className="dev-ribbon" aria-hidden="true">
+                        <span className="dev-ribbon__label">{t.badges.inDevelopment}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="text-content flex flex-col justify-center mt-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t.projects[project.slug].title}</h2>
