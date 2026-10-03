@@ -1011,7 +1011,7 @@ const projects = {
       slug: "lesarts",
       title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
       description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery",
-      image: "/images/lesarts/lesarts_cover.webp",
+      image: "/images/lesarts/lesarts_cover_v2.webp",
       link: "https://www.versiontest.site/",
       techLogos: [
         "/images/logos/html.webp",
@@ -1110,7 +1110,7 @@ const projects = {
       slug: "lesarts",
       title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
       description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois",
-      image: "/images/lesarts/lesarts_cover.webp",
+      image: "/images/lesarts/lesarts_cover_v2.webp",
       link: "https://www.versiontest.site/",
       techLogos: [
         "/images/logos/html.webp",
