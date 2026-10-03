@@ -1,0 +1,2 @@
+[ 1346900ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:3000/_next/image?url=%2Fimages%2Ffanal_des_chats%2Ffanal_home.webp&w=1080&q=80:0
+[ 1347916ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297

@@ -15,10 +15,10 @@ import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
-  { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
-  { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Le Noyer', slug: 'lenoyer' },
-  { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
   { src: '/images/lesarts/lesarts_cover.webp', mobileSrc: '/images/slider-mobile/lesarts.webp', label: 'LESARTS', slug: 'lesarts' },
+  { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
+  { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },
+  { src: '/images/lenoyer1.webp', mobileSrc: '/images/slider-mobile/lenoyer.webp', label: 'Le Noyer', slug: 'lenoyer' },
   { src: '/images/asbl_ovni/ovni_dashboard.webp', mobileSrc: '/images/slider-mobile/ovni-compta.webp', label: 'OVNI Compta', slug: 'ovni-compta' },
   { src: '/images/portfolioCover1.webp', mobileSrc: '/images/slider-mobile/portfolio.webp', label: 'Portfolio', slug: 'portfolio' },
   { src: '/images/ag2.webp', mobileSrc: null, label: 'ArtGallery', slug: 'artgallery' },
