@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${project?.title || 'Project'} | Oliver Van Droogenbroeck`,
     description: project?.description || 'Project details',
+    alternates: { canonical: `/projects/${slug}` },
     openGraph: {
       title: `${project?.title || 'Project'} | Oliver Van Droogenbroeck`,
       description: project?.description || 'Project details',

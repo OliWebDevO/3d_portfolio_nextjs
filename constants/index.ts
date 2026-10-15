@@ -1082,7 +1082,7 @@ const projects = {
       title: "Portfolio Website",
       description: "An animated portfolio website showcasing my work.",
       image: "/images/portfolioCover.webp",
-      link: "https://olivervdb.com",
+      link: "https://www.olivervdb.com",
       techLogos: [
         "/images/logos/nextjs.webp",
         "/images/logos/react.webp",
@@ -1181,7 +1181,7 @@ const projects = {
       title: "Site Web Portfolio",
       description: "Un site portfolio animé présentant mon travail.",
       image: "/images/portfolioCover.webp",
-      link: "https://olivervdb.com",
+      link: "https://www.olivervdb.com",
       techLogos: [
         "/images/logos/nextjs.webp",
         "/images/logos/react.webp",

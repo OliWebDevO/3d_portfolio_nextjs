@@ -13,8 +13,8 @@ const monaSans = Mona_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Oliver Van Droogenbroeck | Frontend Web Developer | React & Next.js Expert Belgium",
-  description: "Portfolio of Oliver Van Droogenbroeck, a freelance frontend web developer based in Belgium specializing in React, Next.js, TypeScript, and modern web development. View my projects including custom web apps, art galleries, and responsive websites.",
+  title: "Oliver Van Droogenbroeck | Développeur web freelance à Bruxelles · Web Developer Belgium",
+  description: "Développeur web freelance à Bruxelles : sites vitrines, WordPress, applications web React & Next.js. Freelance web developer in Belgium specializing in React, Next.js and modern websites.",
   keywords: [
     "développeur",
     "développeur web",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   classification: "Portfolio Website",
   metadataBase: new URL("https://www.olivervdb.com"),
   openGraph: {
-    title: "Oliver Van Droogenbroeck | Frontend Developer Portfolio",
-    description: "Discover the portfolio of Oliver Van Droogenbroeck, a skilled frontend developer from Belgium. Specializing in React, Next.js, and modern web technologies. View live projects and get in touch for your next web development project.",
+    title: "Oliver Van Droogenbroeck | Développeur web freelance · Web Developer Portfolio",
+    description: "Développeur web freelance à Bruxelles : découvrez mes projets et parlons de votre site. Freelance web developer in Belgium — React, Next.js, WordPress.",
     url: "https://www.olivervdb.com",
     siteName: "Oliver Van Droogenbroeck - Web Developer Portfolio",
     images: [
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oliver Van Droogenbroeck | Frontend Developer Belgium",
-    description: "Frontend web developer specializing in React, Next.js & TypeScript. Based in Belgium. View my portfolio of modern web applications and interactive projects.",
+    title: "Oliver Van Droogenbroeck | Développeur web Bruxelles · Web Developer Belgium",
+    description: "Développeur web freelance à Bruxelles — sites et applications React, Next.js, WordPress. Freelance web developer based in Belgium.",
     images: ["/images/portfolioCover.webp"],
   },
   icons: {
@@ -97,10 +97,6 @@ export default function RootLayout({
         <meta name="language" content="en,fr" />
         <meta name="rating" content="general" />
         <meta name="revisit-after" content="7 days" />
-        <link rel="canonical" href="https://www.olivervdb.com" />
-        <link rel="alternate" hrefLang="en" href="https://www.olivervdb.com" />
-        <link rel="alternate" hrefLang="fr" href="https://www.olivervdb.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.olivervdb.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -109,8 +105,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Person",
                 name: "Oliver Van Droogenbroeck",
-                url: "https://olivervdb.com",
-                image: "https://olivervdb.com/images/portfolioCover.webp",
+                url: "https://www.olivervdb.com",
+                image: "https://www.olivervdb.com/images/portfolioCover.webp",
                 description: "Frontend web developer specializing in React, Next.js, TypeScript, and modern web technologies",
                 sameAs: [
                   "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
@@ -154,7 +150,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 name: "Oliver Van Droogenbroeck Portfolio",
-                url: "https://olivervdb.com",
+                url: "https://www.olivervdb.com",
                 description: "Portfolio website showcasing web development projects and skills",
                 author: {
                   "@type": "Person",
