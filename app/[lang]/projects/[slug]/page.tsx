@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { projects } from "@/constants";
 import NavBar from "@/components/NavBar";
-// import Contact from "@/sections/Contact";
 import Footer from "@/sections/Footer";
 import ProjectDetailsSection from "@/sections/ProjectDetailsSection";
 import ProjectHero from "@/sections/ProjectHero";
