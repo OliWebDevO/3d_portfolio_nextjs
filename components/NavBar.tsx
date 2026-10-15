@@ -46,10 +46,10 @@ const navHoverColors = [
 ]
 
 const projectBubbles = [
-    { src: '/images/annick1.webp', srcMobile: '/images/slider-mobile/annick.webp', slug: 'annick', label: 'Annick', bg: '#1c1c21' },
+    { src: '/images/lesarts/lesarts_cover_v2.webp', srcMobile: '/images/slider-mobile/lesarts.webp', slug: 'lesarts', label: 'Lesarts', bg: '#191514' },
     { src: '/images/fanal_des_chats/fanal_home.webp', srcMobile: '/images/slider-mobile/fanal.webp', slug: 'fanal', label: 'Fanal', bg: '#ffefdb' },
     { src: '/images/lenoyer1.webp', srcMobile: '/images/slider-mobile/lenoyer.webp', slug: 'lenoyer', label: 'Le Noyer', bg: 'white' },
-    { src: '/images/asbl_ovni/ovni_dashboard.webp?v=2', srcMobile: '/images/slider-mobile/ovni-compta.webp', slug: 'ovni-compta', label: 'OVNI', bg: '#ffefdb' },
+    { src: '/images/annick1.webp', srcMobile: '/images/slider-mobile/annick.webp', slug: 'annick', label: 'Annick', bg: '#1c1c21' },
 ]
 
 const NavBar = () => {
