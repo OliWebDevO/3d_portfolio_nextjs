@@ -106,6 +106,110 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
+const schemaText = {
+  fr: {
+    personDescription: "Développeur web freelance à Bruxelles, spécialisé en React, Next.js et TypeScript : sites vitrines, plateformes web et applications de gestion sur mesure.",
+    jobTitle: "Développeur web freelance",
+    locality: "Bruxelles",
+    region: "Belgique",
+    occupation: "Développeur web",
+    siteName: "Oliver Van Droogenbroeck - Portfolio",
+    siteDescription: "Portfolio de projets web et de compétences en développement web",
+    siteKeywords: "développeur web, développeur web freelance, Bruxelles, Belgique, React, Next.js, portfolio",
+    serviceName: "Oliver Van Droogenbroeck - Développement web",
+    serviceType: "Développement web",
+    catalog: "Services de développement web",
+    offers: [
+      { name: "Sites vitrines", description: "Sites vitrines sur mesure avec WordPress, administrables en toute autonomie" },
+      { name: "Plateformes web interactives", description: "Applications web dynamiques : espace membre, réservations, paiement" },
+      { name: "Applications de gestion", description: "Outils sur mesure : tableaux de bord, accès par rôles, automatisation" },
+    ],
+  },
+  en: {
+    personDescription: "Freelance web developer in Brussels specializing in React, Next.js and TypeScript: showcase websites, web platforms and custom management apps.",
+    jobTitle: "Freelance Web Developer",
+    locality: "Brussels",
+    region: "Belgium",
+    occupation: "Web Developer",
+    siteName: "Oliver Van Droogenbroeck Portfolio",
+    siteDescription: "Portfolio website showcasing web development projects and skills",
+    siteKeywords: "web developer, freelance web developer, Brussels, Belgium, React, Next.js, portfolio",
+    serviceName: "Oliver Van Droogenbroeck Web Development Services",
+    serviceType: "Web Development",
+    catalog: "Web Development Services",
+    offers: [
+      { name: "Showcase websites", description: "Custom showcase websites built with WordPress, easy to manage on your own" },
+      { name: "Interactive web platforms", description: "Dynamic web applications: member area, bookings, payment" },
+      { name: "Management apps", description: "Custom tools: dashboards, role-based access, automation" },
+    ],
+  },
+} as const;
+
+function structuredData(lang: Language) {
+  const x = schemaText[lang];
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Oliver Van Droogenbroeck",
+      url: `https://www.olivervdb.com/${lang}`,
+      image: "https://www.olivervdb.com/images/portfolioCover.webp",
+      description: x.personDescription,
+      sameAs: [
+        "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
+        "https://github.com/OliWebDevO",
+      ],
+      jobTitle: x.jobTitle,
+      worksFor: { "@type": "Organization", name: "Freelance" },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "BE",
+        addressLocality: x.locality,
+        addressRegion: x.region,
+      },
+      knowsAbout: [
+        "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "WordPress", "GSAP",
+        "Tailwind CSS", "Web Development", "Frontend Development", "Responsive Design", "UI/UX Design",
+      ],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: x.occupation,
+        occupationLocation: { "@type": "Country", name: x.region },
+        skills: "React, Next.js, TypeScript, JavaScript, WordPress, GSAP",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: x.siteName,
+      url: `https://www.olivervdb.com/${lang}`,
+      description: x.siteDescription,
+      author: { "@type": "Person", name: "Oliver Van Droogenbroeck" },
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      keywords: x.siteKeywords,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: x.serviceName,
+      provider: { "@type": "Person", name: "Oliver Van Droogenbroeck" },
+      serviceType: x.serviceType,
+      areaServed: { "@type": "Country", name: x.region },
+      inLanguage: lang,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: x.catalog,
+        itemListElement: x.offers.map((offer) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: offer.name, description: offer.description },
+        })),
+      },
+    },
+  ];
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -133,111 +237,7 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                name: "Oliver Van Droogenbroeck",
-                url: "https://www.olivervdb.com",
-                image: "https://www.olivervdb.com/images/portfolioCover.webp",
-                description: "Frontend web developer specializing in React, Next.js, TypeScript, and modern web technologies",
-                sameAs: [
-                  "https://www.linkedin.com/in/oliver-van-droogenbroeck-44b699151/",
-                  "https://github.com/OliWebDevO"
-                ],
-                jobTitle: "Frontend Web Developer",
-                worksFor: {
-                  "@type": "Organization",
-                  name: "Freelance"
-                },
-                address: {
-                  "@type": "PostalAddress",
-                  addressCountry: "BE",
-                  addressRegion: "Belgium"
-                },
-                knowsAbout: [
-                  "JavaScript",
-                  "TypeScript", 
-                  "React",
-                  "Next.js",
-                  "Node.js",
-                  "Three.js",
-                  "GSAP",
-                  "Tailwind CSS",
-                  "Web Development",
-                  "Frontend Development",
-                  "Responsive Design",
-                  "UI/UX Design"
-                ],
-                hasOccupation: {
-                  "@type": "Occupation",
-                  name: "Web Developer",
-                  occupationLocation: {
-                    "@type": "Country",
-                    name: "Belgium"
-                  },
-                  skills: "React, Next.js, TypeScript, JavaScript, Three.js, GSAP"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                name: "Oliver Van Droogenbroeck Portfolio",
-                url: `https://www.olivervdb.com/${lang}`,
-                description: "Portfolio website showcasing web development projects and skills",
-                author: {
-                  "@type": "Person",
-                  name: "Oliver Van Droogenbroeck"
-                },
-                inLanguage: lang,
-                isAccessibleForFree: true,
-                keywords: "web developer, frontend developer, React, Next.js, portfolio"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                name: "Oliver Van Droogenbroeck Web Development Services",
-                provider: {
-                  "@type": "Person",
-                  name: "Oliver Van Droogenbroeck"
-                },
-                serviceType: "Web Development",
-                areaServed: {
-                  "@type": "Country",
-                  name: "Belgium"
-                },
-                hasOfferCatalog: {
-                  "@type": "OfferCatalog",
-                  name: "Web Development Services",
-                  itemListElement: [
-                    {
-                      "@type": "Offer",
-                      itemOffered: {
-                        "@type": "Service",
-                        name: "Frontend Development",
-                        description: "Modern, responsive web applications using React and Next.js"
-                      }
-                    },
-                    {
-                      "@type": "Offer", 
-                      itemOffered: {
-                        "@type": "Service",
-                        name: "Full-Stack Development",
-                        description: "Complete web solutions from frontend to backend"
-                      }
-                    },
-                    {
-                      "@type": "Offer",
-                      itemOffered: {
-                        "@type": "Service", 
-                        name: "3D Web Development",
-                        description: "Interactive 3D experiences using Three.js"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]),
+            __html: JSON.stringify(structuredData(lang)),
           }}
         />
       </head>

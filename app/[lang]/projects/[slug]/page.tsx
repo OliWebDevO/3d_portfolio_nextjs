@@ -24,6 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: project?.description || 'Project details',
     alternates: alternatesFor(lang, `/projects/${slug}`),
     openGraph: {
+      url: `/${lang}/projects/${slug}`,
+      locale: lang === 'fr' ? 'fr_BE' : 'en_US',
+      alternateLocale: [lang === 'fr' ? 'en_US' : 'fr_BE'],
       title: `${project?.title || 'Project'} | Oliver Van Droogenbroeck`,
       description: project?.description || 'Project details',
       images: project?.image ? [{ url: project.image }] : [],
