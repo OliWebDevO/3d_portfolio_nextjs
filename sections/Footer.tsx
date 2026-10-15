@@ -1,6 +1,11 @@
+"use client"
+
 import Image from "next/image"
+import { useTranslation } from "@/hooks/useTranslation"
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -28,7 +33,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-center items-center">
             <p className="text-center md:text-end">
-                © {new Date().getFullYear()} Oliver Van Droogenbroeck.<br className="md:hidden" /> All rights reserved.
+                © {new Date().getFullYear()} Oliver Van Droogenbroeck.<br className="md:hidden" /> {t.common.rights}
             </p>
         </div>
       </div>

@@ -1,8 +1,12 @@
 'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function LanguageSwitcher({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
   const { language, setLanguage } = useLanguage();
+  const pathname = usePathname();
+  const rest = pathname.replace(/^\/(fr|en)(?=\/|$)/, '');
 
   const isLight = variant === 'light';
 
@@ -10,8 +14,11 @@ export default function LanguageSwitcher({ variant = 'dark' }: { variant?: 'dark
     <div suppressHydrationWarning className="flex items-center gap-1 rounded-lg p-1"
       style={{ backgroundColor: isLight ? 'rgba(0,0,0,0.05)' : 'var(--color-surface)' }}
     >
-      <button
-        onClick={() => setLanguage('en')}
+      <Link
+        href={`/en${rest}`}
+        hrefLang="en"
+        aria-current={language === 'en' ? 'true' : undefined}
+        onClick={(e) => { e.preventDefault(); setLanguage('en'); }}
         suppressHydrationWarning
         className={`px-3 py-1 rounded text-sm font-medium transition-all duration-300 ${
           language === 'en'
@@ -27,9 +34,12 @@ export default function LanguageSwitcher({ variant = 'dark' }: { variant?: 'dark
         }
       >
         EN
-      </button>
-      <button
-        onClick={() => setLanguage('fr')}
+      </Link>
+      <Link
+        href={`/fr${rest}`}
+        hrefLang="fr"
+        aria-current={language === 'fr' ? 'true' : undefined}
+        onClick={(e) => { e.preventDefault(); setLanguage('fr'); }}
         suppressHydrationWarning
         className={`px-3 py-1 rounded text-sm font-medium transition-all duration-300 ${
           language === 'fr'
@@ -45,7 +55,7 @@ export default function LanguageSwitcher({ variant = 'dark' }: { variant?: 'dark
         }
       >
         FR
-      </button>
+      </Link>
     </div>
   );
 }

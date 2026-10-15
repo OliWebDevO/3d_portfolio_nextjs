@@ -5,7 +5,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { useTheme } from '@/contexts/ThemeContext'
 
 const ProjectNavigation = ({ slug }: { slug: string }) => {
-  const { projects } = useTranslation()
+  const { projects, locale } = useTranslation()
   const { isDark } = useTheme()
 
   const currentIndex = projects.findIndex((p) => p.slug === slug)
@@ -20,7 +20,7 @@ const ProjectNavigation = ({ slug }: { slug: string }) => {
   return (
     <nav className="w-full flex justify-between items-center md:px-20 px-5 pt-32 md:pt-44 pb-16">
       <Link
-        href={`/projects/${prev.slug}`}
+        href={`/${locale}/projects/${prev.slug}`}
         className="group flex items-center gap-4 text-th-muted hover:text-th-text transition-colors"
       >
         <div
@@ -41,7 +41,7 @@ const ProjectNavigation = ({ slug }: { slug: string }) => {
       </Link>
 
       <Link
-        href={`/projects/${next.slug}`}
+        href={`/${locale}/projects/${next.slug}`}
         className="group flex items-center gap-4 text-th-muted hover:text-th-text transition-colors text-right"
       >
         <span className="text-sm md:text-base line-clamp-1">{next.title}</span>

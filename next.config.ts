@@ -41,6 +41,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ['gsap', 'three', '@react-three/drei', 'swiper'],
+    globalNotFound: true,
   },
   // Compression
   compress: true,

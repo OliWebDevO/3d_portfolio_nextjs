@@ -222,6 +222,18 @@ interface CtaTranslations {
   contact: string;
 }
 
+interface CommonTranslations {
+  notFoundTitle: string;
+  notFoundText: string;
+  backHome: string;
+  errorTitle: string;
+  retry: string;
+  scrollToTop: string;
+  previous: string;
+  next: string;
+  rights: string;
+}
+
 interface Translations {
   nav: NavTranslations;
   hero: HeroTranslations;
@@ -236,6 +248,7 @@ interface Translations {
   badges: BadgesTranslations;
   home: HomeTranslations;
   cta: CtaTranslations;
+  common: CommonTranslations;
 }
 
 

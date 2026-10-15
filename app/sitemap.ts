@@ -1,58 +1,26 @@
 import { MetadataRoute } from 'next'
+import { projects } from '@/constants'
+import { locales } from '@/i18n'
 
 export const dynamic = 'force-static'
 
+const baseUrl = 'https://www.olivervdb.com'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.olivervdb.com'
-  
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/projects/lesarts`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/ovni-compta`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/fanal`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/artgallery`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/lenoyer`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/annick`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+  const pages = [
+    { path: '', priority: 1 },
+    ...projects.en.map(({ slug }) => ({ path: `/projects/${slug}`, priority: 0.8 })),
   ]
+
+  return pages.flatMap(({ path, priority }) =>
+    locales.map(lang => ({
+      url: `${baseUrl}/${lang}${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: {
+        languages: Object.fromEntries(locales.map(l => [l, `${baseUrl}/${l}${path}`])),
+      },
+    }))
+  )
 }

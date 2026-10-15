@@ -55,7 +55,8 @@ const projectBubbles = [
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
-    const { t, navLinks: resumeNavLinks, homeNavLinks, isFrench } = useTranslation()
+    const { t, navLinks: resumeNavLinks, homeNavLinks, isFrench, locale } = useTranslation()
+    const base = `/${locale}`
     const pathname = usePathname()
     const router = useRouter()
     const pendingNavRef = useRef<string | null>(null)
@@ -733,7 +734,7 @@ const NavBar = () => {
         if (link.startsWith('#')) {
             e.preventDefault()
             if (isProjectPage) {
-                const dest = `/${link}`
+                const dest = `${base}${link}`
                 if (menuOpen && tlRef.current) {
                     pendingNavRef.current = dest
                     tlRef.current.timeScale(1.8)
@@ -785,10 +786,11 @@ const NavBar = () => {
         }
     }
 
-    const isProjectPage = pathname?.startsWith('/projects/')
+    const path = pathname?.replace(new RegExp(`^/${locale}(?=/|$)`), '') || '/'
+    const isProjectPage = path.startsWith('/projects/')
     isProjectPageRef.current = !!isProjectPage
-    const isHomePage = pathname === '/'
-    const isResumePage = pathname === '/resume'
+    const isHomePage = path === '/'
+    const isResumePage = path === '/resume'
     const navLinks = isResumePage ? resumeNavLinks : homeNavLinks
 
     return (
@@ -804,11 +806,11 @@ const NavBar = () => {
                     <Link
                         ref={logoRef}
                         className={`logo ${isHomePage ? 'hidden md:block' : 'hidden md:block'} overflow-hidden`}
-                        href="/"
+                        href={base}
                         onClick={(e) => {
                             if (desktopContactOpen && dtlRef.current) {
                                 e.preventDefault()
-                                pendingNavRef.current = '/'
+                                pendingNavRef.current = base
                                 if (successTlRef.current) {
                                     gsap.to('.desktop-success-svg', {
                                         opacity: 0,
@@ -849,7 +851,7 @@ const NavBar = () => {
                             {navLinks.filter(({link}) => link !== '#contact').map(({link, name}, i) => (
                                 <li key={name} style={{ '--nav-hover': navHoverColors[i % navHoverColors.length] } as React.CSSProperties}>
                                     <Link
-                                        href={isProjectPage ? `/${link}` : link}
+                                        href={isProjectPage ? `${base}${link}` : link}
                                         className="group"
                                         onClick={(e) => handleNavClick(e, link)}
                                     >
@@ -929,10 +931,10 @@ const NavBar = () => {
                                 className={menuOpen ? '' : 'opacity-0'}
                             >
                                 <Link
-                                    href="/"
+                                    href={base}
                                     className="text-4xl font-bold transition-colors duration-200"
                                     style={{ color: 'var(--color-overlay-text)' }}
-                                    onClick={(e) => handleNavClick(e, '/')}
+                                    onClick={(e) => handleNavClick(e, base)}
                                 >
                                     {isFrench ? 'Accueil' : 'Home'}
                                 </Link>
@@ -955,7 +957,7 @@ const NavBar = () => {
                                             className={menuOpen ? '' : 'opacity-0'}
                                         >
                                             <Link
-                                                href={isProjectPage ? `/${first.link}` : first.link}
+                                                href={isProjectPage ? `${base}${first.link}` : first.link}
                                                 className="text-4xl font-bold transition-colors duration-200"
                                                 style={{ color: 'var(--color-overlay-text)' }}
                                                 onClick={(e) => handleNavClick(e, first.link)}
@@ -973,10 +975,10 @@ const NavBar = () => {
                                             {projectBubbles.map((bubble, i) => (
                                                 <Link
                                                     key={bubble.slug}
-                                                    href={`/projects/${bubble.slug}`}
+                                                    href={`${base}/projects/${bubble.slug}`}
                                                     ref={(el) => { bubblesRef.current[i] = el }}
                                                     className="block w-7 h-7 rounded-full overflow-hidden opacity-0"
-                                                    onClick={(e) => handleNavClick(e, `/projects/${bubble.slug}`)}
+                                                    onClick={(e) => handleNavClick(e, `${base}/projects/${bubble.slug}`)}
                                                     aria-label={bubble.label}
                                                 >
                                                     <Image
@@ -997,7 +999,7 @@ const NavBar = () => {
                                             className={menuOpen ? '' : 'opacity-0'}
                                         >
                                             <Link
-                                                href={isProjectPage ? `/${link}` : link}
+                                                href={isProjectPage ? `${base}${link}` : link}
                                                 className="text-4xl font-bold transition-colors duration-200"
                                                 style={{ color: 'var(--color-overlay-text)' }}
                                                 onClick={(e) => handleNavClick(e, link)}
@@ -1166,11 +1168,11 @@ const NavBar = () => {
                             {projectBubbles.map((bubble, i) => (
                                 <Link
                                     key={bubble.slug}
-                                    href={`/projects/${bubble.slug}`}
+                                    href={`${base}/projects/${bubble.slug}`}
                                     ref={(el) => { desktopBubblesRef.current[i] = el }}
                                     className="image-wrapper group relative overflow-hidden rounded-xl opacity-0 cursor-pointer w-[200px]"
                                     style={{ background: bubble.bg }}
-                                    onClick={(e) => handleNavClick(e, `/projects/${bubble.slug}`)}
+                                    onClick={(e) => handleNavClick(e, `${base}/projects/${bubble.slug}`)}
                                     onMouseEnter={handleBubbleMouseEnter}
                                     onMouseLeave={handleBubbleMouseLeave}
                                     aria-label={bubble.label}

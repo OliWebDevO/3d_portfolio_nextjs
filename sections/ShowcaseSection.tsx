@@ -11,7 +11,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
-  const { t, projects } = useTranslation();
+  const { t, projects, locale } = useTranslation();
   const showcaseRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   useGSAP(() => {
@@ -66,7 +66,7 @@ const ShowcaseSection = () => {
               {leftProjects.map((project, idx) => (
                 <Link
                   key={project.slug}
-                  href={`/projects/${project.slug}`}
+                  href={`/${locale}/projects/${project.slug}`}
                   className="project-card group flex-1 rounded-xl transition-transform duration-300"
                 >
                   <div
@@ -101,7 +101,7 @@ const ShowcaseSection = () => {
               {rightProjects.map((project, idx) => (
                 <Link
                   key={project.slug}
-                  href={`/projects/${project.slug}`}
+                  href={`/${locale}/projects/${project.slug}`}
                   className="project-card group flex-1 rounded-xl transition-transform duration-300"
                 >
                   <div

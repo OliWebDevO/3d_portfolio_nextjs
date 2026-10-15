@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ScrollToTop() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={handleClick}
-      aria-label="Scroll to top"
+      aria-label={t.common.scrollToTop}
       className={`fixed bottom-6 right-6 z-50 size-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
@@ -29,7 +31,7 @@ export default function ScrollToTop() {
     >
       <Image
         src="/images/arrow-down.svg"
-        alt="Scroll to top"
+        alt={t.common.scrollToTop}
         width={20}
         height={20}
         className="rotate-180"

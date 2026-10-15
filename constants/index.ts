@@ -407,6 +407,17 @@ const translations = {
         title: "FAQ",
         subtitle: "❓ Common questions answered",
       },
+    },
+    common: {
+      notFoundTitle: "404",
+      notFoundText: "Page not found",
+      backHome: "Return home",
+      errorTitle: "Something went wrong!",
+      retry: "Try again",
+      scrollToTop: "Scroll to top",
+      previous: "Previous",
+      next: "Next",
+      rights: "All rights reserved.",
     }
   },
   fr: {
@@ -520,6 +531,17 @@ const translations = {
         title: "FAQ",
         subtitle: "❓ Questions fréquentes",
       },
+    },
+    common: {
+      notFoundTitle: "404",
+      notFoundText: "Page introuvable",
+      backHome: "Retour à l'accueil",
+      errorTitle: "Une erreur est survenue !",
+      retry: "Réessayer",
+      scrollToTop: "Retour en haut",
+      previous: "Précédent",
+      next: "Suivant",
+      rights: "Tous droits réservés.",
     }
   },
 };

@@ -25,7 +25,7 @@ const images = [
 ];
 
 export default function Slider() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const swiperRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState<boolean>(
     () => typeof window !== 'undefined' && window.innerWidth < 768
@@ -96,7 +96,7 @@ export default function Slider() {
           <div className="arrow-nav-wrapper">
             <Image
               src="/images/arrow-right.svg"
-              alt="Previous"
+              alt={t.common.previous}
               width={24}
               height={24}
               className="arrow-nav-icon rotate-180"
@@ -108,7 +108,7 @@ export default function Slider() {
           <div className="arrow-nav-wrapper">
             <Image
               src="/images/arrow-right.svg"
-              alt="Next"
+              alt={t.common.next}
               width={24}
               height={24}
               className="arrow-nav-icon"
@@ -132,7 +132,7 @@ export default function Slider() {
                       draggable={false}
                     />
                     <Link
-                      href={`/projects/${img.slug}`}
+                      href={`/${locale}/projects/${img.slug}`}
                       className="demo-material-label swiper-material-animate-opacity"
                     >
                       {img.label}
