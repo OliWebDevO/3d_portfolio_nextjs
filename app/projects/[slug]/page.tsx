@@ -7,6 +7,8 @@ import ProjectDetailsSection from "@/sections/ProjectDetailsSection";
 import ProjectHero from "@/sections/ProjectHero";
 import ProjectNavigation from "@/components/ProjectNavigation";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return projects.en.map(project => ({ slug: project.slug }));
 }
