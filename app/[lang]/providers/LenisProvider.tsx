@@ -10,8 +10,30 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
   const lenisRef = useRef<Lenis | null>(null)
 
   useEffect(() => {
+    // Links like /fr#work (e.g. in emails): the target section is rendered client-side and
+    // Lenis owns the scroll, so the browser's native anchor jump never happens. Wait for the
+    // section, let ScrollTrigger settle, then scroll to it.
+    let hashTimer: ReturnType<typeof setTimeout> | undefined
+    const hash = window.location.hash.slice(1)
+    if (hash) {
+      const started = Date.now()
+      const findTarget = () => {
+        const target = document.getElementById(decodeURIComponent(hash))
+        if (target) {
+          hashTimer = setTimeout(() => {
+            ScrollTrigger.refresh()
+            if (lenisRef.current) lenisRef.current.scrollTo(target, { immediate: true })
+            else target.scrollIntoView()
+          }, 800)
+        } else if (Date.now() - started < 6000) {
+          hashTimer = setTimeout(findTarget, 100)
+        }
+      }
+      findTarget()
+    }
+
     // Disable Lenis on mobile - native scroll works fine and saves CPU
-    if (window.innerWidth < 768) return;
+    if (window.innerWidth < 768) return () => clearTimeout(hashTimer);
 
     const lenis = new Lenis({
       lerp: 0.12,
@@ -65,6 +87,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
     // Cleanup
     return () => {
+      clearTimeout(hashTimer)
       clearTimeout(refreshTimeout)
       timeouts.forEach(clearTimeout)
       gsap.ticker.remove(lenis.raf)
