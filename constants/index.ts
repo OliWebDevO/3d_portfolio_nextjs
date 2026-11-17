@@ -1287,7 +1287,7 @@ const projectDetailsCards = {
       slug: "felix-zurstrassen",
       cards: [
         {
-          imgPath: "/images/felix/felix_about.webp",
+          imgPath: "/images/felix/felix_bio.webp",
           logoPath: "/images/Asset1.webp",
           title: "Félix Zurstrassen: A Jazz Musician's Home Online",
           details: [
@@ -1572,7 +1572,7 @@ const projectDetailsCards = {
       slug: "felix-zurstrassen",
       cards: [
         {
-          imgPath: "/images/felix/felix_about.webp",
+          imgPath: "/images/felix/felix_bio.webp",
           logoPath: "/images/Asset1.webp",
           title: "Félix Zurstrassen : la vitrine d'un musicien de jazz",
           details: [
