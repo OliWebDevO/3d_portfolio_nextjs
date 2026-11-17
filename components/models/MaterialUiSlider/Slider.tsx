@@ -15,6 +15,7 @@ import TitleHeader from '@/components/TitleHeader';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
+  { src: '/images/felix/felix_cover.webp', mobileSrc: '/images/slider-mobile/felix.webp', label: 'Félix Zurstrassen', slug: 'felix-zurstrassen' },
   { src: '/images/nasirian/nasirian_cover.webp', mobileSrc: '/images/slider-mobile/nasirian.webp', label: 'Nasirian Gallery', slug: 'nasirian' },
   { src: '/images/fanal_des_chats/fanal_home.webp', mobileSrc: '/images/slider-mobile/fanal.webp', label: 'Le Fanal des Chats', slug: 'fanal' },
   { src: '/images/annick1.webp', mobileSrc: '/images/slider-mobile/annick.webp', label: 'Annick', slug: 'annick' },

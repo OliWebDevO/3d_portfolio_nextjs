@@ -167,6 +167,7 @@ interface ShowcaseTranslations {
 
 
 interface ProjectsTranslations {
+  "felix-zurstrassen": ProjectTranslations;
   nasirian: ProjectTranslations;
   "ovni-compta": ProjectTranslations;
   fanal: ProjectTranslations;

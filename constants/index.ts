@@ -321,6 +321,10 @@ const translations = {
       subtitle: "Take a deeper dive"
     },
     projects: {
+      "felix-zurstrassen": {
+        title: "Félix Zurstrassen : Bilingual website for a jazz bassist & composer",
+        description: "A cinematic, music-first WordPress site with a persistent audio player, a press kit and a private space for professionals"
+      },
       nasirian: {
         title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
         description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery"
@@ -442,6 +446,10 @@ const translations = {
       subtitle: "Une plongée dans mes projets"
     },
     projects: {
+      "felix-zurstrassen": {
+        title: "Félix Zurstrassen : Site bilingue pour un bassiste et compositeur de jazz",
+        description: "Un site WordPress cinématographique centré sur la musique, avec lecteur audio permanent, kit presse et espace privé pour les professionnels"
+      },
       nasirian: {
         title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
         description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois"
@@ -1024,6 +1032,20 @@ const expLogos = [
 const projects = {
   en: [
     {
+      slug: "felix-zurstrassen",
+      title: "Félix Zurstrassen : Bilingual website for a jazz bassist & composer",
+      description: "A cinematic, music-first WordPress site with a persistent audio player, a press kit and a private space for professionals",
+      image: "/images/felix/felix_cover.webp",
+      link: "https://felixzurstrassen.com/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#111111",
+    },
+    {
       slug: "nasirian",
       title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
       description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery",
@@ -1122,6 +1144,20 @@ const projects = {
     },
   ],
   fr: [
+    {
+      slug: "felix-zurstrassen",
+      title: "Félix Zurstrassen : Site bilingue pour un bassiste et compositeur de jazz",
+      description: "Un site WordPress cinématographique centré sur la musique, avec lecteur audio permanent, kit presse et espace privé pour les professionnels",
+      image: "/images/felix/felix_cover.webp",
+      link: "https://felixzurstrassen.com/",
+      techLogos: [
+        "/images/logos/html.webp",
+        "/images/logos/css.webp",
+        "/images/logos/js.webp",
+        "/images/logos/wordpress.webp",
+      ],
+      bg: "#111111",
+    },
     {
       slug: "nasirian",
       title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
@@ -1247,6 +1283,41 @@ const socialImgs = [
 
 const projectDetailsCards = {
   en: [
+    {
+      slug: "felix-zurstrassen",
+      cards: [
+        {
+          imgPath: "/images/felix/felix_about.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "Félix Zurstrassen: A Jazz Musician's Home Online",
+          details: [
+            "Félix Zurstrassen is a Belgian electric bassist, double bassist, and composer, bandleader of the NOVA project and a sought-after sideman in jazz and pop.",
+            "The brief: replace his self-built Jimdo site with a modern, mobile-first website he can update himself — photos, texts, news, concerts — without any subscription.",
+            "The site is fully bilingual (English / French) and brings together his biography, discography, media, tour dates, and press coverage.",
+          ],
+        },
+        {
+          imgPath: "/images/felix/felix_nova.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Cinematic Design & Music First",
+          details: [
+            "Full-screen video and photography, oversized typography, and alternating dark and light sections give the site the feel of a concert stage.",
+            "A persistent audio player keeps the music playing from page to page, and only one sound plays at a time across audio, video, YouTube, and Spotify.",
+            "Album covers, video lightboxes, and a news carousel let visitors listen and watch without ever leaving the site.",
+          ],
+        },
+        {
+          imgPath: "/images/felix/felix_discography.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "GSAP Animations & Custom WordPress Theme",
+          details: [
+            "GSAP, ScrollTrigger, and Lenis drive the hero intro, stacked sections, and scroll reveals, with a fully static fallback under reduced motion.",
+            "A fully custom WordPress theme with ACF Pro and Polylang lets Félix edit every page, album, concert, and news post in both languages.",
+            "A public press kit and a hidden space for professionals, reached through a secret, non-indexed link, give organizers and musicians the material they need.",
+          ],
+        },
+      ],
+    },
     {
       slug: "nasirian",
       cards: [
@@ -1497,6 +1568,41 @@ const projectDetailsCards = {
     },
   ],
   fr: [
+    {
+      slug: "felix-zurstrassen",
+      cards: [
+        {
+          imgPath: "/images/felix/felix_about.webp",
+          logoPath: "/images/Asset1.webp",
+          title: "Félix Zurstrassen : la vitrine d'un musicien de jazz",
+          details: [
+            "Félix Zurstrassen est un bassiste, contrebassiste et compositeur belge, leader du projet NOVA et sideman recherché en jazz comme en pop.",
+            "Le brief : remplacer son site Jimdo fait maison par un site moderne, pensé mobile, qu'il peut mettre à jour lui-même — photos, textes, actualités, concerts — sans abonnement.",
+            "Le site est entièrement bilingue (anglais / français) et réunit biographie, discographie, médias, agenda des concerts et revue de presse.",
+          ],
+        },
+        {
+          imgPath: "/images/felix/felix_nova.webp",
+          logoPath: "/images/Asset2.webp",
+          title: "Design cinématographique & musique avant tout",
+          details: [
+            "Vidéos et photos plein écran, typographie surdimensionnée et alternance de sections sombres et claires donnent au site l'allure d'une scène de concert.",
+            "Un lecteur audio permanent garde la musique d'une page à l'autre, et un seul son joue à la fois entre audio, vidéo, YouTube et Spotify.",
+            "Pochettes d'albums, vidéos en lightbox et carrousel d'actualités permettent d'écouter et de regarder sans quitter le site.",
+          ],
+        },
+        {
+          imgPath: "/images/felix/felix_discography.webp",
+          logoPath: "/images/Asset3.webp",
+          title: "Animations GSAP & thème WordPress sur mesure",
+          details: [
+            "GSAP, ScrollTrigger et Lenis orchestrent l'intro du hero, les sections empilées et les révélations au scroll, avec une version entièrement statique si le visiteur réduit les animations.",
+            "Un thème WordPress entièrement sur mesure, avec ACF Pro et Polylang, permet à Félix de modifier chaque page, album, concert et actualité dans les deux langues.",
+            "Un kit presse public et un espace caché pour les professionnels, accessible par un lien secret non indexé, donnent aux organisateurs et musiciens tout le matériel nécessaire.",
+          ],
+        },
+      ],
+    },
     {
       slug: "nasirian",
       cards: [
