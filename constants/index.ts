@@ -322,7 +322,7 @@ const translations = {
     },
     projects: {
       lesarts: {
-        title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
+        title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
         description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery"
       },
       "ovni-compta": {
@@ -387,9 +387,6 @@ const translations = {
     projectpage: {
       visitProject: "Visit Project"
     },
-    badges: {
-      inDevelopment: "In Development"
-    },
     home: {
       services: {
         title: "Services",
@@ -446,7 +443,7 @@ const translations = {
     },
     projects: {
       lesarts: {
-        title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
+        title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
         description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois"
       },
       "ovni-compta": {
@@ -510,9 +507,6 @@ const translations = {
     },
     projectpage: {
       visitProject: "Visiter le projet"
-    },
-    badges: {
-      inDevelopment: "En Développement"
     },
     home: {
       services: {
@@ -1031,10 +1025,10 @@ const projects = {
   en: [
     {
       slug: "lesarts",
-      title: "LESARTS : Bold showcase site for a custom framing atelier & art gallery",
+      title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
       description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery",
-      image: "/images/lesarts/lesarts_cover_v2.webp",
-      link: "https://www.versiontest.site/",
+      image: "/images/nasirian/nasirian_cover.webp",
+      link: "https://www.nasiriangallery.com/",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
@@ -1130,10 +1124,10 @@ const projects = {
   fr: [
     {
       slug: "lesarts",
-      title: "LESARTS : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
+      title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
       description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois",
-      image: "/images/lesarts/lesarts_cover_v2.webp",
-      link: "https://www.versiontest.site/",
+      image: "/images/nasirian/nasirian_cover.webp",
+      link: "https://www.nasiriangallery.com/",
       techLogos: [
         "/images/logos/html.webp",
         "/images/logos/css.webp",
@@ -1257,17 +1251,17 @@ const projectDetailsCards = {
       slug: "lesarts",
       cards: [
         {
-          imgPath: "/images/lesarts/lesarts_atelier.webp",
+          imgPath: "/images/nasirian/nasirian_atelier.webp",
           logoPath: "/images/Asset1.webp",
-          title: "LESARTS: A Framing Atelier, Reimagined Online",
+          title: "Nasirian Gallery: A Framing Atelier, Reimagined Online",
           details: [
-            "LESARTS is a Brussels atelier specialized in custom framing, based on rue du Bailli in Ixelles, where every artwork, photo, and poster is sublimated with precision and passion.",
+            "Nasirian Gallery & Framing is a Brussels atelier specialized in custom framing, based on rue du Bailli in Ixelles, where every artwork, photo, and poster is sublimated with precision and passion.",
             "The brief: a bold, modern, high-impact showcase site that feels as crafted as the framing itself — built to draw visitors in and let the work breathe.",
             "This showcase is phase one of a larger vision: an online store and a custom management app will follow to handle quotes, orders, and the gallery's day-to-day.",
           ],
         },
         {
-          imgPath: "/images/lesarts/lesarts_realisations.webp",
+          imgPath: "/images/nasirian/nasirian_realisations.webp",
           logoPath: "/images/Asset2.webp",
           title: "Bold Design & Crafted Experience",
           details: [
@@ -1277,13 +1271,13 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lesarts/lesarts_services.webp",
+          imgPath: "/images/nasirian/nasirian_galerie.webp",
           logoPath: "/images/Asset3.webp",
-          title: "GSAP Animations & WordPress-Ready",
+          title: "GSAP Animations & Custom WordPress Theme",
           details: [
             "Rich GSAP and ScrollTrigger animations drive scroll reveals, transitions, and micro-interactions that bring the atelier's universe to life.",
-            "The site will be transformed into a fully custom WordPress theme so the client can edit galleries, services, and content autonomously — no developer needed.",
-            "Currently in active development, this prototype lays the foundation for the upcoming e-commerce store and management application.",
+            "Built as a fully custom WordPress theme, the site lets the client edit galleries, services, and content autonomously — no developer needed.",
+            "Now live at nasiriangallery.com, the site lays the foundation for the upcoming e-commerce store and management application.",
           ],
         },
       ],
@@ -1507,17 +1501,17 @@ const projectDetailsCards = {
       slug: "lesarts",
       cards: [
         {
-          imgPath: "/images/lesarts/lesarts_atelier.webp",
+          imgPath: "/images/nasirian/nasirian_atelier.webp",
           logoPath: "/images/Asset1.webp",
-          title: "LESARTS : Un atelier d'encadrement, réinventé en ligne",
+          title: "Nasirian Gallery : Un atelier d'encadrement, réinventé en ligne",
           details: [
-            "LESARTS est un atelier bruxellois spécialisé dans l'encadrement sur mesure, situé rue du Bailli à Ixelles, où chaque œuvre, photo et affiche est sublimée avec précision et passion.",
+            "Nasirian Gallery & Framing est un atelier bruxellois spécialisé dans l'encadrement sur mesure, situé rue du Bailli à Ixelles, où chaque œuvre, photo et affiche est sublimée avec précision et passion.",
             "Le brief : un site vitrine audacieux, moderne et percutant, aussi soigné que l'encadrement lui-même — pensé pour capter le visiteur et laisser respirer les œuvres.",
             "Cette vitrine n'est que la première étape d'une vision plus large : une boutique en ligne et une application de gestion sur mesure suivront pour gérer devis, commandes et le quotidien de la galerie.",
           ],
         },
         {
-          imgPath: "/images/lesarts/lesarts_realisations.webp",
+          imgPath: "/images/nasirian/nasirian_realisations.webp",
           logoPath: "/images/Asset2.webp",
           title: "Design audacieux & expérience soignée",
           details: [
@@ -1527,13 +1521,13 @@ const projectDetailsCards = {
           ],
         },
         {
-          imgPath: "/images/lesarts/lesarts_services.webp",
+          imgPath: "/images/nasirian/nasirian_galerie.webp",
           logoPath: "/images/Asset3.webp",
-          title: "Animations GSAP & prêt pour WordPress",
+          title: "Animations GSAP & thème WordPress sur mesure",
           details: [
             "De riches animations GSAP et ScrollTrigger orchestrent révélations au scroll, transitions et micro-interactions qui donnent vie à l'univers de l'atelier.",
-            "Le site sera transformé en thème WordPress entièrement sur mesure pour que le client modifie galeries, services et contenu en toute autonomie — sans développeur.",
-            "Actuellement en cours de réalisation, ce prototype pose les fondations du futur e-commerce et de l'application de gestion.",
+            "Développé comme un thème WordPress entièrement sur mesure, le site permet au client de modifier galeries, services et contenu en toute autonomie — sans développeur.",
+            "Désormais en ligne sur nasiriangallery.com, le site pose les fondations du futur e-commerce et de l'application de gestion.",
           ],
         },
       ],

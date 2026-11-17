@@ -213,10 +213,6 @@ interface ProjectPageTranslations {
   visitProject: string;
 }
 
-interface BadgesTranslations {
-  inDevelopment: string;
-}
-
 interface CtaTranslations {
   create: string;
   contact: string;
@@ -245,7 +241,6 @@ interface Translations {
   techstack: TechStackTranslations;
   contact: ContactTranslations;
   projectpage: ProjectPageTranslations;
-  badges: BadgesTranslations;
   home: HomeTranslations;
   cta: CtaTranslations;
   common: CommonTranslations;
