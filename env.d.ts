@@ -167,7 +167,7 @@ interface ShowcaseTranslations {
 
 
 interface ProjectsTranslations {
-  lesarts: ProjectTranslations;
+  nasirian: ProjectTranslations;
   "ovni-compta": ProjectTranslations;
   fanal: ProjectTranslations;
   artgallery: ProjectTranslations;

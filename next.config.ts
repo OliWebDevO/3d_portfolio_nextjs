@@ -39,6 +39,13 @@ const nextConfig: NextConfig = {
       }
     ]
   },
+  // Lesarts was renamed Nasirian Gallery: keep the old project URLs working
+  async redirects() {
+    return [
+      { source: '/:locale(fr|en)/projects/lesarts', destination: '/:locale/projects/nasirian', statusCode: 301 },
+      { source: '/projects/lesarts', destination: '/fr/projects/nasirian', statusCode: 301 },
+    ]
+  },
   experimental: {
     optimizePackageImports: ['gsap', 'three', '@react-three/drei', 'swiper'],
     globalNotFound: true,

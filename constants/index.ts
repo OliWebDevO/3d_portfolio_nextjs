@@ -321,7 +321,7 @@ const translations = {
       subtitle: "Take a deeper dive"
     },
     projects: {
-      lesarts: {
+      nasirian: {
         title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
         description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery"
       },
@@ -442,7 +442,7 @@ const translations = {
       subtitle: "Une plongée dans mes projets"
     },
     projects: {
-      lesarts: {
+      nasirian: {
         title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
         description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois"
       },
@@ -1024,7 +1024,7 @@ const expLogos = [
 const projects = {
   en: [
     {
-      slug: "lesarts",
+      slug: "nasirian",
       title: "Nasirian Gallery : Bold showcase site for a custom framing atelier & art gallery",
       description: "An audacious, animation-rich showcase for a Brussels framing workshop and gallery",
       image: "/images/nasirian/nasirian_cover.webp",
@@ -1123,7 +1123,7 @@ const projects = {
   ],
   fr: [
     {
-      slug: "lesarts",
+      slug: "nasirian",
       title: "Nasirian Gallery : Site vitrine audacieux pour un atelier d'encadrement & galerie d'art",
       description: "Une vitrine percutante et animée pour un atelier d'encadrement et une galerie bruxellois",
       image: "/images/nasirian/nasirian_cover.webp",
@@ -1248,7 +1248,7 @@ const socialImgs = [
 const projectDetailsCards = {
   en: [
     {
-      slug: "lesarts",
+      slug: "nasirian",
       cards: [
         {
           imgPath: "/images/nasirian/nasirian_atelier.webp",
@@ -1498,7 +1498,7 @@ const projectDetailsCards = {
   ],
   fr: [
     {
-      slug: "lesarts",
+      slug: "nasirian",
       cards: [
         {
           imgPath: "/images/nasirian/nasirian_atelier.webp",
