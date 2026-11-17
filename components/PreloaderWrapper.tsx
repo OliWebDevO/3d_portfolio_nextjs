@@ -2,12 +2,6 @@
 import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
 import Hero from "@/sections/Hero";
-import { usePreloader } from "@/hooks/usePreloader";
-
-const Preloader = dynamic(
-  () => import("@/components/Lottie/LottiePreloader"),
-  { ssr: false }
-);
 
 const Slider = dynamic(() => import("@/components/models/MaterialUiSlider/Slider"), {
   ssr: false,
@@ -39,11 +33,8 @@ const Footer = dynamic(() => import("@/sections/Footer"), {
 });
 
 export default function PreloaderWrapper() {
-  const loading = usePreloader();
-
   return (
     <>
-      {loading && <Preloader />}
       <main>
         <NavBar />
         <Hero />

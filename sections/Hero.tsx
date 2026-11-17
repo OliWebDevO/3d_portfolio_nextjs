@@ -50,7 +50,7 @@ const Hero = () => {
 return (
     <section id="hero" className="relative overflow-hidden 3xl:px-20 2xl:px-10 xl:px-6">
         <div className="hero-bg absolute top-0 left-0 z-10">
-            <Image src="/images/bg.webp" alt="background" width={1920} height={1080} priority quality={80} sizes="100vw" />
+            <Image src="/images/bg.webp" alt="background" width={1920} height={1080} loading="eager" fetchPriority="high" quality={80} sizes="100vw" />
         </div>
         {/* Triangle image composition — light mode, xl+ only */}
         {!isDark && (
