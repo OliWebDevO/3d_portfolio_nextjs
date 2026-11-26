@@ -697,6 +697,29 @@ const NavBar = () => {
         }
     }, [desktopContactOpen, buildDesktopTimeline])
 
+    // Other components open the contact form (e.g. "Request a quote" on service pages):
+    // window.dispatchEvent(new CustomEvent('open-contact', { detail: { subject } }))
+    useEffect(() => {
+        const onOpenContact = (e: Event) => {
+            const subject = (e as CustomEvent<{ subject?: string }>).detail?.subject
+            if (subject) setContactForm(form => ({ ...form, subject }))
+            if (window.innerWidth >= 768) {
+                if (!desktopContactOpen) toggleDesktopContact()
+            } else if (!menuOpen) {
+                toggleMenu()
+                // Play the menu opening faster, then show the form once it has finished
+                const tl = tlRef.current
+                const speed = 3
+                tl?.timeScale(speed)
+                setTimeout(showMobileContact, ((tl?.duration() ?? 1) / speed) * 1000)
+            } else if (!mobileContactRef.current) {
+                showMobileContact()
+            }
+        }
+        window.addEventListener('open-contact', onOpenContact)
+        return () => window.removeEventListener('open-contact', onOpenContact)
+    }, [desktopContactOpen, menuOpen, toggleDesktopContact, toggleMenu, showMobileContact])
+
     const forceScrollTo = (hash: string) => {
         const el = document.querySelector(hash)
         if (el) {

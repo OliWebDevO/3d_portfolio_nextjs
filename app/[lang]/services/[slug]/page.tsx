@@ -109,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string;
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <NavBar />
-      <ServiceHero service={service} cta={ui.cta} priceCaption={ui.priceCaption} quoteHref={quoteHref} />
+      <ServiceHero service={service} cta={ui.cta} priceCaption={ui.priceCaption} quoteSubject={ui.quoteSubject} quoteHref={quoteHref} />
       <ProjectDetailsSection cards={service.cards} />
       <StepsSection steps={service.steps} title={ui.stepsTitle} />
       <FAQSection categories={[{ category: ui.faqCategory, items: service.faq }]} title={ui.faqTitle} />

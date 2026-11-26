@@ -1,9 +1,9 @@
 import Image from "next/image";
-import ProjectButton from "@/components/ProjectButton";
+import QuoteButton from "@/components/QuoteButton";
 import type { ServiceType } from "@/constants/services";
 
 // Same layout as ProjectHero (.detail-hero), with the price crest and a quote button
-export default function ServiceHero({ service, cta, priceCaption, quoteHref }: { service: ServiceType; cta: string; priceCaption: string; quoteHref: string }) {
+export default function ServiceHero({ service, cta, priceCaption, quoteSubject, quoteHref }: { service: ServiceType; cta: string; priceCaption: string; quoteSubject: string; quoteHref: string }) {
   return (
     <section className="detail-hero">
       <div className="detail-hero__layout">
@@ -36,7 +36,7 @@ export default function ServiceHero({ service, cta, priceCaption, quoteHref }: {
               <span className="price-badge__amount">{service.priceLabel}</span>
             </span>
           </div>
-          <ProjectButton className="md:w-[26rem] md:h-16 w-72 h-14" text={cta} href={quoteHref} />
+          <QuoteButton className="md:w-[26rem] md:h-16 w-72 h-14" text={cta} subject={quoteSubject} fallbackHref={quoteHref} />
         </div>
       </div>
     </section>
