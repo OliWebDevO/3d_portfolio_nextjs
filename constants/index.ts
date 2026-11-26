@@ -259,18 +259,21 @@ const productCards = {
       description: "A professional online presence with WordPress admin so you can manage your content independently.",
       features: ["Custom Design", "WordPress CMS", "SEO Optimized", "Responsive"],
       imgPath: "/images/products/showcase.svg",
+      slug: "site-vitrine",
     },
     {
       title: "Interactive Platform",
       description: "Dynamic web applications with advanced features: member areas, bookings, payments.",
       features: ["Custom Features", "User Accounts", "API Integrations", "Interactive UI"],
       imgPath: "/images/products/platform.svg",
+      slug: "plateforme-interactive",
     },
     {
       title: "Management App",
       description: "Custom-built tools to optimize your operations and workflows.",
       features: ["Dashboard", "Role-Based Access", "Data Management", "Automation"],
       imgPath: "/images/products/management.svg",
+      slug: "application-de-gestion",
     },
   ],
   fr: [
@@ -279,18 +282,21 @@ const productCards = {
       description: "Présence en ligne professionnelle avec WordPress admin pour gérer le contenu en autonomie.",
       features: ["Design sur mesure", "CMS WordPress", "Optimisé SEO", "Responsive"],
       imgPath: "/images/products/showcase.svg",
+      slug: "site-vitrine",
     },
     {
       title: "Plateforme Interactive",
       description: "Applications web dynamiques avec fonctionnalités avancées : espace membre, réservations, paiement.",
       features: ["Fonctionnalités sur mesure", "Comptes utilisateurs", "Intégrations API", "Interface interactive"],
       imgPath: "/images/products/platform.svg",
+      slug: "plateforme-interactive",
     },
     {
       title: "Application de Gestion",
       description: "Outils sur mesure pour optimiser opérations et flux de travail.",
       features: ["Tableau de bord", "Accès par rôles", "Gestion de données", "Automatisation"],
       imgPath: "/images/products/management.svg",
+      slug: "application-de-gestion",
     },
   ],
 };

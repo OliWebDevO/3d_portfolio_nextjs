@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useTheme } from '@/contexts/ThemeContext'
 
-const ProjectNavigation = ({ slug }: { slug: string }) => {
-  const { projects, locale } = useTranslation()
+const ProjectNavigation = ({ slug, items, basePath = 'projects' }: { slug: string; items?: { slug: string; title: string }[]; basePath?: string }) => {
+  const { projects: allProjects, locale } = useTranslation()
+  const projects = items ?? allProjects
   const { isDark } = useTheme()
 
   const currentIndex = projects.findIndex((p) => p.slug === slug)
@@ -20,7 +21,7 @@ const ProjectNavigation = ({ slug }: { slug: string }) => {
   return (
     <nav className="w-full flex justify-between items-center md:px-20 px-5 pt-32 md:pt-44 pb-16">
       <Link
-        href={`/${locale}/projects/${prev.slug}`}
+        href={`/${locale}/${basePath}/${prev.slug}`}
         className="group flex items-center gap-4 text-th-muted hover:text-th-text transition-colors"
       >
         <div
@@ -41,7 +42,7 @@ const ProjectNavigation = ({ slug }: { slug: string }) => {
       </Link>
 
       <Link
-        href={`/${locale}/projects/${next.slug}`}
+        href={`/${locale}/${basePath}/${next.slug}`}
         className="group flex items-center gap-4 text-th-muted hover:text-th-text transition-colors text-right"
       >
         <span className="text-sm md:text-base line-clamp-1">{next.title}</span>

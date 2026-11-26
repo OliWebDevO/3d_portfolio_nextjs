@@ -30,8 +30,9 @@ const stepGradients = [
 
 gsap.registerPlugin(ScrollTrigger)
 
-const StepsSection = () => {
-  const { t, processSteps, locale } = useTranslation();
+const StepsSection = ({ steps, title }: { steps?: StepType[]; title?: string } = {}) => {
+  const { t, processSteps: homeSteps, locale } = useTranslation();
+  const processSteps = steps ?? homeSteps;
   const sectionRef = useRef<HTMLElement>(null);
 
 
@@ -119,7 +120,7 @@ const StepsSection = () => {
   return (
     <section id="process" ref={sectionRef} className="w-full section-padding pb-44">
         <div className="w-full h-full md:px-20 px-5">
-            <TitleHeader title={t.home.process.title} sub={t.home.process.subtitle} cn="mb-28"/>
+            <TitleHeader title={title ?? t.home.process.title} sub={t.home.process.subtitle} cn="mb-28"/>
             <div className="mt-3 relative">
                 <div className="relative z-50">
                     {/* Lines inside z-50 but outside space-y */}

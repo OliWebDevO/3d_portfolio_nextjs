@@ -787,7 +787,7 @@ const NavBar = () => {
     }
 
     const path = pathname?.replace(new RegExp(`^/${locale}(?=/|$)`), '') || '/'
-    const isProjectPage = path.startsWith('/projects/')
+    const isProjectPage = /^\/(projects|services)\//.test(path)
     isProjectPageRef.current = !!isProjectPage
     const isHomePage = path === '/'
     const isResumePage = path === '/resume'

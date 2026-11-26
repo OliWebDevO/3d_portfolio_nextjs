@@ -18,8 +18,9 @@ const categoryGradients = [
   "from-[#67e8f9] to-[#083344]", // cyan
 ]
 
-const FAQSection = () => {
-  const { t, faqItems, locale } = useTranslation()
+const FAQSection = ({ categories, title }: { categories?: FaqCategoryType[]; title?: string } = {}) => {
+  const { t, faqItems: homeFaqItems, locale } = useTranslation()
+  const faqItems = categories ?? homeFaqItems
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
   const answerRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
@@ -70,7 +71,7 @@ const FAQSection = () => {
   return (
     <div id="faq" className="flex-center section-padding">
       <div className="w-full h-full 3xl:px-28 2xl:px-20 xl:px-12">
-        <TitleHeader title={t.home.faq.title} sub={t.home.faq.subtitle} />
+        <TitleHeader title={title ?? t.home.faq.title} sub={t.home.faq.subtitle} />
         <div className="mt-16 max-w-4xl mx-auto flex flex-col gap-10">
           {faqItems.map((category, catIdx) => (
             <div key={catIdx} className="faq-category">

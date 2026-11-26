@@ -5,9 +5,10 @@ import TitleHeader from "../components/TitleHeader"
 import { gsap } from "gsap"
 import { useTranslation } from "@/hooks/useTranslation"
 import Image from "next/image"
+import Link from "next/link"
 
 const ProductsSection = () => {
-    const { t, productCards } = useTranslation();
+    const { t, productCards, locale } = useTranslation();
     const cardRefs = useRef<HTMLDivElement[]>([]);
 
     const handleMouseMove = (index: number) => (e: React.MouseEvent<HTMLDivElement>) => {
@@ -61,7 +62,12 @@ const ProductsSection = () => {
                                     loading="lazy"
                                 />
                             </div>
-                            <h3 className="text-2xl font-semibold text-th-text">{product.title}</h3>
+                            <h3 className="text-2xl font-semibold text-th-text">
+                                {/* Stretched link: the whole card opens the service page */}
+                                <Link href={`/${locale}/services/${product.slug}`} className="after:absolute after:inset-0 after:z-20">
+                                    {product.title}
+                                </Link>
+                            </h3>
                             <p className="text-th-muted text-lg md:text-justify">{product.description}</p>
                             <ul className="mt-auto flex flex-col gap-3">
                                 {product.features.map((feature) => (

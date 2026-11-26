@@ -16,7 +16,7 @@ function getSlug(param: string | string[] | undefined): string {
   return param || "";
 }
 
-const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => {
+const ProjectDetailsSection = ({ slug: staticSlug, cards }: { slug?: string; cards?: ProjectDetailCard[] } = {}) => {
     const { projectDetailsCards } = useTranslation();
     const sectionRef = useRef<HTMLElement>(null);
     // Always call useParams
@@ -25,7 +25,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
 
     // Prefer staticSlug if provided, otherwise use paramSlug
     const slug = staticSlug || paramSlug;
-    const details = projectDetailsCards?.find(p => p.slug === slug)?.cards;
+    const details = cards ?? projectDetailsCards?.find(p => p.slug === slug)?.cards;
 
     useGSAP(() => {
         if (!details) return;
@@ -77,7 +77,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
     }, { scope: sectionRef, dependencies: [details], revertOnUpdate: true })
 
     // Don't render if projectDetailsCards is not loaded yet
-    if (!projectDetailsCards || !details) {
+    if (!details) {
         return <div>Loading...</div>;
     }
 
@@ -91,7 +91,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                            <div className="xl:w-2/6">
                                 <GlowCardDetails index={index}>
                                     <div>
-                                        <Image className="rounded-lg" src={card.imgPath} alt={card.imgPath} width={400} height={300} quality={80} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
+                                        <Image className="rounded-lg" src={card.imgPath} alt={card.title} width={400} height={300} quality={80} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
                                     </div>
                                 </GlowCardDetails>
                             </div>

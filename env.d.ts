@@ -102,6 +102,7 @@ interface StepType {
 }
 
 interface ProductCardType {
+  slug: string;
   title: string;
   description: string;
   features: string[];
