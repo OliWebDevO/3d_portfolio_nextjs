@@ -262,7 +262,7 @@ const productCards = {
       slug: "site-vitrine",
     },
     {
-      title: "Interactive Platform & E-commerce",
+      title: "Platform & E‑commerce",
       description: "Dynamic web applications with advanced features: online shop, member areas, bookings, payments.",
       features: ["Custom Features", "User Accounts", "API Integrations", "Interactive UI"],
       imgPath: "/images/products/platform.svg",
@@ -285,7 +285,7 @@ const productCards = {
       slug: "site-vitrine",
     },
     {
-      title: "Plateforme Interactive & E-commerce",
+      title: "Plateforme & E‑commerce",
       description: "Applications web dynamiques avec fonctionnalités avancées : boutique en ligne, espace membre, réservations, paiement.",
       features: ["Fonctionnalités sur mesure", "Comptes utilisateurs", "Intégrations API", "Interface interactive"],
       imgPath: "/images/products/platform.svg",
