@@ -301,7 +301,7 @@ const translations = {
       contact: "Contact"
     },
     hero: {
-      shaping: "Shapping",
+      shaping: "Shaping",
       intoRealProjects: "into concrete solutions",
       deliverResults: "",
       description: "Based in Brussels, I turn your ideas into striking showcase websites, interactive web platforms or full-featured management apps, designed to simplify your day-to-day.",

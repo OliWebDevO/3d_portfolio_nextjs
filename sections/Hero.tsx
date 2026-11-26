@@ -27,7 +27,7 @@ const Hero = () => {
     const { isDark } = useTheme();
 
     useGSAP(() => {
-        gsap.fromTo('.hero-text h1',
+        gsap.fromTo('.hero-text > span',
             { y: 50, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
         )
@@ -108,8 +108,8 @@ return (
             {/* LEFT : CONTENT */}
             <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
                 <div className="flex flex-col gap-16 md:gap-7">
-                    <div className="hero-text mt-8 md:mt-0">
-                        <h1>
+                    <h1 className="hero-text mt-8 md:mt-0">
+                        <span>
                             {t.hero.shaping}
                             {isFrench && <br className="md:hidden" />}
                             <span className="slide">
@@ -129,10 +129,10 @@ return (
                                     ))}
                                 </span>
                             </span>
-                        </h1>
-                        <h1>{t.hero.intoRealProjects}</h1>
-                        <h1>{t.hero.deliverResults}</h1>
-                    </div>
+                        </span>
+                        <span>{t.hero.intoRealProjects}</span>
+                        <span>{t.hero.deliverResults}</span>
+                    </h1>
                     <p className="text-th-muted md:text-xl relative z-10 pointer-events-none md:max-w-[50%]">
                         {t.hero.description}
                     </p>

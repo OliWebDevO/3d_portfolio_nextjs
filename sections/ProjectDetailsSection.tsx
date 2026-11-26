@@ -106,7 +106,7 @@ const ProjectDetailsSection = ({ slug: staticSlug }: { slug?: string } = {}) => 
                                             <Image src={card.logoPath} alt="logo" width={60} height={60} loading="lazy" />
                                         </div>
                                         <div className="">
-                                            <h1 className="font-semibold text-3xl">{card.title}</h1>
+                                            <h2 className="font-semibold text-3xl">{card.title}</h2>
                                             <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-th-muted">
                                                 {card.details?.map((detail, index) => (
                                                     <li key={index} className="text-lg md:text-justify">

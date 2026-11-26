@@ -86,7 +86,7 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
               />
             ))}
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h2>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h1>
           <p className="text-th-muted md:text-xl mt-4">{project.description}</p>
           <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text={t.projectpage.visitProject} href={project.link}/>
         </div>

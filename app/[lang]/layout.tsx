@@ -119,6 +119,7 @@ const schemaText = {
     serviceName: "Oliver Van Droogenbroeck - Développement web",
     serviceType: "Développement web",
     catalog: "Services de développement web",
+    audience: ["Petites entreprises et indépendants", "ASBL et associations", "Artistes et créatifs"],
     offers: [
       { name: "Sites vitrines", description: "Sites vitrines sur mesure avec WordPress, administrables en toute autonomie" },
       { name: "Plateformes web interactives", description: "Applications web dynamiques : espace membre, réservations, paiement" },
@@ -137,6 +138,7 @@ const schemaText = {
     serviceName: "Oliver Van Droogenbroeck Web Development Services",
     serviceType: "Web Development",
     catalog: "Web Development Services",
+    audience: ["Small businesses and self-employed professionals", "Non-profits (ASBL)", "Artists and creatives"],
     offers: [
       { name: "Showcase websites", description: "Custom showcase websites built with WordPress, easy to manage on your own" },
       { name: "Interactive web platforms", description: "Dynamic web applications: member area, bookings, payment" },
@@ -152,8 +154,11 @@ function structuredData(lang: Language) {
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://www.olivervdb.com/#person",
       name: "Oliver Van Droogenbroeck",
       url: `https://www.olivervdb.com/${lang}`,
+      email: "contact@olivervdb.com",
+      knowsLanguage: ["fr", "en"],
       image: "https://www.olivervdb.com/images/portfolioCover.webp",
       description: x.personDescription,
       sameAs: [
@@ -161,7 +166,6 @@ function structuredData(lang: Language) {
         "https://github.com/OliWebDevO",
       ],
       jobTitle: x.jobTitle,
-      worksFor: { "@type": "Organization", name: "Freelance" },
       address: {
         "@type": "PostalAddress",
         addressCountry: "BE",
@@ -182,10 +186,11 @@ function structuredData(lang: Language) {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://www.olivervdb.com/#website",
       name: x.siteName,
       url: `https://www.olivervdb.com/${lang}`,
       description: x.siteDescription,
-      author: { "@type": "Person", name: "Oliver Van Droogenbroeck" },
+      author: { "@id": "https://www.olivervdb.com/#person" },
       inLanguage: lang,
       isAccessibleForFree: true,
       keywords: x.siteKeywords,
@@ -193,10 +198,25 @@ function structuredData(lang: Language) {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://www.olivervdb.com/#service",
       name: x.serviceName,
-      provider: { "@type": "Person", name: "Oliver Van Droogenbroeck" },
+      url: `https://www.olivervdb.com/${lang}`,
+      email: "contact@olivervdb.com",
+      image: "https://www.olivervdb.com/images/portfolioCover.webp",
+      description: x.personDescription,
+      founder: { "@id": "https://www.olivervdb.com/#person" },
+      provider: { "@id": "https://www.olivervdb.com/#person" },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "BE",
+        addressLocality: x.locality,
+      },
       serviceType: x.serviceType,
-      areaServed: { "@type": "Country", name: x.region },
+      areaServed: [
+        { "@type": "City", name: x.locality },
+        { "@type": "Country", name: x.region },
+      ],
+      audience: x.audience.map((audienceType) => ({ "@type": "BusinessAudience", audienceType })),
       inLanguage: lang,
       hasOfferCatalog: {
         "@type": "OfferCatalog",

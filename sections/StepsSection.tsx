@@ -150,13 +150,13 @@ const StepsSection = () => {
                                             </div>
                                         </div>
                                         <div className="step-content min-w-0 max-w-[calc(100vw-8rem)] md:max-w-none">
-                                            <h1 className="font-semibold text-3xl flex gap-3 md:h-20 h-10 items-baseline mb-5 md:-translate-y-6 -translate-y-2">
+                                            <h3 className="font-semibold text-3xl flex gap-3 md:h-20 h-10 items-baseline mb-5 md:-translate-y-6 -translate-y-2">
                                                 <span className={`text-5xl md:text-7xl font-black bg-gradient-to-b ${stepGradients[index % stepGradients.length]} bg-clip-text text-transparent`}>
                                                     {step.number}
                                                 </span>
                                                 <span className="-translate-y-1 hidden md:inline">{step.title}</span>
                                                 <span className="-translate-y-1 md:hidden">{step.shortTitle}</span>
-                                            </h1>
+                                            </h3>
                                             <div className="card-inverted card-steps bg-th-surface border border-th-border rounded-xl p-5 flex flex-col gap-3">
                                                 {step.checkpoints.map((point, i) => (
                                                     <div key={i} className="flex items-start gap-3">
