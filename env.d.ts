@@ -112,7 +112,7 @@ interface ProductCardType {
 interface HomeTranslations {
   services: { title: string; subtitle: string };
   process: { title: string; subtitle: string };
-  products: { title: string; subtitle: string };
+  products: { title: string; subtitle: string; more: string };
   faq: { title: string; subtitle: string };
 }
 

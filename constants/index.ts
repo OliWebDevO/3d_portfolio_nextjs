@@ -409,6 +409,7 @@ const translations = {
       products: {
         title: "Products",
         subtitle: "📦 What I build",
+        more: "Explore the service",
       },
       faq: {
         title: "FAQ",
@@ -534,6 +535,7 @@ const translations = {
       products: {
         title: "Produits",
         subtitle: "📦 Ce que je construis",
+        more: "Découvrir le service",
       },
       faq: {
         title: "FAQ",

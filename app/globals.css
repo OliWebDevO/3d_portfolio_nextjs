@@ -322,6 +322,49 @@ section {
     }
   }
 
+  /* Home product cards link to the service pages: lift on hover / keyboard focus.
+     `top` (the card is position: relative) because GSAP writes inline transform/translate on .product-card */
+  .product-card {
+    top: 0;
+    transition: top 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  }
+  .product-card:hover,
+  .product-card:has(.product-card__link:focus-visible) {
+    top: -8px;
+    box-shadow: 0 24px 48px -24px rgba(167, 139, 250, 0.55);
+  }
+  .product-card:has(.product-card__link:focus-visible) {
+    outline: 2px solid #a78bfa;
+    outline-offset: 4px;
+  }
+  .product-card__link:focus-visible {
+    outline: none;
+  }
+  .product-card__more {
+    @apply inline-flex items-center gap-2 text-base font-medium;
+    color: var(--color-text);
+  }
+  .product-card__more svg {
+    transition: translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .product-card:hover .product-card__more svg,
+  .product-card:has(.product-card__link:focus-visible) .product-card__more svg {
+    translate: 6px 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .product-card__more svg {
+      transition: none;
+    }
+    .product-card:hover,
+    .product-card:has(.product-card__link:focus-visible) {
+      top: 0;
+    }
+    .product-card:hover .product-card__more svg {
+      translate: none;
+    }
+  }
+
   /* Header of project and service pages: image + content, fills the first screen */
   .detail-hero {
     @apply w-full min-h-svh flex items-center px-5 md:px-20 pt-32 pb-16 md:pt-40 md:pb-24;
