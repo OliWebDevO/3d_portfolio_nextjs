@@ -171,7 +171,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
     },
     {
       slug: "plateforme-interactive",
-      name: "Plateforme & e-commerce",
+      name: "Plateforme interactive",
       title: "Plateforme web interactive et e-commerce sur mesure",
       description:
         "Un site qui va plus loin qu'une vitrine : boutique en ligne, dons, réservations, espace membre, formulaires avancés. Des fonctionnalités pensées pour votre activité, faciles à gérer au quotidien.",
@@ -551,7 +551,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
     },
     {
       slug: "plateforme-interactive",
-      name: "Platform & e-commerce",
+      name: "Interactive platform",
       title: "Custom interactive web platform and e-commerce",
       description:
         "A site that goes beyond a showcase: online shop, donations, bookings, member area, advanced forms. Features designed around your business, easy to manage day to day.",
