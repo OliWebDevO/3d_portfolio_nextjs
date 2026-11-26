@@ -122,7 +122,7 @@ const schemaText = {
     audience: ["Petites entreprises et indépendants", "ASBL et associations", "Artistes et créatifs"],
     offers: [
       { name: "Sites vitrines", description: "Sites vitrines sur mesure avec WordPress, administrables en toute autonomie" },
-      { name: "Plateformes web interactives", description: "Applications web dynamiques : espace membre, réservations, paiement" },
+      { name: "Plateformes web interactives et e-commerce", description: "Applications web dynamiques : boutique en ligne, espace membre, réservations, paiement" },
       { name: "Applications de gestion", description: "Outils sur mesure : tableaux de bord, accès par rôles, automatisation" },
     ],
   },
@@ -141,7 +141,7 @@ const schemaText = {
     audience: ["Small businesses and self-employed professionals", "Non-profits (ASBL)", "Artists and creatives"],
     offers: [
       { name: "Showcase websites", description: "Custom showcase websites built with WordPress, easy to manage on your own" },
-      { name: "Interactive web platforms", description: "Dynamic web applications: member area, bookings, payment" },
+      { name: "Interactive web platforms and e-commerce", description: "Dynamic web applications: online shop, member area, bookings, payment" },
       { name: "Management apps", description: "Custom tools: dashboards, role-based access, automation" },
     ],
   },
