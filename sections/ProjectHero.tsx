@@ -58,22 +58,22 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
 
   return (
     <>
-    <section className="app-showcase min-h-screen flex items-center justify-center mobile-padding">
-      <div className="showcaselayout flex flex-col md:flex-row gap-10">
-        <div className="image-wrapper group relative overflow-hidden rounded-xl h-fit" style={{ background: project.bg }}>
+    <section className="detail-hero">
+      <div className="detail-hero__layout">
+        <div className="detail-hero__media" style={{ background: project.bg }}>
           <Image
             src={project.image}
             alt={project.title}
-            width={600}
-            height={400}
+            width={1200}
+            height={800}
             quality={80}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(min-width: 1280px) 55vw, 100vw"
             loading="lazy"
             className="rounded-xl card-border card-inverted card-frame p-5 block"
           />
         </div>
-        <div className="text-content flex flex-col justify-center gap-4">
-          <div className="tech-logos flex gap-4 mb-3">
+        <div className="detail-hero__content">
+          <div className="tech-logos flex gap-4">
             {project.techLogos && project.techLogos.map((logo, idx) => (
               <Image
                 key={logo}
@@ -86,9 +86,9 @@ export default function ProjectHero({ slug: staticSlug }: { slug?: string }) {
               />
             ))}
           </div>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{project.title}</h1>
-          <p className="text-th-muted md:text-xl mt-4">{project.description}</p>
-          <ProjectButton className="md:w-80 md:h-16 w-60 h-12" text={t.projectpage.visitProject} href={project.link}/>
+          <h1 className="detail-hero__title">{project.title}</h1>
+          <p className="detail-hero__desc">{project.description}</p>
+          <ProjectButton className="md:w-96 md:h-16 w-72 h-14" text={t.projectpage.visitProject} href={project.link}/>
         </div>
       </div>
     </section>

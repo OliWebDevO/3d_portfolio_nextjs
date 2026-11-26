@@ -10,6 +10,9 @@ import { useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 
+// Full class names (Tailwind keeps only classes written out in the source)
+const checkBadgeColors = ["check-badge--0", "check-badge--1", "check-badge--2"]
+
 // Helper to get slug as string (for static export)
 function getSlug(param: string | string[] | undefined): string {
   if (Array.isArray(param)) return param[0];
@@ -107,10 +110,15 @@ const ProjectDetailsSection = ({ slug: staticSlug, cards }: { slug?: string; car
                                         </div>
                                         <div className="">
                                             <h2 className="font-semibold text-3xl">{card.title}</h2>
-                                            <ul className="list-disc ms-g mt-5 flex flex-col gap-5 text-th-muted">
-                                                {card.details?.map((detail, index) => (
-                                                    <li key={index} className="text-lg md:text-justify">
-                                                        {detail}
+                                            <ul className="detail-list">
+                                                {card.details?.map((detail, i) => (
+                                                    <li key={i} className="detail-list__item">
+                                                        <span className={`check-badge ${checkBadgeColors[index % checkBadgeColors.length]}`} aria-hidden="true">
+                                                            <svg width="14" height="14" viewBox="0 0 12 12" fill="none">
+                                                                <path d="M2.5 6L5 8.5L9.5 3.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="md:text-justify">{detail}</span>
                                                     </li>
                                                 ))}
                                             </ul>

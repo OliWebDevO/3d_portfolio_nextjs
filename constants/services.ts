@@ -23,6 +23,7 @@ export interface ServiceType {
 const serviceUi = {
   fr: {
     cta: "Demander un devis",
+    priceCaption: "Tarif indicatif",
     stepsTitle: "La marche à suivre",
     faqTitle: "Questions fréquentes",
     faqCategory: "Questions sur ce service",
@@ -32,6 +33,7 @@ const serviceUi = {
   },
   en: {
     cta: "Request a quote",
+    priceCaption: "Indicative price",
     stepsTitle: "How it works",
     faqTitle: "Frequently asked questions",
     faqCategory: "About this service",

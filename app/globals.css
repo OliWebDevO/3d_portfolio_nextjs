@@ -322,6 +322,66 @@ section {
     }
   }
 
+  /* Header of project and service pages: image + content, fills the first screen */
+  .detail-hero {
+    @apply w-full min-h-svh flex items-center px-5 md:px-20 pt-32 pb-16 md:pt-40 md:pb-24;
+  }
+  .detail-hero__layout {
+    @apply w-full grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-12 xl:gap-20 items-center;
+  }
+  .detail-hero__media {
+    @apply w-full h-fit overflow-hidden rounded-xl;
+  }
+  .detail-hero__media img {
+    @apply w-full h-auto;
+  }
+  .detail-hero__content {
+    @apply flex flex-col gap-6 md:gap-8;
+  }
+  .detail-hero__title {
+    @apply text-3xl md:text-4xl 2xl:text-5xl font-bold leading-tight;
+  }
+  .detail-hero__desc {
+    @apply text-lg md:text-xl leading-relaxed max-w-[60ch];
+    color: var(--color-text-muted);
+  }
+
+  /* Price of a service page: gradient crest + caption + amount */
+  .price-badge {
+    @apply inline-flex items-center gap-4 self-start rounded-2xl border px-5 py-4;
+    border-color: var(--color-border);
+    background-color: var(--color-surface);
+  }
+  .price-badge__crest {
+    @apply flex-none size-12 rounded-xl flex items-center justify-center;
+    color: #ffffff;
+    background-image: linear-gradient(135deg, #a78bfa, #3b1f7e);
+    box-shadow: 0 8px 24px -8px rgba(167, 139, 250, 0.55);
+  }
+  .price-badge__caption {
+    @apply block text-sm uppercase tracking-wider;
+    color: var(--color-text-muted);
+  }
+  .price-badge__amount {
+    @apply block text-xl md:text-2xl font-semibold;
+  }
+
+  /* Detail cards (project and service pages): check crest instead of a bullet */
+  .detail-list {
+    @apply mt-6 flex flex-col gap-4;
+    color: var(--color-text-muted);
+  }
+  .detail-list__item {
+    @apply flex items-start gap-4 text-lg;
+  }
+  .check-badge {
+    @apply flex-none mt-0.5 size-7 rounded-lg flex items-center justify-center;
+    color: #ffffff;
+  }
+  .check-badge--0 { background-image: linear-gradient(135deg, #a78bfa, #3b1f7e); }
+  .check-badge--1 { background-image: linear-gradient(135deg, #e879a8, #6e1a3d); }
+  .check-badge--2 { background-image: linear-gradient(135deg, #38bdf8, #0c4a6e); }
+
   .app-showcase {
     @apply w-full mt-0 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
