@@ -50,7 +50,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
       description:
         "Un site WordPress sur mesure qui présente votre activité, rassure vos visiteurs et les transforme en clients. Vous modifiez vous-même vos textes et vos images, sans abonnement à un éditeur de site.",
       metaDescription:
-        "Création de site vitrine WordPress sur mesure à Bruxelles : design unique, SEO, mobile, formation incluse. Entre 1 500 et 3 000 € HTVA, en 2 à 8 semaines.",
+        "Création de site vitrine WordPress sur mesure à Bruxelles : design unique, SEO, mobile, formation incluse. Entre 1 500 et 3 000 € HTVA, en 2 semaines à 1 mois.",
       price: { min: 1500, max: 3000 },
       priceLabel: "1 500 – 3 000 € HTVA",
       image: "/images/nasirian/nasirian_cover.webp",
@@ -84,7 +84,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
             "Entre 1 500 et 3 000 € HTVA. Le prix dépend du nombre de pages, des fonctionnalités (blog, galerie, formulaires, multilingue) et du niveau d'animation.",
             "Vous recevez un devis détaillé ligne par ligne avant de vous engager, sans frais cachés.",
             "Paiement en deux temps : un acompte au démarrage, le solde à la livraison.",
-            "Comptez 2 à 8 semaines selon la taille du site et la rapidité des retours.",
+            "Comptez 2 semaines à 1 mois selon la taille du site et la rapidité des retours.",
           ],
         },
       ],
@@ -430,7 +430,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
       description:
         "A custom WordPress website that presents your business, builds trust and turns visitors into clients. You edit your own texts and images, with no website-builder subscription.",
       metaDescription:
-        "Custom WordPress showcase website in Brussels: unique design, SEO, mobile-ready, training included. €1,500 to €3,000 excl. VAT, in 2 to 8 weeks.",
+        "Custom WordPress showcase website in Brussels: unique design, SEO, mobile-ready, training included. €1,500 to €3,000 excl. VAT, in 2 weeks to 1 month.",
       price: { min: 1500, max: 3000 },
       priceLabel: "€1,500 – €3,000 excl. VAT",
       image: "/images/nasirian/nasirian_cover.webp",
@@ -464,7 +464,7 @@ const services: { fr: ServiceType[]; en: ServiceType[] } = {
             "€1,500 to €3,000 excl. VAT. The price depends on the number of pages, the features (blog, gallery, forms, multilingual) and the level of animation.",
             "You get a detailed, line-by-line quote before committing, with no hidden costs.",
             "Two-step payment: a deposit at the start, the balance on delivery.",
-            "Allow 2 to 8 weeks depending on the size of the site and how quickly feedback comes in.",
+            "Allow 2 weeks to 1 month depending on the size of the site and how quickly feedback comes in.",
           ],
         },
       ],

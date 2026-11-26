@@ -582,7 +582,7 @@ const faqItems = {
     {
       category: "Development",
       items: [
-        { question: "How long does development take?", answer: "A showcase site typically takes between 2 and 8 weeks. An interactive platform or management app, depending on its complexity, can range from 1 to 4 months. Exact timelines depend on the number of pages, features and how quickly feedback is provided during approvals." },
+        { question: "How long does development take?", answer: "A showcase site typically takes between 2 weeks and 1 month. An interactive platform or management app, depending on its complexity, can range from 1 to 4 months. Exact timelines depend on the number of pages, features and how quickly feedback is provided during approvals." },
         { question: "Can I follow the progress?", answer: "Yes. You receive regular demos with a preview link to see the project in real conditions. We check in at every key milestone to make sure we stay aligned with your expectations." },
       ],
     },
@@ -636,7 +636,7 @@ const faqItems = {
     {
       category: "Développement",
       items: [
-        { question: "Combien de temps dure le développement ?", answer: "Un site vitrine prend généralement entre 2 et 8 semaines. Une plateforme interactive ou une app de gestion, selon sa complexité, peut aller de 1 à 4 mois. Les délais exacts dépendent du nombre de pages, des fonctionnalités et de la rapidité des retours lors des validations." },
+        { question: "Combien de temps dure le développement ?", answer: "Un site vitrine prend généralement entre 2 semaines et 1 mois. Une plateforme interactive ou une app de gestion, selon sa complexité, peut aller de 1 à 4 mois. Les délais exacts dépendent du nombre de pages, des fonctionnalités et de la rapidité des retours lors des validations." },
         { question: "Est-ce que je peux suivre l'avancement ?", answer: "Oui. Vous recevez des démos régulières avec un lien de prévisualisation pour voir le projet en conditions réelles. On fait un point à chaque étape clé pour s'assurer qu'on reste alignés sur vos attentes." },
       ],
     },
